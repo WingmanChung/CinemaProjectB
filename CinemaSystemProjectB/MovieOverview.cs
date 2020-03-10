@@ -50,5 +50,17 @@ namespace CinemaSystemProjectB
             Form johnWick3 = new JohnWick3();
             johnWick3.ShowDialog();
         }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            Form after = new After();
+            after.ShowDialog();
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            Form stormwind = new Stormwind();
+            stormwind.ShowDialog();
+        }
     }
 }
