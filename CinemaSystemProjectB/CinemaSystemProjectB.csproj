@@ -58,6 +58,18 @@
     <Compile Include="Avengers.Designer.cs">
       <DependentUpon>Avengers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Httyd3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Httyd3.Designer.cs">
+      <DependentUpon>Httyd3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IStillSeeYou.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IStillSeeYou.Designer.cs">
+      <DependentUpon>IStillSeeYou.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frozen2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +119,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Avengers.resx">
       <DependentUpon>Avengers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Httyd3.resx">
+      <DependentUpon>Httyd3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IStillSeeYou.resx">
+      <DependentUpon>IStillSeeYou.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frozen2.resx">
       <DependentUpon>Frozen2.cs</DependentUpon>
