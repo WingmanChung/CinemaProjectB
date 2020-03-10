@@ -28,5 +28,17 @@ namespace CinemaSystemProjectB
             Form madeInAbyss = new MadeInAbyss();
             madeInAbyss.ShowDialog();
         }
+        private void pictureBox3_Click_1(object sender, EventArgs e)
+        {
+            Form avengers = new Avengers();
+            avengers.ShowDialog();
+        }
+        private void pictureBox4_Click_1(object sender, EventArgs e)
+        {
+            Form frozen2 = new Frozen2();
+            frozen2.ShowDialog();
+        }
+
+
     }
 }

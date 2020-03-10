@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Avengers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Avengers.Designer.cs">
+      <DependentUpon>Avengers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frozen2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frozen2.Designer.cs">
+      <DependentUpon>Frozen2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Godzilla.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +78,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Avengers.resx">
+      <DependentUpon>Avengers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frozen2.resx">
+      <DependentUpon>Frozen2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Godzilla.resx">
       <DependentUpon>Godzilla.cs</DependentUpon>
     </EmbeddedResource>
@@ -103,6 +121,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\MadeInAbyss.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Avengersendgame.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Frozen2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
