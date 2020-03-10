@@ -62,5 +62,17 @@ namespace CinemaSystemProjectB
             Form stormwind = new Stormwind();
             stormwind.ShowDialog();
         }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+            Form istillseeyou = new IStillSeeYou();
+            istillseeyou.ShowDialog();
+        }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+            Form httyd3 = new Httyd3();
+            httyd3.ShowDialog();
+        }
     }
 }
