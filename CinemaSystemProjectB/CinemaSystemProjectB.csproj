@@ -176,5 +176,11 @@
   <ItemGroup>
     <None Include="Resources\Stormwind.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IStillSeeYou.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HowToTrainYourDragon3.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
