@@ -39,6 +39,16 @@ namespace CinemaSystemProjectB
             frozen2.ShowDialog();
         }
 
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            Form johnWick2 = new JohnWick2();
+            johnWick2.ShowDialog();
+        }
 
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            Form johnWick3 = new JohnWick3();
+            johnWick3.ShowDialog();
+        }
     }
 }

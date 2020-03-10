@@ -64,6 +64,18 @@
     <Compile Include="Godzilla.Designer.cs">
       <DependentUpon>Godzilla.cs</DependentUpon>
     </Compile>
+    <Compile Include="JohnWick2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JohnWick2.Designer.cs">
+      <DependentUpon>JohnWick2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JohnWick3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JohnWick3.Designer.cs">
+      <DependentUpon>JohnWick3.cs</DependentUpon>
+    </Compile>
     <Compile Include="MadeInAbyss.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +98,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Godzilla.resx">
       <DependentUpon>Godzilla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JohnWick2.resx">
+      <DependentUpon>JohnWick2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JohnWick3.resx">
+      <DependentUpon>JohnWick3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MadeInAbyss.resx">
       <DependentUpon>MadeInAbyss.cs</DependentUpon>
@@ -127,6 +145,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Frozen2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\John Wick 2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\John Wick 3.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
