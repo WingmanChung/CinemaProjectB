@@ -63,6 +63,16 @@ namespace CinemaSystemProjectB.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap After {
+            get {
+                object obj = ResourceManager.GetObject("After", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Avengersendgame {
             get {
                 object obj = ResourceManager.GetObject("Avengersendgame", resourceCulture);
@@ -116,6 +126,16 @@ namespace CinemaSystemProjectB.Properties {
         internal static System.Drawing.Bitmap MadeInAbyss {
             get {
                 object obj = ResourceManager.GetObject("MadeInAbyss", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Stormwind {
+            get {
+                object obj = ResourceManager.GetObject("Stormwind", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

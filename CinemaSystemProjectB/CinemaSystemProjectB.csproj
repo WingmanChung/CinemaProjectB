@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="After.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="After.Designer.cs">
+      <DependentUpon>After.cs</DependentUpon>
+    </Compile>
     <Compile Include="Avengers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stormwind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stormwind.Designer.cs">
+      <DependentUpon>Stormwind.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="After.resx">
+      <DependentUpon>After.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Avengers.resx">
       <DependentUpon>Avengers.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +136,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Stormwind.resx">
+      <DependentUpon>Stormwind.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -151,6 +169,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\John Wick 3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\After.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stormwind.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
