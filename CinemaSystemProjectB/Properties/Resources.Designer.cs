@@ -93,6 +93,26 @@ namespace CinemaSystemProjectB.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap John_Wick_2 {
+            get {
+                object obj = ResourceManager.GetObject("John Wick 2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap John_Wick_3 {
+            get {
+                object obj = ResourceManager.GetObject("John Wick 3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MadeInAbyss {
             get {
                 object obj = ResourceManager.GetObject("MadeInAbyss", resourceCulture);
