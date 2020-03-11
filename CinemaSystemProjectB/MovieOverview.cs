@@ -28,12 +28,12 @@ namespace CinemaSystemProjectB
             Form madeInAbyss = new MadeInAbyss();
             madeInAbyss.ShowDialog();
         }
-        private void pictureBox3_Click_1(object sender, EventArgs e)
+        private void pictureBox3_Click(object sender, EventArgs e)
         {
             Form avengers = new Avengers();
             avengers.ShowDialog();
         }
-        private void pictureBox4_Click_1(object sender, EventArgs e)
+        private void pictureBox4_Click(object sender, EventArgs e)
         {
             Form frozen2 = new Frozen2();
             frozen2.ShowDialog();
@@ -62,5 +62,138 @@ namespace CinemaSystemProjectB
             Form stormwind = new Stormwind();
             stormwind.ShowDialog();
         }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+            Form istillseeyou = new IStillSeeYou();
+            istillseeyou.ShowDialog();
+        }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+            Form httyd3 = new Httyd3();
+            httyd3.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            char[] letters = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
+            Random r = new Random();
+            string randomString = "";
+            for (int i = 0; i < 10; i++)
+            {
+                randomString += letters[r.Next(0, 25)].ToString();
+            }
+            MessageBox.Show(randomString);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            char[] letters = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
+            Random r = new Random();
+            string randomString = "";
+            for (int i = 0; i < 10; i++)
+            {
+                randomString += letters[r.Next(0, 25)].ToString();
+            }
+            MessageBox.Show(randomString);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            char[] letters = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
+            Random r = new Random();
+            string randomString = "";
+            for (int i = 0; i < 10; i++)
+            {
+                randomString += letters[r.Next(0, 25)].ToString();
+            }
+            MessageBox.Show(randomString);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            char[] letters = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
+            Random r = new Random();
+            string randomString = "";
+            for (int i = 0; i < 10; i++)
+            {
+                randomString += letters[r.Next(0, 25)].ToString();
+            }
+            MessageBox.Show(randomString);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            char[] letters = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
+            Random r = new Random();
+            string randomString = "";
+            for (int i = 0; i < 10; i++)
+            {
+                randomString += letters[r.Next(0, 25)].ToString();
+            }
+            MessageBox.Show(randomString);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            char[] letters = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
+            Random r = new Random();
+            string randomString = "";
+            for (int i = 0; i < 10; i++)
+            {
+                randomString += letters[r.Next(0, 25)].ToString();
+            }
+            MessageBox.Show(randomString);
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            char[] letters = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
+            Random r = new Random();
+            string randomString = "";
+            for (int i = 0; i < 10; i++)
+            {
+                randomString += letters[r.Next(0, 25)].ToString();
+            }
+            MessageBox.Show(randomString);
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            char[] letters = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
+            Random r = new Random();
+            string randomString = "";
+            for (int i = 0; i < 10; i++)
+            {
+                randomString += letters[r.Next(0, 25)].ToString();
+            }
+            MessageBox.Show(randomString);
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            char[] letters = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
+            Random r = new Random();
+            string randomString = "";
+            for (int i = 0; i < 10; i++)
+            {
+                randomString += letters[r.Next(0, 25)].ToString();
+            }
+            MessageBox.Show(randomString);
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            char[] letters = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
+            Random r = new Random();
+            string randomString = "";
+            for (int i = 0; i < 10; i++)
+            {
+                randomString += letters[r.Next(0, 25)].ToString();
+            }
+            MessageBox.Show(randomString);
+        }
+
     }
 }
