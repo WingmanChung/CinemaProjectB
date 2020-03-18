@@ -195,5 +195,9 @@ namespace CinemaSystemProjectB
             MessageBox.Show(randomString);
         }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
