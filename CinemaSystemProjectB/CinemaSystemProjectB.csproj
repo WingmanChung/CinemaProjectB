@@ -46,60 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="After.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="After.Designer.cs">
-      <DependentUpon>After.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Avengers.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Avengers.Designer.cs">
-      <DependentUpon>Avengers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Httyd3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Httyd3.Designer.cs">
-      <DependentUpon>Httyd3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="IStillSeeYou.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="IStillSeeYou.Designer.cs">
-      <DependentUpon>IStillSeeYou.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frozen2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frozen2.Designer.cs">
-      <DependentUpon>Frozen2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Godzilla.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Godzilla.Designer.cs">
-      <DependentUpon>Godzilla.cs</DependentUpon>
-    </Compile>
-    <Compile Include="JohnWick2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="JohnWick2.Designer.cs">
-      <DependentUpon>JohnWick2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="JohnWick3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="JohnWick3.Designer.cs">
-      <DependentUpon>JohnWick3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MadeInAbyss.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MadeInAbyss.Designer.cs">
-      <DependentUpon>MadeInAbyss.cs</DependentUpon>
-    </Compile>
     <Compile Include="MovieOverview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,39 +54,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Stormwind.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Stormwind.Designer.cs">
-      <DependentUpon>Stormwind.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="After.resx">
-      <DependentUpon>After.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Avengers.resx">
-      <DependentUpon>Avengers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Httyd3.resx">
-      <DependentUpon>Httyd3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="IStillSeeYou.resx">
-      <DependentUpon>IStillSeeYou.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frozen2.resx">
-      <DependentUpon>Frozen2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Godzilla.resx">
-      <DependentUpon>Godzilla.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="JohnWick2.resx">
-      <DependentUpon>JohnWick2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="JohnWick3.resx">
-      <DependentUpon>JohnWick3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MadeInAbyss.resx">
-      <DependentUpon>MadeInAbyss.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MovieOverview.resx">
       <DependentUpon>MovieOverview.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,9 +67,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Stormwind.resx">
-      <DependentUpon>Stormwind.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

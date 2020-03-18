@@ -62,6 +62,15 @@
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -74,7 +83,8 @@
             this.label1.AutoSize = true;
             this.label1.Cursor = System.Windows.Forms.Cursors.SizeNESW;
             this.label1.Font = new System.Drawing.Font("Lucida Sans Unicode", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(74, 22);
+            this.label1.ForeColor = System.Drawing.Color.Yellow;
+            this.label1.Location = new System.Drawing.Point(37, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(289, 59);
             this.label1.TabIndex = 10;
@@ -434,6 +444,105 @@
             this.label28.TabIndex = 43;
             this.label28.Text = "Locatie";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(968, 78);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(109, 43);
+            this.button1.TabIndex = 44;
+            this.button1.Text = "Reserveren";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(853, 78);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(109, 43);
+            this.button2.TabIndex = 46;
+            this.button2.Text = "Menu";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.Black;
+            this.button3.Location = new System.Drawing.Point(738, 78);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(109, 43);
+            this.button3.TabIndex = 47;
+            this.button3.Text = "Prijzen";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.Black;
+            this.button4.Location = new System.Drawing.Point(623, 78);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(109, 43);
+            this.button4.TabIndex = 48;
+            this.button4.Text = "Films";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Yellow;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.Black;
+            this.button5.Location = new System.Drawing.Point(392, 78);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(109, 43);
+            this.button5.TabIndex = 49;
+            this.button5.Text = "Start";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.White;
+            this.button6.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.Black;
+            this.button6.Location = new System.Drawing.Point(508, 78);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(109, 43);
+            this.button6.TabIndex = 51;
+            this.button6.Text = "Filmtijden";
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // label29
+            // 
+            this.label29.BackColor = System.Drawing.Color.White;
+            this.label29.Location = new System.Drawing.Point(-5, 116);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(1112, 5);
+            this.label29.TabIndex = 52;
+            this.label29.Text = "label29";
+            // 
+            // label30
+            // 
+            this.label30.BackColor = System.Drawing.Color.Maroon;
+            this.label30.Location = new System.Drawing.Point(-5, 121);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(30, 614);
+            this.label30.TabIndex = 53;
+            // 
+            // label31
+            // 
+            this.label31.BackColor = System.Drawing.Color.Maroon;
+            this.label31.Location = new System.Drawing.Point(1077, 121);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(30, 614);
+            this.label31.TabIndex = 54;
+            // 
             // MovieOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -441,6 +550,15 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1107, 735);
+            this.Controls.Add(this.label31);
+            this.Controls.Add(this.label30);
+            this.Controls.Add(this.label29);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.label26);
@@ -524,6 +642,15 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label31;
     }
 }
 
