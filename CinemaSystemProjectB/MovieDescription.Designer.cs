@@ -32,7 +32,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -47,6 +46,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label29 = new System.Windows.Forms.Label();
+            this.Synopsis = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -86,16 +86,6 @@
             this.label3.Size = new System.Drawing.Size(85, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Film Beschrijving";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.Yellow;
-            this.label4.Location = new System.Drawing.Point(110, 501);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Fill in textbox~";
             // 
             // label5
             // 
@@ -238,12 +228,25 @@
             this.label29.TabIndex = 59;
             this.label29.Text = "label29";
             // 
+            // Synopsis
+            // 
+            this.Synopsis.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.Synopsis.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Synopsis.ForeColor = System.Drawing.Color.Yellow;
+            this.Synopsis.Location = new System.Drawing.Point(113, 508);
+            this.Synopsis.Multiline = true;
+            this.Synopsis.Name = "Synopsis";
+            this.Synopsis.ReadOnly = true;
+            this.Synopsis.Size = new System.Drawing.Size(912, 171);
+            this.Synopsis.TabIndex = 60;
+            // 
             // MovieDescription
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1107, 735);
+            this.Controls.Add(this.Synopsis);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label31);
@@ -257,7 +260,6 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
@@ -279,7 +281,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -294,5 +295,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox Synopsis;
     }
 }

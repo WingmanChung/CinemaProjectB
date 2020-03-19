@@ -14,6 +14,16 @@ namespace CinemaSystemProjectB
         [STAThread]
         static void Main()
         {
+			/*JObject Movies;
+            if (File.Exists("Movies.json")) {
+				Movies = JObject.Parse(File.ReadAllText("Movies.json"));
+			} else {
+                File.CreateText("")
+			}
+            
+            */
+
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MovieOverview());
