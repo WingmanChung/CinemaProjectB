@@ -19,7 +19,7 @@ namespace CinemaSystemProjectB
 
         private void button5_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(".");
+            MessageBox.Show("Ara Ara Startu-desu!");
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -28,6 +28,21 @@ namespace CinemaSystemProjectB
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            new MovieDescription().Show();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            new MovieDescription().Show();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            new MovieDescription().Show();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
         {
             new MovieDescription().Show();
         }
