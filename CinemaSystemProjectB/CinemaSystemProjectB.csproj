@@ -55,7 +55,7 @@
     <Compile Include="MovieDescription.Designer.cs">
       <DependentUpon>MovieDescription.cs</DependentUpon>
     </Compile>
-    <Compile Include="MovieInfo.cs" />
+    <Compile Include="MovieDescriptionClass.cs" />
     <Compile Include="MovieOverview.cs">
       <SubType>Form</SubType>
     </Compile>

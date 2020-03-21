@@ -10,7 +10,7 @@ namespace CinemaSystemProjectB
     public partial class MovieDescription : Form
     {
         const string path = @"JsonTextFile.json";
-        public MovieInfo MovieInfo { get; set; }
+        public MovieDescriptionClass MovieInfo { get; set; }
         public MovieDescription()
         {
             InitializeComponent();
@@ -19,11 +19,17 @@ namespace CinemaSystemProjectB
 
             string resultJson = JsonConvert.SerializeObject(MovieInfo);
 
-            Dictionary<string, MovieInfo> Movies = JsonConvert.DeserializeObject<Dictionary<string, MovieInfo>>(File.ReadAllText(path));
-            label3.Text = Movies["After"].Title;
-            Synopsis.Text = Movies["After"].Synopsis;
+            Dictionary<string, MovieDescriptionClass> Movies = JsonConvert.DeserializeObject<Dictionary<string, MovieDescriptionClass>>(File.ReadAllText(path));
+            label6.Text = Movies["After"].Titel;
+            label9.Text = Movies["After"].Release;
+            label10.Text = Movies["After"].Regisseur;
+            label8.Text = Movies["After"].Genre;
+            label11.Text = Movies["After"].Taal;
+            label12.Text = Movies["After"].Prijs;
+            
+            label3.Text = Movies["After"].Synopsis;
 
-            MovieInfo = JsonConvert.DeserializeObject<MovieInfo>(resultJson, new JsonSerializerSettings());
+            MovieInfo = JsonConvert.DeserializeObject<MovieDescriptionClass>(resultJson, new JsonSerializerSettings());
 
         }
     }
