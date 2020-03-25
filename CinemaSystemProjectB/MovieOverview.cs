@@ -31,6 +31,6 @@ namespace CinemaSystemProjectB
             new MovieDescription().Show();
         }
 
-       
-    }
+
+}
 }
