@@ -153,6 +153,16 @@ namespace CinemaSystemProjectB.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pngfuel_com {
+            get {
+                object obj = ResourceManager.GetObject("pngfuel.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Stormwind {
             get {
                 object obj = ResourceManager.GetObject("Stormwind", resourceCulture);
