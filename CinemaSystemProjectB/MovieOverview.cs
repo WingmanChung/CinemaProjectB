@@ -15,11 +15,22 @@ namespace CinemaSystemProjectB
         public MovieOverview()
         {
             InitializeComponent();
+            toolTip1.SetToolTip(filmtitel5, "How to train your dragon");
+            toolTip1.SetToolTip(filmtitel4, "Godzilla");
+            toolTip1.SetToolTip(filmtitel3, "Frozen 2");
+            toolTip1.SetToolTip(filmtitel2, "Avengers: End Game");
+            toolTip1.SetToolTip(filmtitel1, "After");
+        }
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            new MovieDescription().Show();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Startpagina");
+            new MovieDescription().Show();
         }
-    }
+
+
+}
 }
