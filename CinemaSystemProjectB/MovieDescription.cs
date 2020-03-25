@@ -19,12 +19,12 @@ namespace CinemaSystemProjectB
             string resultJson = JsonConvert.SerializeObject(MovieInfo);
 
             Dictionary<string, MovieDescriptionClass> Movies = JsonConvert.DeserializeObject<Dictionary<string, MovieDescriptionClass>>(File.ReadAllText(path));
-            Filmtitel.Text = Movies["After"].MovieTitle;
+            Filmtitel.Text = Movies["After"].Titel;
             Release.Text = Movies["After"].Release;
-            Regisseurs.Text = Movies["After"].Director;
+            Regisseurs.Text = Movies["After"].Regisseur;
             Genre.Text = Movies["After"].Genre;
-            Taal.Text = Movies["After"].Language;
-            Prijs.Text = Movies["After"].Prize;
+            Taal.Text = Movies["After"].Taal;
+            Prijs.Text = Movies["After"].Prijs;
             Synopsis.Text = Movies["After"].Synopsis;
 
             MovieInfo = JsonConvert.DeserializeObject<MovieDescriptionClass>(resultJson, new JsonSerializerSettings());
