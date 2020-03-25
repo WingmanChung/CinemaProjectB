@@ -17,9 +17,17 @@ namespace CinemaSystemProjectB
             InitializeComponent();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Startpagina");
+            new MovieDescription().Show();
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            new MovieDescription().Show();
+        }
+
     }
 }
