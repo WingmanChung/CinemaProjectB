@@ -127,5 +127,17 @@
   <ItemGroup>
     <None Include="Resources\pngfuel.com.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayButton.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayButton2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayButton3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayButton4.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
