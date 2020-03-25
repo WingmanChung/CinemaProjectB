@@ -30,7 +30,6 @@
         {
             this.Filmbeschrijving = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Filmtitel = new System.Windows.Forms.Label();
             this.Genre = new System.Windows.Forms.Label();
             this.Release = new System.Windows.Forms.Label();
@@ -41,13 +40,22 @@
             this.Rechterkolom = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.Linkerkolom = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.Wittelijn = new System.Windows.Forms.Label();
             this.Trailer = new System.Windows.Forms.Label();
             this.Synopsis = new System.Windows.Forms.Label();
             this.Trailerlink = new System.Windows.Forms.LinkLabel();
+            this.Reserveerknop = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.Releasedatumlabel = new System.Windows.Forms.Label();
+            this.Regisseurlabel = new System.Windows.Forms.Label();
+            this.Genrelabel = new System.Windows.Forms.Label();
+            this.Taallabel = new System.Windows.Forms.Label();
+            this.Prijslabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // Filmbeschrijving
@@ -67,14 +75,6 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 2;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(110, 185);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(184, 245);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
             // 
             // Filmtitel
             // 
@@ -105,9 +105,9 @@
             this.Release.ForeColor = System.Drawing.Color.Yellow;
             this.Release.Location = new System.Drawing.Point(333, 226);
             this.Release.Name = "Release";
-            this.Release.Size = new System.Drawing.Size(66, 18);
+            this.Release.Size = new System.Drawing.Size(70, 18);
             this.Release.TabIndex = 10;
-            this.Release.Text = "Release";
+            this.Release.Text = "Release:";
             // 
             // Regisseurs
             // 
@@ -178,14 +178,6 @@
             this.Linkerkolom.Size = new System.Drawing.Size(30, 648);
             this.Linkerkolom.TabIndex = 57;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(26, 92);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1058, 119);
-            this.pictureBox2.TabIndex = 58;
-            this.pictureBox2.TabStop = false;
-            // 
             // Wittelijn
             // 
             this.Wittelijn.BackColor = System.Drawing.Color.White;
@@ -217,20 +209,124 @@
             // 
             // Trailerlink
             // 
+            this.Trailerlink.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.Trailerlink.AutoSize = true;
+            this.Trailerlink.LinkColor = System.Drawing.Color.Cyan;
             this.Trailerlink.Location = new System.Drawing.Point(339, 401);
             this.Trailerlink.Name = "Trailerlink";
             this.Trailerlink.Size = new System.Drawing.Size(55, 13);
             this.Trailerlink.TabIndex = 63;
             this.Trailerlink.TabStop = true;
             this.Trailerlink.Text = "linkLabel1";
+            this.Trailerlink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Trailerlink_LinkClicked);
+            // 
+            // Reserveerknop
+            // 
+            this.Reserveerknop.BackColor = System.Drawing.Color.Yellow;
+            this.Reserveerknop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Reserveerknop.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Reserveerknop.ForeColor = System.Drawing.Color.Black;
+            this.Reserveerknop.Location = new System.Drawing.Point(868, 12);
+            this.Reserveerknop.Margin = new System.Windows.Forms.Padding(90);
+            this.Reserveerknop.Name = "Reserveerknop";
+            this.Reserveerknop.Size = new System.Drawing.Size(216, 58);
+            this.Reserveerknop.TabIndex = 64;
+            this.Reserveerknop.Text = "Reserveer nu";
+            this.Reserveerknop.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(110, 185);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(184, 245);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(26, 92);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(1058, 119);
+            this.pictureBox2.TabIndex = 58;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Yellow;
+            this.pictureBox3.BackgroundImage = global::CinemaSystemProjectB.Properties.Resources.pngfuel_com;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox3.Image = global::CinemaSystemProjectB.Properties.Resources.pngfuel_com;
+            this.pictureBox3.Location = new System.Drawing.Point(1046, 30);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(25, 23);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 65;
+            this.pictureBox3.TabStop = false;
+            // 
+            // Releasedatumlabel
+            // 
+            this.Releasedatumlabel.AutoSize = true;
+            this.Releasedatumlabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Releasedatumlabel.Location = new System.Drawing.Point(410, 227);
+            this.Releasedatumlabel.Name = "Releasedatumlabel";
+            this.Releasedatumlabel.Size = new System.Drawing.Size(53, 18);
+            this.Releasedatumlabel.TabIndex = 66;
+            this.Releasedatumlabel.Text = "Datum";
+            // 
+            // Regisseurlabel
+            // 
+            this.Regisseurlabel.AutoSize = true;
+            this.Regisseurlabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Regisseurlabel.Location = new System.Drawing.Point(442, 251);
+            this.Regisseurlabel.Name = "Regisseurlabel";
+            this.Regisseurlabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Regisseurlabel.Size = new System.Drawing.Size(47, 18);
+            this.Regisseurlabel.TabIndex = 68;
+            this.Regisseurlabel.Text = "Naam";
+            // 
+            // Genrelabel
+            // 
+            this.Genrelabel.AutoSize = true;
+            this.Genrelabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Genrelabel.Location = new System.Drawing.Point(396, 276);
+            this.Genrelabel.Name = "Genrelabel";
+            this.Genrelabel.Size = new System.Drawing.Size(53, 18);
+            this.Genrelabel.TabIndex = 69;
+            this.Genrelabel.Text = "Genre";
+            // 
+            // Taallabel
+            // 
+            this.Taallabel.AutoSize = true;
+            this.Taallabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Taallabel.Location = new System.Drawing.Point(383, 301);
+            this.Taallabel.Name = "Taallabel";
+            this.Taallabel.Size = new System.Drawing.Size(37, 18);
+            this.Taallabel.TabIndex = 70;
+            this.Taallabel.Text = "Taal";
+            // 
+            // Prijslabel
+            // 
+            this.Prijslabel.AutoSize = true;
+            this.Prijslabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Prijslabel.Location = new System.Drawing.Point(383, 326);
+            this.Prijslabel.Name = "Prijslabel";
+            this.Prijslabel.Size = new System.Drawing.Size(40, 18);
+            this.Prijslabel.TabIndex = 71;
+            this.Prijslabel.Text = "Prijs";
             // 
             // MovieDescription
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1107, 735);
+            this.ClientSize = new System.Drawing.Size(1107, 575);
+            this.Controls.Add(this.Prijslabel);
+            this.Controls.Add(this.Taallabel);
+            this.Controls.Add(this.Genrelabel);
+            this.Controls.Add(this.Regisseurlabel);
+            this.Controls.Add(this.Releasedatumlabel);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.Reserveerknop);
             this.Controls.Add(this.Trailerlink);
             this.Controls.Add(this.Synopsis);
             this.Controls.Add(this.Trailer);
@@ -254,6 +350,7 @@
             this.Text = "MovieDescription";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,5 +376,12 @@
         private System.Windows.Forms.Label Trailer;
         private System.Windows.Forms.Label Synopsis;
         private System.Windows.Forms.LinkLabel Trailerlink;
+        private System.Windows.Forms.Button Reserveerknop;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label Releasedatumlabel;
+        private System.Windows.Forms.Label Regisseurlabel;
+        private System.Windows.Forms.Label Genrelabel;
+        private System.Windows.Forms.Label Taallabel;
+        private System.Windows.Forms.Label Prijslabel;
     }
 }
