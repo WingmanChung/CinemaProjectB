@@ -1,9 +1,8 @@
 ﻿
 using System.IO;
-using Newtonsoft.Json;
 using System.Windows.Forms;
-using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace CinemaSystemProjectB
 {
@@ -20,12 +19,12 @@ namespace CinemaSystemProjectB
             string resultJson = JsonConvert.SerializeObject(MovieInfo);
 
             Dictionary<string, MovieDescriptionClass> Movies = JsonConvert.DeserializeObject<Dictionary<string, MovieDescriptionClass>>(File.ReadAllText(path));
-            MovieTitle.Text = Movies["After"].MovieTitle;
+            Filmtitel.Text = Movies["After"].MovieTitle;
             Release.Text = Movies["After"].Release;
-            Director.Text = Movies["After"].Director;
+            Regisseurs.Text = Movies["After"].Director;
             Genre.Text = Movies["After"].Genre;
-            Language.Text = Movies["After"].Language;
-            Prize.Text = Movies["After"].Prize;
+            Taal.Text = Movies["After"].Language;
+            Prijs.Text = Movies["After"].Prize;
             Synopsis.Text = Movies["After"].Synopsis;
 
             MovieInfo = JsonConvert.DeserializeObject<MovieDescriptionClass>(resultJson, new JsonSerializerSettings());
