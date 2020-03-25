@@ -49,11 +49,11 @@
             this.Genrelabel = new System.Windows.Forms.Label();
             this.Taallabel = new System.Windows.Forms.Label();
             this.Prijslabel = new System.Windows.Forms.Label();
-            this.Reserveerknop = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.Filmposter = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.Filmbanner = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.Filmposter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Filmbanner)).BeginInit();
             this.SuspendLayout();
             // 
             // Filmbeschrijving
@@ -290,39 +290,36 @@
             this.Prijslabel.TabIndex = 71;
             this.Prijslabel.Text = "Prijs";
             // 
-            // Reserveerknop
+            // Filmposter
             // 
-            this.Reserveerknop.BackColor = System.Drawing.Color.Yellow;
-            this.Reserveerknop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Reserveerknop.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Reserveerknop.ForeColor = System.Drawing.Color.Black;
-            this.Reserveerknop.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Reserveerknop.Location = new System.Drawing.Point(1157, 15);
-            this.Reserveerknop.Margin = new System.Windows.Forms.Padding(120, 111, 120, 111);
-            this.Reserveerknop.Name = "Reserveerknop";
-            this.Reserveerknop.Size = new System.Drawing.Size(288, 71);
-            this.Reserveerknop.TabIndex = 64;
-            this.Reserveerknop.Text = "Reserveer nu";
-            this.Reserveerknop.UseVisualStyleBackColor = false;
+            this.Filmposter.Location = new System.Drawing.Point(150, 204);
+            this.Filmposter.Name = "Filmposter";
+            this.Filmposter.Size = new System.Drawing.Size(206, 307);
+            this.Filmposter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Filmposter.TabIndex = 74;
+            this.Filmposter.TabStop = false;
+            this.Filmposter.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // pictureBox1
+            // button1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(147, 228);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(245, 302);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.button1.BackColor = System.Drawing.Color.Yellow;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(1114, 11);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(313, 84);
+            this.button1.TabIndex = 75;
+            this.button1.Text = "Reserveer nu";
+            this.button1.UseVisualStyleBackColor = false;
             // 
-            // pictureBox2
+            // Filmbanner
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(35, 113);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1411, 146);
-            this.pictureBox2.TabIndex = 58;
-            this.pictureBox2.TabStop = false;
+            this.Filmbanner.Location = new System.Drawing.Point(41, 113);
+            this.Filmbanner.Name = "Filmbanner";
+            this.Filmbanner.Size = new System.Drawing.Size(1398, 138);
+            this.Filmbanner.TabIndex = 76;
+            this.Filmbanner.TabStop = false;
             // 
             // MovieDescription
             // 
@@ -330,12 +327,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1476, 708);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Prijslabel);
             this.Controls.Add(this.Taallabel);
             this.Controls.Add(this.Genrelabel);
             this.Controls.Add(this.Regisseurlabel);
             this.Controls.Add(this.Releasedatumlabel);
-            this.Controls.Add(this.Reserveerknop);
             this.Controls.Add(this.Trailerlink);
             this.Controls.Add(this.Synopsis);
             this.Controls.Add(this.Trailer);
@@ -350,16 +347,16 @@
             this.Controls.Add(this.Release);
             this.Controls.Add(this.Genre);
             this.Controls.Add(this.Filmtitel);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Filmbeschrijving);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.Filmposter);
+            this.Controls.Add(this.Filmbanner);
             this.ForeColor = System.Drawing.Color.Yellow;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MovieDescription";
             this.Text = "MovieDescription";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Filmposter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Filmbanner)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -369,7 +366,6 @@
 
         private System.Windows.Forms.Label Filmbeschrijving;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label Filmtitel;
         private System.Windows.Forms.Label Genre;
         private System.Windows.Forms.Label Release;
@@ -380,16 +376,17 @@
         private System.Windows.Forms.Label Rechterkolom;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label Linkerkolom;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox Filmposter;
         private System.Windows.Forms.Label Wittelijn;
         private System.Windows.Forms.Label Trailer;
         private System.Windows.Forms.Label Synopsis;
         private System.Windows.Forms.LinkLabel Trailerlink;
-        private System.Windows.Forms.Button Reserveerknop;
         private System.Windows.Forms.Label Releasedatumlabel;
         private System.Windows.Forms.Label Regisseurlabel;
         private System.Windows.Forms.Label Genrelabel;
         private System.Windows.Forms.Label Taallabel;
         private System.Windows.Forms.Label Prijslabel;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox Filmbanner;
     }
 }
