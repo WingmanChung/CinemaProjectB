@@ -20,6 +20,7 @@ namespace CinemaSystemProjectB
             string resultJson = JsonConvert.SerializeObject(MovieInfo);
 
             Dictionary<string, MovieDescriptionClass> Movies = JsonConvert.DeserializeObject<Dictionary<string, MovieDescriptionClass>>(File.ReadAllText(path));
+
             string showMovie = "Avengers: Endgame";
             Filmtitel.Text = Movies[showMovie].Title;
             Releasedatumlabel.Text = Movies[showMovie].Release;
