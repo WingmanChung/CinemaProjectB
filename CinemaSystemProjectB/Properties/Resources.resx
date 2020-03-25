@@ -121,15 +121,11 @@
   <data name="John Wick 3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\John Wick 3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PlayButton2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PlayButton2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+
   <data name="MadeInAbyss" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MadeInAbyss.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PlayButton3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PlayButton3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+
   <data name="After" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\After.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -145,9 +141,7 @@
   <data name="John Wick 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\John Wick 2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PlayButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PlayButton.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+
   <data name="Stormwind" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Stormwind.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -160,7 +154,5 @@
   <data name="IStillSeeYou" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IStillSeeYou.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PlayButton4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PlayButton4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+
 </root>

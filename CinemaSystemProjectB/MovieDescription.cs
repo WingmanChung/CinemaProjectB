@@ -34,7 +34,7 @@ namespace CinemaSystemProjectB
             var fileString = Movies[showMovie].Image;
             var bytes = Convert.FromBase64String(fileString);
 
-            pictureBox1.Image = Image.FromStream(new MemoryStream(bytes));
+            Filmposter.Image = Image.FromStream(new MemoryStream(bytes));
 
 
             MovieInfo = JsonConvert.DeserializeObject<MovieDescriptionClass>(resultJson, new JsonSerializerSettings());
@@ -45,6 +45,11 @@ namespace CinemaSystemProjectB
         private void Trailerlink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start(Trailerlink.Text);
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
