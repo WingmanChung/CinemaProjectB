@@ -130,11 +130,17 @@
   <data name="MadeInAbyss" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MadeInAbyss.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="IStillSeeYou" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IStillSeeYou.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="John Wick 3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\John Wick 3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Godzilla" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Godzilla.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HowToTrainYourDragon3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HowToTrainYourDragon3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Frozen2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Frozen2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,10 +148,7 @@
   <data name="After" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\After.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IStillSeeYou" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IStillSeeYou.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="HowToTrainYourDragon3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HowToTrainYourDragon3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pngfuel.com" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngfuel.com.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
