@@ -93,5 +93,11 @@ namespace CinemaSystemProjectB
             chosenMovie = Film5Title;
             new MovieDescription().Show();
         }
+
+        private void Filmtijdenknop_Click(object sender, EventArgs e)
+        {
+            //((Control)sender).BackColor = Color.Yellow;
+        }
+
     }
 }
