@@ -49,6 +49,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GradientLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="MovieDescription.cs">
       <SubType>Form</SubType>
     </Compile>
