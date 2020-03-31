@@ -15,7 +15,6 @@ namespace CinemaSystemProjectB
         private Color cLeft;
         private Color cRight;
 
-       
         public Color BeginColor
         {
             get
@@ -54,7 +53,6 @@ namespace CinemaSystemProjectB
             Rectangle rect = new Rectangle(0, 0, this.Width, this.Height);
             
             e.Graphics.FillRectangle(GBrush, rect);
-
            
             SolidBrush drawBrush = new SolidBrush(this.ForeColor);
             StringFormat sf = new StringFormat();
