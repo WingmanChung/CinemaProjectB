@@ -15,7 +15,6 @@ namespace CinemaSystemProjectB
         private Color cLeft;
         private Color cRight;
 
-       
         public Color BeginColor
         {
             get

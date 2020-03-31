@@ -96,7 +96,8 @@ namespace CinemaSystemProjectB
 
         private void Filmtijdenknop_Click(object sender, EventArgs e)
         {
-            ((Control)sender).BackColor = Color.Yellow;
+            //((Control)sender).BackColor = Color.Yellow;
         }
+
     }
 }

@@ -53,6 +53,7 @@
             this.ReservationButton = new System.Windows.Forms.Button();
             this.gradientLabel1 = new CinemaSystemProjectB.GradientLabel();
             ((System.ComponentModel.ISupportInitialize)(this.Filmposter)).BeginInit();
+            this.gradientLabel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Filmbeschrijving
@@ -154,7 +155,7 @@
             this.Bioscoopnaam.Cursor = System.Windows.Forms.Cursors.SizeNESW;
             this.Bioscoopnaam.Font = new System.Drawing.Font("Lucida Sans Unicode", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bioscoopnaam.ForeColor = System.Drawing.Color.Yellow;
-            this.Bioscoopnaam.Location = new System.Drawing.Point(41, 11);
+            this.Bioscoopnaam.Location = new System.Drawing.Point(88, 23);
             this.Bioscoopnaam.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Bioscoopnaam.Name = "Bioscoopnaam";
             this.Bioscoopnaam.Size = new System.Drawing.Size(356, 73);
@@ -317,21 +318,20 @@
             // 
             // gradientLabel1
             // 
-            this.gradientLabel1.ColorBottom = System.Drawing.Color.Empty;
-            this.gradientLabel1.ColorTop = System.Drawing.Color.Empty;
-            this.gradientLabel1.Location = new System.Drawing.Point(302, 40);
+            this.gradientLabel1.BeginColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.gradientLabel1.Controls.Add(this.Bioscoopnaam);
+            this.gradientLabel1.EndColor = System.Drawing.Color.Maroon;
+            this.gradientLabel1.Location = new System.Drawing.Point(-1, -1);
             this.gradientLabel1.Name = "gradientLabel1";
-            this.gradientLabel1.Size = new System.Drawing.Size(200, 100);
+            this.gradientLabel1.Size = new System.Drawing.Size(1485, 111);
             this.gradientLabel1.TabIndex = 76;
             // 
             // MovieDescription
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1480, 889);
-            this.Controls.Add(this.gradientLabel1);
-            this.Controls.Add(this.Bioscoopnaam);
             this.Controls.Add(this.ReservationButton);
             this.Controls.Add(this.Prijslabel);
             this.Controls.Add(this.Taallabel);
@@ -354,6 +354,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Filmbeschrijving);
             this.Controls.Add(this.Filmposter);
+            this.Controls.Add(this.gradientLabel1);
             this.ForeColor = System.Drawing.Color.Yellow;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
@@ -362,6 +363,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MovieDescription";
             ((System.ComponentModel.ISupportInitialize)(this.Filmposter)).EndInit();
+            this.gradientLabel1.ResumeLayout(false);
+            this.gradientLabel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

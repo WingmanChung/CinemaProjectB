@@ -73,20 +73,23 @@
             this.Linkerkolom = new System.Windows.Forms.Label();
             this.Rechterkolom = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.gradientLabel1 = new CinemaSystemProjectB.GradientLabel();
             ((System.ComponentModel.ISupportInitialize)(this.Film1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Film2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Film3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Film4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Film5)).BeginInit();
+            this.gradientLabel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Bioscoopnaam
             // 
             this.Bioscoopnaam.AutoSize = true;
+            this.Bioscoopnaam.BackColor = System.Drawing.Color.Transparent;
             this.Bioscoopnaam.Cursor = System.Windows.Forms.Cursors.SizeNESW;
             this.Bioscoopnaam.Font = new System.Drawing.Font("Lucida Sans Unicode", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bioscoopnaam.ForeColor = System.Drawing.Color.Yellow;
-            this.Bioscoopnaam.Location = new System.Drawing.Point(49, 41);
+            this.Bioscoopnaam.Location = new System.Drawing.Point(69, 40);
             this.Bioscoopnaam.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Bioscoopnaam.Name = "Bioscoopnaam";
             this.Bioscoopnaam.Size = new System.Drawing.Size(356, 73);
@@ -109,7 +112,7 @@
             // Film1
             // 
             this.Film1.Location = new System.Drawing.Point(147, 267);
-            this.Film1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Film1.Margin = new System.Windows.Forms.Padding(4);
             this.Film1.Name = "Film1";
             this.Film1.Size = new System.Drawing.Size(184, 245);
             this.Film1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -120,7 +123,7 @@
             // Film2
             // 
             this.Film2.Location = new System.Drawing.Point(387, 267);
-            this.Film2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Film2.Margin = new System.Windows.Forms.Padding(4);
             this.Film2.Name = "Film2";
             this.Film2.Size = new System.Drawing.Size(184, 245);
             this.Film2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -131,7 +134,7 @@
             // Film3
             // 
             this.Film3.Location = new System.Drawing.Point(639, 267);
-            this.Film3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Film3.Margin = new System.Windows.Forms.Padding(4);
             this.Film3.Name = "Film3";
             this.Film3.Size = new System.Drawing.Size(184, 245);
             this.Film3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -142,7 +145,7 @@
             // Film4
             // 
             this.Film4.Location = new System.Drawing.Point(893, 267);
-            this.Film4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Film4.Margin = new System.Windows.Forms.Padding(4);
             this.Film4.Name = "Film4";
             this.Film4.Size = new System.Drawing.Size(184, 245);
             this.Film4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -153,7 +156,7 @@
             // Film5
             // 
             this.Film5.Location = new System.Drawing.Point(1147, 267);
-            this.Film5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Film5.Margin = new System.Windows.Forms.Padding(4);
             this.Film5.Name = "Film5";
             this.Film5.Size = new System.Drawing.Size(184, 245);
             this.Film5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -483,7 +486,7 @@
             this.Reserveerknop.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Reserveerknop.ForeColor = System.Drawing.Color.Black;
             this.Reserveerknop.Location = new System.Drawing.Point(1291, 96);
-            this.Reserveerknop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Reserveerknop.Margin = new System.Windows.Forms.Padding(4);
             this.Reserveerknop.Name = "Reserveerknop";
             this.Reserveerknop.Size = new System.Drawing.Size(145, 53);
             this.Reserveerknop.TabIndex = 44;
@@ -497,7 +500,7 @@
             this.Menuknop.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Menuknop.ForeColor = System.Drawing.Color.Black;
             this.Menuknop.Location = new System.Drawing.Point(1137, 96);
-            this.Menuknop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Menuknop.Margin = new System.Windows.Forms.Padding(4);
             this.Menuknop.Name = "Menuknop";
             this.Menuknop.Size = new System.Drawing.Size(145, 53);
             this.Menuknop.TabIndex = 46;
@@ -511,7 +514,7 @@
             this.Prijzenknop.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Prijzenknop.ForeColor = System.Drawing.Color.Black;
             this.Prijzenknop.Location = new System.Drawing.Point(984, 96);
-            this.Prijzenknop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Prijzenknop.Margin = new System.Windows.Forms.Padding(4);
             this.Prijzenknop.Name = "Prijzenknop";
             this.Prijzenknop.Size = new System.Drawing.Size(145, 53);
             this.Prijzenknop.TabIndex = 47;
@@ -525,7 +528,7 @@
             this.Filmsknop.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Filmsknop.ForeColor = System.Drawing.Color.Black;
             this.Filmsknop.Location = new System.Drawing.Point(831, 96);
-            this.Filmsknop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Filmsknop.Margin = new System.Windows.Forms.Padding(4);
             this.Filmsknop.Name = "Filmsknop";
             this.Filmsknop.Size = new System.Drawing.Size(145, 53);
             this.Filmsknop.TabIndex = 48;
@@ -540,7 +543,7 @@
             this.Startknop.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Startknop.ForeColor = System.Drawing.Color.Black;
             this.Startknop.Location = new System.Drawing.Point(523, 96);
-            this.Startknop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Startknop.Margin = new System.Windows.Forms.Padding(4);
             this.Startknop.Name = "Startknop";
             this.Startknop.Size = new System.Drawing.Size(145, 53);
             this.Startknop.TabIndex = 49;
@@ -554,7 +557,7 @@
             this.Filmtijdenknop.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Filmtijdenknop.ForeColor = System.Drawing.Color.Black;
             this.Filmtijdenknop.Location = new System.Drawing.Point(677, 96);
-            this.Filmtijdenknop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Filmtijdenknop.Margin = new System.Windows.Forms.Padding(4);
             this.Filmtijdenknop.Name = "Filmtijdenknop";
             this.Filmtijdenknop.Size = new System.Drawing.Size(145, 53);
             this.Filmtijdenknop.TabIndex = 51;
@@ -578,7 +581,7 @@
             this.Linkerkolom.Location = new System.Drawing.Point(0, 149);
             this.Linkerkolom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Linkerkolom.Name = "Linkerkolom";
-            this.Linkerkolom.Size = new System.Drawing.Size(40, 756);
+            this.Linkerkolom.Size = new System.Drawing.Size(40, 796);
             this.Linkerkolom.TabIndex = 53;
             // 
             // Rechterkolom
@@ -587,20 +590,30 @@
             this.Rechterkolom.Location = new System.Drawing.Point(1436, 149);
             this.Rechterkolom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Rechterkolom.Name = "Rechterkolom";
-            this.Rechterkolom.Size = new System.Drawing.Size(40, 756);
+            this.Rechterkolom.Size = new System.Drawing.Size(40, 796);
             this.Rechterkolom.TabIndex = 54;
             // 
             // toolTip1
             // 
             this.toolTip1.ForeColor = System.Drawing.Color.Yellow;
             // 
+            // gradientLabel1
+            // 
+            this.gradientLabel1.BeginColor = System.Drawing.Color.Black;
+            this.gradientLabel1.Controls.Add(this.Bioscoopnaam);
+            this.gradientLabel1.EndColor = System.Drawing.Color.Maroon;
+            this.gradientLabel1.Location = new System.Drawing.Point(-4, -3);
+            this.gradientLabel1.Name = "gradientLabel1";
+            this.gradientLabel1.Size = new System.Drawing.Size(1480, 149);
+            this.gradientLabel1.TabIndex = 55;
+            // 
             // MovieOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1476, 905);
+            this.ClientSize = new System.Drawing.Size(1476, 919);
             this.Controls.Add(this.Rechterkolom);
             this.Controls.Add(this.Linkerkolom);
             this.Controls.Add(this.Wittelijn);
@@ -643,9 +656,9 @@
             this.Controls.Add(this.Film2);
             this.Controls.Add(this.Film1);
             this.Controls.Add(this.Trending);
-            this.Controls.Add(this.Bioscoopnaam);
+            this.Controls.Add(this.gradientLabel1);
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MovieOverview";
@@ -656,6 +669,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Film3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Film4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Film5)).EndInit();
+            this.gradientLabel1.ResumeLayout(false);
+            this.gradientLabel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -706,6 +721,7 @@
         private System.Windows.Forms.Label Linkerkolom;
         private System.Windows.Forms.Label Rechterkolom;
         private System.Windows.Forms.ToolTip toolTip1;
+        private GradientLabel gradientLabel1;
     }
 }
 
