@@ -63,6 +63,7 @@ namespace CinemaSystemProjectB
             Email.Text = "darichwiwi.hr.nl";
             Telefoonnummer.Text = "010-1234567";
             Locatie.Text = "Wijnhaven 107, 3011 WN Rotterdam";
+
         }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -96,8 +97,70 @@ namespace CinemaSystemProjectB
 
         private void Filmtijdenknop_Click(object sender, EventArgs e)
         {
-            //((Control)sender).BackColor = Color.Yellow;
+
+            ((Control)sender).BackColor = Color.Yellow;
+            Startknop.BackColor = Color.White;
+            Filmsknop.BackColor = Color.White;
+            Prijzenknop.BackColor = Color.White;
+            Menuknop.BackColor = Color.White;
+            Reserveerknop.BackColor = Color.White;
+
         }
 
+        private void Startknop_Click(object sender, EventArgs e)
+        {
+
+            ((Control)sender).BackColor = Color.Yellow;
+            Filmsknop.BackColor = Color.White;
+            Filmtijdenknop.BackColor = Color.White;
+            Prijzenknop.BackColor = Color.White;
+            Menuknop.BackColor = Color.White;
+            Reserveerknop.BackColor = Color.White;
+
+        }
+
+        private void Filmsknop_Click(object sender, EventArgs e)
+        {
+
+            ((Control)sender).BackColor = Color.Yellow;
+            Startknop.BackColor = Color.White;
+            Filmtijdenknop.BackColor = Color.White;
+            Prijzenknop.BackColor = Color.White;
+            Menuknop.BackColor = Color.White;
+            Reserveerknop.BackColor = Color.White;
+
+        }
+
+        private void Prijzenknop_Click(object sender, EventArgs e)
+        {
+
+            ((Control)sender).BackColor = Color.Yellow;
+            Startknop.BackColor = Color.White;
+            Filmtijdenknop.BackColor = Color.White;
+            Filmsknop.BackColor = Color.White;
+            Menuknop.BackColor = Color.White;
+            Reserveerknop.BackColor = Color.White;
+
+        }
+
+        private void Menuknop_Click(object sender, EventArgs e)
+        {
+            ((Control)sender).BackColor = Color.Yellow;
+            Startknop.BackColor = Color.White;
+            Filmtijdenknop.BackColor = Color.White;
+            Filmsknop.BackColor = Color.White;
+            Prijzenknop.BackColor = Color.White;
+            Reserveerknop.BackColor = Color.White;
+        }
+
+        private void Reserveerknop_Click(object sender, EventArgs e)
+        {
+            ((Control)sender).BackColor = Color.Yellow;
+            Startknop.BackColor = Color.White;
+            Filmtijdenknop.BackColor = Color.White;
+            Filmsknop.BackColor = Color.White;
+            Prijzenknop.BackColor = Color.White;
+            Menuknop.BackColor = Color.White;
+        }
     }
 }
