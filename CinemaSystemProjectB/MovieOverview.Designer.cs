@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.Bioscoopnaam = new System.Windows.Forms.Label();
             this.Trending = new System.Windows.Forms.Label();
             this.Film1 = new System.Windows.Forms.PictureBox();
             this.Film2 = new System.Windows.Forms.PictureBox();
@@ -67,13 +66,14 @@
             this.Menuknop = new System.Windows.Forms.Button();
             this.Prijzenknop = new System.Windows.Forms.Button();
             this.Filmsknop = new System.Windows.Forms.Button();
-            this.Startknop = new System.Windows.Forms.Button();
             this.Filmtijdenknop = new System.Windows.Forms.Button();
             this.Wittelijn = new System.Windows.Forms.Label();
             this.Linkerkolom = new System.Windows.Forms.Label();
             this.Rechterkolom = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.gradientLabel1 = new CinemaSystemProjectB.GradientLabel();
+            this.Bioscoopnaam = new System.Windows.Forms.Label();
+            this.Startknop = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Film1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Film2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Film3)).BeginInit();
@@ -81,20 +81,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Film5)).BeginInit();
             this.gradientLabel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // Bioscoopnaam
-            // 
-            this.Bioscoopnaam.AutoSize = true;
-            this.Bioscoopnaam.BackColor = System.Drawing.Color.Transparent;
-            this.Bioscoopnaam.Cursor = System.Windows.Forms.Cursors.SizeNESW;
-            this.Bioscoopnaam.Font = new System.Drawing.Font("Lucida Sans Unicode", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Bioscoopnaam.ForeColor = System.Drawing.Color.Yellow;
-            this.Bioscoopnaam.Location = new System.Drawing.Point(69, 40);
-            this.Bioscoopnaam.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Bioscoopnaam.Name = "Bioscoopnaam";
-            this.Bioscoopnaam.Size = new System.Drawing.Size(356, 73);
-            this.Bioscoopnaam.TabIndex = 10;
-            this.Bioscoopnaam.Text = "Darichwiwi";
             // 
             // Trending
             // 
@@ -492,6 +478,7 @@
             this.Reserveerknop.TabIndex = 44;
             this.Reserveerknop.Text = "Reserveren";
             this.Reserveerknop.UseVisualStyleBackColor = false;
+            this.Reserveerknop.Click += new System.EventHandler(this.Reserveerknop_Click);
             // 
             // Menuknop
             // 
@@ -506,6 +493,7 @@
             this.Menuknop.TabIndex = 46;
             this.Menuknop.Text = "Menu";
             this.Menuknop.UseVisualStyleBackColor = false;
+            this.Menuknop.Click += new System.EventHandler(this.Menuknop_Click);
             // 
             // Prijzenknop
             // 
@@ -520,6 +508,7 @@
             this.Prijzenknop.TabIndex = 47;
             this.Prijzenknop.Text = "Prijzen";
             this.Prijzenknop.UseVisualStyleBackColor = false;
+            this.Prijzenknop.Click += new System.EventHandler(this.Prijzenknop_Click);
             // 
             // Filmsknop
             // 
@@ -534,21 +523,7 @@
             this.Filmsknop.TabIndex = 48;
             this.Filmsknop.Text = "Films";
             this.Filmsknop.UseVisualStyleBackColor = false;
-            // 
-            // Startknop
-            // 
-            this.Startknop.BackColor = System.Drawing.Color.Yellow;
-            this.Startknop.FlatAppearance.BorderSize = 0;
-            this.Startknop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Startknop.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Startknop.ForeColor = System.Drawing.Color.Black;
-            this.Startknop.Location = new System.Drawing.Point(523, 96);
-            this.Startknop.Margin = new System.Windows.Forms.Padding(4);
-            this.Startknop.Name = "Startknop";
-            this.Startknop.Size = new System.Drawing.Size(145, 53);
-            this.Startknop.TabIndex = 49;
-            this.Startknop.Text = "Start";
-            this.Startknop.UseVisualStyleBackColor = false;
+            this.Filmsknop.Click += new System.EventHandler(this.Filmsknop_Click);
             // 
             // Filmtijdenknop
             // 
@@ -601,24 +576,52 @@
             // 
             this.gradientLabel1.BeginColor = System.Drawing.Color.Black;
             this.gradientLabel1.Controls.Add(this.Bioscoopnaam);
+            this.gradientLabel1.Controls.Add(this.Startknop);
             this.gradientLabel1.EndColor = System.Drawing.Color.Maroon;
             this.gradientLabel1.Location = new System.Drawing.Point(-4, -3);
             this.gradientLabel1.Name = "gradientLabel1";
-            this.gradientLabel1.Size = new System.Drawing.Size(1480, 149);
+            this.gradientLabel1.Size = new System.Drawing.Size(1484, 149);
             this.gradientLabel1.TabIndex = 55;
+            // 
+            // Bioscoopnaam
+            // 
+            this.Bioscoopnaam.AutoSize = true;
+            this.Bioscoopnaam.BackColor = System.Drawing.Color.Transparent;
+            this.Bioscoopnaam.Cursor = System.Windows.Forms.Cursors.SizeNESW;
+            this.Bioscoopnaam.Font = new System.Drawing.Font("Lucida Sans Unicode", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bioscoopnaam.ForeColor = System.Drawing.Color.Yellow;
+            this.Bioscoopnaam.Location = new System.Drawing.Point(69, 40);
+            this.Bioscoopnaam.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Bioscoopnaam.Name = "Bioscoopnaam";
+            this.Bioscoopnaam.Size = new System.Drawing.Size(356, 73);
+            this.Bioscoopnaam.TabIndex = 10;
+            this.Bioscoopnaam.Text = "Darichwiwi";
+            // 
+            // Startknop
+            // 
+            this.Startknop.BackColor = System.Drawing.Color.White;
+            this.Startknop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Startknop.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Startknop.ForeColor = System.Drawing.Color.Black;
+            this.Startknop.Location = new System.Drawing.Point(527, 99);
+            this.Startknop.Margin = new System.Windows.Forms.Padding(4);
+            this.Startknop.Name = "Startknop";
+            this.Startknop.Size = new System.Drawing.Size(145, 53);
+            this.Startknop.TabIndex = 52;
+            this.Startknop.Text = "Start";
+            this.Startknop.UseVisualStyleBackColor = false;
+            this.Startknop.Click += new System.EventHandler(this.Startknop_Click);
             // 
             // MovieOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1476, 919);
             this.Controls.Add(this.Rechterkolom);
             this.Controls.Add(this.Linkerkolom);
             this.Controls.Add(this.Wittelijn);
             this.Controls.Add(this.Filmtijdenknop);
-            this.Controls.Add(this.Startknop);
             this.Controls.Add(this.Filmsknop);
             this.Controls.Add(this.Prijzenknop);
             this.Controls.Add(this.Menuknop);
@@ -715,13 +718,13 @@
         private System.Windows.Forms.Button Menuknop;
         private System.Windows.Forms.Button Prijzenknop;
         private System.Windows.Forms.Button Filmsknop;
-        private System.Windows.Forms.Button Startknop;
         private System.Windows.Forms.Button Filmtijdenknop;
         private System.Windows.Forms.Label Wittelijn;
         private System.Windows.Forms.Label Linkerkolom;
         private System.Windows.Forms.Label Rechterkolom;
         private System.Windows.Forms.ToolTip toolTip1;
         private GradientLabel gradientLabel1;
+        private System.Windows.Forms.Button Startknop;
     }
 }
 
