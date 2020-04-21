@@ -60,11 +60,7 @@ namespace CinemaSystemProjectB
             Film4.Image = Image.FromStream(new MemoryStream(bytesFilm4));
             Film5.Image = Image.FromStream(new MemoryStream(bytesFilm5));
 
-<<<<<<< Updated upstream
-            Email.Text = "darichwiwi.hr.nl";
-=======
             Email.Text = "bioscoop@hr.nl";
->>>>>>> Stashed changes
             Telefoonnummer.Text = "010-1234567";
             Locatie.Text = "Wijnhaven 107, 3011 WN Rotterdam";
 
