@@ -65,7 +65,7 @@
             this.Filmbeschrijving.Name = "Filmbeschrijving";
             this.Filmbeschrijving.Size = new System.Drawing.Size(228, 30);
             this.Filmbeschrijving.TabIndex = 1;
-            this.Filmbeschrijving.Text = "Film Beschrijving";
+            this.Filmbeschrijving.Text = "Filmbeschrijving";
             // 
             // label2
             // 
@@ -144,9 +144,9 @@
             this.Prijs.Location = new System.Drawing.Point(444, 401);
             this.Prijs.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Prijs.Name = "Prijs";
-            this.Prijs.Size = new System.Drawing.Size(59, 22);
+            this.Prijs.Size = new System.Drawing.Size(116, 22);
             this.Prijs.TabIndex = 13;
-            this.Prijs.Text = "Prijs:";
+            this.Prijs.Text = "Prijs:  v.a. €";
             // 
             // Bioscoopnaam
             // 
@@ -284,7 +284,7 @@
             // 
             this.Prijslabel.AutoSize = true;
             this.Prijslabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Prijslabel.Location = new System.Drawing.Point(511, 401);
+            this.Prijslabel.Location = new System.Drawing.Point(556, 401);
             this.Prijslabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Prijslabel.Name = "Prijslabel";
             this.Prijslabel.Size = new System.Drawing.Size(52, 22);

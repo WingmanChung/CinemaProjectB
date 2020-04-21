@@ -60,7 +60,7 @@ namespace CinemaSystemProjectB
             Film4.Image = Image.FromStream(new MemoryStream(bytesFilm4));
             Film5.Image = Image.FromStream(new MemoryStream(bytesFilm5));
 
-            Email.Text = "darichwiwi.hr.nl";
+            Email.Text = "bioscoop@hr.nl";
             Telefoonnummer.Text = "010-1234567";
             Locatie.Text = "Wijnhaven 107, 3011 WN Rotterdam";
 
@@ -151,6 +151,8 @@ namespace CinemaSystemProjectB
             Filmsknop.BackColor = Color.White;
             Prijzenknop.BackColor = Color.White;
             Reserveerknop.BackColor = Color.White;
+
+            new MenuCard().Show();
         }
 
         private void Reserveerknop_Click(object sender, EventArgs e)
