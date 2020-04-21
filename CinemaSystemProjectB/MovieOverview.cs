@@ -141,6 +141,7 @@ namespace CinemaSystemProjectB
             Menuknop.BackColor = Color.White;
             Reserveerknop.BackColor = Color.White;
 
+            new PriceList().Show();
         }
 
         private void Menuknop_Click(object sender, EventArgs e)
