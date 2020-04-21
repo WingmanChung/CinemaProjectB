@@ -434,7 +434,7 @@
             this.Email.AutoSize = true;
             this.Email.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Email.ForeColor = System.Drawing.Color.Yellow;
-            this.Email.Location = new System.Drawing.Point(943, 676);
+            this.Email.Location = new System.Drawing.Point(914, 676);
             this.Email.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Email.Name = "Email";
             this.Email.Size = new System.Drawing.Size(51, 19);
@@ -446,7 +446,7 @@
             this.Telefoonnummer.AutoSize = true;
             this.Telefoonnummer.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Telefoonnummer.ForeColor = System.Drawing.Color.Yellow;
-            this.Telefoonnummer.Location = new System.Drawing.Point(943, 706);
+            this.Telefoonnummer.Location = new System.Drawing.Point(933, 706);
             this.Telefoonnummer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Telefoonnummer.Name = "Telefoonnummer";
             this.Telefoonnummer.Size = new System.Drawing.Size(139, 19);
@@ -458,7 +458,7 @@
             this.Locatie.AutoSize = true;
             this.Locatie.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Locatie.ForeColor = System.Drawing.Color.Yellow;
-            this.Locatie.Location = new System.Drawing.Point(943, 736);
+            this.Locatie.Location = new System.Drawing.Point(834, 736);
             this.Locatie.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Locatie.Name = "Locatie";
             this.Locatie.Size = new System.Drawing.Size(66, 19);
