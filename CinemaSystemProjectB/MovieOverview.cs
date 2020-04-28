@@ -20,7 +20,7 @@ namespace CinemaSystemProjectB
         public static string Film1Title = "After";
         public static string Film2Title = "Avengers: Endgame";
         public static string Film3Title = "Frozen 2";
-        public static string Film4Title = "Godzilla: King of the monsters";
+        public static string Film4Title = "Godzilla: King of the Monsters";
         public static string Film5Title = "How to train your dragon 3";
         public static string chosenMovie;
 
@@ -129,6 +129,7 @@ namespace CinemaSystemProjectB
             Menuknop.BackColor = Color.White;
             Reserveerknop.BackColor = Color.White;
 
+            new Movies().Show();
         }
 
         private void Prijzenknop_Click(object sender, EventArgs e)
