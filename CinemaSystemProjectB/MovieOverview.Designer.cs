@@ -404,7 +404,7 @@
             this.Email.AutoSize = true;
             this.Email.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Email.ForeColor = System.Drawing.Color.Yellow;
-            this.Email.Location = new System.Drawing.Point(686, 549);
+            this.Email.Location = new System.Drawing.Point(686, 589);
             this.Email.Name = "Email";
             this.Email.Size = new System.Drawing.Size(44, 16);
             this.Email.TabIndex = 41;
@@ -415,7 +415,7 @@
             this.Telefoonnummer.AutoSize = true;
             this.Telefoonnummer.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Telefoonnummer.ForeColor = System.Drawing.Color.Yellow;
-            this.Telefoonnummer.Location = new System.Drawing.Point(700, 574);
+            this.Telefoonnummer.Location = new System.Drawing.Point(700, 614);
             this.Telefoonnummer.Name = "Telefoonnummer";
             this.Telefoonnummer.Size = new System.Drawing.Size(116, 16);
             this.Telefoonnummer.TabIndex = 42;
@@ -426,7 +426,7 @@
             this.Locatie.AutoSize = true;
             this.Locatie.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Locatie.ForeColor = System.Drawing.Color.Yellow;
-            this.Locatie.Location = new System.Drawing.Point(626, 598);
+            this.Locatie.Location = new System.Drawing.Point(626, 638);
             this.Locatie.Name = "Locatie";
             this.Locatie.Size = new System.Drawing.Size(55, 16);
             this.Locatie.TabIndex = 43;
@@ -538,7 +538,7 @@
             this.gradientLabel1.Controls.Add(this.Startknop);
             this.gradientLabel1.EndColor = System.Drawing.Color.Maroon;
             this.gradientLabel1.Location = new System.Drawing.Point(-3, -2);
-            this.gradientLabel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gradientLabel1.Margin = new System.Windows.Forms.Padding(2);
             this.gradientLabel1.Name = "gradientLabel1";
             this.gradientLabel1.Size = new System.Drawing.Size(1113, 121);
             this.gradientLabel1.TabIndex = 55;
