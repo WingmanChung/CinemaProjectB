@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gradientLabel1 = new CinemaSystemProjectB.GradientLabel();
-            this.Wittelijn = new System.Windows.Forms.Label();
-            this.Bioscoopnaam = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Rechterkolom = new System.Windows.Forms.Label();
             this.YellowLabel = new System.Windows.Forms.Label();
@@ -55,41 +52,12 @@
             this.MysteryMovies = new System.Windows.Forms.CheckBox();
             this.CrimeMovies = new System.Windows.Forms.CheckBox();
             this.FamilyMovies = new System.Windows.Forms.CheckBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.gradientLabel1 = new CinemaSystemProjectB.GradientLabel();
+            this.Wittelijn = new System.Windows.Forms.Label();
+            this.Bioscoopnaam = new System.Windows.Forms.Label();
             this.gradientLabel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // gradientLabel1
-            // 
-            this.gradientLabel1.BeginColor = System.Drawing.Color.Black;
-            this.gradientLabel1.Controls.Add(this.Wittelijn);
-            this.gradientLabel1.Controls.Add(this.Bioscoopnaam);
-            this.gradientLabel1.EndColor = System.Drawing.Color.Maroon;
-            this.gradientLabel1.Location = new System.Drawing.Point(-3, -2);
-            this.gradientLabel1.Margin = new System.Windows.Forms.Padding(2);
-            this.gradientLabel1.Name = "gradientLabel1";
-            this.gradientLabel1.Size = new System.Drawing.Size(1113, 121);
-            this.gradientLabel1.TabIndex = 58;
-            // 
-            // Wittelijn
-            // 
-            this.Wittelijn.BackColor = System.Drawing.Color.White;
-            this.Wittelijn.Location = new System.Drawing.Point(-5, 116);
-            this.Wittelijn.Name = "Wittelijn";
-            this.Wittelijn.Size = new System.Drawing.Size(1112, 5);
-            this.Wittelijn.TabIndex = 60;
-            // 
-            // Bioscoopnaam
-            // 
-            this.Bioscoopnaam.AutoSize = true;
-            this.Bioscoopnaam.BackColor = System.Drawing.Color.Transparent;
-            this.Bioscoopnaam.Cursor = System.Windows.Forms.Cursors.SizeNESW;
-            this.Bioscoopnaam.Font = new System.Drawing.Font("Lucida Sans Unicode", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Bioscoopnaam.ForeColor = System.Drawing.Color.Yellow;
-            this.Bioscoopnaam.Location = new System.Drawing.Point(52, 32);
-            this.Bioscoopnaam.Name = "Bioscoopnaam";
-            this.Bioscoopnaam.Size = new System.Drawing.Size(289, 59);
-            this.Bioscoopnaam.TabIndex = 10;
-            this.Bioscoopnaam.Text = "Darichwiwi";
             // 
             // label1
             // 
@@ -372,12 +340,55 @@
             this.FamilyMovies.Text = "Familie";
             this.FamilyMovies.UseVisualStyleBackColor = true;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(318, 160);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(735, 603);
+            this.flowLayoutPanel1.TabIndex = 103;
+            // 
+            // gradientLabel1
+            // 
+            this.gradientLabel1.BeginColor = System.Drawing.Color.Black;
+            this.gradientLabel1.Controls.Add(this.Wittelijn);
+            this.gradientLabel1.Controls.Add(this.Bioscoopnaam);
+            this.gradientLabel1.EndColor = System.Drawing.Color.Maroon;
+            this.gradientLabel1.Location = new System.Drawing.Point(-3, -2);
+            this.gradientLabel1.Margin = new System.Windows.Forms.Padding(2);
+            this.gradientLabel1.Name = "gradientLabel1";
+            this.gradientLabel1.Size = new System.Drawing.Size(1113, 121);
+            this.gradientLabel1.TabIndex = 58;
+            // 
+            // Wittelijn
+            // 
+            this.Wittelijn.BackColor = System.Drawing.Color.White;
+            this.Wittelijn.Location = new System.Drawing.Point(-5, 116);
+            this.Wittelijn.Name = "Wittelijn";
+            this.Wittelijn.Size = new System.Drawing.Size(1112, 5);
+            this.Wittelijn.TabIndex = 60;
+            // 
+            // Bioscoopnaam
+            // 
+            this.Bioscoopnaam.AutoSize = true;
+            this.Bioscoopnaam.BackColor = System.Drawing.Color.Transparent;
+            this.Bioscoopnaam.Cursor = System.Windows.Forms.Cursors.SizeNESW;
+            this.Bioscoopnaam.Font = new System.Drawing.Font("Lucida Sans Unicode", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bioscoopnaam.ForeColor = System.Drawing.Color.Yellow;
+            this.Bioscoopnaam.Location = new System.Drawing.Point(52, 32);
+            this.Bioscoopnaam.Name = "Bioscoopnaam";
+            this.Bioscoopnaam.Size = new System.Drawing.Size(289, 59);
+            this.Bioscoopnaam.TabIndex = 10;
+            this.Bioscoopnaam.Text = "Darichwiwi";
+            // 
             // Movies
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1106, 766);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.FamilyMovies);
             this.Controls.Add(this.CrimeMovies);
             this.Controls.Add(this.MysteryMovies);
@@ -405,6 +416,7 @@
             this.Controls.Add(this.gradientLabel1);
             this.Name = "Movies";
             this.Text = "Movies";
+            this.Load += new System.EventHandler(this.Movies_Load);
             this.gradientLabel1.ResumeLayout(false);
             this.gradientLabel1.PerformLayout();
             this.ResumeLayout(false);
@@ -441,5 +453,6 @@
         private System.Windows.Forms.CheckBox MysteryMovies;
         private System.Windows.Forms.CheckBox CrimeMovies;
         private System.Windows.Forms.CheckBox FamilyMovies;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
