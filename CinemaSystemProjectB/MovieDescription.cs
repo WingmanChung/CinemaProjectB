@@ -18,7 +18,20 @@ namespace CinemaSystemProjectB
         {
             InitializeComponent();
 
-            string showMovie = MovieOverview.chosenMovie;
+            string showMovie;
+            //to check if chosenMovie is selected in Trending or not
+            bool checkBool = MovieOverview.HomeScreen;
+
+            //determines which variable will be used (choosing between forms)
+
+            if (checkBool)
+            {
+            showMovie = MovieOverview.chosenMovie;
+            }
+            else
+            {
+                showMovie = ListItem.chosenMovieListView;
+            }
 
             string resultJson = JsonConvert.SerializeObject(MovieInfo);
 
