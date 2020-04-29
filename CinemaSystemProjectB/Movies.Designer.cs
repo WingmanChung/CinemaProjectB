@@ -44,7 +44,6 @@
             this.NameMovies = new System.Windows.Forms.CheckBox();
             this.RatingMovies = new System.Windows.Forms.CheckBox();
             this.AgeMovies = new System.Windows.Forms.CheckBox();
-            this.AllMovies = new System.Windows.Forms.CheckBox();
             this.DramaMovies = new System.Windows.Forms.CheckBox();
             this.HistoryMovies = new System.Windows.Forms.CheckBox();
             this.WarMovies = new System.Windows.Forms.CheckBox();
@@ -53,6 +52,7 @@
             this.CrimeMovies = new System.Windows.Forms.CheckBox();
             this.FamilyMovies = new System.Windows.Forms.CheckBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.AllMovies = new System.Windows.Forms.CheckBox();
             this.gradientLabel1 = new CinemaSystemProjectB.GradientLabel();
             this.Wittelijn = new System.Windows.Forms.Label();
             this.Bioscoopnaam = new System.Windows.Forms.Label();
@@ -244,18 +244,6 @@
             this.AgeMovies.Text = "Leeftijd";
             this.AgeMovies.UseVisualStyleBackColor = true;
             // 
-            // AllMovies
-            // 
-            this.AllMovies.AutoSize = true;
-            this.AllMovies.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AllMovies.ForeColor = System.Drawing.Color.Yellow;
-            this.AllMovies.Location = new System.Drawing.Point(71, 622);
-            this.AllMovies.Name = "AllMovies";
-            this.AllMovies.Size = new System.Drawing.Size(85, 21);
-            this.AllMovies.TabIndex = 95;
-            this.AllMovies.Text = "Alle films";
-            this.AllMovies.UseVisualStyleBackColor = true;
-            // 
             // DramaMovies
             // 
             this.DramaMovies.AutoSize = true;
@@ -349,6 +337,20 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(735, 603);
             this.flowLayoutPanel1.TabIndex = 103;
             // 
+            // AllMovies
+            // 
+            this.AllMovies.AutoSize = true;
+            this.AllMovies.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AllMovies.ForeColor = System.Drawing.Color.Yellow;
+            this.AllMovies.Location = new System.Drawing.Point(71, 622);
+            this.AllMovies.Name = "AllMovies";
+            this.AllMovies.Size = new System.Drawing.Size(85, 21);
+            this.AllMovies.TabIndex = 104;
+            this.AllMovies.Text = "Alle films";
+            this.AllMovies.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.AllMovies.UseVisualStyleBackColor = true;
+            this.AllMovies.CheckedChanged += new System.EventHandler(this.AllMovies_CheckedChanged);
+            // 
             // gradientLabel1
             // 
             this.gradientLabel1.BeginColor = System.Drawing.Color.Black;
@@ -388,6 +390,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1106, 766);
+            this.Controls.Add(this.AllMovies);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.FamilyMovies);
             this.Controls.Add(this.CrimeMovies);
@@ -396,7 +399,6 @@
             this.Controls.Add(this.WarMovies);
             this.Controls.Add(this.HistoryMovies);
             this.Controls.Add(this.DramaMovies);
-            this.Controls.Add(this.AllMovies);
             this.Controls.Add(this.AgeMovies);
             this.Controls.Add(this.RatingMovies);
             this.Controls.Add(this.NameMovies);
@@ -445,7 +447,6 @@
         private System.Windows.Forms.CheckBox NameMovies;
         private System.Windows.Forms.CheckBox RatingMovies;
         private System.Windows.Forms.CheckBox AgeMovies;
-        private System.Windows.Forms.CheckBox AllMovies;
         private System.Windows.Forms.CheckBox DramaMovies;
         private System.Windows.Forms.CheckBox HistoryMovies;
         private System.Windows.Forms.CheckBox WarMovies;
@@ -454,5 +455,6 @@
         private System.Windows.Forms.CheckBox CrimeMovies;
         private System.Windows.Forms.CheckBox FamilyMovies;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.CheckBox AllMovies;
     }
 }

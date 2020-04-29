@@ -23,6 +23,7 @@ namespace CinemaSystemProjectB
         public static string Film4Title = "Godzilla: King of the Monsters";
         public static string Film5Title = "How to train your dragon 3";
         public static string chosenMovie;
+        public static bool HomeScreen = false;
 
         public MovieOverview()
         {
@@ -68,31 +69,41 @@ namespace CinemaSystemProjectB
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             chosenMovie = Film1Title;
+            HomeScreen = true;
             new MovieDescription().Show();
+            HomeScreen = false;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             chosenMovie = Film2Title;
+            HomeScreen = true;
             new MovieDescription().Show();
+            HomeScreen = false;
         }
 
         private void Film3_Click(object sender, EventArgs e)
         {
             chosenMovie = Film3Title;
+            HomeScreen = true;
             new MovieDescription().Show();
+            HomeScreen = false;
         }
 
         private void Film4_Click(object sender, EventArgs e)
         {
             chosenMovie = Film4Title;
+            HomeScreen = true;
             new MovieDescription().Show();
+            HomeScreen = false;
         }
 
         private void Film5_Click(object sender, EventArgs e)
         {
             chosenMovie = Film5Title;
+            HomeScreen = true;
             new MovieDescription().Show();
+            HomeScreen = false;
         }
 
         private void Filmtijdenknop_Click(object sender, EventArgs e)
