@@ -20,9 +20,10 @@ namespace CinemaSystemProjectB
         public static string Film1Title = "After";
         public static string Film2Title = "Avengers: Endgame";
         public static string Film3Title = "Frozen 2";
-        public static string Film4Title = "Godzilla: King of the monsters";
+        public static string Film4Title = "Godzilla: King of the Monsters";
         public static string Film5Title = "How to train your dragon 3";
         public static string chosenMovie;
+        public static bool HomeScreen = false;
 
         public MovieOverview()
         {
@@ -68,31 +69,41 @@ namespace CinemaSystemProjectB
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             chosenMovie = Film1Title;
+            HomeScreen = true;
             new MovieDescription().Show();
+            HomeScreen = false;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             chosenMovie = Film2Title;
+            HomeScreen = true;
             new MovieDescription().Show();
+            HomeScreen = false;
         }
 
         private void Film3_Click(object sender, EventArgs e)
         {
             chosenMovie = Film3Title;
+            HomeScreen = true;
             new MovieDescription().Show();
+            HomeScreen = false;
         }
 
         private void Film4_Click(object sender, EventArgs e)
         {
             chosenMovie = Film4Title;
+            HomeScreen = true;
             new MovieDescription().Show();
+            HomeScreen = false;
         }
 
         private void Film5_Click(object sender, EventArgs e)
         {
             chosenMovie = Film5Title;
+            HomeScreen = true;
             new MovieDescription().Show();
+            HomeScreen = false;
         }
 
         private void Filmtijdenknop_Click(object sender, EventArgs e)
@@ -129,6 +140,7 @@ namespace CinemaSystemProjectB
             Menuknop.BackColor = Color.White;
             Reserveerknop.BackColor = Color.White;
 
+            new Movies().Show();
         }
 
         private void Prijzenknop_Click(object sender, EventArgs e)
@@ -141,6 +153,7 @@ namespace CinemaSystemProjectB
             Menuknop.BackColor = Color.White;
             Reserveerknop.BackColor = Color.White;
 
+            new PriceList().Show();
         }
 
         private void Menuknop_Click(object sender, EventArgs e)
