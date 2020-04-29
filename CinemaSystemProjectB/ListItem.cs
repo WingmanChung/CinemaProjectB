@@ -28,6 +28,7 @@ namespace CinemaSystemProjectB
         private string _filmtechnology;
         private string _rating;
         private string _age;
+        private string _genre;
 
         [Category("Custom Props")]
         public string Title
@@ -70,6 +71,14 @@ namespace CinemaSystemProjectB
             get { return _age; }
             set { _age = value; age.Text = value; }
         }
+
+        [Category("Custom Props")]
+        public string Genre
+        {
+            get { return _genre; }
+            set { _genre = value; genre.Text = value; }
+        }
+
 
 
         [Category("Custom Props")]
