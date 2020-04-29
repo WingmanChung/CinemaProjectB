@@ -12,6 +12,7 @@ namespace CinemaSystemProjectB
 {
     public partial class ListItem : UserControl
     {
+        public static string chosenMovieListView;
         public ListItem()
         {
             InitializeComponent();
@@ -78,14 +79,66 @@ namespace CinemaSystemProjectB
             set { _cover = value; FilmCover.Image = value; }
         }
 
+        private void FilmCover_MouseClick(object sender, MouseEventArgs e)
+        {
+            //Title is the json key. When clicked, the chosenMovie will be the title because it's already loaded in the usercontrol.
+            chosenMovieListView = ListItemTitle.Text;
+            new MovieDescription().Show();
+        }
+
         private void ListItem_MouseEnter(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(64, 0, 0);
+
+            ListItemTitle.BackColor = Color.FromArgb(64, 0, 0);
+
+            ListItemRelease.BackColor = Color.FromArgb(64, 0, 0);
+
+            Releasedate.BackColor = Color.FromArgb(64, 0, 0);
+
+            ListItemDirector.BackColor = Color.FromArgb(64, 0, 0);
+
+            DirectorName.BackColor = Color.FromArgb(64, 0, 0);
+
+            ListItemFilmtechnology.BackColor = Color.FromArgb(64, 0, 0);
+
+            Filmtechnology.BackColor = Color.FromArgb(64, 0, 0);
+
+            ListItemRating.BackColor = Color.FromArgb(64, 0, 0);
+
+            rating.BackColor = Color.FromArgb(64, 0, 0);
+
+            ListItemAge.BackColor = Color.FromArgb(64, 0, 0);
+
+            age.BackColor = Color.FromArgb(64, 0, 0);
         }
 
         private void ListItem_MouseLeave(object sender, EventArgs e)
         {
             this.BackColor = Color.Transparent;
+
+            ListItemTitle.BackColor = Color.Transparent;
+
+            ListItemRelease.BackColor = Color.Transparent;
+
+            Releasedate.BackColor = Color.Transparent;
+
+            ListItemDirector.BackColor = Color.Transparent;
+
+            DirectorName.BackColor = Color.Transparent;
+
+            ListItemFilmtechnology.BackColor = Color.Transparent;
+
+            Filmtechnology.BackColor = Color.Transparent;
+
+            ListItemRating.BackColor = Color.Transparent;
+
+            rating.BackColor = Color.Transparent;
+
+            ListItemAge.BackColor = Color.Transparent;
+
+            age.BackColor = Color.Transparent;
         }
+
     }
 }
