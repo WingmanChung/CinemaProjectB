@@ -123,6 +123,7 @@
             this.ThrillerMovies.TabIndex = 82;
             this.ThrillerMovies.Text = "Thriller";
             this.ThrillerMovies.UseVisualStyleBackColor = true;
+            this.ThrillerMovies.CheckedChanged += new System.EventHandler(this.ThrillerMovies_CheckedChanged);
             // 
             // ActionMovies
             // 
@@ -135,6 +136,7 @@
             this.ActionMovies.TabIndex = 83;
             this.ActionMovies.Text = "Actie";
             this.ActionMovies.UseVisualStyleBackColor = true;
+            this.ActionMovies.CheckedChanged += new System.EventHandler(this.ActionMovies_CheckedChanged);
             // 
             // RomanceMovies
             // 
@@ -147,6 +149,7 @@
             this.RomanceMovies.TabIndex = 84;
             this.RomanceMovies.Text = "Romantiek";
             this.RomanceMovies.UseVisualStyleBackColor = true;
+            this.RomanceMovies.CheckedChanged += new System.EventHandler(this.RomanceMovies_CheckedChanged);
             // 
             // FantasyMovies
             // 
@@ -159,6 +162,7 @@
             this.FantasyMovies.TabIndex = 85;
             this.FantasyMovies.Text = "Fantasie";
             this.FantasyMovies.UseVisualStyleBackColor = true;
+            this.FantasyMovies.CheckedChanged += new System.EventHandler(this.FantasyMovies_CheckedChanged);
             // 
             // HorrorMovies
             // 
@@ -171,6 +175,7 @@
             this.HorrorMovies.TabIndex = 86;
             this.HorrorMovies.Text = "Horror";
             this.HorrorMovies.UseVisualStyleBackColor = true;
+            this.HorrorMovies.CheckedChanged += new System.EventHandler(this.HorrorMovies_CheckedChanged);
             // 
             // SciFiMovies
             // 
@@ -183,6 +188,7 @@
             this.SciFiMovies.TabIndex = 87;
             this.SciFiMovies.Text = "Sci-Fi";
             this.SciFiMovies.UseVisualStyleBackColor = true;
+            this.SciFiMovies.CheckedChanged += new System.EventHandler(this.SciFiMovies_CheckedChanged);
             // 
             // ComedyMovies
             // 
@@ -195,6 +201,7 @@
             this.ComedyMovies.TabIndex = 88;
             this.ComedyMovies.Text = "Comedie";
             this.ComedyMovies.UseVisualStyleBackColor = true;
+            this.ComedyMovies.CheckedChanged += new System.EventHandler(this.ComedyMovies_CheckedChanged);
             // 
             // AnimationMovies
             // 
@@ -207,6 +214,7 @@
             this.AnimationMovies.TabIndex = 89;
             this.AnimationMovies.Text = "Animatie";
             this.AnimationMovies.UseVisualStyleBackColor = true;
+            this.AnimationMovies.CheckedChanged += new System.EventHandler(this.AnimationMovies_CheckedChanged);
             // 
             // NameMovies
             // 
@@ -255,6 +263,7 @@
             this.DramaMovies.TabIndex = 96;
             this.DramaMovies.Text = "Drama";
             this.DramaMovies.UseVisualStyleBackColor = true;
+            this.DramaMovies.CheckedChanged += new System.EventHandler(this.DramaMovies_CheckedChanged);
             // 
             // HistoryMovies
             // 
@@ -267,6 +276,7 @@
             this.HistoryMovies.TabIndex = 97;
             this.HistoryMovies.Text = "Historisch";
             this.HistoryMovies.UseVisualStyleBackColor = true;
+            this.HistoryMovies.CheckedChanged += new System.EventHandler(this.HistoryMovies_CheckedChanged);
             // 
             // WarMovies
             // 
@@ -279,6 +289,7 @@
             this.WarMovies.TabIndex = 98;
             this.WarMovies.Text = "Oorlog";
             this.WarMovies.UseVisualStyleBackColor = true;
+            this.WarMovies.CheckedChanged += new System.EventHandler(this.WarMovies_CheckedChanged);
             // 
             // AdventureMovies
             // 
@@ -291,6 +302,7 @@
             this.AdventureMovies.TabIndex = 99;
             this.AdventureMovies.Text = "Avontuur";
             this.AdventureMovies.UseVisualStyleBackColor = true;
+            this.AdventureMovies.CheckedChanged += new System.EventHandler(this.AdventureMovies_CheckedChanged);
             // 
             // MysteryMovies
             // 
@@ -303,6 +315,7 @@
             this.MysteryMovies.TabIndex = 100;
             this.MysteryMovies.Text = "Mysterie";
             this.MysteryMovies.UseVisualStyleBackColor = true;
+            this.MysteryMovies.CheckedChanged += new System.EventHandler(this.MysteryMovies_CheckedChanged);
             // 
             // CrimeMovies
             // 
@@ -315,6 +328,7 @@
             this.CrimeMovies.TabIndex = 101;
             this.CrimeMovies.Text = "Misdaad";
             this.CrimeMovies.UseVisualStyleBackColor = true;
+            this.CrimeMovies.CheckedChanged += new System.EventHandler(this.CrimeMovies_CheckedChanged);
             // 
             // FamilyMovies
             // 
@@ -327,6 +341,7 @@
             this.FamilyMovies.TabIndex = 102;
             this.FamilyMovies.Text = "Familie";
             this.FamilyMovies.UseVisualStyleBackColor = true;
+            this.FamilyMovies.CheckedChanged += new System.EventHandler(this.FamilyMovies_CheckedChanged);
             // 
             // flowLayoutPanel1
             // 

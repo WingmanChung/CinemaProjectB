@@ -45,6 +45,8 @@ namespace CinemaSystemProjectB
             Prijslabel.Text = Movies[showMovie].Price;
             Synopsis.Text = Movies[showMovie].Synopsis;
             Trailerlink.Text = Movies[showMovie].Trailer;
+            Leeftijdlabel.Text = Movies[showMovie].Age;
+            Technologielabel.Text = Movies[showMovie].FilmTechnology;
 
             var fileString = Movies[showMovie].Image;
             var bytes = Convert.FromBase64String(fileString);

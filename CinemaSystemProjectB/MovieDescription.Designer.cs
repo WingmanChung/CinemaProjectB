@@ -52,6 +52,10 @@
             this.Filmposter = new System.Windows.Forms.PictureBox();
             this.ReservationButton = new System.Windows.Forms.Button();
             this.gradientLabel1 = new CinemaSystemProjectB.GradientLabel();
+            this.Leeftijd = new System.Windows.Forms.Label();
+            this.Filmtechnologie = new System.Windows.Forms.Label();
+            this.Leeftijdlabel = new System.Windows.Forms.Label();
+            this.Technologielabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Filmposter)).BeginInit();
             this.gradientLabel1.SuspendLayout();
             this.SuspendLayout();
@@ -60,20 +64,18 @@
             // 
             this.Filmbeschrijving.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Filmbeschrijving.ForeColor = System.Drawing.Color.Yellow;
-            this.Filmbeschrijving.Location = new System.Drawing.Point(145, 571);
-            this.Filmbeschrijving.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Filmbeschrijving.Location = new System.Drawing.Point(108, 474);
             this.Filmbeschrijving.Name = "Filmbeschrijving";
-            this.Filmbeschrijving.Size = new System.Drawing.Size(228, 30);
+            this.Filmbeschrijving.Size = new System.Drawing.Size(171, 24);
             this.Filmbeschrijving.TabIndex = 1;
             this.Filmbeschrijving.Text = "Filmbeschrijving";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 625);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(9, 508);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 17);
+            this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 2;
             // 
             // Filmtitel
@@ -81,10 +83,9 @@
             this.Filmtitel.AutoSize = true;
             this.Filmtitel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Filmtitel.ForeColor = System.Drawing.Color.Yellow;
-            this.Filmtitel.Location = new System.Drawing.Point(443, 204);
-            this.Filmtitel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Filmtitel.Location = new System.Drawing.Point(332, 166);
             this.Filmtitel.Name = "Filmtitel";
-            this.Filmtitel.Size = new System.Drawing.Size(106, 29);
+            this.Filmtitel.Size = new System.Drawing.Size(82, 22);
             this.Filmtitel.TabIndex = 7;
             this.Filmtitel.Text = "Filmtitel";
             // 
@@ -93,10 +94,9 @@
             this.Genre.AutoSize = true;
             this.Genre.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Genre.ForeColor = System.Drawing.Color.Yellow;
-            this.Genre.Location = new System.Drawing.Point(444, 340);
-            this.Genre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Genre.Location = new System.Drawing.Point(333, 268);
             this.Genre.Name = "Genre";
-            this.Genre.Size = new System.Drawing.Size(74, 22);
+            this.Genre.Size = new System.Drawing.Size(57, 18);
             this.Genre.TabIndex = 9;
             this.Genre.Text = "Genre:";
             // 
@@ -105,10 +105,9 @@
             this.Release.AutoSize = true;
             this.Release.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Release.ForeColor = System.Drawing.Color.Yellow;
-            this.Release.Location = new System.Drawing.Point(444, 278);
-            this.Release.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Release.Location = new System.Drawing.Point(333, 218);
             this.Release.Name = "Release";
-            this.Release.Size = new System.Drawing.Size(90, 22);
+            this.Release.Size = new System.Drawing.Size(70, 18);
             this.Release.TabIndex = 10;
             this.Release.Text = "Release:";
             // 
@@ -117,10 +116,9 @@
             this.Regisseurs.AutoSize = true;
             this.Regisseurs.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Regisseurs.ForeColor = System.Drawing.Color.Yellow;
-            this.Regisseurs.Location = new System.Drawing.Point(444, 309);
-            this.Regisseurs.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Regisseurs.Location = new System.Drawing.Point(333, 243);
             this.Regisseurs.Name = "Regisseurs";
-            this.Regisseurs.Size = new System.Drawing.Size(134, 22);
+            this.Regisseurs.Size = new System.Drawing.Size(103, 18);
             this.Regisseurs.TabIndex = 11;
             this.Regisseurs.Text = "Regisseur(s):";
             // 
@@ -129,10 +127,9 @@
             this.Taal.AutoSize = true;
             this.Taal.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Taal.ForeColor = System.Drawing.Color.Yellow;
-            this.Taal.Location = new System.Drawing.Point(444, 370);
-            this.Taal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Taal.Location = new System.Drawing.Point(333, 293);
             this.Taal.Name = "Taal";
-            this.Taal.Size = new System.Drawing.Size(56, 22);
+            this.Taal.Size = new System.Drawing.Size(41, 18);
             this.Taal.TabIndex = 12;
             this.Taal.Text = "Taal:";
             // 
@@ -141,10 +138,9 @@
             this.Prijs.AutoSize = true;
             this.Prijs.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Prijs.ForeColor = System.Drawing.Color.Yellow;
-            this.Prijs.Location = new System.Drawing.Point(444, 401);
-            this.Prijs.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Prijs.Location = new System.Drawing.Point(333, 368);
             this.Prijs.Name = "Prijs";
-            this.Prijs.Size = new System.Drawing.Size(116, 22);
+            this.Prijs.Size = new System.Drawing.Size(88, 18);
             this.Prijs.TabIndex = 13;
             this.Prijs.Text = "Prijs:  v.a. €";
             // 
@@ -155,47 +151,42 @@
             this.Bioscoopnaam.Cursor = System.Windows.Forms.Cursors.SizeNESW;
             this.Bioscoopnaam.Font = new System.Drawing.Font("Lucida Sans Unicode", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bioscoopnaam.ForeColor = System.Drawing.Color.Yellow;
-            this.Bioscoopnaam.Location = new System.Drawing.Point(88, 23);
-            this.Bioscoopnaam.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Bioscoopnaam.Location = new System.Drawing.Point(66, 19);
             this.Bioscoopnaam.Name = "Bioscoopnaam";
-            this.Bioscoopnaam.Size = new System.Drawing.Size(356, 73);
+            this.Bioscoopnaam.Size = new System.Drawing.Size(289, 59);
             this.Bioscoopnaam.TabIndex = 14;
             this.Bioscoopnaam.Text = "Darichwiwi";
             // 
             // Rechterkolom
             // 
             this.Rechterkolom.BackColor = System.Drawing.Color.Maroon;
-            this.Rechterkolom.Location = new System.Drawing.Point(1439, 113);
-            this.Rechterkolom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Rechterkolom.Location = new System.Drawing.Point(1079, 92);
             this.Rechterkolom.Name = "Rechterkolom";
-            this.Rechterkolom.Size = new System.Drawing.Size(40, 798);
+            this.Rechterkolom.Size = new System.Drawing.Size(30, 648);
             this.Rechterkolom.TabIndex = 56;
             // 
             // label30
             // 
             this.label30.BackColor = System.Drawing.Color.Maroon;
-            this.label30.Location = new System.Drawing.Point(-227, 11);
-            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label30.Location = new System.Drawing.Point(-170, 9);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(40, 756);
+            this.label30.Size = new System.Drawing.Size(30, 614);
             this.label30.TabIndex = 55;
             // 
             // Linkerkolom
             // 
             this.Linkerkolom.BackColor = System.Drawing.Color.Maroon;
-            this.Linkerkolom.Location = new System.Drawing.Point(1, 113);
-            this.Linkerkolom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Linkerkolom.Location = new System.Drawing.Point(1, 92);
             this.Linkerkolom.Name = "Linkerkolom";
-            this.Linkerkolom.Size = new System.Drawing.Size(40, 798);
+            this.Linkerkolom.Size = new System.Drawing.Size(30, 648);
             this.Linkerkolom.TabIndex = 57;
             // 
             // Wittelijn
             // 
             this.Wittelijn.BackColor = System.Drawing.Color.White;
-            this.Wittelijn.Location = new System.Drawing.Point(-4, 107);
-            this.Wittelijn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Wittelijn.Location = new System.Drawing.Point(-3, 87);
             this.Wittelijn.Name = "Wittelijn";
-            this.Wittelijn.Size = new System.Drawing.Size(1483, 6);
+            this.Wittelijn.Size = new System.Drawing.Size(1112, 5);
             this.Wittelijn.TabIndex = 59;
             this.Wittelijn.Text = "label29";
             // 
@@ -204,20 +195,18 @@
             this.Trailer.AutoSize = true;
             this.Trailer.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Trailer.ForeColor = System.Drawing.Color.Yellow;
-            this.Trailer.Location = new System.Drawing.Point(444, 462);
-            this.Trailer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Trailer.Location = new System.Drawing.Point(332, 413);
             this.Trailer.Name = "Trailer";
-            this.Trailer.Size = new System.Drawing.Size(85, 29);
+            this.Trailer.Size = new System.Drawing.Size(70, 22);
             this.Trailer.TabIndex = 61;
             this.Trailer.Text = "Trailer";
             // 
             // Synopsis
             // 
             this.Synopsis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Synopsis.Location = new System.Drawing.Point(143, 625);
-            this.Synopsis.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Synopsis.Location = new System.Drawing.Point(107, 508);
             this.Synopsis.Name = "Synopsis";
-            this.Synopsis.Size = new System.Drawing.Size(1247, 212);
+            this.Synopsis.Size = new System.Drawing.Size(935, 172);
             this.Synopsis.TabIndex = 62;
             this.Synopsis.Text = "Synopsis";
             // 
@@ -226,10 +215,9 @@
             this.Trailerlink.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.Trailerlink.AutoSize = true;
             this.Trailerlink.LinkColor = System.Drawing.Color.Cyan;
-            this.Trailerlink.Location = new System.Drawing.Point(452, 494);
-            this.Trailerlink.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Trailerlink.Location = new System.Drawing.Point(338, 439);
             this.Trailerlink.Name = "Trailerlink";
-            this.Trailerlink.Size = new System.Drawing.Size(72, 17);
+            this.Trailerlink.Size = new System.Drawing.Size(55, 13);
             this.Trailerlink.TabIndex = 63;
             this.Trailerlink.TabStop = true;
             this.Trailerlink.Text = "linkLabel1";
@@ -239,22 +227,21 @@
             // 
             this.Releasedatumlabel.AutoSize = true;
             this.Releasedatumlabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Releasedatumlabel.Location = new System.Drawing.Point(547, 279);
-            this.Releasedatumlabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Releasedatumlabel.Location = new System.Drawing.Point(410, 219);
             this.Releasedatumlabel.Name = "Releasedatumlabel";
-            this.Releasedatumlabel.Size = new System.Drawing.Size(70, 22);
+            this.Releasedatumlabel.Size = new System.Drawing.Size(53, 18);
             this.Releasedatumlabel.TabIndex = 66;
             this.Releasedatumlabel.Text = "Datum";
             // 
             // Regisseurlabel
             // 
+            this.Regisseurlabel.AutoEllipsis = true;
             this.Regisseurlabel.AutoSize = true;
             this.Regisseurlabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Regisseurlabel.Location = new System.Drawing.Point(589, 309);
-            this.Regisseurlabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Regisseurlabel.Location = new System.Drawing.Point(442, 243);
             this.Regisseurlabel.Name = "Regisseurlabel";
             this.Regisseurlabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Regisseurlabel.Size = new System.Drawing.Size(62, 22);
+            this.Regisseurlabel.Size = new System.Drawing.Size(47, 18);
             this.Regisseurlabel.TabIndex = 68;
             this.Regisseurlabel.Text = "Naam";
             // 
@@ -262,10 +249,9 @@
             // 
             this.Genrelabel.AutoSize = true;
             this.Genrelabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Genrelabel.Location = new System.Drawing.Point(528, 340);
-            this.Genrelabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Genrelabel.Location = new System.Drawing.Point(396, 268);
             this.Genrelabel.Name = "Genrelabel";
-            this.Genrelabel.Size = new System.Drawing.Size(67, 22);
+            this.Genrelabel.Size = new System.Drawing.Size(53, 18);
             this.Genrelabel.TabIndex = 69;
             this.Genrelabel.Text = "Genre";
             // 
@@ -273,10 +259,9 @@
             // 
             this.Taallabel.AutoSize = true;
             this.Taallabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Taallabel.Location = new System.Drawing.Point(511, 370);
-            this.Taallabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Taallabel.Location = new System.Drawing.Point(383, 293);
             this.Taallabel.Name = "Taallabel";
-            this.Taallabel.Size = new System.Drawing.Size(49, 22);
+            this.Taallabel.Size = new System.Drawing.Size(37, 18);
             this.Taallabel.TabIndex = 70;
             this.Taallabel.Text = "Taal";
             // 
@@ -284,19 +269,18 @@
             // 
             this.Prijslabel.AutoSize = true;
             this.Prijslabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Prijslabel.Location = new System.Drawing.Point(556, 401);
-            this.Prijslabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Prijslabel.Location = new System.Drawing.Point(417, 368);
             this.Prijslabel.Name = "Prijslabel";
-            this.Prijslabel.Size = new System.Drawing.Size(52, 22);
+            this.Prijslabel.Size = new System.Drawing.Size(40, 18);
             this.Prijslabel.TabIndex = 71;
             this.Prijslabel.Text = "Prijs";
             // 
             // Filmposter
             // 
-            this.Filmposter.Location = new System.Drawing.Point(149, 204);
-            this.Filmposter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Filmposter.Location = new System.Drawing.Point(112, 166);
+            this.Filmposter.Margin = new System.Windows.Forms.Padding(2);
             this.Filmposter.Name = "Filmposter";
-            this.Filmposter.Size = new System.Drawing.Size(205, 306);
+            this.Filmposter.Size = new System.Drawing.Size(197, 287);
             this.Filmposter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Filmposter.TabIndex = 74;
             this.Filmposter.TabStop = false;
@@ -307,10 +291,10 @@
             this.ReservationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ReservationButton.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReservationButton.ForeColor = System.Drawing.Color.Black;
-            this.ReservationButton.Location = new System.Drawing.Point(1115, 11);
-            this.ReservationButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ReservationButton.Location = new System.Drawing.Point(836, 9);
+            this.ReservationButton.Margin = new System.Windows.Forms.Padding(2);
             this.ReservationButton.Name = "ReservationButton";
-            this.ReservationButton.Size = new System.Drawing.Size(313, 84);
+            this.ReservationButton.Size = new System.Drawing.Size(235, 68);
             this.ReservationButton.TabIndex = 75;
             this.ReservationButton.Text = "Reserveer nu";
             this.ReservationButton.UseVisualStyleBackColor = false;
@@ -322,16 +306,65 @@
             this.gradientLabel1.Controls.Add(this.Bioscoopnaam);
             this.gradientLabel1.EndColor = System.Drawing.Color.Maroon;
             this.gradientLabel1.Location = new System.Drawing.Point(-1, -1);
+            this.gradientLabel1.Margin = new System.Windows.Forms.Padding(2);
             this.gradientLabel1.Name = "gradientLabel1";
-            this.gradientLabel1.Size = new System.Drawing.Size(1485, 111);
+            this.gradientLabel1.Size = new System.Drawing.Size(1114, 90);
             this.gradientLabel1.TabIndex = 76;
+            // 
+            // Leeftijd
+            // 
+            this.Leeftijd.AutoSize = true;
+            this.Leeftijd.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Leeftijd.ForeColor = System.Drawing.Color.Yellow;
+            this.Leeftijd.Location = new System.Drawing.Point(333, 318);
+            this.Leeftijd.Name = "Leeftijd";
+            this.Leeftijd.Size = new System.Drawing.Size(66, 18);
+            this.Leeftijd.TabIndex = 77;
+            this.Leeftijd.Text = "Leeftijd:";
+            // 
+            // Filmtechnologie
+            // 
+            this.Filmtechnologie.AutoSize = true;
+            this.Filmtechnologie.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Filmtechnologie.ForeColor = System.Drawing.Color.Yellow;
+            this.Filmtechnologie.Location = new System.Drawing.Point(333, 343);
+            this.Filmtechnologie.Name = "Filmtechnologie";
+            this.Filmtechnologie.Size = new System.Drawing.Size(125, 18);
+            this.Filmtechnologie.TabIndex = 78;
+            this.Filmtechnologie.Text = "Filmtechnologie:";
+            // 
+            // Leeftijdlabel
+            // 
+            this.Leeftijdlabel.AutoSize = true;
+            this.Leeftijdlabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Leeftijdlabel.ForeColor = System.Drawing.Color.Yellow;
+            this.Leeftijdlabel.Location = new System.Drawing.Point(405, 318);
+            this.Leeftijdlabel.Name = "Leeftijdlabel";
+            this.Leeftijdlabel.Size = new System.Drawing.Size(62, 18);
+            this.Leeftijdlabel.TabIndex = 79;
+            this.Leeftijdlabel.Text = "Leeftijd";
+            // 
+            // Technologielabel
+            // 
+            this.Technologielabel.AutoSize = true;
+            this.Technologielabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Technologielabel.ForeColor = System.Drawing.Color.Yellow;
+            this.Technologielabel.Location = new System.Drawing.Point(458, 343);
+            this.Technologielabel.Name = "Technologielabel";
+            this.Technologielabel.Size = new System.Drawing.Size(96, 18);
+            this.Technologielabel.TabIndex = 80;
+            this.Technologielabel.Text = "Technologie";
             // 
             // MovieDescription
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1480, 889);
+            this.ClientSize = new System.Drawing.Size(1110, 722);
+            this.Controls.Add(this.Technologielabel);
+            this.Controls.Add(this.Leeftijdlabel);
+            this.Controls.Add(this.Filmtechnologie);
+            this.Controls.Add(this.Leeftijd);
             this.Controls.Add(this.ReservationButton);
             this.Controls.Add(this.Prijslabel);
             this.Controls.Add(this.Taallabel);
@@ -356,7 +389,6 @@
             this.Controls.Add(this.Filmposter);
             this.Controls.Add(this.gradientLabel1);
             this.ForeColor = System.Drawing.Color.Yellow;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MovieDescription";
@@ -396,5 +428,9 @@
         private System.Windows.Forms.Label Prijslabel;
         private System.Windows.Forms.Button ReservationButton;
         private GradientLabel gradientLabel1;
+        private System.Windows.Forms.Label Leeftijd;
+        private System.Windows.Forms.Label Filmtechnologie;
+        private System.Windows.Forms.Label Leeftijdlabel;
+        private System.Windows.Forms.Label Technologielabel;
     }
 }

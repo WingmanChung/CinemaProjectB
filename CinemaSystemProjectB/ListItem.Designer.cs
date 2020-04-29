@@ -40,6 +40,8 @@
             this.age = new System.Windows.Forms.Label();
             this.rating = new System.Windows.Forms.Label();
             this.Filmtechnology = new System.Windows.Forms.Label();
+            this.listItemGenre = new System.Windows.Forms.Label();
+            this.genre = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.FilmCover)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,9 +78,9 @@
             this.ListItemRelease.BackColor = System.Drawing.Color.Transparent;
             this.ListItemRelease.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListItemRelease.ForeColor = System.Drawing.Color.Yellow;
-            this.ListItemRelease.Location = new System.Drawing.Point(192, 87);
+            this.ListItemRelease.Location = new System.Drawing.Point(192, 74);
             this.ListItemRelease.Name = "ListItemRelease";
-            this.ListItemRelease.Size = new System.Drawing.Size(120, 23);
+            this.ListItemRelease.Size = new System.Drawing.Size(107, 23);
             this.ListItemRelease.TabIndex = 2;
             this.ListItemRelease.Text = "Release datum: ";
             this.ListItemRelease.MouseClick += new System.Windows.Forms.MouseEventHandler(this.FilmCover_MouseClick);
@@ -90,9 +92,9 @@
             this.ListItemDirector.BackColor = System.Drawing.Color.Transparent;
             this.ListItemDirector.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListItemDirector.ForeColor = System.Drawing.Color.Yellow;
-            this.ListItemDirector.Location = new System.Drawing.Point(192, 110);
+            this.ListItemDirector.Location = new System.Drawing.Point(192, 97);
             this.ListItemDirector.Name = "ListItemDirector";
-            this.ListItemDirector.Size = new System.Drawing.Size(86, 23);
+            this.ListItemDirector.Size = new System.Drawing.Size(74, 23);
             this.ListItemDirector.TabIndex = 3;
             this.ListItemDirector.Text = "Regisseur: ";
             this.ListItemDirector.MouseClick += new System.Windows.Forms.MouseEventHandler(this.FilmCover_MouseClick);
@@ -104,9 +106,9 @@
             this.ListItemFilmtechnology.BackColor = System.Drawing.Color.Transparent;
             this.ListItemFilmtechnology.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListItemFilmtechnology.ForeColor = System.Drawing.Color.Yellow;
-            this.ListItemFilmtechnology.Location = new System.Drawing.Point(192, 133);
+            this.ListItemFilmtechnology.Location = new System.Drawing.Point(192, 120);
             this.ListItemFilmtechnology.Name = "ListItemFilmtechnology";
-            this.ListItemFilmtechnology.Size = new System.Drawing.Size(103, 23);
+            this.ListItemFilmtechnology.Size = new System.Drawing.Size(93, 23);
             this.ListItemFilmtechnology.TabIndex = 4;
             this.ListItemFilmtechnology.Text = "Filmervaring: ";
             this.ListItemFilmtechnology.MouseClick += new System.Windows.Forms.MouseEventHandler(this.FilmCover_MouseClick);
@@ -118,9 +120,9 @@
             this.ListItemRating.BackColor = System.Drawing.Color.Transparent;
             this.ListItemRating.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListItemRating.ForeColor = System.Drawing.Color.Yellow;
-            this.ListItemRating.Location = new System.Drawing.Point(192, 156);
+            this.ListItemRating.Location = new System.Drawing.Point(192, 143);
             this.ListItemRating.Name = "ListItemRating";
-            this.ListItemRating.Size = new System.Drawing.Size(59, 23);
+            this.ListItemRating.Size = new System.Drawing.Size(53, 23);
             this.ListItemRating.TabIndex = 5;
             this.ListItemRating.Text = "Rating:";
             this.ListItemRating.MouseClick += new System.Windows.Forms.MouseEventHandler(this.FilmCover_MouseClick);
@@ -132,9 +134,9 @@
             this.ListItemAge.BackColor = System.Drawing.Color.Transparent;
             this.ListItemAge.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListItemAge.ForeColor = System.Drawing.Color.Yellow;
-            this.ListItemAge.Location = new System.Drawing.Point(192, 179);
+            this.ListItemAge.Location = new System.Drawing.Point(192, 166);
             this.ListItemAge.Name = "ListItemAge";
-            this.ListItemAge.Size = new System.Drawing.Size(68, 23);
+            this.ListItemAge.Size = new System.Drawing.Size(60, 23);
             this.ListItemAge.TabIndex = 6;
             this.ListItemAge.Text = "Leeftijd:";
             this.ListItemAge.MouseClick += new System.Windows.Forms.MouseEventHandler(this.FilmCover_MouseClick);
@@ -143,12 +145,13 @@
             // 
             // Releasedate
             // 
+            this.Releasedate.AutoSize = true;
             this.Releasedate.BackColor = System.Drawing.Color.Transparent;
             this.Releasedate.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Releasedate.ForeColor = System.Drawing.Color.Yellow;
-            this.Releasedate.Location = new System.Drawing.Point(307, 87);
+            this.Releasedate.Location = new System.Drawing.Point(299, 74);
             this.Releasedate.Name = "Releasedate";
-            this.Releasedate.Size = new System.Drawing.Size(120, 23);
+            this.Releasedate.Size = new System.Drawing.Size(37, 16);
             this.Releasedate.TabIndex = 7;
             this.Releasedate.Text = "Date";
             this.Releasedate.MouseClick += new System.Windows.Forms.MouseEventHandler(this.FilmCover_MouseClick);
@@ -157,12 +160,14 @@
             // 
             // DirectorName
             // 
+            this.DirectorName.AutoEllipsis = true;
+            this.DirectorName.AutoSize = true;
             this.DirectorName.BackColor = System.Drawing.Color.Transparent;
             this.DirectorName.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DirectorName.ForeColor = System.Drawing.Color.Yellow;
-            this.DirectorName.Location = new System.Drawing.Point(276, 110);
+            this.DirectorName.Location = new System.Drawing.Point(266, 97);
             this.DirectorName.Name = "DirectorName";
-            this.DirectorName.Size = new System.Drawing.Size(120, 23);
+            this.DirectorName.Size = new System.Drawing.Size(45, 16);
             this.DirectorName.TabIndex = 8;
             this.DirectorName.Text = "Name";
             this.DirectorName.MouseClick += new System.Windows.Forms.MouseEventHandler(this.FilmCover_MouseClick);
@@ -171,12 +176,13 @@
             // 
             // age
             // 
+            this.age.AutoSize = true;
             this.age.BackColor = System.Drawing.Color.Transparent;
             this.age.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.age.ForeColor = System.Drawing.Color.Yellow;
-            this.age.Location = new System.Drawing.Point(258, 179);
+            this.age.Location = new System.Drawing.Point(252, 166);
             this.age.Name = "age";
-            this.age.Size = new System.Drawing.Size(120, 23);
+            this.age.Size = new System.Drawing.Size(33, 16);
             this.age.TabIndex = 9;
             this.age.Text = "Age";
             this.age.MouseClick += new System.Windows.Forms.MouseEventHandler(this.FilmCover_MouseClick);
@@ -185,12 +191,13 @@
             // 
             // rating
             // 
+            this.rating.AutoSize = true;
             this.rating.BackColor = System.Drawing.Color.Transparent;
             this.rating.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rating.ForeColor = System.Drawing.Color.Yellow;
-            this.rating.Location = new System.Drawing.Point(249, 156);
+            this.rating.Location = new System.Drawing.Point(245, 143);
             this.rating.Name = "rating";
-            this.rating.Size = new System.Drawing.Size(120, 23);
+            this.rating.Size = new System.Drawing.Size(33, 16);
             this.rating.TabIndex = 10;
             this.rating.Text = "0/10";
             this.rating.UseMnemonic = false;
@@ -200,23 +207,52 @@
             // 
             // Filmtechnology
             // 
+            this.Filmtechnology.AutoSize = true;
             this.Filmtechnology.BackColor = System.Drawing.Color.Transparent;
             this.Filmtechnology.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Filmtechnology.ForeColor = System.Drawing.Color.Yellow;
-            this.Filmtechnology.Location = new System.Drawing.Point(289, 133);
+            this.Filmtechnology.Location = new System.Drawing.Point(285, 120);
             this.Filmtechnology.Name = "Filmtechnology";
-            this.Filmtechnology.Size = new System.Drawing.Size(120, 23);
+            this.Filmtechnology.Size = new System.Drawing.Size(35, 16);
             this.Filmtechnology.TabIndex = 11;
             this.Filmtechnology.Text = "Text";
             this.Filmtechnology.MouseClick += new System.Windows.Forms.MouseEventHandler(this.FilmCover_MouseClick);
             this.Filmtechnology.MouseEnter += new System.EventHandler(this.ListItem_MouseEnter);
             this.Filmtechnology.MouseLeave += new System.EventHandler(this.ListItem_MouseLeave);
             // 
+            // listItemGenre
+            // 
+            this.listItemGenre.BackColor = System.Drawing.Color.Transparent;
+            this.listItemGenre.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listItemGenre.ForeColor = System.Drawing.Color.Yellow;
+            this.listItemGenre.Location = new System.Drawing.Point(192, 189);
+            this.listItemGenre.Name = "listItemGenre";
+            this.listItemGenre.Size = new System.Drawing.Size(51, 23);
+            this.listItemGenre.TabIndex = 12;
+            this.listItemGenre.Text = "Genre:";
+            this.listItemGenre.MouseClick += new System.Windows.Forms.MouseEventHandler(this.FilmCover_MouseClick);
+            // 
+            // genre
+            // 
+            this.genre.AutoEllipsis = true;
+            this.genre.AutoSize = true;
+            this.genre.BackColor = System.Drawing.Color.Transparent;
+            this.genre.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genre.ForeColor = System.Drawing.Color.Yellow;
+            this.genre.Location = new System.Drawing.Point(243, 189);
+            this.genre.Name = "genre";
+            this.genre.Size = new System.Drawing.Size(47, 16);
+            this.genre.TabIndex = 13;
+            this.genre.Text = "Genre";
+            this.genre.MouseClick += new System.Windows.Forms.MouseEventHandler(this.FilmCover_MouseClick);
+            // 
             // ListItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
+            this.Controls.Add(this.genre);
+            this.Controls.Add(this.listItemGenre);
             this.Controls.Add(this.age);
             this.Controls.Add(this.ListItemAge);
             this.Controls.Add(this.ListItemRating);
@@ -231,10 +267,12 @@
             this.Controls.Add(this.ListItemTitle);
             this.Name = "ListItem";
             this.Size = new System.Drawing.Size(707, 247);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.FilmCover_MouseClick);
             this.MouseEnter += new System.EventHandler(this.ListItem_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.ListItem_MouseLeave);
             ((System.ComponentModel.ISupportInitialize)(this.FilmCover)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -252,5 +290,7 @@
         private System.Windows.Forms.Label age;
         private System.Windows.Forms.Label rating;
         private System.Windows.Forms.Label Filmtechnology;
+        private System.Windows.Forms.Label listItemGenre;
+        private System.Windows.Forms.Label genre;
     }
 }
