@@ -731,5 +731,57 @@ namespace CinemaSystemProjectB
                 genreItems();
             }
         }
+
+        private void NameMovies_CheckedChanged(object sender, EventArgs e)
+        {
+            //Loads json file with all movies
+
+            Dictionary<string, MovieDescriptionClass> ListView = JsonConvert.DeserializeObject<Dictionary<string, MovieDescriptionClass>>(File.ReadAllText(path));
+
+            //List with all keys (movie titles)
+            var movieList = ListView.Keys.ToArray();
+            
+            //Sorts the array keys from A to Z
+            Array.Sort(movieList);
+
+            //populate here
+
+            ListItem[] listItems = new ListItem[ListView.Count];
+            
+
+            //loop through each item
+
+            for (int i = 0; i < listItems.Length; i++)
+            {
+                listItems[i] = new ListItem();
+                //load image
+                var filmCover = ListView[ListView[movieList[i]].Title].Image;
+                var bytesFilm = Convert.FromBase64String(filmCover);
+
+                listItems[i].Cover = Image.FromStream(new MemoryStream(bytesFilm));
+
+                listItems[i].Title = ListView[movieList[i]].Title;
+                listItems[i].Release = ListView[movieList[i]].Release;
+                listItems[i].Director = ListView[movieList[i]].Director;
+                listItems[i].FilmTechnology = ListView[movieList[i]].FilmTechnology;
+                //listItems[i].Rating = ListView[movieList[i]];
+                listItems[i].Age = ListView[movieList[i]].Age;
+                listItems[i].Genre = ListView[movieList[i]].Genre;
+                //end loop
+                
+
+
+
+                //checks wheter listview is already filled or not (with preview searchresult) <- Displays list in flowlayoutpanel
+                if (flowLayoutPanel1.Controls.Count < 0)
+                {
+                    flowLayoutPanel1.Controls.Clear();
+                }
+                else
+                {
+                    flowLayoutPanel1.Controls.Add(listItems[i]);
+                }
+            }
+        }
     }
 }
