@@ -227,6 +227,7 @@
             this.NameMovies.TabIndex = 90;
             this.NameMovies.Text = "Naam A-Z";
             this.NameMovies.UseVisualStyleBackColor = true;
+            this.NameMovies.CheckedChanged += new System.EventHandler(this.NameMovies_CheckedChanged);
             // 
             // RatingMovies
             // 
