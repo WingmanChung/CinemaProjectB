@@ -53,6 +53,7 @@
             this.FamilyMovies = new System.Windows.Forms.CheckBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.AllMovies = new System.Windows.Forms.CheckBox();
+            this.TwelvePlus = new System.Windows.Forms.CheckBox();
             this.gradientLabel1 = new CinemaSystemProjectB.GradientLabel();
             this.Wittelijn = new System.Windows.Forms.Label();
             this.Bioscoopnaam = new System.Windows.Forms.Label();
@@ -248,10 +249,11 @@
             this.AgeMovies.ForeColor = System.Drawing.Color.Yellow;
             this.AgeMovies.Location = new System.Drawing.Point(71, 703);
             this.AgeMovies.Name = "AgeMovies";
-            this.AgeMovies.Size = new System.Drawing.Size(73, 21);
+            this.AgeMovies.Size = new System.Drawing.Size(100, 21);
             this.AgeMovies.TabIndex = 94;
-            this.AgeMovies.Text = "Leeftijd";
+            this.AgeMovies.Text = "Kinderfilms";
             this.AgeMovies.UseVisualStyleBackColor = true;
+            this.AgeMovies.CheckedChanged += new System.EventHandler(this.AgeMovies_CheckedChanged);
             // 
             // DramaMovies
             // 
@@ -367,6 +369,19 @@
             this.AllMovies.UseVisualStyleBackColor = true;
             this.AllMovies.CheckedChanged += new System.EventHandler(this.AllMovies_CheckedChanged);
             // 
+            // TwelvePlus
+            // 
+            this.TwelvePlus.AutoSize = true;
+            this.TwelvePlus.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TwelvePlus.ForeColor = System.Drawing.Color.Yellow;
+            this.TwelvePlus.Location = new System.Drawing.Point(71, 730);
+            this.TwelvePlus.Name = "TwelvePlus";
+            this.TwelvePlus.Size = new System.Drawing.Size(124, 21);
+            this.TwelvePlus.TabIndex = 105;
+            this.TwelvePlus.Text = "Films voor 12+";
+            this.TwelvePlus.UseVisualStyleBackColor = true;
+            this.TwelvePlus.CheckedChanged += new System.EventHandler(this.TwelvePlus_CheckedChanged);
+            // 
             // gradientLabel1
             // 
             this.gradientLabel1.BeginColor = System.Drawing.Color.Black;
@@ -406,6 +421,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1106, 766);
+            this.Controls.Add(this.TwelvePlus);
             this.Controls.Add(this.AllMovies);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.FamilyMovies);
@@ -472,5 +488,6 @@
         private System.Windows.Forms.CheckBox FamilyMovies;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.CheckBox AllMovies;
+        private System.Windows.Forms.CheckBox TwelvePlus;
     }
 }
