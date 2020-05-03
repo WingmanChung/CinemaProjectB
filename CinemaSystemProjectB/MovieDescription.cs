@@ -47,6 +47,7 @@ namespace CinemaSystemProjectB
             Trailerlink.Text = Movies[showMovie].Trailer;
             Leeftijdlabel.Text = Movies[showMovie].Age;
             Technologielabel.Text = Movies[showMovie].FilmTechnology;
+            RatingLabel.Text = Movies[showMovie].Rating;
 
             var fileString = Movies[showMovie].Image;
             var bytes = Convert.FromBase64String(fileString);
@@ -78,6 +79,7 @@ namespace CinemaSystemProjectB
             DateTime dateToday = DateTime.Today;
             MessageBox.Show(finalString + dateToday.ToString("ddMMyyyy"), "Reservatie code");
         }
+
     }
 }
 

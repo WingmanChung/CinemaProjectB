@@ -19,7 +19,10 @@ namespace CinemaSystemProjectB
 
         public MovieDescriptionClass ListViewItems { get; set; }
 
-        private List<string> chosenGenre = new List<string>();
+        string chosenGenre;
+        string chosenAge;
+        string chosenAge2;
+        bool AboveTwelve = false;
 
         public Movies()
         {
@@ -41,6 +44,12 @@ namespace CinemaSystemProjectB
             //List with all keys (movie titles)
             var movieList = ListView.Keys.ToArray();
 
+            //Sorts the array keys from A to Z
+            if(NameMovies.Checked)
+            {
+                Array.Sort(movieList);
+            }
+
             //populate here
 
             ListItem[] listItems = new ListItem[ListView.Count];
@@ -60,7 +69,7 @@ namespace CinemaSystemProjectB
                 listItems[i].Release = ListView[movieList[i]].Release;
                 listItems[i].Director = ListView[movieList[i]].Director;
                 listItems[i].FilmTechnology = ListView[movieList[i]].FilmTechnology;
-                //listItems[i].Rating = ListView[movieList[i]];
+                listItems[i].Rating = ListView[movieList[i]].Rating;
                 listItems[i].Age = ListView[movieList[i]].Age;
                 listItems[i].Genre = ListView[movieList[i]].Genre;
                 //end loop
@@ -87,26 +96,19 @@ namespace CinemaSystemProjectB
             //List with all keys (movie titles)
             var movieList = ListView.Keys.ToArray();
 
-            //Converts string list to string
-
-            //string combindedString = string.Join(",", chosenGenre);
-            string[] combindedString = { string.Join(",", chosenGenre) };
-
             //Determines how many movies the chosen genre contains
             int movieCount = 0;
             var movieTitles = new List<string>();
 
             foreach (var movieTitle in movieList)
             {
-                foreach (var genre in combindedString)
-                {
-                    if (ListView[movieTitle].Genre.Contains(genre))
+                    if (ListView[movieTitle].Genre.Contains(chosenGenre))
                     {
                         movieTitles.Add(movieTitle);
                         movieCount++;
                     }
-                }
             }
+           
 
             //Populate items in the list (flowlayoutpanel)
 
@@ -127,7 +129,7 @@ namespace CinemaSystemProjectB
                     listItems[j].Release = ListView[movieTitles[j]].Release;
                     listItems[j].Director = ListView[movieTitles[j]].Director;
                     listItems[j].FilmTechnology = ListView[movieTitles[j]].FilmTechnology;
-                    //listItems[i].Rating = ListView[movieList[i]];
+                    listItems[j].Rating = ListView[movieList[j]].Rating;
                     listItems[j].Age = ListView[movieTitles[j]].Age;
                     listItems[j].Genre = ListView[movieTitles[j]].Genre;
                     //end loop
@@ -146,6 +148,132 @@ namespace CinemaSystemProjectB
                 }
             }
             
+        }
+
+        private void movieKidsItems()
+        {
+            //Loads json file with all movies
+
+            Dictionary<string, MovieDescriptionClass> ListView = JsonConvert.DeserializeObject<Dictionary<string, MovieDescriptionClass>>(File.ReadAllText(path));
+
+            //List with all keys (movie titles)
+            var movieList = ListView.Keys.ToArray();
+            if (AboveTwelve == false)
+            {
+                
+
+                //Determines how many movies the chosen genre contains
+                int movieCount = 0;
+                    var movieTitles = new List<string>();
+
+                    foreach (var movieTitle in movieList)
+                    {
+
+
+                        if (ListView[movieTitle].Age == chosenAge || ListView[movieTitle].Age == chosenAge2)
+                        {
+                            movieTitles.Add(movieTitle);
+                            movieCount++;
+                        }
+                    
+                    }
+                    //Populate items in the list (flowlayoutpanel)
+
+                    ListItem[] listItems = new ListItem[movieCount];
+                    for (int i = 0, j = 0; i < 1; i++)
+                    {
+
+                        foreach (var title in movieTitles)
+                        {
+                            listItems[j] = new ListItem();
+                            //load image
+                            var filmCover = ListView[movieTitles[j]].Image;
+                            var bytesFilm = Convert.FromBase64String(filmCover);
+
+                            listItems[j].Cover = Image.FromStream(new MemoryStream(bytesFilm));
+
+                            listItems[j].Title = ListView[movieTitles[j]].Title;
+                            listItems[j].Release = ListView[movieTitles[j]].Release;
+                            listItems[j].Director = ListView[movieTitles[j]].Director;
+                            listItems[j].FilmTechnology = ListView[movieTitles[j]].FilmTechnology;
+                            listItems[i].Rating = ListView[movieList[i]].Rating;
+                            listItems[j].Age = ListView[movieTitles[j]].Age;
+                            listItems[j].Genre = ListView[movieTitles[j]].Genre;
+                            //end loop
+
+
+                            //checks wheter listview is already filled or not (with preview searchresult) <- Displays list in flowlayoutpanel
+                            if (flowLayoutPanel1.Controls.Count < 0)
+                            {
+                                flowLayoutPanel1.Controls.Clear();
+                            }
+                            else
+                            {
+                                flowLayoutPanel1.Controls.Add(listItems[j]);
+                            }
+                            j++;
+                        }
+                    }
+                
+            }
+            if (AboveTwelve == true)
+            {   
+                
+                
+                    //Determines how many movies the chosen genre contains
+                    int movieCount = 0;
+                    var movieTitles = new List<string>();
+
+                    foreach (var movieTitle in movieList)
+                    {
+
+                        if (ListView[movieTitle].Age != chosenAge && ListView[movieTitle].Age != chosenAge2)
+                        {
+                            movieTitles.Add(movieTitle);
+                            movieCount++;
+                        }
+
+                    }
+                    //Populate items in the list (flowlayoutpanel)
+
+                    ListItem[] listItems = new ListItem[movieCount];
+                    for (int i = 0, j = 0; i < 1; i++)
+                    {
+
+                        foreach (var title in movieTitles)
+                        {
+                            listItems[j] = new ListItem();
+                            //load image
+                            var filmCover = ListView[movieTitles[j]].Image;
+                            var bytesFilm = Convert.FromBase64String(filmCover);
+
+                            listItems[j].Cover = Image.FromStream(new MemoryStream(bytesFilm));
+
+                            listItems[j].Title = ListView[movieTitles[j]].Title;
+                            listItems[j].Release = ListView[movieTitles[j]].Release;
+                            listItems[j].Director = ListView[movieTitles[j]].Director;
+                            listItems[j].FilmTechnology = ListView[movieTitles[j]].FilmTechnology;
+                            listItems[i].Rating = ListView[movieList[i]].Rating;
+                            listItems[j].Age = ListView[movieTitles[j]].Age;
+                            listItems[j].Genre = ListView[movieTitles[j]].Genre;
+                            //end loop
+
+
+                            //checks wheter listview is already filled or not (with preview searchresult) <- Displays list in flowlayoutpanel
+                            if (flowLayoutPanel1.Controls.Count < 0)
+                            {
+                                flowLayoutPanel1.Controls.Clear();
+                            }
+                            else
+                            {
+                                flowLayoutPanel1.Controls.Add(listItems[j]);
+                            }
+                            j++;
+                        }
+                    }
+                
+            }
+
         }
 
         private void AllMovies_CheckedChanged(object sender, EventArgs e)
@@ -168,6 +296,10 @@ namespace CinemaSystemProjectB
                 MysteryMovies.Checked = false;
                 CrimeMovies.Checked = false;
                 FamilyMovies.Checked = false;
+                TwelvePlus.Checked = false;
+                AgeMovies.Checked = false;
+                NameMovies.Checked = false;
+                flowLayoutPanel1.Controls.Clear();
                 populateItems();
             }
             else
@@ -195,21 +327,16 @@ namespace CinemaSystemProjectB
                 CrimeMovies.Checked = false;
                 FamilyMovies.Checked = false;
                 AllMovies.Checked = false;
-                chosenGenre.Add("Thriller");
+                TwelvePlus.Checked = false;
+                AgeMovies.Checked = false;
+                NameMovies.Checked = false;
+                chosenGenre = "Thriller";
                 flowLayoutPanel1.Controls.Clear();
                 genreItems();
             }
             else
-            {   
-                if(ThrillerMovies.Checked == false && ActionMovies.Checked == false && RomanceMovies.Checked == false && FantasyMovies.Checked == false && HorrorMovies.Checked == false &&
-                SciFiMovies.Checked == false && ComedyMovies.Checked == false && AnimationMovies.Checked == false && DramaMovies.Checked == false && HistoryMovies.Checked == false &&
-                WarMovies.Checked == false && AdventureMovies.Checked == false && MysteryMovies.Checked == false && CrimeMovies.Checked == false && FamilyMovies.Checked == false)
-                {
-                    AllMovies.Checked = true;
-                }
-                chosenGenre.Remove("Thriller");
-                flowLayoutPanel1.Controls.Clear();
-                genreItems();
+            {
+                codeRepetitionForCategorie();
             }
         }
 
@@ -232,21 +359,16 @@ namespace CinemaSystemProjectB
                 CrimeMovies.Checked = false;
                 FamilyMovies.Checked = false;
                 AllMovies.Checked = false;
-                chosenGenre.Add("Actie");
+                TwelvePlus.Checked = false;
+                AgeMovies.Checked = false;
+                NameMovies.Checked = false;
+                chosenGenre = "Actie";
                 flowLayoutPanel1.Controls.Clear();
                 genreItems();
             }
             else
             {
-                if (ThrillerMovies.Checked == false && ActionMovies.Checked == false && RomanceMovies.Checked == false && FantasyMovies.Checked == false && HorrorMovies.Checked == false &&
-                SciFiMovies.Checked == false && ComedyMovies.Checked == false && AnimationMovies.Checked == false && DramaMovies.Checked == false && HistoryMovies.Checked == false &&
-                WarMovies.Checked == false && AdventureMovies.Checked == false && MysteryMovies.Checked == false && CrimeMovies.Checked == false && FamilyMovies.Checked == false)
-                {
-                    AllMovies.Checked = true;
-                }
-                chosenGenre.Remove("Actie");
-                flowLayoutPanel1.Controls.Clear();
-                genreItems();
+                codeRepetitionForCategorie();
             }
         }
 
@@ -269,21 +391,16 @@ namespace CinemaSystemProjectB
                 CrimeMovies.Checked = false;
                 FamilyMovies.Checked = false;
                 AllMovies.Checked = false;
-                chosenGenre.Add("Romantiek");
+                TwelvePlus.Checked = false;
+                AgeMovies.Checked = false;
+                NameMovies.Checked = false;
+                chosenGenre = "Romantiek";
                 flowLayoutPanel1.Controls.Clear();
                 genreItems();
             }
             else
             {
-                if (ThrillerMovies.Checked == false && ActionMovies.Checked == false && RomanceMovies.Checked == false && FantasyMovies.Checked == false && HorrorMovies.Checked == false &&
-                SciFiMovies.Checked == false && ComedyMovies.Checked == false && AnimationMovies.Checked == false && DramaMovies.Checked == false && HistoryMovies.Checked == false &&
-                WarMovies.Checked == false && AdventureMovies.Checked == false && MysteryMovies.Checked == false && CrimeMovies.Checked == false && FamilyMovies.Checked == false)
-                {
-                    AllMovies.Checked = true;
-                }
-                chosenGenre.Remove("Romantiek");
-                flowLayoutPanel1.Controls.Clear();
-                genreItems();
+                codeRepetitionForCategorie();
             }
         }
 
@@ -306,21 +423,16 @@ namespace CinemaSystemProjectB
                 CrimeMovies.Checked = false;
                 FamilyMovies.Checked = false;
                 AllMovies.Checked = false;
-                chosenGenre.Add("Fantasie");
+                TwelvePlus.Checked = false;
+                AgeMovies.Checked = false;
+                NameMovies.Checked = false;
+                chosenGenre = "Fantasie";
                 flowLayoutPanel1.Controls.Clear();
                 genreItems();
             }
             else
             {
-                if (ThrillerMovies.Checked == false && ActionMovies.Checked == false && RomanceMovies.Checked == false && FantasyMovies.Checked == false && HorrorMovies.Checked == false &&
-                SciFiMovies.Checked == false && ComedyMovies.Checked == false && AnimationMovies.Checked == false && DramaMovies.Checked == false && HistoryMovies.Checked == false &&
-                WarMovies.Checked == false && AdventureMovies.Checked == false && MysteryMovies.Checked == false && CrimeMovies.Checked == false && FamilyMovies.Checked == false)
-                {
-                    AllMovies.Checked = true;
-                }
-                chosenGenre.Remove("Fantasie");
-                flowLayoutPanel1.Controls.Clear();
-                genreItems();
+                codeRepetitionForCategorie();
             }
         }
 
@@ -344,21 +456,16 @@ namespace CinemaSystemProjectB
                 CrimeMovies.Checked = false;
                 FamilyMovies.Checked = false;
                 AllMovies.Checked = false;
-                chosenGenre.Add("Sci-Fi");
+                TwelvePlus.Checked = false;
+                AgeMovies.Checked = false;
+                NameMovies.Checked = false;
+                chosenGenre = "Sci-Fi";
                 flowLayoutPanel1.Controls.Clear();
                 genreItems();
             }
             else
             {
-                if (ThrillerMovies.Checked == false && ActionMovies.Checked == false && RomanceMovies.Checked == false && FantasyMovies.Checked == false && HorrorMovies.Checked == false &&
-                SciFiMovies.Checked == false && ComedyMovies.Checked == false && AnimationMovies.Checked == false && DramaMovies.Checked == false && HistoryMovies.Checked == false &&
-                WarMovies.Checked == false && AdventureMovies.Checked == false && MysteryMovies.Checked == false && CrimeMovies.Checked == false && FamilyMovies.Checked == false)
-                {
-                    AllMovies.Checked = true;
-                }
-                chosenGenre.Remove("Sci-Fi");
-                flowLayoutPanel1.Controls.Clear();
-                genreItems();
+                codeRepetitionForCategorie();
             }
         }
 
@@ -381,21 +488,16 @@ namespace CinemaSystemProjectB
                 CrimeMovies.Checked = false;
                 FamilyMovies.Checked = false;
                 AllMovies.Checked = false;
-                chosenGenre.Add("Comedie");
+                TwelvePlus.Checked = false;
+                AgeMovies.Checked = false;
+                NameMovies.Checked = false;
+                chosenGenre = "Comedie";
                 flowLayoutPanel1.Controls.Clear();
                 genreItems();
             }
             else
             {
-                if (ThrillerMovies.Checked == false && ActionMovies.Checked == false && RomanceMovies.Checked == false && FantasyMovies.Checked == false && HorrorMovies.Checked == false &&
-                SciFiMovies.Checked == false && ComedyMovies.Checked == false && AnimationMovies.Checked == false && DramaMovies.Checked == false && HistoryMovies.Checked == false &&
-                WarMovies.Checked == false && AdventureMovies.Checked == false && MysteryMovies.Checked == false && CrimeMovies.Checked == false && FamilyMovies.Checked == false)
-                {
-                    AllMovies.Checked = true;
-                }
-                chosenGenre.Remove("Comedie");
-                flowLayoutPanel1.Controls.Clear();
-                genreItems();
+                codeRepetitionForCategorie();
             }
         }
 
@@ -418,21 +520,16 @@ namespace CinemaSystemProjectB
                 CrimeMovies.Checked = false;
                 FamilyMovies.Checked = false;
                 AllMovies.Checked = false;
-                chosenGenre.Add("Animatie");
+                TwelvePlus.Checked = false;
+                AgeMovies.Checked = false;
+                NameMovies.Checked = false;
+                chosenGenre = "Animatie";
                 flowLayoutPanel1.Controls.Clear();
                 genreItems();
             }
             else
             {
-                if (ThrillerMovies.Checked == false && ActionMovies.Checked == false && RomanceMovies.Checked == false && FantasyMovies.Checked == false && HorrorMovies.Checked == false &&
-                SciFiMovies.Checked == false && ComedyMovies.Checked == false && AnimationMovies.Checked == false && DramaMovies.Checked == false && HistoryMovies.Checked == false &&
-                WarMovies.Checked == false && AdventureMovies.Checked == false && MysteryMovies.Checked == false && CrimeMovies.Checked == false && FamilyMovies.Checked == false)
-                {
-                    AllMovies.Checked = true;
-                }
-                chosenGenre.Remove("Animatie");
-                flowLayoutPanel1.Controls.Clear();
-                genreItems();
+                codeRepetitionForCategorie();
             }
         }
 
@@ -455,21 +552,16 @@ namespace CinemaSystemProjectB
                 CrimeMovies.Checked = false;
                 FamilyMovies.Checked = false;
                 AllMovies.Checked = false;
-                chosenGenre.Add("Drama");
+                TwelvePlus.Checked = false;
+                AgeMovies.Checked = false;
+                NameMovies.Checked = false;
+                chosenGenre = "Drama";
                 flowLayoutPanel1.Controls.Clear();
                 genreItems();
             }
             else
             {
-                if (ThrillerMovies.Checked == false && ActionMovies.Checked == false && RomanceMovies.Checked == false && FantasyMovies.Checked == false && HorrorMovies.Checked == false &&
-                SciFiMovies.Checked == false && ComedyMovies.Checked == false && AnimationMovies.Checked == false && DramaMovies.Checked == false && HistoryMovies.Checked == false &&
-                WarMovies.Checked == false && AdventureMovies.Checked == false && MysteryMovies.Checked == false && CrimeMovies.Checked == false && FamilyMovies.Checked == false)
-                {
-                    AllMovies.Checked = true;
-                }
-                chosenGenre.Remove("Drama");
-                flowLayoutPanel1.Controls.Clear();
-                genreItems();
+                codeRepetitionForCategorie();
             }
         }
 
@@ -492,21 +584,16 @@ namespace CinemaSystemProjectB
                 CrimeMovies.Checked = false;
                 FamilyMovies.Checked = false;
                 AllMovies.Checked = false;
-                chosenGenre.Add("Historisch");
+                TwelvePlus.Checked = false;
+                AgeMovies.Checked = false;
+                NameMovies.Checked = false;
+                chosenGenre = "Historisch";
                 flowLayoutPanel1.Controls.Clear();
                 genreItems();
             }
             else
             {
-                if (ThrillerMovies.Checked == false && ActionMovies.Checked == false && RomanceMovies.Checked == false && FantasyMovies.Checked == false && HorrorMovies.Checked == false &&
-                SciFiMovies.Checked == false && ComedyMovies.Checked == false && AnimationMovies.Checked == false && DramaMovies.Checked == false && HistoryMovies.Checked == false &&
-                WarMovies.Checked == false && AdventureMovies.Checked == false && MysteryMovies.Checked == false && CrimeMovies.Checked == false && FamilyMovies.Checked == false)
-                {
-                    AllMovies.Checked = true;
-                }
-                chosenGenre.Remove("Historisch");
-                flowLayoutPanel1.Controls.Clear();
-                genreItems();
+                codeRepetitionForCategorie();
             }
         }
 
@@ -529,21 +616,16 @@ namespace CinemaSystemProjectB
                 CrimeMovies.Checked = false;
                 FamilyMovies.Checked = false;
                 AllMovies.Checked = false;
-                chosenGenre.Add("Oorlog");
+                TwelvePlus.Checked = false;
+                AgeMovies.Checked = false;
+                NameMovies.Checked = false;
+                chosenGenre = "Oorlog";
                 flowLayoutPanel1.Controls.Clear();
                 genreItems();
             }
             else
             {
-                if (ThrillerMovies.Checked == false && ActionMovies.Checked == false && RomanceMovies.Checked == false && FantasyMovies.Checked == false && HorrorMovies.Checked == false &&
-                SciFiMovies.Checked == false && ComedyMovies.Checked == false && AnimationMovies.Checked == false && DramaMovies.Checked == false && HistoryMovies.Checked == false &&
-                WarMovies.Checked == false && AdventureMovies.Checked == false && MysteryMovies.Checked == false && CrimeMovies.Checked == false && FamilyMovies.Checked == false)
-                {
-                    AllMovies.Checked = true;
-                }
-                chosenGenre.Remove("Oorlog");
-                flowLayoutPanel1.Controls.Clear();
-                genreItems();
+                codeRepetitionForCategorie();
             }
         }
 
@@ -566,21 +648,16 @@ namespace CinemaSystemProjectB
                 CrimeMovies.Checked = false;
                 FamilyMovies.Checked = false;
                 AllMovies.Checked = false;
-                chosenGenre.Add("Avontuur");
+                TwelvePlus.Checked = false;
+                AgeMovies.Checked = false;
+                NameMovies.Checked = false;
+                chosenGenre = "Avontuur";
                 flowLayoutPanel1.Controls.Clear();
                 genreItems();
             }
             else
             {
-                if (ThrillerMovies.Checked == false && ActionMovies.Checked == false && RomanceMovies.Checked == false && FantasyMovies.Checked == false && HorrorMovies.Checked == false &&
-                SciFiMovies.Checked == false && ComedyMovies.Checked == false && AnimationMovies.Checked == false && DramaMovies.Checked == false && HistoryMovies.Checked == false &&
-                WarMovies.Checked == false && AdventureMovies.Checked == false && MysteryMovies.Checked == false && CrimeMovies.Checked == false && FamilyMovies.Checked == false)
-                {
-                    AllMovies.Checked = true;
-                }
-                chosenGenre.Remove("Avontuur");
-                flowLayoutPanel1.Controls.Clear();
-                genreItems();
+                codeRepetitionForCategorie();
             }
         }
 
@@ -603,21 +680,16 @@ namespace CinemaSystemProjectB
                 CrimeMovies.Checked = false;
                 FamilyMovies.Checked = false;
                 AllMovies.Checked = false;
-                chosenGenre.Add("Mysterie");
+                TwelvePlus.Checked = false;
+                AgeMovies.Checked = false;
+                NameMovies.Checked = false;
+                chosenGenre = "Mysterie";
                 flowLayoutPanel1.Controls.Clear();
                 genreItems();
             }
             else
             {
-                if (ThrillerMovies.Checked == false && ActionMovies.Checked == false && RomanceMovies.Checked == false && FantasyMovies.Checked == false && HorrorMovies.Checked == false &&
-                SciFiMovies.Checked == false && ComedyMovies.Checked == false && AnimationMovies.Checked == false && DramaMovies.Checked == false && HistoryMovies.Checked == false &&
-                WarMovies.Checked == false && AdventureMovies.Checked == false && MysteryMovies.Checked == false && CrimeMovies.Checked == false && FamilyMovies.Checked == false)
-                {
-                    AllMovies.Checked = true;
-                }
-                chosenGenre.Remove("Mysterie");
-                flowLayoutPanel1.Controls.Clear();
-                genreItems();
+                codeRepetitionForCategorie();
             }
         }
 
@@ -640,21 +712,16 @@ namespace CinemaSystemProjectB
                 MysteryMovies.Checked = false;
                 FamilyMovies.Checked = false;
                 AllMovies.Checked = false;
-                chosenGenre.Add("Misdaad");
+                TwelvePlus.Checked = false;
+                AgeMovies.Checked = false;
+                NameMovies.Checked = false;
+                chosenGenre = "Misdaad";
                 flowLayoutPanel1.Controls.Clear();
                 genreItems();
             }
             else
             {
-                if (ThrillerMovies.Checked == false && ActionMovies.Checked == false && RomanceMovies.Checked == false && FantasyMovies.Checked == false && HorrorMovies.Checked == false &&
-                SciFiMovies.Checked == false && ComedyMovies.Checked == false && AnimationMovies.Checked == false && DramaMovies.Checked == false && HistoryMovies.Checked == false &&
-                WarMovies.Checked == false && AdventureMovies.Checked == false && MysteryMovies.Checked == false && CrimeMovies.Checked == false && FamilyMovies.Checked == false)
-                {
-                    AllMovies.Checked = true;
-                }
-                chosenGenre.Remove("Misdaad");
-                flowLayoutPanel1.Controls.Clear();
-                genreItems();
+                codeRepetitionForCategorie();
             }
         }
 
@@ -677,21 +744,16 @@ namespace CinemaSystemProjectB
                 MysteryMovies.Checked = false;
                 CrimeMovies.Checked = false;
                 AllMovies.Checked = false;
-                chosenGenre.Add("Familie");
+                TwelvePlus.Checked = false;
+                AgeMovies.Checked = false;
+                NameMovies.Checked = false;
+                chosenGenre = "Familie";
                 flowLayoutPanel1.Controls.Clear();
                 genreItems();
             }
             else
             {
-                if (ThrillerMovies.Checked == false && ActionMovies.Checked == false && RomanceMovies.Checked == false && FantasyMovies.Checked == false && HorrorMovies.Checked == false &&
-                SciFiMovies.Checked == false && ComedyMovies.Checked == false && AnimationMovies.Checked == false && DramaMovies.Checked == false && HistoryMovies.Checked == false &&
-                WarMovies.Checked == false && AdventureMovies.Checked == false && MysteryMovies.Checked == false && CrimeMovies.Checked == false && FamilyMovies.Checked == false)
-                {
-                    AllMovies.Checked = true;
-                }
-                chosenGenre.Remove("Familie");
-                flowLayoutPanel1.Controls.Clear();
-                genreItems();
+                codeRepetitionForCategorie();
             }
         }
 
@@ -714,21 +776,144 @@ namespace CinemaSystemProjectB
                 CrimeMovies.Checked = false;
                 FamilyMovies.Checked = false;
                 AllMovies.Checked = false;
-                chosenGenre.Add("Horror");
+                TwelvePlus.Checked = false;
+                AgeMovies.Checked = false;
+                NameMovies.Checked = false;
+                chosenGenre = "Horror";
                 flowLayoutPanel1.Controls.Clear();
                 genreItems();
             }
             else
             {
-                if (ThrillerMovies.Checked == false && ActionMovies.Checked == false && RomanceMovies.Checked == false && FantasyMovies.Checked == false && HorrorMovies.Checked == false &&
-                SciFiMovies.Checked == false && ComedyMovies.Checked == false && AnimationMovies.Checked == false && DramaMovies.Checked == false && HistoryMovies.Checked == false &&
-                WarMovies.Checked == false && AdventureMovies.Checked == false && MysteryMovies.Checked == false && CrimeMovies.Checked == false && FamilyMovies.Checked == false)
+                codeRepetitionForCategorie();
+            }
+        }
+        private void AgeMovies_CheckedChanged(object sender, EventArgs e) //Age
+        {
+            if (AgeMovies.Checked)
+            {
+                ThrillerMovies.Checked = false;
+                ActionMovies.Checked = false;
+                RomanceMovies.Checked = false;
+                FantasyMovies.Checked = false;
+                SciFiMovies.Checked = false;
+                ComedyMovies.Checked = false;
+                AnimationMovies.Checked = false;
+                DramaMovies.Checked = false;
+                HistoryMovies.Checked = false;
+                WarMovies.Checked = false;
+                AdventureMovies.Checked = false;
+                MysteryMovies.Checked = false;
+                CrimeMovies.Checked = false;
+                FamilyMovies.Checked = false;
+                HorrorMovies.Checked = false;               
+                TwelvePlus.Checked = false;
+                AllMovies.Checked = false;
+                NameMovies.Checked = false;
+                chosenAge = "6+";
+                chosenAge2 = "9+";
+                AboveTwelve = false;
+                flowLayoutPanel1.Controls.Clear();
+                movieKidsItems();
+            }
+            else
+            {
+                codeRepetitionForCategorie();
+            }
+        }
+
+        private void NameMovies_CheckedChanged(object sender, EventArgs e)
+        {
+            if (NameMovies.Checked)
+            {
+                //When All movies is checked, all genre boxes will be unchecked
+                ThrillerMovies.Checked = false;
+                ActionMovies.Checked = false;
+                RomanceMovies.Checked = false;
+                FantasyMovies.Checked = false;
+                HorrorMovies.Checked = false;
+                SciFiMovies.Checked = false;
+                ComedyMovies.Checked = false;
+                AnimationMovies.Checked = false;
+                DramaMovies.Checked = false;
+                HistoryMovies.Checked = false;
+                WarMovies.Checked = false;
+                AdventureMovies.Checked = false;
+                MysteryMovies.Checked = false;
+                CrimeMovies.Checked = false;
+                FamilyMovies.Checked = false;
+                TwelvePlus.Checked = false;
+                AgeMovies.Checked = false;
+                AllMovies.Checked = false;
+                flowLayoutPanel1.Controls.Clear();
+                populateItems();
+            }
+            else
+            {
+                codeRepetitionForCategorie();
+            }
+        }
+
+        private void TwelvePlus_CheckedChanged(object sender, EventArgs e)
+        {
+            if (TwelvePlus.Checked)
+            {
+                ThrillerMovies.Checked = false;
+                ActionMovies.Checked = false;
+                RomanceMovies.Checked = false;
+                FantasyMovies.Checked = false;
+                SciFiMovies.Checked = false;
+                ComedyMovies.Checked = false;
+                AnimationMovies.Checked = false;
+                DramaMovies.Checked = false;
+                HistoryMovies.Checked = false;
+                WarMovies.Checked = false;
+                AdventureMovies.Checked = false;
+                MysteryMovies.Checked = false;
+                CrimeMovies.Checked = false;
+                FamilyMovies.Checked = false;
+                HorrorMovies.Checked = false;
+                AllMovies.Checked = false;
+                AgeMovies.Checked = false;
+                NameMovies.Checked = false;
+                chosenAge = "6+";
+                chosenAge2 = "9+";
+                AboveTwelve = true;
+                flowLayoutPanel1.Controls.Clear();
+                movieKidsItems();
+            }
+            else
+            {
+                codeRepetitionForCategorie();
+            }
+        }
+
+        private void codeRepetitionForCategorie()
+        {
+            flowLayoutPanel1.Controls.Clear();
+            if (AgeMovies.Checked == false && NameMovies.Checked == false && TwelvePlus.Checked == false)
+            {
+                if (ThrillerMovies.Checked == false &&
+                 ActionMovies.Checked == false &&
+                 RomanceMovies.Checked == false &&
+                 FantasyMovies.Checked == false &&
+                 SciFiMovies.Checked == false &&
+                 ComedyMovies.Checked == false &&
+                 AnimationMovies.Checked == false &&
+                 DramaMovies.Checked == false &&
+                 HistoryMovies.Checked == false &&
+                 WarMovies.Checked == false &&
+                 AdventureMovies.Checked == false &&
+                 MysteryMovies.Checked == false &&
+                 CrimeMovies.Checked == false &&
+                 FamilyMovies.Checked == false &&
+                 HorrorMovies.Checked == false &&
+                 AllMovies.Checked == false &&
+                 AgeMovies.Checked == false &&
+                 NameMovies.Checked == false)
                 {
                     AllMovies.Checked = true;
                 }
-                chosenGenre.Remove("Horror");
-                flowLayoutPanel1.Controls.Clear();
-                genreItems();
             }
         }
     }
