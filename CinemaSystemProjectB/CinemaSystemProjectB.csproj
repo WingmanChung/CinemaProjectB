@@ -90,6 +90,12 @@
     <Compile Include="MovieSchedule.Designer.cs">
       <DependentUpon>MovieSchedule.cs</DependentUpon>
     </Compile>
+    <Compile Include="MovieScheduleItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MovieScheduleItem.Designer.cs">
+      <DependentUpon>MovieScheduleItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="PriceList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MovieSchedule.resx">
       <DependentUpon>MovieSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieScheduleItem.resx">
+      <DependentUpon>MovieScheduleItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PriceList.resx">
       <DependentUpon>PriceList.cs</DependentUpon>
