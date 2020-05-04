@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,45 +14,121 @@ namespace CinemaSystemProjectB
 {
     public partial class MovieSchedule : Form
     {
+        const string path = @"JsonTextFile.json";
+
         public MovieSchedule()
         {
             InitializeComponent();
         }
 
+        private void ScheduleScreen()
+        {
+            //Loads json file with all movies
+
+            Dictionary<string, MovieDescriptionClass> ListView = JsonConvert.DeserializeObject<Dictionary<string, MovieDescriptionClass>>(File.ReadAllText(path));
+
+            //List with all keys (movie titles)
+            var movieList = ListView.Keys.ToArray();
+
+            //populate items here
+
+            MovieScheduleItem[] movieScheduleItems = new MovieScheduleItem[10];
+
+            for (int i = 0; i < 10; i++)
+            {
+                movieScheduleItems[i] = new MovieScheduleItem();
+
+                movieScheduleItems[i].MovieTitle = ListView[movieList[i]].Title;
+                movieScheduleItems[i].FilmTechnology = ListView[movieList[i]].FilmTechnology;
+                movieScheduleItems[i].Runtime = ListView[movieList[i]].Runtime;
+                //end loop
+
+                //fills screen 1 schedule
+                if (i >= 0 && i < 3)
+                {
+                    //checks wheter listview is already filled or not (with preview searchresult) <- Displays list in flowlayoutpanel
+                    if (Screen1Schedule.Controls.Count < 0)
+                    {
+                        Screen1Schedule.Controls.Clear();
+                    }
+                    else
+                    {
+                        Screen1Schedule.Controls.Add(movieScheduleItems[i]);
+                    }
+                }
+                //fills screen 2 schedule
+                if (i >= 3 && i < 6)
+                {
+                    //checks wheter listview is already filled or not (with preview searchresult) <- Displays list in flowlayoutpanel
+                    if (Screen1Schedule.Controls.Count < 0)
+                    {
+                        Screen2Schedule.Controls.Clear();
+                    }
+                    else
+                    {
+                        Screen2Schedule.Controls.Add(movieScheduleItems[i]);
+                    }
+                }
+                //fills screen 3 schedule
+                if (i >= 6 && i < 10)
+                {
+                    //checks wheter listview is already filled or not (with preview searchresult) <- Displays list in flowlayoutpanel
+                    if (Screen1Schedule.Controls.Count < 0)
+                    {
+                        Screen3Schedule.Controls.Clear();
+                    }
+                    else
+                    {
+                        Screen3Schedule.Controls.Add(movieScheduleItems[i]);
+                    }
+                }
+            }
+        }
+
+        private void clearSchedules()
+        {
+            Screen1Schedule.Controls.Clear();
+            Screen2Schedule.Controls.Clear();
+            Screen3Schedule.Controls.Clear();
+        }
+
         private void TodaySchedule_Click(object sender, EventArgs e)
         {
-
+            clearSchedules();
+            ScheduleScreen();
         }
 
         private void SecondSchedule_Click(object sender, EventArgs e)
         {
-
+            clearSchedules();
         }
 
         private void ThirthSchedule_Click(object sender, EventArgs e)
         {
-
+            clearSchedules();
         }
 
         private void FourthSchedule_Click(object sender, EventArgs e)
         {
-
+            clearSchedules();
         }
 
         private void FifthSchedule_Click(object sender, EventArgs e)
         {
-
+            clearSchedules();
         }
 
         private void SixthSchedule_Click(object sender, EventArgs e)
         {
-
+            clearSchedules();
         }
 
         private void SeventhSchedule_Click(object sender, EventArgs e)
         {
-
+            clearSchedules();
         }
+
+        //Selecting day button effect
 
         private void TodaySchedule_MouseEnter(object sender, EventArgs e)
         {
@@ -120,6 +198,12 @@ namespace CinemaSystemProjectB
         private void SeventhSchedule_MouseLeave(object sender, EventArgs e)
         {
             SeventhSchedule.BackColor = Color.Black;
+        }
+
+        //shows movieschedule of today when you open movieschedule page
+        private void MovieSchedule_Load(object sender, EventArgs e)
+        {
+            ScheduleScreen();
         }
     }
 }

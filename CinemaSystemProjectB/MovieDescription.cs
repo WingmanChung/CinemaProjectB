@@ -21,12 +21,17 @@ namespace CinemaSystemProjectB
             string showMovie;
             //to check if chosenMovie is selected in Trending or not
             bool checkBool = MovieOverview.HomeScreen;
+            bool checkBool2 = MovieScheduleItem.MovieScheduleChosenMovie;
 
-            //determines which variable will be used (choosing between forms)
+            //determines which variable will be used to show selected movie(choosing between forms)
 
             if (checkBool)
             {
-            showMovie = MovieOverview.chosenMovie;
+                showMovie = MovieOverview.chosenMovie;
+            }
+            else if (checkBool2)
+            {
+                showMovie = MovieScheduleItem.chosenMovieMovieSchedule;
             }
             else
             {
@@ -47,7 +52,8 @@ namespace CinemaSystemProjectB
             Trailerlink.Text = Movies[showMovie].Trailer;
             Leeftijdlabel.Text = Movies[showMovie].Age;
             Technologielabel.Text = Movies[showMovie].FilmTechnology;
-            RatingLabel.Text = Movies[showMovie].Rating;
+            RuntimeLabel.Text = Movies[showMovie].Runtime;
+            RatingLabel.Text = Movies[showMovie].Rating.ToString();
 
             var fileString = Movies[showMovie].Image;
             var bytes = Convert.FromBase64String(fileString);

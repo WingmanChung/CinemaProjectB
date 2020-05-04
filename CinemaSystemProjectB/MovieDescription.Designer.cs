@@ -58,6 +58,8 @@
             this.Technologielabel = new System.Windows.Forms.Label();
             this.Rating = new System.Windows.Forms.Label();
             this.RatingLabel = new System.Windows.Forms.Label();
+            this.Runtime = new System.Windows.Forms.Label();
+            this.RuntimeLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Filmposter)).BeginInit();
             this.gradientLabel1.SuspendLayout();
             this.SuspendLayout();
@@ -140,7 +142,7 @@
             this.Prijs.AutoSize = true;
             this.Prijs.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Prijs.ForeColor = System.Drawing.Color.Yellow;
-            this.Prijs.Location = new System.Drawing.Point(343, 365);
+            this.Prijs.Location = new System.Drawing.Point(343, 390);
             this.Prijs.Name = "Prijs";
             this.Prijs.Size = new System.Drawing.Size(88, 18);
             this.Prijs.TabIndex = 13;
@@ -271,7 +273,7 @@
             // 
             this.Prijslabel.AutoSize = true;
             this.Prijslabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Prijslabel.Location = new System.Drawing.Point(428, 365);
+            this.Prijslabel.Location = new System.Drawing.Point(428, 390);
             this.Prijslabel.Name = "Prijslabel";
             this.Prijslabel.Size = new System.Drawing.Size(40, 18);
             this.Prijslabel.TabIndex = 71;
@@ -329,7 +331,7 @@
             this.Filmtechnologie.AutoSize = true;
             this.Filmtechnologie.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Filmtechnologie.ForeColor = System.Drawing.Color.Yellow;
-            this.Filmtechnologie.Location = new System.Drawing.Point(343, 340);
+            this.Filmtechnologie.Location = new System.Drawing.Point(343, 365);
             this.Filmtechnologie.Name = "Filmtechnologie";
             this.Filmtechnologie.Size = new System.Drawing.Size(125, 18);
             this.Filmtechnologie.TabIndex = 78;
@@ -351,7 +353,7 @@
             this.Technologielabel.AutoSize = true;
             this.Technologielabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Technologielabel.ForeColor = System.Drawing.Color.Yellow;
-            this.Technologielabel.Location = new System.Drawing.Point(465, 340);
+            this.Technologielabel.Location = new System.Drawing.Point(465, 365);
             this.Technologielabel.Name = "Technologielabel";
             this.Technologielabel.Size = new System.Drawing.Size(96, 18);
             this.Technologielabel.TabIndex = 80;
@@ -379,12 +381,36 @@
             this.RatingLabel.TabIndex = 82;
             this.RatingLabel.Text = "Rating";
             // 
+            // Runtime
+            // 
+            this.Runtime.AutoSize = true;
+            this.Runtime.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Runtime.ForeColor = System.Drawing.Color.Yellow;
+            this.Runtime.Location = new System.Drawing.Point(343, 340);
+            this.Runtime.Name = "Runtime";
+            this.Runtime.Size = new System.Drawing.Size(74, 18);
+            this.Runtime.TabIndex = 83;
+            this.Runtime.Text = "Filmduur:";
+            // 
+            // RuntimeLabel
+            // 
+            this.RuntimeLabel.AutoSize = true;
+            this.RuntimeLabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RuntimeLabel.ForeColor = System.Drawing.Color.Yellow;
+            this.RuntimeLabel.Location = new System.Drawing.Point(414, 340);
+            this.RuntimeLabel.Name = "RuntimeLabel";
+            this.RuntimeLabel.Size = new System.Drawing.Size(45, 18);
+            this.RuntimeLabel.TabIndex = 84;
+            this.RuntimeLabel.Text = "0 min";
+            // 
             // MovieDescription
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1110, 722);
+            this.Controls.Add(this.RuntimeLabel);
+            this.Controls.Add(this.Runtime);
             this.Controls.Add(this.RatingLabel);
             this.Controls.Add(this.Rating);
             this.Controls.Add(this.Technologielabel);
@@ -460,5 +486,7 @@
         private System.Windows.Forms.Label Technologielabel;
         private System.Windows.Forms.Label Rating;
         private System.Windows.Forms.Label RatingLabel;
+        private System.Windows.Forms.Label Runtime;
+        private System.Windows.Forms.Label RuntimeLabel;
     }
 }
