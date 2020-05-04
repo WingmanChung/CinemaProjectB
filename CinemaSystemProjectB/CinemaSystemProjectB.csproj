@@ -49,42 +49,100 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GradientLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ListItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListItem.Designer.cs">
+      <DependentUpon>ListItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuCard.Designer.cs">
+      <DependentUpon>MenuCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuCardClass.cs" />
     <Compile Include="MovieDescription.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MovieDescription.Designer.cs">
       <DependentUpon>MovieDescription.cs</DependentUpon>
     </Compile>
-    <Compile Include="MovieInfo.cs" />
+    <Compile Include="MovieDescriptionClass.cs" />
     <Compile Include="MovieOverview.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MovieOverview.Designer.cs">
       <DependentUpon>MovieOverview.cs</DependentUpon>
     </Compile>
+    <Compile Include="Movies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movies.Designer.cs">
+      <DependentUpon>Movies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovieSchedule.Designer.cs">
+      <DependentUpon>MovieSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieScheduleItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MovieScheduleItem.Designer.cs">
+      <DependentUpon>MovieScheduleItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PriceList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PriceList.Designer.cs">
+      <DependentUpon>PriceList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ListItem.resx">
+      <DependentUpon>ListItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuCard.resx">
+      <DependentUpon>MenuCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MovieDescription.resx">
       <DependentUpon>MovieDescription.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MovieOverview.resx">
       <DependentUpon>MovieOverview.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Movies.resx">
+      <DependentUpon>Movies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieSchedule.resx">
+      <DependentUpon>MovieSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieScheduleItem.resx">
+      <DependentUpon>MovieScheduleItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PriceList.resx">
+      <DependentUpon>PriceList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -123,6 +181,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\HowToTrainYourDragon3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngfuel.com.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayButton.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayButton2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayButton3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayButton4.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
