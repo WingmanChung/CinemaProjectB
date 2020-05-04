@@ -13,7 +13,7 @@ namespace CinemaSystemProjectB
         public string Director { get; set; }
         public string Genre { get; set; }
         public string Language { get; set; }
-        public string Rating { get; set; }
+        public float Rating { get; set; }
         public string Price { get; set; }
         public string Runtime { get; set; }
         public string FilmTechnology { get; set; }
