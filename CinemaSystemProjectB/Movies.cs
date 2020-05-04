@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Threading;
+using System.Collections;
 
 namespace CinemaSystemProjectB
 {
@@ -50,12 +51,12 @@ namespace CinemaSystemProjectB
                 Array.Sort(movieList);
             }
 
+
             //populate here
 
             ListItem[] listItems = new ListItem[ListView.Count];
 
             //loop through each item
-
             for (int i = 0; i < listItems.Length; i++)
             {
                 listItems[i] = new ListItem();
@@ -84,8 +85,10 @@ namespace CinemaSystemProjectB
                 {
                     flowLayoutPanel1.Controls.Add(listItems[i]);
                 }
+ 
             }
         }
+
 
         private void genreItems()
         {
@@ -914,6 +917,38 @@ namespace CinemaSystemProjectB
                 {
                     AllMovies.Checked = true;
                 }
+            }
+        }
+
+        private void RatingMovies_CheckedChanged(object sender, EventArgs e)
+        {
+            if (RatingMovies.Checked)
+            {
+                //When All movies is checked, all genre boxes will be unchecked
+                ThrillerMovies.Checked = false;
+                ActionMovies.Checked = false;
+                RomanceMovies.Checked = false;
+                FantasyMovies.Checked = false;
+                HorrorMovies.Checked = false;
+                SciFiMovies.Checked = false;
+                ComedyMovies.Checked = false;
+                AnimationMovies.Checked = false;
+                DramaMovies.Checked = false;
+                HistoryMovies.Checked = false;
+                WarMovies.Checked = false;
+                AdventureMovies.Checked = false;
+                MysteryMovies.Checked = false;
+                CrimeMovies.Checked = false;
+                FamilyMovies.Checked = false;
+                TwelvePlus.Checked = false;
+                AgeMovies.Checked = false;
+                AllMovies.Checked = false;
+                flowLayoutPanel1.Controls.Clear();
+                populateItems();
+            }
+            else
+            {
+                codeRepetitionForCategorie();
             }
         }
     }
