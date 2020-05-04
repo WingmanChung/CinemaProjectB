@@ -19,6 +19,7 @@ namespace CinemaSystemProjectB
 
         public MovieDescriptionClass ListViewItems { get; set; }
 
+
         string chosenGenre;
         string chosenAge;
         string chosenAge2;
@@ -38,7 +39,6 @@ namespace CinemaSystemProjectB
         private void populateItems()
         {
             //Loads json file with all movies
-
             Dictionary<string, MovieDescriptionClass> ListView = JsonConvert.DeserializeObject<Dictionary<string, MovieDescriptionClass>>(File.ReadAllText(path));
 
             //List with all keys (movie titles)
@@ -50,15 +50,20 @@ namespace CinemaSystemProjectB
                 Array.Sort(movieList);
             }
 
-            //populate here
+            //Sorts the movies by rating from highest to lowest (Work in Progress)
+            if (RatingMovies.Checked)
+            {
+                Array.Sort(movieList);
+            }
 
-            ListItem[] listItems = new ListItem[ListView.Count];
+                    //populate here
+                    ListItem[] listItems = new ListItem[ListView.Count];
 
             //loop through each item
-
             for (int i = 0; i < listItems.Length; i++)
             {
                 listItems[i] = new ListItem();
+                
                 //load image
                 var filmCover = ListView[ListView[movieList[i]].Title].Image;
                 var bytesFilm = Convert.FromBase64String(filmCover);
@@ -90,7 +95,6 @@ namespace CinemaSystemProjectB
         private void genreItems()
         {
             //Loads json file with all movies
-
             Dictionary<string, MovieDescriptionClass> ListView = JsonConvert.DeserializeObject<Dictionary<string, MovieDescriptionClass>>(File.ReadAllText(path));
 
             //List with all keys (movie titles)
@@ -111,7 +115,6 @@ namespace CinemaSystemProjectB
            
 
             //Populate items in the list (flowlayoutpanel)
-
             ListItem[] listItems = new ListItem[movieCount];
 
             for (int i = 0, j = 0; i < 1; i++)
@@ -119,6 +122,7 @@ namespace CinemaSystemProjectB
                 foreach (var title in movieTitles)
                 {
                     listItems[j] = new ListItem();
+                    
                     //load image
                     var filmCover = ListView[movieTitles[j]].Image;
                     var bytesFilm = Convert.FromBase64String(filmCover);
@@ -153,7 +157,6 @@ namespace CinemaSystemProjectB
         private void movieKidsItems()
         {
             //Loads json file with all movies
-
             Dictionary<string, MovieDescriptionClass> ListView = JsonConvert.DeserializeObject<Dictionary<string, MovieDescriptionClass>>(File.ReadAllText(path));
 
             //List with all keys (movie titles)
@@ -178,7 +181,6 @@ namespace CinemaSystemProjectB
                     
                     }
                     //Populate items in the list (flowlayoutpanel)
-
                     ListItem[] listItems = new ListItem[movieCount];
                     for (int i = 0, j = 0; i < 1; i++)
                     {
@@ -186,6 +188,7 @@ namespace CinemaSystemProjectB
                         foreach (var title in movieTitles)
                         {
                             listItems[j] = new ListItem();
+                            
                             //load image
                             var filmCover = ListView[movieTitles[j]].Image;
                             var bytesFilm = Convert.FromBase64String(filmCover);
@@ -234,8 +237,8 @@ namespace CinemaSystemProjectB
                         }
 
                     }
+                    
                     //Populate items in the list (flowlayoutpanel)
-
                     ListItem[] listItems = new ListItem[movieCount];
                     for (int i = 0, j = 0; i < 1; i++)
                     {
@@ -243,6 +246,7 @@ namespace CinemaSystemProjectB
                         foreach (var title in movieTitles)
                         {
                             listItems[j] = new ListItem();
+                            
                             //load image
                             var filmCover = ListView[movieTitles[j]].Image;
                             var bytesFilm = Convert.FromBase64String(filmCover);
@@ -299,6 +303,7 @@ namespace CinemaSystemProjectB
                 TwelvePlus.Checked = false;
                 AgeMovies.Checked = false;
                 NameMovies.Checked = false;
+                RatingMovies.Checked = false;
                 flowLayoutPanel1.Controls.Clear();
                 populateItems();
             }
@@ -330,6 +335,7 @@ namespace CinemaSystemProjectB
                 TwelvePlus.Checked = false;
                 AgeMovies.Checked = false;
                 NameMovies.Checked = false;
+                RatingMovies.Checked = false;
                 chosenGenre = "Thriller";
                 flowLayoutPanel1.Controls.Clear();
                 genreItems();
@@ -362,6 +368,7 @@ namespace CinemaSystemProjectB
                 TwelvePlus.Checked = false;
                 AgeMovies.Checked = false;
                 NameMovies.Checked = false;
+                RatingMovies.Checked = false;
                 chosenGenre = "Actie";
                 flowLayoutPanel1.Controls.Clear();
                 genreItems();
@@ -394,6 +401,7 @@ namespace CinemaSystemProjectB
                 TwelvePlus.Checked = false;
                 AgeMovies.Checked = false;
                 NameMovies.Checked = false;
+                RatingMovies.Checked = false;
                 chosenGenre = "Romantiek";
                 flowLayoutPanel1.Controls.Clear();
                 genreItems();
@@ -426,6 +434,7 @@ namespace CinemaSystemProjectB
                 TwelvePlus.Checked = false;
                 AgeMovies.Checked = false;
                 NameMovies.Checked = false;
+                RatingMovies.Checked = false;
                 chosenGenre = "Fantasie";
                 flowLayoutPanel1.Controls.Clear();
                 genreItems();
@@ -459,6 +468,7 @@ namespace CinemaSystemProjectB
                 TwelvePlus.Checked = false;
                 AgeMovies.Checked = false;
                 NameMovies.Checked = false;
+                RatingMovies.Checked = false;
                 chosenGenre = "Sci-Fi";
                 flowLayoutPanel1.Controls.Clear();
                 genreItems();
@@ -491,6 +501,7 @@ namespace CinemaSystemProjectB
                 TwelvePlus.Checked = false;
                 AgeMovies.Checked = false;
                 NameMovies.Checked = false;
+                RatingMovies.Checked = false;
                 chosenGenre = "Comedie";
                 flowLayoutPanel1.Controls.Clear();
                 genreItems();
@@ -523,6 +534,7 @@ namespace CinemaSystemProjectB
                 TwelvePlus.Checked = false;
                 AgeMovies.Checked = false;
                 NameMovies.Checked = false;
+                RatingMovies.Checked = false;
                 chosenGenre = "Animatie";
                 flowLayoutPanel1.Controls.Clear();
                 genreItems();
@@ -555,6 +567,7 @@ namespace CinemaSystemProjectB
                 TwelvePlus.Checked = false;
                 AgeMovies.Checked = false;
                 NameMovies.Checked = false;
+                RatingMovies.Checked = false;
                 chosenGenre = "Drama";
                 flowLayoutPanel1.Controls.Clear();
                 genreItems();
@@ -587,6 +600,7 @@ namespace CinemaSystemProjectB
                 TwelvePlus.Checked = false;
                 AgeMovies.Checked = false;
                 NameMovies.Checked = false;
+                RatingMovies.Checked = false;
                 chosenGenre = "Historisch";
                 flowLayoutPanel1.Controls.Clear();
                 genreItems();
@@ -619,6 +633,7 @@ namespace CinemaSystemProjectB
                 TwelvePlus.Checked = false;
                 AgeMovies.Checked = false;
                 NameMovies.Checked = false;
+                RatingMovies.Checked = false;
                 chosenGenre = "Oorlog";
                 flowLayoutPanel1.Controls.Clear();
                 genreItems();
@@ -651,6 +666,7 @@ namespace CinemaSystemProjectB
                 TwelvePlus.Checked = false;
                 AgeMovies.Checked = false;
                 NameMovies.Checked = false;
+                RatingMovies.Checked = false;
                 chosenGenre = "Avontuur";
                 flowLayoutPanel1.Controls.Clear();
                 genreItems();
@@ -683,6 +699,7 @@ namespace CinemaSystemProjectB
                 TwelvePlus.Checked = false;
                 AgeMovies.Checked = false;
                 NameMovies.Checked = false;
+                RatingMovies.Checked = false;
                 chosenGenre = "Mysterie";
                 flowLayoutPanel1.Controls.Clear();
                 genreItems();
@@ -715,6 +732,7 @@ namespace CinemaSystemProjectB
                 TwelvePlus.Checked = false;
                 AgeMovies.Checked = false;
                 NameMovies.Checked = false;
+                RatingMovies.Checked = false;
                 chosenGenre = "Misdaad";
                 flowLayoutPanel1.Controls.Clear();
                 genreItems();
@@ -747,6 +765,7 @@ namespace CinemaSystemProjectB
                 TwelvePlus.Checked = false;
                 AgeMovies.Checked = false;
                 NameMovies.Checked = false;
+                RatingMovies.Checked = false;
                 chosenGenre = "Familie";
                 flowLayoutPanel1.Controls.Clear();
                 genreItems();
@@ -779,6 +798,7 @@ namespace CinemaSystemProjectB
                 TwelvePlus.Checked = false;
                 AgeMovies.Checked = false;
                 NameMovies.Checked = false;
+                RatingMovies.Checked = false;
                 chosenGenre = "Horror";
                 flowLayoutPanel1.Controls.Clear();
                 genreItems();
@@ -810,6 +830,7 @@ namespace CinemaSystemProjectB
                 TwelvePlus.Checked = false;
                 AllMovies.Checked = false;
                 NameMovies.Checked = false;
+                RatingMovies.Checked = false;
                 chosenAge = "6+";
                 chosenAge2 = "9+";
                 AboveTwelve = false;
@@ -845,6 +866,39 @@ namespace CinemaSystemProjectB
                 TwelvePlus.Checked = false;
                 AgeMovies.Checked = false;
                 AllMovies.Checked = false;
+                RatingMovies.Checked = false;
+                flowLayoutPanel1.Controls.Clear();
+                populateItems();
+            }
+            else
+            {
+                codeRepetitionForCategorie();
+            }
+        }
+
+        private void RatingMovies_CheckedChanged(object sender, EventArgs e) //Rating
+        {
+            if (RatingMovies.Checked)
+            {
+                ThrillerMovies.Checked = false;
+                ActionMovies.Checked = false;
+                RomanceMovies.Checked = false;
+                FantasyMovies.Checked = false;
+                SciFiMovies.Checked = false;
+                ComedyMovies.Checked = false;
+                AnimationMovies.Checked = false;
+                DramaMovies.Checked = false;
+                HistoryMovies.Checked = false;
+                WarMovies.Checked = false;
+                AdventureMovies.Checked = false;
+                MysteryMovies.Checked = false;
+                CrimeMovies.Checked = false;
+                FamilyMovies.Checked = false;
+                HorrorMovies.Checked = false;
+                TwelvePlus.Checked = false;
+                AllMovies.Checked = false;
+                AgeMovies.Checked = false;
+                NameMovies.Checked = false;
                 flowLayoutPanel1.Controls.Clear();
                 populateItems();
             }
@@ -876,6 +930,7 @@ namespace CinemaSystemProjectB
                 AllMovies.Checked = false;
                 AgeMovies.Checked = false;
                 NameMovies.Checked = false;
+                RatingMovies.Checked = false;
                 chosenAge = "6+";
                 chosenAge2 = "9+";
                 AboveTwelve = true;
@@ -891,7 +946,7 @@ namespace CinemaSystemProjectB
         private void codeRepetitionForCategorie()
         {
             flowLayoutPanel1.Controls.Clear();
-            if (AgeMovies.Checked == false && NameMovies.Checked == false && TwelvePlus.Checked == false)
+            if (AgeMovies.Checked == false && NameMovies.Checked == false && TwelvePlus.Checked == false && RatingMovies.Checked == false)
             {
                 if (ThrillerMovies.Checked == false &&
                  ActionMovies.Checked == false &&
@@ -910,7 +965,8 @@ namespace CinemaSystemProjectB
                  HorrorMovies.Checked == false &&
                  AllMovies.Checked == false &&
                  AgeMovies.Checked == false &&
-                 NameMovies.Checked == false)
+                 NameMovies.Checked == false &&
+                 RatingMovies.Checked == false)
                 {
                     AllMovies.Checked = true;
                 }
