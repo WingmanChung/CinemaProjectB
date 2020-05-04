@@ -241,6 +241,7 @@
             this.RatingMovies.TabIndex = 93;
             this.RatingMovies.Text = "Rating";
             this.RatingMovies.UseVisualStyleBackColor = true;
+            this.RatingMovies.CheckedChanged += new System.EventHandler(this.RatingMovies_CheckedChanged);
             // 
             // AgeMovies
             // 
