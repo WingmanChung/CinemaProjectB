@@ -116,6 +116,8 @@ namespace CinemaSystemProjectB
             Menuknop.BackColor = Color.White;
             Reserveerknop.BackColor = Color.White;
 
+            new MovieSchedule().Show();
+
         }
 
         private void Startknop_Click(object sender, EventArgs e)
