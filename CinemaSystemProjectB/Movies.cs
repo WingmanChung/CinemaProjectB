@@ -38,6 +38,7 @@ namespace CinemaSystemProjectB
         private void populateItems()
         {
             //Loads json file with all movies
+
             Dictionary<string, MovieDescriptionClass> ListView = JsonConvert.DeserializeObject<Dictionary<string, MovieDescriptionClass>>(File.ReadAllText(path));
 
             //List with all keys (movie titles)
@@ -49,22 +50,29 @@ namespace CinemaSystemProjectB
                 Array.Sort(movieList);
             }
 
-            //Sorts the movies by rating from highest to lowest (Work in Progress)
+            //Sorts the dictionary from highest rating to lowest rating
             if (RatingMovies.Checked)
             {
-                Array.Sort(movieList);
+                Dictionary<string, float> rates = new Dictionary<string, float>();
+                for (int i = 0; i < movieList.Length; i++)
+                {
+                    rates.Add(ListView[movieList[i]].Title, ListView[movieList[i]].Rating);
+                }
+                rates = rates.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+                movieList = rates.Keys.ToArray();
             }
 
-                    //populate here
-                    ListItem[] listItems = new ListItem[ListView.Count];
+            //populate here
+
+            ListItem[] listItems = new ListItem[ListView.Count];
 
             //loop through each item
+
             for (int i = 0; i < listItems.Length; i++)
             {
                 listItems[i] = new ListItem();
-                
                 //load image
-                var filmCover = ListView[ListView[movieList[i]].Title].Image;
+                var filmCover = ListView[movieList[i]].Image;
                 var bytesFilm = Convert.FromBase64String(filmCover);
 
                 listItems[i].Cover = Image.FromStream(new MemoryStream(bytesFilm));
@@ -73,7 +81,7 @@ namespace CinemaSystemProjectB
                 listItems[i].Release = ListView[movieList[i]].Release;
                 listItems[i].Director = ListView[movieList[i]].Director;
                 listItems[i].FilmTechnology = ListView[movieList[i]].FilmTechnology;
-                listItems[i].Rating = ListView[movieList[i]].Rating;
+                listItems[i].Rating = ListView[movieList[i]].Rating.ToString();
                 listItems[i].Age = ListView[movieList[i]].Age;
                 listItems[i].Genre = ListView[movieList[i]].Genre;
                 //end loop
@@ -94,6 +102,7 @@ namespace CinemaSystemProjectB
         private void genreItems()
         {
             //Loads json file with all movies
+
             Dictionary<string, MovieDescriptionClass> ListView = JsonConvert.DeserializeObject<Dictionary<string, MovieDescriptionClass>>(File.ReadAllText(path));
 
             //List with all keys (movie titles)
@@ -114,6 +123,7 @@ namespace CinemaSystemProjectB
            
 
             //Populate items in the list (flowlayoutpanel)
+
             ListItem[] listItems = new ListItem[movieCount];
 
             for (int i = 0, j = 0; i < 1; i++)
@@ -121,7 +131,6 @@ namespace CinemaSystemProjectB
                 foreach (var title in movieTitles)
                 {
                     listItems[j] = new ListItem();
-                    
                     //load image
                     var filmCover = ListView[movieTitles[j]].Image;
                     var bytesFilm = Convert.FromBase64String(filmCover);
@@ -132,7 +141,7 @@ namespace CinemaSystemProjectB
                     listItems[j].Release = ListView[movieTitles[j]].Release;
                     listItems[j].Director = ListView[movieTitles[j]].Director;
                     listItems[j].FilmTechnology = ListView[movieTitles[j]].FilmTechnology;
-                    listItems[j].Rating = ListView[movieList[j]].Rating;
+                    listItems[j].Rating = ListView[movieList[j]].Rating.ToString();
                     listItems[j].Age = ListView[movieTitles[j]].Age;
                     listItems[j].Genre = ListView[movieTitles[j]].Genre;
                     //end loop
@@ -156,6 +165,7 @@ namespace CinemaSystemProjectB
         private void movieKidsItems()
         {
             //Loads json file with all movies
+
             Dictionary<string, MovieDescriptionClass> ListView = JsonConvert.DeserializeObject<Dictionary<string, MovieDescriptionClass>>(File.ReadAllText(path));
 
             //List with all keys (movie titles)
@@ -180,6 +190,7 @@ namespace CinemaSystemProjectB
                     
                     }
                     //Populate items in the list (flowlayoutpanel)
+
                     ListItem[] listItems = new ListItem[movieCount];
                     for (int i = 0, j = 0; i < 1; i++)
                     {
@@ -187,7 +198,6 @@ namespace CinemaSystemProjectB
                         foreach (var title in movieTitles)
                         {
                             listItems[j] = new ListItem();
-                            
                             //load image
                             var filmCover = ListView[movieTitles[j]].Image;
                             var bytesFilm = Convert.FromBase64String(filmCover);
@@ -198,7 +208,7 @@ namespace CinemaSystemProjectB
                             listItems[j].Release = ListView[movieTitles[j]].Release;
                             listItems[j].Director = ListView[movieTitles[j]].Director;
                             listItems[j].FilmTechnology = ListView[movieTitles[j]].FilmTechnology;
-                            listItems[i].Rating = ListView[movieList[i]].Rating;
+                            listItems[i].Rating = ListView[movieList[i]].Rating.ToString();
                             listItems[j].Age = ListView[movieTitles[j]].Age;
                             listItems[j].Genre = ListView[movieTitles[j]].Genre;
                             //end loop
@@ -236,8 +246,8 @@ namespace CinemaSystemProjectB
                         }
 
                     }
-                    
                     //Populate items in the list (flowlayoutpanel)
+
                     ListItem[] listItems = new ListItem[movieCount];
                     for (int i = 0, j = 0; i < 1; i++)
                     {
@@ -245,7 +255,6 @@ namespace CinemaSystemProjectB
                         foreach (var title in movieTitles)
                         {
                             listItems[j] = new ListItem();
-                            
                             //load image
                             var filmCover = ListView[movieTitles[j]].Image;
                             var bytesFilm = Convert.FromBase64String(filmCover);
@@ -256,7 +265,7 @@ namespace CinemaSystemProjectB
                             listItems[j].Release = ListView[movieTitles[j]].Release;
                             listItems[j].Director = ListView[movieTitles[j]].Director;
                             listItems[j].FilmTechnology = ListView[movieTitles[j]].FilmTechnology;
-                            listItems[i].Rating = ListView[movieList[i]].Rating;
+                            listItems[i].Rating = ListView[movieList[i]].Rating.ToString();
                             listItems[j].Age = ListView[movieTitles[j]].Age;
                             listItems[j].Genre = ListView[movieTitles[j]].Genre;
                             //end loop
@@ -875,38 +884,6 @@ namespace CinemaSystemProjectB
             }
         }
 
-        private void RatingMovies_CheckedChanged(object sender, EventArgs e) //Rating
-        {
-            if (RatingMovies.Checked)
-            {
-                ThrillerMovies.Checked = false;
-                ActionMovies.Checked = false;
-                RomanceMovies.Checked = false;
-                FantasyMovies.Checked = false;
-                SciFiMovies.Checked = false;
-                ComedyMovies.Checked = false;
-                AnimationMovies.Checked = false;
-                DramaMovies.Checked = false;
-                HistoryMovies.Checked = false;
-                WarMovies.Checked = false;
-                AdventureMovies.Checked = false;
-                MysteryMovies.Checked = false;
-                CrimeMovies.Checked = false;
-                FamilyMovies.Checked = false;
-                HorrorMovies.Checked = false;
-                TwelvePlus.Checked = false;
-                AllMovies.Checked = false;
-                AgeMovies.Checked = false;
-                NameMovies.Checked = false;
-                flowLayoutPanel1.Controls.Clear();
-                populateItems();
-            }
-            else
-            {
-                codeRepetitionForCategorie();
-            }
-        }
-
         private void TwelvePlus_CheckedChanged(object sender, EventArgs e)
         {
             if (TwelvePlus.Checked)
@@ -945,9 +922,7 @@ namespace CinemaSystemProjectB
         private void codeRepetitionForCategorie()
         {
             flowLayoutPanel1.Controls.Clear();
-            if (AgeMovies.Checked == false && NameMovies.Checked == false && TwelvePlus.Checked == false && RatingMovies.Checked == false)
-            {
-                if (ThrillerMovies.Checked == false &&
+            if (ThrillerMovies.Checked == false &&
                  ActionMovies.Checked == false &&
                  RomanceMovies.Checked == false &&
                  FantasyMovies.Checked == false &&
@@ -969,6 +944,38 @@ namespace CinemaSystemProjectB
                 {
                     AllMovies.Checked = true;
                 }
+        }
+
+        private void RatingMovies_CheckedChanged(object sender, EventArgs e)
+        {
+            if (RatingMovies.Checked)
+            {
+                //When All movies is checked, all genre boxes will be unchecked
+                ThrillerMovies.Checked = false;
+                ActionMovies.Checked = false;
+                RomanceMovies.Checked = false;
+                FantasyMovies.Checked = false;
+                HorrorMovies.Checked = false;
+                SciFiMovies.Checked = false;
+                ComedyMovies.Checked = false;
+                AnimationMovies.Checked = false;
+                DramaMovies.Checked = false;
+                HistoryMovies.Checked = false;
+                WarMovies.Checked = false;
+                AdventureMovies.Checked = false;
+                MysteryMovies.Checked = false;
+                CrimeMovies.Checked = false;
+                FamilyMovies.Checked = false;
+                TwelvePlus.Checked = false;
+                AgeMovies.Checked = false;
+                AllMovies.Checked = false;
+                NameMovies.Checked = false;
+                flowLayoutPanel1.Controls.Clear();
+                populateItems();
+            }
+            else
+            {
+                codeRepetitionForCategorie();
             }
         }
     }
