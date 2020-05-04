@@ -84,6 +84,12 @@
     <Compile Include="Movies.Designer.cs">
       <DependentUpon>Movies.cs</DependentUpon>
     </Compile>
+    <Compile Include="MovieSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovieSchedule.Designer.cs">
+      <DependentUpon>MovieSchedule.cs</DependentUpon>
+    </Compile>
     <Compile Include="PriceList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Movies.resx">
       <DependentUpon>Movies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieSchedule.resx">
+      <DependentUpon>MovieSchedule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PriceList.resx">
       <DependentUpon>PriceList.cs</DependentUpon>
