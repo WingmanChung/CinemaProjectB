@@ -19,7 +19,6 @@ namespace CinemaSystemProjectB
 
         public MovieDescriptionClass ListViewItems { get; set; }
 
-
         string chosenGenre;
         string chosenAge;
         string chosenAge2;
