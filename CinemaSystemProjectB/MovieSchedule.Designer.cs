@@ -58,6 +58,9 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.Time1Label = new System.Windows.Forms.Label();
+            this.Time2Label = new System.Windows.Forms.Label();
+            this.Time3Label = new System.Windows.Forms.Label();
             this.gradientLabel1 = new CinemaSystemProjectB.GradientLabel();
             this.Wittelijn = new System.Windows.Forms.Label();
             this.Bioscoopnaam = new System.Windows.Forms.Label();
@@ -190,7 +193,7 @@
             // 
             this.Screen1.BackColor = System.Drawing.Color.Yellow;
             this.Screen1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Screen1.Location = new System.Drawing.Point(55, 222);
+            this.Screen1.Location = new System.Drawing.Point(157, 221);
             this.Screen1.Name = "Screen1";
             this.Screen1.Size = new System.Drawing.Size(293, 43);
             this.Screen1.TabIndex = 70;
@@ -201,7 +204,7 @@
             // 
             this.Screen2.BackColor = System.Drawing.Color.Yellow;
             this.Screen2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Screen2.Location = new System.Drawing.Point(410, 222);
+            this.Screen2.Location = new System.Drawing.Point(456, 221);
             this.Screen2.Name = "Screen2";
             this.Screen2.Size = new System.Drawing.Size(293, 43);
             this.Screen2.TabIndex = 72;
@@ -212,7 +215,7 @@
             // 
             this.Screen3.BackColor = System.Drawing.Color.Yellow;
             this.Screen3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Screen3.Location = new System.Drawing.Point(760, 222);
+            this.Screen3.Location = new System.Drawing.Point(755, 221);
             this.Screen3.Name = "Screen3";
             this.Screen3.Size = new System.Drawing.Size(293, 43);
             this.Screen3.TabIndex = 73;
@@ -221,23 +224,23 @@
             // 
             // Screen1Schedule
             // 
-            this.Screen1Schedule.Location = new System.Drawing.Point(55, 266);
+            this.Screen1Schedule.Location = new System.Drawing.Point(157, 264);
             this.Screen1Schedule.Name = "Screen1Schedule";
-            this.Screen1Schedule.Size = new System.Drawing.Size(293, 466);
+            this.Screen1Schedule.Size = new System.Drawing.Size(293, 468);
             this.Screen1Schedule.TabIndex = 74;
             // 
             // Screen2Schedule
             // 
-            this.Screen2Schedule.Location = new System.Drawing.Point(410, 266);
+            this.Screen2Schedule.Location = new System.Drawing.Point(456, 264);
             this.Screen2Schedule.Name = "Screen2Schedule";
-            this.Screen2Schedule.Size = new System.Drawing.Size(293, 466);
+            this.Screen2Schedule.Size = new System.Drawing.Size(293, 468);
             this.Screen2Schedule.TabIndex = 75;
             // 
             // Screen3Schedule
             // 
-            this.Screen3Schedule.Location = new System.Drawing.Point(760, 266);
+            this.Screen3Schedule.Location = new System.Drawing.Point(755, 264);
             this.Screen3Schedule.Name = "Screen3Schedule";
-            this.Screen3Schedule.Size = new System.Drawing.Size(293, 466);
+            this.Screen3Schedule.Size = new System.Drawing.Size(293, 468);
             this.Screen3Schedule.TabIndex = 76;
             // 
             // label3
@@ -352,6 +355,39 @@
             this.label16.Size = new System.Drawing.Size(3, 23);
             this.label16.TabIndex = 90;
             // 
+            // Time1Label
+            // 
+            this.Time1Label.BackColor = System.Drawing.Color.Yellow;
+            this.Time1Label.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Time1Label.Location = new System.Drawing.Point(64, 265);
+            this.Time1Label.Name = "Time1Label";
+            this.Time1Label.Size = new System.Drawing.Size(92, 153);
+            this.Time1Label.TabIndex = 92;
+            this.Time1Label.Text = "18:00 uur";
+            this.Time1Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Time2Label
+            // 
+            this.Time2Label.BackColor = System.Drawing.Color.Yellow;
+            this.Time2Label.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Time2Label.Location = new System.Drawing.Point(64, 425);
+            this.Time2Label.Name = "Time2Label";
+            this.Time2Label.Size = new System.Drawing.Size(92, 153);
+            this.Time2Label.TabIndex = 93;
+            this.Time2Label.Text = "19:30 uur";
+            this.Time2Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Time3Label
+            // 
+            this.Time3Label.BackColor = System.Drawing.Color.Yellow;
+            this.Time3Label.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Time3Label.Location = new System.Drawing.Point(64, 586);
+            this.Time3Label.Name = "Time3Label";
+            this.Time3Label.Size = new System.Drawing.Size(92, 153);
+            this.Time3Label.TabIndex = 94;
+            this.Time3Label.Text = "22:00 uur";
+            this.Time3Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // gradientLabel1
             // 
             this.gradientLabel1.BeginColor = System.Drawing.Color.Black;
@@ -391,6 +427,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1106, 766);
+            this.Controls.Add(this.Time3Label);
+            this.Controls.Add(this.Time2Label);
+            this.Controls.Add(this.Time1Label);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
@@ -424,6 +463,7 @@
             this.Controls.Add(this.gradientLabel1);
             this.Name = "MovieSchedule";
             this.Text = "MovieSchedule";
+            this.Load += new System.EventHandler(this.MovieSchedule_Load);
             this.gradientLabel1.ResumeLayout(false);
             this.gradientLabel1.PerformLayout();
             this.ResumeLayout(false);
@@ -465,5 +505,8 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label Time1Label;
+        private System.Windows.Forms.Label Time2Label;
+        private System.Windows.Forms.Label Time3Label;
     }
 }
