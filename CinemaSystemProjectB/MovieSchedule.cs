@@ -591,7 +591,7 @@ namespace CinemaSystemProjectB
         //shows movieschedule of today when you open movieschedule page
         private void MovieSchedule_Load(object sender, EventArgs e)
         {
-            //
+            ScheduleScreen();
         }
     }
 }
