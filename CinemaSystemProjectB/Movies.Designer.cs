@@ -473,6 +473,7 @@
             this.Controls.Add(this.gradientLabel1);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Movies";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Movies";
             this.Load += new System.EventHandler(this.Movies_Load);
             this.gradientLabel1.ResumeLayout(false);
