@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,10 +16,77 @@ namespace CinemaSystemProjectB
     public partial class MovieSchedule : Form
     {
         const string path = @"JsonTextFile.json";
+        public int movieScheduleCount;
 
         public MovieSchedule()
         {
             InitializeComponent();
+
+            TodaySchedule.Text = DateTime.Now.ToString("dd - MM - yyyy");
+            SecondSchedule.Text = DateTime.Now.AddDays(1).ToString("dd - MM - yyyy");
+            ThirthSchedule.Text = DateTime.Now.AddDays(2).ToString("dd - MM - yyyy");
+            FourthSchedule.Text = DateTime.Now.AddDays(3).ToString("dd - MM - yyyy");
+            FifthSchedule.Text = DateTime.Now.AddDays(4).ToString("dd - MM - yyyy");
+            SixthSchedule.Text = DateTime.Now.AddDays(5).ToString("dd - MM - yyyy");
+            SeventhSchedule.Text = DateTime.Now.AddDays(6).ToString("dd - MM - yyyy");
+
+            //creates movieschedule list if it doesnt exist
+            string movieSchedulePath = @"movieSchedulesTest.txt";
+            if (!File.Exists(movieSchedulePath))
+            {
+                File.Create(movieSchedulePath);
+            }
+
+            if (!File.Exists("DateVerification.txt"))
+            {
+                using (StreamWriter datePath = File.CreateText("DateVerification.txt"))
+                {
+                    datePath.WriteLine(DateTime.Now.ToString("dd - MM - yyyy"));
+                }
+            }
+            else
+            {
+                //Checks if dates are up-to-date
+                var allLines = File.ReadLines("DateVerification.txt");
+                int fileLength = File.ReadLines(@"DateVerification.txt").Count();
+                int lineNumber = 0;
+                foreach (var lineInAllLines in allLines)
+                {
+                    if (lineNumber + 1 == fileLength)
+                    {
+                        if (lineInAllLines != DateTime.Now.ToString("dd - MM - yyyy"))
+                        {
+                            string tempFile = Path.GetTempFileName();
+
+                            using (var sr = new StreamReader("movieSchedulesTest.txt"))
+                            using (var sw = new StreamWriter(tempFile))
+                            {
+                                string line;
+                                int line_number = 0;
+                                int lines_to_delete = 9;
+
+                                while ((line = sr.ReadLine()) != null)
+                                {
+                                    line_number++;
+
+                                    if (line_number <= lines_to_delete)
+                                        continue;
+
+                                    sw.WriteLine(line);
+                                }
+                            }
+                            File.Delete("movieSchedulesTest.txt");
+                            File.Move(tempFile, "movieSchedulesTest.txt");
+                        }
+                    }
+                    lineNumber++;
+                }
+
+                //Add today's date to text file
+                StreamWriter datesFile = new StreamWriter(@"DateVerification.txt", true);
+                datesFile.WriteLine(DateTime.Now.ToString("dd - MM - yyyy"));
+                datesFile.Close();
+            }
         }
 
         private void ScheduleScreen()
@@ -29,18 +97,59 @@ namespace CinemaSystemProjectB
 
             //List with all keys (movie titles)
             var movieList = ListView.Keys.ToArray();
+            List<string> duplicateMovieList = new List<string>();
+
+            //Fills movieschedule text file with movies if there is no total of 63 movies
+            Random movieRound = new Random();
+
+            while (File.ReadLines(@"movieSchedulesTest.txt").Count() < 63)
+            {
+                StreamWriter file2 = new StreamWriter(@"movieSchedulesTest.txt", true);
+
+                int chosenRandomNumber = movieRound.Next(0, 43);
+
+                string[] technology = ListView[movieList[chosenRandomNumber]].FilmTechnology.Split(',');
+                int chosenRandomNumber2 = movieRound.Next(0, technology.Length);
+                //Method to avoid duplicates in movieschedules
+                if (duplicateMovieList.Contains(ListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]))
+                {
+                    file2.Close();
+                }
+                else
+                {
+                    duplicateMovieList.Add(ListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]);
+                    file2.WriteLine(ListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]);
+                    file2.Close();
+                }
+            }
+
+            //fills list from streamreader
+
+            List<KeyValuePair<string, string>> woorden = new List<KeyValuePair<string, string>>();
+
+            // Read the file and display it line by line.
+            StreamReader file = new StreamReader(@"movieSchedulesTest.txt");
+            while (!file.EndOfStream)
+            {
+                string[] words = file.ReadLine().Split(',');
+                for (int i = 0; i < 1; i++) //loops through each element of the array
+                {
+                    woorden.Add(new KeyValuePair<string, string>(words[i], words[i + 1]));
+                }
+            }
+            file.Close();
 
             //populate items here
 
-            MovieScheduleItem[] movieScheduleItems = new MovieScheduleItem[10];
+            MovieScheduleItem[] movieScheduleItems = new MovieScheduleItem[9];
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0, j = movieScheduleCount; i < 9; i++)
             {
                 movieScheduleItems[i] = new MovieScheduleItem();
 
-                movieScheduleItems[i].MovieTitle = ListView[movieList[i]].Title;
-                movieScheduleItems[i].FilmTechnology = ListView[movieList[i]].FilmTechnology;
-                movieScheduleItems[i].Runtime = ListView[movieList[i]].Runtime;
+                movieScheduleItems[i].MovieTitle = ListView[woorden[j].Key].Title;
+                movieScheduleItems[i].FilmTechnology = woorden[j].Value;
+                movieScheduleItems[i].Runtime = ListView[woorden[j].Key].Runtime;
                 //end loop
 
                 //fills screen 1 schedule
@@ -70,7 +179,7 @@ namespace CinemaSystemProjectB
                     }
                 }
                 //fills screen 3 schedule
-                if (i >= 6 && i < 10)
+                if (i >= 6 && i < 9)
                 {
                     //checks wheter listview is already filled or not (with preview searchresult) <- Displays list in flowlayoutpanel
                     if (Screen1Schedule.Controls.Count < 0)
@@ -82,6 +191,8 @@ namespace CinemaSystemProjectB
                         Screen3Schedule.Controls.Add(movieScheduleItems[i]);
                     }
                 }
+
+                j++;
             }
         }
 
@@ -95,37 +206,50 @@ namespace CinemaSystemProjectB
         private void TodaySchedule_Click(object sender, EventArgs e)
         {
             clearSchedules();
+            movieScheduleCount = 0;
             ScheduleScreen();
         }
 
         private void SecondSchedule_Click(object sender, EventArgs e)
         {
             clearSchedules();
+            movieScheduleCount = 9;
+            ScheduleScreen();
         }
 
         private void ThirthSchedule_Click(object sender, EventArgs e)
         {
             clearSchedules();
+            movieScheduleCount = 18;
+            ScheduleScreen();
         }
 
         private void FourthSchedule_Click(object sender, EventArgs e)
         {
             clearSchedules();
+            movieScheduleCount = 27;
+            ScheduleScreen();
         }
 
         private void FifthSchedule_Click(object sender, EventArgs e)
         {
             clearSchedules();
+            movieScheduleCount = 36;
+            ScheduleScreen();
         }
 
         private void SixthSchedule_Click(object sender, EventArgs e)
         {
             clearSchedules();
+            movieScheduleCount = 45;
+            ScheduleScreen();
         }
 
         private void SeventhSchedule_Click(object sender, EventArgs e)
         {
             clearSchedules();
+            movieScheduleCount = 54;
+            ScheduleScreen();
         }
 
         //Selecting day button effect
