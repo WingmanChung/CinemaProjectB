@@ -99,7 +99,7 @@
             this.TodaySchedule.Name = "TodaySchedule";
             this.TodaySchedule.Size = new System.Drawing.Size(149, 65);
             this.TodaySchedule.TabIndex = 63;
-            this.TodaySchedule.Text = "Vandaag";
+            this.TodaySchedule.Text = "Zo";
             this.TodaySchedule.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.TodaySchedule.Click += new System.EventHandler(this.TodaySchedule_Click);
             this.TodaySchedule.MouseEnter += new System.EventHandler(this.TodaySchedule_MouseEnter);
@@ -462,6 +462,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gradientLabel1);
             this.Name = "MovieSchedule";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MovieSchedule";
             this.Load += new System.EventHandler(this.MovieSchedule_Load);
             this.gradientLabel1.ResumeLayout(false);
