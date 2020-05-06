@@ -241,6 +241,7 @@
             this.RatingMovies.TabIndex = 93;
             this.RatingMovies.Text = "Rating";
             this.RatingMovies.UseVisualStyleBackColor = true;
+            this.RatingMovies.CheckedChanged += new System.EventHandler(this.RatingMovies_CheckedChanged);
             // 
             // AgeMovies
             // 
@@ -449,6 +450,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gradientLabel1);
             this.Name = "Movies";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Movies";
             this.Load += new System.EventHandler(this.Movies_Load);
             this.gradientLabel1.ResumeLayout(false);

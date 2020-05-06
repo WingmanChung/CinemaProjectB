@@ -53,7 +53,7 @@ namespace CinemaSystemProjectB
             Leeftijdlabel.Text = Movies[showMovie].Age;
             Technologielabel.Text = Movies[showMovie].FilmTechnology;
             RuntimeLabel.Text = Movies[showMovie].Runtime;
-            RatingLabel.Text = Movies[showMovie].Rating;
+            RatingLabel.Text = Movies[showMovie].Rating.ToString();
 
             var fileString = Movies[showMovie].Image;
             var bytes = Convert.FromBase64String(fileString);
