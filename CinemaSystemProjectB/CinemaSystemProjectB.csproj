@@ -90,6 +90,12 @@
     <Compile Include="MovieReservationAvailableMoviesItem.Designer.cs">
       <DependentUpon>MovieReservationAvailableMoviesItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="MovieReservationChosenMoviesItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MovieReservationChosenMoviesItem.Designer.cs">
+      <DependentUpon>MovieReservationChosenMoviesItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Movies.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MovieReservationAvailableMoviesItem.resx">
       <DependentUpon>MovieReservationAvailableMoviesItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieReservationChosenMoviesItem.resx">
+      <DependentUpon>MovieReservationChosenMoviesItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Movies.resx">
       <DependentUpon>Movies.cs</DependentUpon>

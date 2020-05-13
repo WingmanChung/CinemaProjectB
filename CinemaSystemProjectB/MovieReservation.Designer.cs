@@ -124,7 +124,7 @@
             // availableMoviesPanel
             // 
             this.availableMoviesPanel.AutoScroll = true;
-            this.availableMoviesPanel.Location = new System.Drawing.Point(102, 248);
+            this.availableMoviesPanel.Location = new System.Drawing.Point(101, 248);
             this.availableMoviesPanel.Name = "availableMoviesPanel";
             this.availableMoviesPanel.Size = new System.Drawing.Size(450, 412);
             this.availableMoviesPanel.TabIndex = 66;
@@ -156,6 +156,8 @@
             this.Page1NextButton.TabIndex = 69;
             this.Page1NextButton.Text = "Volgende";
             this.Page1NextButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Page1NextButton.MouseEnter += new System.EventHandler(this.Page1NextButton_MouseEnter);
+            this.Page1NextButton.MouseLeave += new System.EventHandler(this.Page1NextButton_MouseLeave);
             // 
             // gradientLabel1
             // 

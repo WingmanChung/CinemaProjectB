@@ -1,14 +1,9 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CinemaSystemProjectB
@@ -311,6 +306,7 @@ namespace CinemaSystemProjectB
             Filmsknop.BackColor = Color.White;
             Prijzenknop.BackColor = Color.White;
             Menuknop.BackColor = Color.White;
+
             new MovieReservation().Show();
         }
     }

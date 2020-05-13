@@ -1,21 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CinemaSystemProjectB
 {
     public partial class MovieReservationAvailableMoviesItem : UserControl
     {
-        public static string chosenMovieForPanel;
-        public static string chosenMovieTechnology;
-        public static string chosenMovieRuntime;
-        public static string chosenMovieDate;
+		public static MovieReservationAvailableMoviesItem chosenItem;
         public static bool chosenMoviePanelBool = false;
 
         public MovieReservationAvailableMoviesItem()
@@ -23,7 +15,8 @@ namespace CinemaSystemProjectB
             InitializeComponent();
         }
 
-        //properties
+		//properties
+		public bool Chosen { get; set; } = false;
 
         private string _movietitle;
         private string _filmtechnology;
@@ -60,14 +53,25 @@ namespace CinemaSystemProjectB
         }
         private void YellowStripe_MouseClick(object sender, MouseEventArgs e)
         {
-            chosenMovieForPanel = Filmtitle.Text;
-            chosenMovieTechnology = Filmtechnology.Text;
-            chosenMovieRuntime = runtime.Text;
-            chosenMovieDate = date.Text;
+			chosenItem = this;
             chosenMoviePanelBool = true;
 
-            MessageBox.Show(Filmtitle.Text);
-        }
+            this.BackColor = Color.FromArgb(64, 0, 0);
+
+            Filmtitle.BackColor = Color.FromArgb(64, 0, 0);
+
+            Filmtechnology.BackColor = Color.FromArgb(64, 0, 0);
+
+            runtime.BackColor = Color.FromArgb(64, 0, 0);
+
+            date.BackColor = Color.FromArgb(64, 0, 0);
+
+            if (!Chosen)
+                (this.ParentForm as MovieReservation).chosenMovies();
+
+			Chosen = true;
+
+		}
         private void MovieReservationAvailableMoviesItem_MouseEnter(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(64, 0, 0);
@@ -84,15 +88,22 @@ namespace CinemaSystemProjectB
 
         private void MovieReservationAvailableMoviesItem_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = Color.Transparent;
+            if (!Chosen)
+			    SetDefaultColor();
 
-            Filmtitle.BackColor = Color.Transparent;
+		}
 
-            Filmtechnology.BackColor= Color.Transparent;
+        public void SetDefaultColor()
+		{
+			this.BackColor = Color.Transparent;
 
-            runtime.BackColor = Color.Transparent;
+			Filmtitle.BackColor = Color.Transparent;
 
-            date.BackColor = Color.Transparent;
-        }
+			Filmtechnology.BackColor = Color.Transparent;
+
+			runtime.BackColor = Color.Transparent;
+
+			date.BackColor = Color.Transparent;
+		}
     }
 }
