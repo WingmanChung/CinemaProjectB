@@ -71,7 +71,7 @@ namespace CinemaSystemProjectB
 
         private void ReservationButton_Click(object sender, EventArgs e)
         {
-            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            /*var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             var stringChars = new char[8];
             var random = new Random();
 
@@ -83,7 +83,9 @@ namespace CinemaSystemProjectB
             var finalString = new String(stringChars);
 
             DateTime dateToday = DateTime.Today;
-            MessageBox.Show(finalString + dateToday.ToString("ddMMyyyy"), "Reservatie code");
+            MessageBox.Show(finalString + dateToday.ToString("ddMMyyyy"), "Reservatie code");*/
+
+            new MovieReservation().Show();
         }
 
     }
