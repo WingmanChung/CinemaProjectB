@@ -32,7 +32,7 @@
             this.Filmtechnology = new System.Windows.Forms.Label();
             this.runtime = new System.Windows.Forms.Label();
             this.date = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.YellowStripe = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Filmtitle
@@ -45,7 +45,7 @@
             this.Filmtitle.Size = new System.Drawing.Size(419, 53);
             this.Filmtitle.TabIndex = 1;
             this.Filmtitle.Text = "FIlmtitel";
-            this.Filmtitle.Click += new System.EventHandler(this.Filmtitle_Click);
+            this.Filmtitle.MouseClick += new System.Windows.Forms.MouseEventHandler(this.YellowStripe_MouseClick);
             this.Filmtitle.MouseEnter += new System.EventHandler(this.MovieReservationAvailableMoviesItem_MouseEnter);
             this.Filmtitle.MouseLeave += new System.EventHandler(this.MovieReservationAvailableMoviesItem_MouseLeave);
             // 
@@ -58,7 +58,7 @@
             this.Filmtechnology.Size = new System.Drawing.Size(137, 28);
             this.Filmtechnology.TabIndex = 2;
             this.Filmtechnology.Text = "2D/3D";
-            this.Filmtechnology.Click += new System.EventHandler(this.Filmtitle_Click);
+            this.Filmtechnology.MouseClick += new System.Windows.Forms.MouseEventHandler(this.YellowStripe_MouseClick);
             this.Filmtechnology.MouseEnter += new System.EventHandler(this.MovieReservationAvailableMoviesItem_MouseEnter);
             this.Filmtechnology.MouseLeave += new System.EventHandler(this.MovieReservationAvailableMoviesItem_MouseLeave);
             // 
@@ -71,7 +71,7 @@
             this.runtime.Size = new System.Drawing.Size(125, 28);
             this.runtime.TabIndex = 3;
             this.runtime.Text = "Filmduur";
-            this.runtime.Click += new System.EventHandler(this.Filmtitle_Click);
+            this.runtime.MouseClick += new System.Windows.Forms.MouseEventHandler(this.YellowStripe_MouseClick);
             this.runtime.MouseEnter += new System.EventHandler(this.MovieReservationAvailableMoviesItem_MouseEnter);
             this.runtime.MouseLeave += new System.EventHandler(this.MovieReservationAvailableMoviesItem_MouseLeave);
             // 
@@ -84,25 +84,25 @@
             this.date.Size = new System.Drawing.Size(125, 28);
             this.date.TabIndex = 4;
             this.date.Text = "Datum";
-            this.date.Click += new System.EventHandler(this.Filmtitle_Click);
+            this.date.MouseClick += new System.Windows.Forms.MouseEventHandler(this.YellowStripe_MouseClick);
             this.date.MouseEnter += new System.EventHandler(this.MovieReservationAvailableMoviesItem_MouseEnter);
             this.date.MouseLeave += new System.EventHandler(this.MovieReservationAvailableMoviesItem_MouseLeave);
             // 
-            // label2
+            // YellowStripe
             // 
-            this.label2.BackColor = System.Drawing.Color.Yellow;
-            this.label2.Location = new System.Drawing.Point(0, 129);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(453, 3);
-            this.label2.TabIndex = 5;
-            this.label2.Click += new System.EventHandler(this.Filmtitle_Click);
+            this.YellowStripe.BackColor = System.Drawing.Color.Yellow;
+            this.YellowStripe.Location = new System.Drawing.Point(0, 129);
+            this.YellowStripe.Name = "YellowStripe";
+            this.YellowStripe.Size = new System.Drawing.Size(453, 3);
+            this.YellowStripe.TabIndex = 5;
+            this.YellowStripe.MouseClick += new System.Windows.Forms.MouseEventHandler(this.YellowStripe_MouseClick);
             // 
             // MovieReservationAvailableMoviesItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.YellowStripe);
             this.Controls.Add(this.date);
             this.Controls.Add(this.runtime);
             this.Controls.Add(this.Filmtechnology);
@@ -121,6 +121,6 @@
         private System.Windows.Forms.Label Filmtechnology;
         private System.Windows.Forms.Label runtime;
         private System.Windows.Forms.Label date;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label YellowStripe;
     }
 }

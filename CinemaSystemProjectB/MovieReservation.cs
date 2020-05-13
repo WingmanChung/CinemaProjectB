@@ -6,6 +6,8 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -16,76 +18,37 @@ namespace CinemaSystemProjectB
     public partial class MovieReservation : Form
     {
         const string path = @"JsonTextFile.json";
-
-        bool activateChosenMoviePanel = MovieReservationAvailableMoviesItem.chosenMoviePanelBool;
+        bool swapping = MovieReservationAvailableMoviesItem.chosenMoviePanelBool;
         public MovieReservation()
         {
             InitializeComponent();
 
-            //Loads json file with all movies
-
-            Dictionary<string, MovieDescriptionClass> ListView = JsonConvert.DeserializeObject<Dictionary<string, MovieDescriptionClass>>(File.ReadAllText(path));
-
-            //List with all keys (movie titles)
-            var movieList = ListView.Keys.ToArray();
-            List<string> duplicateMovieList = new List<string>();
-
-            //Fills movieschedule text file with movies if there is no total of 63 movies
-            Random movieRound = new Random();
-
-            while (File.ReadLines(@"movieSchedulesTest.txt").Count() < 63)
-            {
-                StreamWriter file2 = new StreamWriter(@"movieSchedulesTest.txt", true);
-
-                int chosenRandomNumber = movieRound.Next(0, 43);
-
-                string[] technology = ListView[movieList[chosenRandomNumber]].FilmTechnology.Split(',');
-                int chosenRandomNumber2 = movieRound.Next(0, technology.Length);
-                //Method to avoid duplicates in movieschedules
-                if (duplicateMovieList.Contains(ListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]))
-                {
-                    file2.Close();
-                }
-                else
-                {
-                    duplicateMovieList.Add(ListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]);
-                    file2.WriteLine(ListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]);
-                    file2.Close();
-                }
-            }
-
             AvailableMovies();
-            if (activateChosenMoviePanel == true)
-            {
-                chosenMovies();
-            }
         }
-       
+
         int row = 0;
         private void chosenMovies()
         {
+
             string selectedMovieTitle = MovieReservationAvailableMoviesItem.chosenMovieForPanel;
             string selectedMovieTechnology = MovieReservationAvailableMoviesItem.chosenMovieTechnology;
             string selectedMovieRuntime = MovieReservationAvailableMoviesItem.chosenMovieRuntime;
             string selectedMovieDate = MovieReservationAvailableMoviesItem.chosenMovieDate;
+
             //populate items here
             MovieReservationAvailableMoviesItem[] MovieReservationChosenMoviesItems = new MovieReservationAvailableMoviesItem[1];
 
-            for (int i = 0; i < MovieReservationChosenMoviesItems.Length; i++)
+            for (int i = 0; i < 1; i++)
             {
+                MovieReservationChosenMoviesItems[row] = new MovieReservationAvailableMoviesItem();
+
                 MovieReservationChosenMoviesItems[row].MovieTitle = selectedMovieTitle;
                 MovieReservationChosenMoviesItems[row].FilmTechnology = selectedMovieTechnology;
                 MovieReservationChosenMoviesItems[row].Runtime = selectedMovieRuntime;
                 MovieReservationChosenMoviesItems[row].Date = selectedMovieDate;
             }
-            if (chosenMoviesPanel.Controls.Count < 0)
-            {
-                chosenMoviesPanel.Controls.Clear();
-            }
-            else
-            {
-                chosenMoviesPanel.Controls.Add(MovieReservationChosenMoviesItems[row]);
-            }
+            
+            chosenMoviesPanel.Controls.Add(MovieReservationChosenMoviesItems[row]);
 
             row++;
         }
@@ -99,6 +62,7 @@ namespace CinemaSystemProjectB
             //fills list from streamreader
 
             List<KeyValuePair<string, int>> availableMoviesList = new List<KeyValuePair<string, int>>();
+            List<string> technologies = new List<string>();
 
             // Read the file and display it line by line.
             StreamReader file = new StreamReader(@"movieSchedulesTest.txt");
@@ -109,6 +73,7 @@ namespace CinemaSystemProjectB
                 for (int i = 0; i < 1; i++) //loops through each element of the array
                 {
                     availableMoviesList.Add(new KeyValuePair<string, int>(words[i], count));
+                    technologies.Add(words[i + 1]);
                     count++;
                 }
             }
@@ -124,7 +89,7 @@ namespace CinemaSystemProjectB
                 MovieReservationAvailableMoviesItems[i] = new MovieReservationAvailableMoviesItem();
 
                 MovieReservationAvailableMoviesItems[i].MovieTitle = ListView[availableMoviesList[i].Key].Title;
-                MovieReservationAvailableMoviesItems[i].FilmTechnology = ListView[availableMoviesList[i].Key].FilmTechnology;
+                MovieReservationAvailableMoviesItems[i].FilmTechnology = technologies[i];
                 MovieReservationAvailableMoviesItems[i].Runtime = ListView[availableMoviesList[i].Key].Runtime;
                 
                 if(availableMoviesList[i].Value >= 0 && availableMoviesList[i].Value < 9)

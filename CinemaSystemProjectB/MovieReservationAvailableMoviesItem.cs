@@ -17,6 +17,7 @@ namespace CinemaSystemProjectB
         public static string chosenMovieRuntime;
         public static string chosenMovieDate;
         public static bool chosenMoviePanelBool = false;
+
         public MovieReservationAvailableMoviesItem()
         {
             InitializeComponent();
@@ -57,16 +58,16 @@ namespace CinemaSystemProjectB
             get { return _Date; }
             set { _Date = value; date.Text = value; }
         }
-
-        private void Filmtitle_Click(object sender, EventArgs e)
+        private void YellowStripe_MouseClick(object sender, MouseEventArgs e)
         {
             chosenMovieForPanel = Filmtitle.Text;
             chosenMovieTechnology = Filmtechnology.Text;
             chosenMovieRuntime = runtime.Text;
             chosenMovieDate = date.Text;
             chosenMoviePanelBool = true;
-        }
 
+            MessageBox.Show(Filmtitle.Text);
+        }
         private void MovieReservationAvailableMoviesItem_MouseEnter(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(64, 0, 0);
