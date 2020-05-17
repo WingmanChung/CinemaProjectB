@@ -28,6 +28,8 @@ namespace CinemaSystemProjectB
 
 			AvailableMovies();
 
+			
+
 			//if there are zero movies selected, then the next page button won't work
 			NextPageButton.Enabled = false;
 		}
@@ -104,6 +106,21 @@ namespace CinemaSystemProjectB
 				SelectPeopleItems[i].Date = Temp[i][j + 3];
 
 				SelectPeoplePanel.Controls.Add(SelectPeopleItems[i]);
+			}
+
+			//fills food menu page with all chosen movies
+			for (int i = 0, j = 0; i < Temp.Count; i++)
+			{
+				FoodMenuMovieItem[] FoodMenuMovieItems = new FoodMenuMovieItem[Temp.Count];
+
+				FoodMenuMovieItems[i] = new FoodMenuMovieItem(chosenItem);
+
+				FoodMenuMovieItems[i].MovieTitle = Temp[i][j];
+				FoodMenuMovieItems[i].FilmTechnology = Temp[i][j + 1];
+				FoodMenuMovieItems[i].Runtime = Temp[i][j + 2];
+				FoodMenuMovieItems[i].Date = Temp[i][j + 3];
+
+				FoodMenuPanel.Controls.Add(FoodMenuMovieItems[i]);
 			}
 		}
 
@@ -242,12 +259,18 @@ namespace CinemaSystemProjectB
 			if (page > 0)
 			{
 				PreviousPageButton.Visible = true;
-			}
+				//if the visible page is selecting people page, then it runs the function to load all movies in the panel
+				if (page == 1)
+				{
+					SelectPeople();
+					NextPageButton.Enabled = false;
+				}
 
-			//if the visible page is selecting people page, then it runs the function to load all movies in the panel
-			if (page == 1)
-			{
-				SelectPeople();
+				//if page is 2 (snack & drink menu) then it changes the text of MovieReservationLabel
+				if(page == 2)
+				{
+					MovieReservationLabel.Text = "Snack reservering";
+				}
 			}
 		}
 
@@ -256,7 +279,19 @@ namespace CinemaSystemProjectB
 			//While current page is not the first page -> Previous button will work
 			if (page > 0)
 			{
-				pages[--page].BringToFront();
+				if(page == 1)
+				{
+					//Warning to make sure the user understands the consequence of pressing the "previous page" button
+					DialogResult dialogResult = MessageBox.Show("Weet u zeker dat u terug naar de vorige pagina wilt gaan? Zo ja, dan worden uw geselecteerde keuzes verwijderd.", "Waarschuwing", MessageBoxButtons.YesNo);
+					if (dialogResult == DialogResult.Yes)
+					{
+						pages[--page].BringToFront();
+					}
+				}
+				else
+				{
+					pages[--page].BringToFront();
+				}
 			}
 
 			//Determines wether the return button is visible or not
@@ -264,6 +299,32 @@ namespace CinemaSystemProjectB
 			{
 				PreviousPageButton.Visible = false;
 			}
+		}
+
+
+		public void checkAllBoxes()
+		{
+			//checks if all comboboxes are filled else the nextpagebutton will remain disabled
+			int countBoxes = 0;
+			foreach (SelectPeopleItem movie in SelectPeoplePanel.Controls)
+			{
+				if (movie.ComboBoxAdult == null &&
+					movie.ComboBoxKids == null &&
+					movie.ComboBoxStudent == null &&
+					movie.ComboBoxSenior == null)
+				{
+					countBoxes++;
+				}
+			}
+			if(countBoxes == 0)
+			{
+				NextPageButton.Enabled = true;
+			}
+		}
+
+		public void FoodBoxes()
+		{
+
 		}
 
 		private void PreviousPageButton_MouseEnter(object sender, EventArgs e)
@@ -283,10 +344,7 @@ namespace CinemaSystemProjectB
 
 		private void DisclaimerButton_Click(object sender, EventArgs e)
 		{
-
 			new Disclaimer().ShowDialog();
-			
-
 		}
 
 		private void DisclaimerButton_MouseEnter(object sender, EventArgs e)

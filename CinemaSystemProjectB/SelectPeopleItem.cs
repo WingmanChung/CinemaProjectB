@@ -7,7 +7,7 @@ namespace CinemaSystemProjectB
 {
 	public partial class SelectPeopleItem : UserControl
     {
-        public SelectPeopleItem(MovieReservationAvailableMoviesItem chosenItem)
+		public SelectPeopleItem(MovieReservationAvailableMoviesItem chosenItem)
         {
             InitializeComponent();
 		}
@@ -16,6 +16,9 @@ namespace CinemaSystemProjectB
 		private string _filmtechnology;
 		private string _runtime;
 		private string _Date;
+		private string _comboBoxAdult;
+		private string _comboBoxKids;
+		private string _comboBoxStudent;
 
 		[Category("Custom Props")]
 		public string MovieTitle
@@ -45,6 +48,37 @@ namespace CinemaSystemProjectB
 			set { _Date = value; date.Text = value; }
 		}
 
+		[Category("Custom Props")]
+		public string ComboBoxAdult
+		{
+			get { return _comboBoxAdult; }
+			set { _comboBoxAdult = value; comboBoxAdult.Text = ""; }
+		}
+
+		[Category("Custom Props")]
+		public string ComboBoxKids
+		{
+			get { return _comboBoxKids; }
+			set { _comboBoxKids = value; comboBoxKids.Text = ""; }
+		}
+
+		[Category("Custom Props")]
+		public string ComboBoxStudent
+		{
+			get { return _comboBoxStudent; }
+			set { _comboBoxStudent = value; comboBoxStudent.Text = ""; }
+		}
+
+		[Category("Custom Props")]
+		private string _comboBoxSenior;
+
+		public string ComboBoxSenior
+		{
+			get { return _comboBoxSenior; }
+			set { _comboBoxSenior = value; comboBoxSenior.Text = ""; }
+		}
+
+
 		public void CheckIfZero()
 		{
 			//checks if the selected items in step 1 are 0 or not. If yes -> show message and reset selected items
@@ -67,6 +101,14 @@ namespace CinemaSystemProjectB
 			}
 		}
 
+		public void AllFields()
+		{
+			if(ComboBoxAdult != null && ComboBoxKids != null && ComboBoxStudent != null && ComboBoxSenior != null)
+			{
+				(this.ParentForm as MovieReservation).checkAllBoxes();
+			}
+		}
+
 		private void comboBoxAdult_MouseClick(object sender, MouseEventArgs e)
 		{
 			//if adult combobox is empty, fill it
@@ -86,7 +128,9 @@ namespace CinemaSystemProjectB
 					comboBoxStudent.ResetText();
 				}
 			}
-		}
+			ComboBoxAdult = comboBoxAdult.SelectedIndex.ToString();
+			AllFields();
+	}
 
 		private void comboBoxKids_MouseClick(object sender, MouseEventArgs e)
 		{
@@ -98,6 +142,8 @@ namespace CinemaSystemProjectB
 					comboBoxKids.Items.Add(i);
 				}
 			}
+			ComboBoxKids = comboBoxKids.SelectedIndex.ToString();
+			AllFields();
 		}
 
 		private void comboBoxStudent_MouseClick(object sender, MouseEventArgs e)
@@ -124,8 +170,10 @@ namespace CinemaSystemProjectB
 					}
 				}
 			}
+			ComboBoxStudent = comboBoxKids.SelectedIndex.ToString();
 			CheckIfZero();
-		}
+			AllFields();
+	}
 
 		private void comboBoxSenior_MouseClick(object sender, MouseEventArgs e)
 		{
@@ -151,7 +199,9 @@ namespace CinemaSystemProjectB
 					}
 				}
 			}
+			ComboBoxSenior = comboBoxKids.SelectedIndex.ToString();
 			CheckIfZero();
+			AllFields();
 		}
 	}
 }

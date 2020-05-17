@@ -51,6 +51,7 @@
             this.SnackMenuLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.FoodMenuPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.gradientLabel1 = new CinemaSystemProjectB.GradientLabel();
             this.DisclaimerButton = new System.Windows.Forms.Label();
             this.RoadMapButton = new System.Windows.Forms.Label();
@@ -254,6 +255,7 @@
             // 
             // PageNumber3
             // 
+            this.PageNumber3.Controls.Add(this.FoodMenuPanel);
             this.PageNumber3.Controls.Add(this.SnackMenuLabel);
             this.PageNumber3.Controls.Add(this.label6);
             this.PageNumber3.Controls.Add(this.label2);
@@ -285,10 +287,18 @@
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.Maroon;
-            this.label2.Location = new System.Drawing.Point(40, 38);
+            this.label2.Location = new System.Drawing.Point(40, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(921, 4);
             this.label2.TabIndex = 64;
+            // 
+            // FoodMenuPanel
+            // 
+            this.FoodMenuPanel.AutoScroll = true;
+            this.FoodMenuPanel.Location = new System.Drawing.Point(40, 44);
+            this.FoodMenuPanel.Name = "FoodMenuPanel";
+            this.FoodMenuPanel.Size = new System.Drawing.Size(921, 437);
+            this.FoodMenuPanel.TabIndex = 70;
             // 
             // gradientLabel1
             // 
@@ -361,9 +371,9 @@
             this.Controls.Add(this.Linkerkolom);
             this.Controls.Add(this.Wittelijn);
             this.Controls.Add(this.gradientLabel1);
+            this.Controls.Add(this.PageNumber3);
             this.Controls.Add(this.PageNumber1);
             this.Controls.Add(this.PageNumber2);
-            this.Controls.Add(this.PageNumber3);
             this.Name = "MovieReservation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MovieReservation";
@@ -409,5 +419,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label RoadMapButton;
         private System.Windows.Forms.Label DisclaimerButton;
+        private System.Windows.Forms.FlowLayoutPanel FoodMenuPanel;
     }
 }

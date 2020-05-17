@@ -251,9 +251,9 @@
             this.ChooseSeatsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ChooseSeatsButton.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ChooseSeatsButton.ForeColor = System.Drawing.Color.Black;
-            this.ChooseSeatsButton.Location = new System.Drawing.Point(667, 156);
+            this.ChooseSeatsButton.Location = new System.Drawing.Point(658, 166);
             this.ChooseSeatsButton.Name = "ChooseSeatsButton";
-            this.ChooseSeatsButton.Size = new System.Drawing.Size(173, 49);
+            this.ChooseSeatsButton.Size = new System.Drawing.Size(195, 39);
             this.ChooseSeatsButton.TabIndex = 29;
             this.ChooseSeatsButton.Text = "Kies zitplaatsen";
             this.ChooseSeatsButton.UseVisualStyleBackColor = false;
