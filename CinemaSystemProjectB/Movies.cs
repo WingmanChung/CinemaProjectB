@@ -1,16 +1,17 @@
-﻿using System;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+<<<<<<< HEAD
 using System.IO;
 using System.Threading;
 using System.Collections;
+=======
+>>>>>>> d7b7bd0d2428bd020caa33dd085881b7eb093dba
 
 namespace CinemaSystemProjectB
 {

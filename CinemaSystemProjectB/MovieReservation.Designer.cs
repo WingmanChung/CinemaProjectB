@@ -39,9 +39,18 @@
             this.availableMoviesPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
             this.chosenMoviesPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.Page1NextButton = new System.Windows.Forms.Label();
+            this.NextPageButton = new System.Windows.Forms.Label();
+            this.PageNumber1 = new System.Windows.Forms.Panel();
+            this.PageNumber2 = new System.Windows.Forms.Panel();
+            this.SelectPeoplePanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.SelectPeopleLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.page2RedTopLine = new System.Windows.Forms.Label();
+            this.PreviousPageButton = new System.Windows.Forms.Label();
             this.gradientLabel1 = new CinemaSystemProjectB.GradientLabel();
             this.Bioscoopnaam = new System.Windows.Forms.Label();
+            this.PageNumber1.SuspendLayout();
+            this.PageNumber2.SuspendLayout();
             this.gradientLabel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,7 +95,7 @@
             this.AvailableMoviesLabel.AutoSize = true;
             this.AvailableMoviesLabel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AvailableMoviesLabel.ForeColor = System.Drawing.Color.Yellow;
-            this.AvailableMoviesLabel.Location = new System.Drawing.Point(229, 221);
+            this.AvailableMoviesLabel.Location = new System.Drawing.Point(178, 15);
             this.AvailableMoviesLabel.Name = "AvailableMoviesLabel";
             this.AvailableMoviesLabel.Size = new System.Drawing.Size(176, 22);
             this.AvailableMoviesLabel.TabIndex = 62;
@@ -96,9 +105,9 @@
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.Maroon;
-            this.label3.Location = new System.Drawing.Point(97, 243);
+            this.label3.Location = new System.Drawing.Point(39, 39);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(921, 2);
+            this.label3.Size = new System.Drawing.Size(921, 4);
             this.label3.TabIndex = 63;
             // 
             // chosenMoviesLabel
@@ -106,7 +115,7 @@
             this.chosenMoviesLabel.AutoSize = true;
             this.chosenMoviesLabel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chosenMoviesLabel.ForeColor = System.Drawing.Color.Yellow;
-            this.chosenMoviesLabel.Location = new System.Drawing.Point(721, 221);
+            this.chosenMoviesLabel.Location = new System.Drawing.Point(663, 15);
             this.chosenMoviesLabel.Name = "chosenMoviesLabel";
             this.chosenMoviesLabel.Size = new System.Drawing.Size(141, 22);
             this.chosenMoviesLabel.TabIndex = 64;
@@ -116,46 +125,125 @@
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.Maroon;
-            this.label4.Location = new System.Drawing.Point(554, 245);
+            this.label4.Location = new System.Drawing.Point(495, 41);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(2, 420);
+            this.label4.Size = new System.Drawing.Size(2, 440);
             this.label4.TabIndex = 65;
             // 
             // availableMoviesPanel
             // 
             this.availableMoviesPanel.AutoScroll = true;
-            this.availableMoviesPanel.Location = new System.Drawing.Point(102, 248);
+            this.availableMoviesPanel.Location = new System.Drawing.Point(43, 44);
             this.availableMoviesPanel.Name = "availableMoviesPanel";
-            this.availableMoviesPanel.Size = new System.Drawing.Size(450, 412);
+            this.availableMoviesPanel.Size = new System.Drawing.Size(450, 434);
             this.availableMoviesPanel.TabIndex = 66;
             // 
             // label5
             // 
             this.label5.BackColor = System.Drawing.Color.Maroon;
-            this.label5.Location = new System.Drawing.Point(97, 665);
+            this.label5.Location = new System.Drawing.Point(39, 481);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(921, 2);
+            this.label5.Size = new System.Drawing.Size(921, 4);
             this.label5.TabIndex = 67;
             // 
             // chosenMoviesPanel
             // 
             this.chosenMoviesPanel.AutoScroll = true;
-            this.chosenMoviesPanel.Location = new System.Drawing.Point(559, 248);
+            this.chosenMoviesPanel.Location = new System.Drawing.Point(498, 44);
             this.chosenMoviesPanel.Name = "chosenMoviesPanel";
-            this.chosenMoviesPanel.Size = new System.Drawing.Size(453, 412);
+            this.chosenMoviesPanel.Size = new System.Drawing.Size(453, 434);
             this.chosenMoviesPanel.TabIndex = 68;
             // 
-            // Page1NextButton
+            // NextPageButton
             // 
-            this.Page1NextButton.BackColor = System.Drawing.Color.Yellow;
-            this.Page1NextButton.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Page1NextButton.ForeColor = System.Drawing.Color.Black;
-            this.Page1NextButton.Location = new System.Drawing.Point(875, 685);
-            this.Page1NextButton.Name = "Page1NextButton";
-            this.Page1NextButton.Size = new System.Drawing.Size(140, 39);
-            this.Page1NextButton.TabIndex = 69;
-            this.Page1NextButton.Text = "Volgende";
-            this.Page1NextButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.NextPageButton.BackColor = System.Drawing.Color.Yellow;
+            this.NextPageButton.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NextPageButton.ForeColor = System.Drawing.Color.Black;
+            this.NextPageButton.Location = new System.Drawing.Point(875, 685);
+            this.NextPageButton.Name = "NextPageButton";
+            this.NextPageButton.Size = new System.Drawing.Size(140, 39);
+            this.NextPageButton.TabIndex = 69;
+            this.NextPageButton.Text = "Volgende";
+            this.NextPageButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.NextPageButton.Click += new System.EventHandler(this.NextPageButton_Click);
+            this.NextPageButton.MouseEnter += new System.EventHandler(this.Page1NextButton_MouseEnter);
+            this.NextPageButton.MouseLeave += new System.EventHandler(this.Page1NextButton_MouseLeave);
+            // 
+            // PageNumber1
+            // 
+            this.PageNumber1.Controls.Add(this.AvailableMoviesLabel);
+            this.PageNumber1.Controls.Add(this.availableMoviesPanel);
+            this.PageNumber1.Controls.Add(this.chosenMoviesPanel);
+            this.PageNumber1.Controls.Add(this.chosenMoviesLabel);
+            this.PageNumber1.Controls.Add(this.label5);
+            this.PageNumber1.Controls.Add(this.label3);
+            this.PageNumber1.Controls.Add(this.label4);
+            this.PageNumber1.Location = new System.Drawing.Point(59, 182);
+            this.PageNumber1.Name = "PageNumber1";
+            this.PageNumber1.Size = new System.Drawing.Size(991, 500);
+            this.PageNumber1.TabIndex = 70;
+            // 
+            // PageNumber2
+            // 
+            this.PageNumber2.Controls.Add(this.SelectPeoplePanel);
+            this.PageNumber2.Controls.Add(this.SelectPeopleLabel);
+            this.PageNumber2.Controls.Add(this.label1);
+            this.PageNumber2.Controls.Add(this.page2RedTopLine);
+            this.PageNumber2.Location = new System.Drawing.Point(59, 182);
+            this.PageNumber2.Name = "PageNumber2";
+            this.PageNumber2.Size = new System.Drawing.Size(991, 500);
+            this.PageNumber2.TabIndex = 69;
+            // 
+            // SelectPeoplePanel
+            // 
+            this.SelectPeoplePanel.AutoScroll = true;
+            this.SelectPeoplePanel.Location = new System.Drawing.Point(42, 44);
+            this.SelectPeoplePanel.Name = "SelectPeoplePanel";
+            this.SelectPeoplePanel.Size = new System.Drawing.Size(914, 435);
+            this.SelectPeoplePanel.TabIndex = 67;
+            // 
+            // SelectPeopleLabel
+            // 
+            this.SelectPeopleLabel.AutoSize = true;
+            this.SelectPeopleLabel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SelectPeopleLabel.ForeColor = System.Drawing.Color.Yellow;
+            this.SelectPeopleLabel.Location = new System.Drawing.Point(319, 15);
+            this.SelectPeopleLabel.Name = "SelectPeopleLabel";
+            this.SelectPeopleLabel.Size = new System.Drawing.Size(326, 22);
+            this.SelectPeopleLabel.TabIndex = 66;
+            this.SelectPeopleLabel.Text = "Selecteer aantal personen per film";
+            this.SelectPeopleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Maroon;
+            this.label1.Location = new System.Drawing.Point(40, 481);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(921, 4);
+            this.label1.TabIndex = 65;
+            // 
+            // page2RedTopLine
+            // 
+            this.page2RedTopLine.BackColor = System.Drawing.Color.Maroon;
+            this.page2RedTopLine.Location = new System.Drawing.Point(40, 39);
+            this.page2RedTopLine.Name = "page2RedTopLine";
+            this.page2RedTopLine.Size = new System.Drawing.Size(921, 4);
+            this.page2RedTopLine.TabIndex = 64;
+            // 
+            // PreviousPageButton
+            // 
+            this.PreviousPageButton.BackColor = System.Drawing.Color.Yellow;
+            this.PreviousPageButton.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PreviousPageButton.ForeColor = System.Drawing.Color.Black;
+            this.PreviousPageButton.Location = new System.Drawing.Point(99, 685);
+            this.PreviousPageButton.Name = "PreviousPageButton";
+            this.PreviousPageButton.Size = new System.Drawing.Size(140, 39);
+            this.PreviousPageButton.TabIndex = 71;
+            this.PreviousPageButton.Text = "Terug";
+            this.PreviousPageButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PreviousPageButton.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PreviousPageButton_MouseClick);
+            this.PreviousPageButton.MouseEnter += new System.EventHandler(this.PreviousPageButton_MouseEnter);
+            this.PreviousPageButton.MouseLeave += new System.EventHandler(this.PreviousPageButton_MouseLeave);
             // 
             // gradientLabel1
             // 
@@ -187,26 +275,26 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1107, 747);
-            this.Controls.Add(this.Page1NextButton);
-            this.Controls.Add(this.chosenMoviesPanel);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.availableMoviesPanel);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.chosenMoviesLabel);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.AvailableMoviesLabel);
+            this.Controls.Add(this.PreviousPageButton);
+            this.Controls.Add(this.NextPageButton);
             this.Controls.Add(this.MovieReservationLabel);
             this.Controls.Add(this.Rechterkolom);
             this.Controls.Add(this.Linkerkolom);
             this.Controls.Add(this.Wittelijn);
             this.Controls.Add(this.gradientLabel1);
+            this.Controls.Add(this.PageNumber1);
+            this.Controls.Add(this.PageNumber2);
             this.Name = "MovieReservation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MovieReservation";
+            this.Load += new System.EventHandler(this.MovieReservation_Load);
+            this.PageNumber1.ResumeLayout(false);
+            this.PageNumber1.PerformLayout();
+            this.PageNumber2.ResumeLayout(false);
+            this.PageNumber2.PerformLayout();
             this.gradientLabel1.ResumeLayout(false);
             this.gradientLabel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -225,6 +313,13 @@
         private System.Windows.Forms.FlowLayoutPanel availableMoviesPanel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.FlowLayoutPanel chosenMoviesPanel;
-        private System.Windows.Forms.Label Page1NextButton;
+        private System.Windows.Forms.Label NextPageButton;
+        private System.Windows.Forms.Panel PageNumber1;
+        private System.Windows.Forms.Panel PageNumber2;
+        private System.Windows.Forms.Label SelectPeopleLabel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label page2RedTopLine;
+        private System.Windows.Forms.FlowLayoutPanel SelectPeoplePanel;
+        private System.Windows.Forms.Label PreviousPageButton;
     }
 }
