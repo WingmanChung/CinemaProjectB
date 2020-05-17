@@ -1,13 +1,9 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CinemaSystemProjectB
@@ -28,6 +24,138 @@ namespace CinemaSystemProjectB
         public MovieOverview()
         {
             InitializeComponent();
+
+            if (!File.Exists("movieSchedulesTest.txt"))
+            {
+                using (StreamWriter datePath = File.CreateText("movieSchedulesTest.txt"))
+                {
+                    datePath.Close();
+                }
+            }
+
+            //Loads json file with all movies
+
+            Dictionary<string, MovieDescriptionClass> ListView = JsonConvert.DeserializeObject<Dictionary<string, MovieDescriptionClass>>(File.ReadAllText(path));
+
+            //List with all keys (movie titles)
+            var movieList = ListView.Keys.ToArray();
+            List<string> duplicateMovieList = new List<string>();
+
+            //Fills movieschedule text file with movies if there is no total of 63 movies
+            Random movieRound = new Random();
+
+            int textFileLength = File.ReadLines(@"movieSchedulesTest.txt").Count();
+            while (File.ReadLines(@"movieSchedulesTest.txt").Count() < 63)
+            {
+                StreamWriter file2 = new StreamWriter(@"movieSchedulesTest.txt", true);
+
+                int chosenRandomNumber = movieRound.Next(0, 43);
+
+                string[] technology = ListView[movieList[chosenRandomNumber]].FilmTechnology.Split(',');
+                int chosenRandomNumber2 = movieRound.Next(0, technology.Length);
+                //Method to avoid duplicates in movieschedules
+                if (duplicateMovieList.Contains(ListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]))
+                {
+                    file2.Close();
+                }
+                else if (textFileLength >= 0 && textFileLength < 2 ||
+                        textFileLength >= 3 && textFileLength < 5 ||
+                        textFileLength >= 6 && textFileLength < 8 ||
+                        textFileLength >= 9 && textFileLength < 11 ||
+                        textFileLength >= 12 && textFileLength < 14 ||
+                        textFileLength >= 15 && textFileLength < 17 ||
+                        textFileLength >= 18 && textFileLength < 20 ||
+                        textFileLength >= 21 && textFileLength < 23 ||
+                        textFileLength >= 24 && textFileLength < 26 ||
+                        textFileLength >= 27 && textFileLength < 29 ||
+                        textFileLength >= 30 && textFileLength < 32 ||
+                        textFileLength >= 33 && textFileLength < 35 ||
+                        textFileLength >= 36 && textFileLength < 38 ||
+                        textFileLength >= 39 && textFileLength < 41 ||
+                        textFileLength >= 42 && textFileLength < 44 ||
+                        textFileLength >= 45 && textFileLength < 47 ||
+                        textFileLength >= 48 && textFileLength < 50 ||
+                        textFileLength >= 51 && textFileLength < 53 ||
+                        textFileLength >= 54 && textFileLength < 56 ||
+                        textFileLength >= 57 && textFileLength < 59 ||
+                        textFileLength >= 60 && textFileLength < 62)
+                {
+                    string[] runTime = ListView[movieList[chosenRandomNumber]].Runtime.Split();
+                    if (Int64.Parse(runTime[0]) > 180)
+                    {
+                        file2.Close();
+                    }
+                    else
+                    {
+                        duplicateMovieList.Add(ListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]);
+                        file2.WriteLine(ListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]);
+                        file2.Close();
+                        textFileLength++;
+                    }
+                }
+                else
+                {
+                    duplicateMovieList.Add(ListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]);
+                    file2.WriteLine(ListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]);
+                    file2.Close();
+                    textFileLength++;
+                }
+            }
+
+            if (!File.Exists("DateVerification.txt"))
+            {
+                using (StreamWriter datePath = File.CreateText("DateVerification.txt"))
+                {
+                    datePath.WriteLine(DateTime.Now.ToString("dd - MM - yyyy"));
+                    datePath.Close();
+                }
+            }
+            else
+            {
+                //Checks if dates are up-to-date
+                var allLines = File.ReadLines("DateVerification.txt");
+                int fileLength = File.ReadLines(@"DateVerification.txt").Count();
+                int lineNumber = 0;
+                foreach (var lineInAllLines in allLines)
+                {
+                    if (lineNumber + 1 == fileLength)
+                    {
+                        if (lineInAllLines != DateTime.Now.ToString("dd - MM - yyyy"))
+                        {
+                            string tempFile = Path.GetTempFileName();
+
+                            using (var sr = new StreamReader("movieSchedulesTest.txt"))
+                            using (var sw = new StreamWriter(tempFile))
+                            {
+                                string line;
+                                int line_number = 0;
+                                int lines_to_delete = 9;
+
+                                while ((line = sr.ReadLine()) != null)
+                                {
+                                    line_number++;
+
+                                    if (line_number <= lines_to_delete)
+                                        continue;
+
+                                    sw.WriteLine(line);
+                                }
+                            }
+                            File.Delete("movieSchedulesTest.txt");
+                            File.Move(tempFile, "movieSchedulesTest.txt");
+                        }
+                    }
+                    lineNumber++;
+                }
+
+                //Add today's date to text file
+                StreamWriter datesFile = new StreamWriter(@"DateVerification.txt", true);
+                datesFile.WriteLine(DateTime.Now.ToString("dd - MM - yyyy"));
+                datesFile.Close();
+            }
+
+            Startknop.BackColor = Color.Yellow;
+
             string resultJson = JsonConvert.SerializeObject(MovieInfo);
 
             Dictionary<string, MovieDescriptionClass> Movies = JsonConvert.DeserializeObject<Dictionary<string, MovieDescriptionClass>>(File.ReadAllText(path));
@@ -178,6 +306,10 @@ namespace CinemaSystemProjectB
             Filmsknop.BackColor = Color.White;
             Prijzenknop.BackColor = Color.White;
             Menuknop.BackColor = Color.White;
+
+            new MovieReservation().Show();
         }
+
+
     }
 }

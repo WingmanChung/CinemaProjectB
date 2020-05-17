@@ -363,7 +363,7 @@
             this.Time1Label.Name = "Time1Label";
             this.Time1Label.Size = new System.Drawing.Size(92, 153);
             this.Time1Label.TabIndex = 92;
-            this.Time1Label.Text = "18:00 uur";
+            this.Time1Label.Text = "16:00 uur";
             this.Time1Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Time2Label
@@ -374,7 +374,7 @@
             this.Time2Label.Name = "Time2Label";
             this.Time2Label.Size = new System.Drawing.Size(92, 153);
             this.Time2Label.TabIndex = 93;
-            this.Time2Label.Text = "19:30 uur";
+            this.Time2Label.Text = "19:00 uur";
             this.Time2Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Time3Label
