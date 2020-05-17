@@ -109,6 +109,7 @@
             this.Controls.Add(this.Filmtitle);
             this.Name = "MovieReservationAvailableMoviesItem";
             this.Size = new System.Drawing.Size(427, 132);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.YellowStripe_MouseClick);
             this.MouseEnter += new System.EventHandler(this.MovieReservationAvailableMoviesItem_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.MovieReservationAvailableMoviesItem_MouseLeave);
             this.ResumeLayout(false);

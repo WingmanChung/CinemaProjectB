@@ -10,7 +10,15 @@ namespace CinemaSystemProjectB
 	public partial class MovieReservation : Form
 	{
 		const string path = @"JsonTextFile.json";
-		bool swapping = MovieReservationAvailableMoviesItem.chosenMoviePanelBool;
+
+		//pages is a list of panels
+		List<Panel> pages = new List<Panel>();
+
+		//Integer to determine the page
+		int page = 0;
+
+		//Temp is list of chosen movies
+		List<string[]> Temp = new List<string[]>();
 
 		public MovieReservation()
 		{
@@ -43,13 +51,67 @@ namespace CinemaSystemProjectB
 			chosenMoviesPanel.Controls.Add(MovieReservationChosenMoviesItems[row]);
 			chosenItem.Chosen = true;
 
+			//create string array with all movie information
+			string[] tempstring = new string[4];
+			tempstring[0] = selectedMovieTitle;
+			tempstring[1] = selectedMovieTechnology;
+			tempstring[2] = selectedMovieRuntime;
+			tempstring[3] = selectedMovieDate;
+
+			//add string array to list
+			Temp.Add(tempstring);
+
 			row++;
 			j++;
+		}
+
+		public void SelectPeople()
+		{
+			var chosenItem = MovieReservationAvailableMoviesItem.chosenItem;
+
+			//clear select page and shows new result
+			SelectPeoplePanel.Controls.Clear();
+
+			//fills select page with all chosen movies <- Temp contains list of string arrays (which contains movietitle, filmtechnology, runtime and date)
+			for (int i = 0, j= 0; i < Temp.Count; i++)
+				{
+						SelectPeopleItem[] SelectPeopleItems = new SelectPeopleItem[Temp.Count];
+
+						SelectPeopleItems[i] = new SelectPeopleItem(chosenItem);
+
+						SelectPeopleItems[i].MovieTitle = Temp[i][j];
+						SelectPeopleItems[i].FilmTechnology = Temp[i][j+1];
+						SelectPeopleItems[i].Runtime = Temp[i][j+2];
+						SelectPeopleItems[i].Date = Temp[i][j+3];
+
+						if (SelectPeoplePanel.Controls.Count < 0)
+						{
+							SelectPeoplePanel.Controls.Clear();
+						}
+						else
+						{
+							SelectPeoplePanel.Controls.Add(SelectPeopleItems[i]);
+						}
+				}
 		}
 
 		public void RemoveItem(MovieReservationChosenMoviesItem item)
 		{
 			chosenMoviesPanel.Controls.Remove(item);
+
+			//Deletes the same item from selecting people page. If the string array is the same as the deleted item, then it deletes the movie from temp list
+			//Temp list contains all chosen movies
+			for (int i = 0, j = 0; i < Temp.Count; i++)
+			{
+				if(
+					Temp[i][j] == item.MovieTitle &&
+					Temp[i][j+1] == item.FilmTechnology &&
+					Temp[i][j+2] == item.Runtime &&
+					Temp[i][j+3] == item.Date)
+				{
+					Temp.RemoveAt(i);
+				}
+			}
 		}
 
 		private void AvailableMovies()
@@ -136,12 +198,72 @@ namespace CinemaSystemProjectB
 
 		private void Page1NextButton_MouseEnter(object sender, EventArgs e)
 		{
-			Page1NextButton.BackColor = Color.Gold;
+			NextPageButton.BackColor = Color.Gold;
 		}
 
 		private void Page1NextButton_MouseLeave(object sender, EventArgs e)
 		{
-			Page1NextButton.BackColor = Color.Yellow;
+			NextPageButton.BackColor = Color.Yellow;
+		}
+
+		private void MovieReservation_Load(object sender, EventArgs e)
+		{
+			pages.Add(PageNumber1);
+			pages.Add(PageNumber2);
+			pages[page].BringToFront();
+			PreviousPageButton.Visible = false;
+		}
+
+		private void NextPageButton_Click(object sender, EventArgs e)
+		{
+			//While current page is not the last page -> Next button will work
+			if(page < pages.Count - 1)
+			{
+				pages[++page].BringToFront();
+			}
+
+			//Determines wether the return button is visible or not
+			if (page > 0)
+			{
+				PreviousPageButton.Visible = true;
+			}
+
+			//if the visible page is selecting people page, then it runs the function to load all movies in the panel
+			if(page == 1)
+			{
+				SelectPeople();
+			}
+		}
+
+		private void PreviousPageButton_MouseClick(object sender, MouseEventArgs e)
+		{
+			//While current page is not the first page -> Previous button will work
+			if (page > 0)
+			{
+				pages[--page].BringToFront();
+			}
+
+			//Determines wether the return button is visible or not
+			if (page == 0)
+			{
+				PreviousPageButton.Visible = false;
+			}
+
+			//if the visible page is selecting people page, then it runs the function to load all movies in the panel
+			if (page == 1)
+			{
+				SelectPeople();
+			}
+		}
+
+		private void PreviousPageButton_MouseEnter(object sender, EventArgs e)
+		{
+			PreviousPageButton.BackColor = Color.Gold;
+		}
+
+		private void PreviousPageButton_MouseLeave(object sender, EventArgs e)
+		{
+			PreviousPageButton.BackColor = Color.Yellow;
 		}
 	}
 }

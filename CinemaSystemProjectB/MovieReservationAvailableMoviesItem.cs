@@ -69,7 +69,7 @@ namespace CinemaSystemProjectB
             if (!Chosen)
                 (this.ParentForm as MovieReservation).chosenMovies();
 
-			Chosen = true;
+            Chosen = true;
 
 		}
         private void MovieReservationAvailableMoviesItem_MouseEnter(object sender, EventArgs e)
