@@ -89,7 +89,7 @@ namespace CinemaSystemProjectB
 			var chosenItem = MovieReservationAvailableMoviesItem.chosenItem;
 
 			//clear select page and shows new result
-			//SelectPeoplePanel.Controls.Clear();
+			SelectPeoplePanel.Controls.Clear();
 
 			//fills select page with all chosen movies <- Temp contains list of string arrays (which contains movietitle, filmtechnology, runtime and date)
 			for (int i = 0, j = 0; i < Temp.Count; i++)
@@ -104,7 +104,6 @@ namespace CinemaSystemProjectB
 				SelectPeopleItems[i].Date = Temp[i][j + 3];
 
 				SelectPeoplePanel.Controls.Add(SelectPeopleItems[i]);
-				
 			}
 		}
 

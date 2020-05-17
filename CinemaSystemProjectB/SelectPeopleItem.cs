@@ -44,16 +44,6 @@ namespace CinemaSystemProjectB
 			get { return _Date; }
 			set { _Date = value; date.Text = value; }
 		}
-		//TEST
-
-		private string _comboBoxAdult;
-		[Category("Custom Props")]
-		public string ComboBoxAdult
-		{
-			get { return _comboBoxAdult; }
-			set { _comboBoxAdult = value; comboBoxAdult.Text = value;}
-		}
-
 
 		public void CheckIfZero()
 		{
