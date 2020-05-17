@@ -275,5 +275,38 @@ namespace CinemaSystemProjectB
 		{
 			PreviousPageButton.BackColor = Color.Yellow;
 		}
+
+		private void RoadMapButton_Click(object sender, EventArgs e)
+		{
+			new RoadMap().Show();
+		}
+
+		private void DisclaimerButton_Click(object sender, EventArgs e)
+		{
+
+			new Disclaimer().ShowDialog();
+			
+
+		}
+
+		private void DisclaimerButton_MouseEnter(object sender, EventArgs e)
+		{
+			DisclaimerButton.BackColor = Color.Gold;
+		}
+
+		private void DisclaimerButton_MouseLeave(object sender, EventArgs e)
+		{
+			DisclaimerButton.BackColor = Color.Yellow;
+		}
+
+		private void RoadMapButton_MouseEnter(object sender, EventArgs e)
+		{
+			RoadMapButton.BackColor = Color.Gold;
+		}
+
+		private void RoadMapButton_MouseLeave(object sender, EventArgs e)
+		{
+			RoadMapButton.BackColor = Color.Yellow;
+		}
 	}
 }

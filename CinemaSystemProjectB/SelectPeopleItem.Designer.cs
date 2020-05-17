@@ -247,7 +247,7 @@
             // 
             // ChooseSeatsButton
             // 
-            this.ChooseSeatsButton.BackColor = System.Drawing.Color.Maroon;
+            this.ChooseSeatsButton.BackColor = System.Drawing.Color.DarkRed;
             this.ChooseSeatsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ChooseSeatsButton.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ChooseSeatsButton.ForeColor = System.Drawing.Color.Black;

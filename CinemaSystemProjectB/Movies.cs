@@ -6,12 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-<<<<<<< HEAD
-using System.IO;
-using System.Threading;
-using System.Collections;
-=======
->>>>>>> d7b7bd0d2428bd020caa33dd085881b7eb093dba
+
 
 namespace CinemaSystemProjectB
 {
