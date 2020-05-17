@@ -37,34 +37,6 @@ namespace CinemaSystemProjectB
 
             Dictionary<string, MovieDescriptionClass> ListView = JsonConvert.DeserializeObject<Dictionary<string, MovieDescriptionClass>>(File.ReadAllText(path));
 
-            //List with all keys (movie titles)
-            var movieList = ListView.Keys.ToArray();
-            List<string> duplicateMovieList = new List<string>();
-
-            //Fills movieschedule text file with movies if there is no total of 63 movies
-            Random movieRound = new Random();
-
-            while (File.ReadLines(@"movieSchedulesTest.txt").Count() < 63)
-            {
-                StreamWriter file2 = new StreamWriter(@"movieSchedulesTest.txt", true);
-
-                int chosenRandomNumber = movieRound.Next(0, 43);
-
-                string[] technology = ListView[movieList[chosenRandomNumber]].FilmTechnology.Split(',');
-                int chosenRandomNumber2 = movieRound.Next(0, technology.Length);
-                //Method to avoid duplicates in movieschedules
-                if (duplicateMovieList.Contains(ListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]))
-                {
-                    file2.Close();
-                }
-                else
-                {
-                    duplicateMovieList.Add(ListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]);
-                    file2.WriteLine(ListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]);
-                    file2.Close();
-                }
-            }
-
             //fills list from streamreader
 
             List<KeyValuePair<string, string>> woorden = new List<KeyValuePair<string, string>>();
