@@ -55,6 +55,12 @@
     <Compile Include="Disclaimer.Designer.cs">
       <DependentUpon>Disclaimer.cs</DependentUpon>
     </Compile>
+    <Compile Include="FoodMenuMovieItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FoodMenuMovieItem.Designer.cs">
+      <DependentUpon>FoodMenuMovieItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="GradientLabel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -148,6 +154,9 @@
     </Compile>
     <EmbeddedResource Include="Disclaimer.resx">
       <DependentUpon>Disclaimer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FoodMenuMovieItem.resx">
+      <DependentUpon>FoodMenuMovieItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListItem.resx">
       <DependentUpon>ListItem.cs</DependentUpon>
