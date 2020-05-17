@@ -3,12 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace CinemaSystemProjectB
 {
 	public partial class MovieReservation : Form
 	{
+
 		const string path = @"JsonTextFile.json";
 
 		//pages is a list of panels
@@ -26,6 +28,8 @@ namespace CinemaSystemProjectB
 
 			AvailableMovies();
 
+			//if there are zero movies selected, then the next page button won't work
+			NextPageButton.Enabled = false;
 		}
 
 		int row = 0;
@@ -63,6 +67,21 @@ namespace CinemaSystemProjectB
 
 			row++;
 			j++;
+
+			MovieSelected();
+		}
+
+		public void MovieSelected()
+		{
+			//if there are zero movies selected, then the next page button won't work
+			if (chosenMoviesPanel.Controls.Count == 0)
+			{
+				NextPageButton.Enabled = false;
+			}
+			else
+			{
+				NextPageButton.Enabled = true;
+			}
 		}
 
 		public void SelectPeople()
@@ -70,29 +89,23 @@ namespace CinemaSystemProjectB
 			var chosenItem = MovieReservationAvailableMoviesItem.chosenItem;
 
 			//clear select page and shows new result
-			SelectPeoplePanel.Controls.Clear();
+			//SelectPeoplePanel.Controls.Clear();
 
 			//fills select page with all chosen movies <- Temp contains list of string arrays (which contains movietitle, filmtechnology, runtime and date)
-			for (int i = 0, j= 0; i < Temp.Count; i++)
-				{
-						SelectPeopleItem[] SelectPeopleItems = new SelectPeopleItem[Temp.Count];
+			for (int i = 0, j = 0; i < Temp.Count; i++)
+			{
+				SelectPeopleItem[] SelectPeopleItems = new SelectPeopleItem[Temp.Count];
 
-						SelectPeopleItems[i] = new SelectPeopleItem(chosenItem);
+				SelectPeopleItems[i] = new SelectPeopleItem(chosenItem);
 
-						SelectPeopleItems[i].MovieTitle = Temp[i][j];
-						SelectPeopleItems[i].FilmTechnology = Temp[i][j+1];
-						SelectPeopleItems[i].Runtime = Temp[i][j+2];
-						SelectPeopleItems[i].Date = Temp[i][j+3];
+				SelectPeopleItems[i].MovieTitle = Temp[i][j];
+				SelectPeopleItems[i].FilmTechnology = Temp[i][j + 1];
+				SelectPeopleItems[i].Runtime = Temp[i][j + 2];
+				SelectPeopleItems[i].Date = Temp[i][j + 3];
 
-						if (SelectPeoplePanel.Controls.Count < 0)
-						{
-							SelectPeoplePanel.Controls.Clear();
-						}
-						else
-						{
-							SelectPeoplePanel.Controls.Add(SelectPeopleItems[i]);
-						}
-				}
+				SelectPeoplePanel.Controls.Add(SelectPeopleItems[i]);
+				
+			}
 		}
 
 		public void RemoveItem(MovieReservationChosenMoviesItem item)
@@ -112,6 +125,8 @@ namespace CinemaSystemProjectB
 					Temp.RemoveAt(i);
 				}
 			}
+
+			MovieSelected();
 		}
 
 		private void AvailableMovies()
@@ -210,14 +225,16 @@ namespace CinemaSystemProjectB
 		{
 			pages.Add(PageNumber1);
 			pages.Add(PageNumber2);
+			pages.Add(PageNumber3);
 			pages[page].BringToFront();
 			PreviousPageButton.Visible = false;
 		}
 
 		private void NextPageButton_Click(object sender, EventArgs e)
 		{
+
 			//While current page is not the last page -> Next button will work
-			if(page < pages.Count - 1)
+			if (page < pages.Count - 1)
 			{
 				pages[++page].BringToFront();
 			}
@@ -229,7 +246,7 @@ namespace CinemaSystemProjectB
 			}
 
 			//if the visible page is selecting people page, then it runs the function to load all movies in the panel
-			if(page == 1)
+			if (page == 1)
 			{
 				SelectPeople();
 			}
@@ -247,12 +264,6 @@ namespace CinemaSystemProjectB
 			if (page == 0)
 			{
 				PreviousPageButton.Visible = false;
-			}
-
-			//if the visible page is selecting people page, then it runs the function to load all movies in the panel
-			if (page == 1)
-			{
-				SelectPeople();
 			}
 		}
 

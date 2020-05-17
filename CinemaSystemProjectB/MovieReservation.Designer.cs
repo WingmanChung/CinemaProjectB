@@ -47,10 +47,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.page2RedTopLine = new System.Windows.Forms.Label();
             this.PreviousPageButton = new System.Windows.Forms.Label();
+            this.PageNumber3 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.SnackMenuLabel = new System.Windows.Forms.Label();
             this.gradientLabel1 = new CinemaSystemProjectB.GradientLabel();
             this.Bioscoopnaam = new System.Windows.Forms.Label();
             this.PageNumber1.SuspendLayout();
             this.PageNumber2.SuspendLayout();
+            this.PageNumber3.SuspendLayout();
             this.gradientLabel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -245,6 +250,44 @@
             this.PreviousPageButton.MouseEnter += new System.EventHandler(this.PreviousPageButton_MouseEnter);
             this.PreviousPageButton.MouseLeave += new System.EventHandler(this.PreviousPageButton_MouseLeave);
             // 
+            // PageNumber3
+            // 
+            this.PageNumber3.Controls.Add(this.SnackMenuLabel);
+            this.PageNumber3.Controls.Add(this.label6);
+            this.PageNumber3.Controls.Add(this.label2);
+            this.PageNumber3.Location = new System.Drawing.Point(59, 182);
+            this.PageNumber3.Name = "PageNumber3";
+            this.PageNumber3.Size = new System.Drawing.Size(991, 500);
+            this.PageNumber3.TabIndex = 69;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Maroon;
+            this.label2.Location = new System.Drawing.Point(40, 38);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(921, 4);
+            this.label2.TabIndex = 64;
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.Maroon;
+            this.label6.Location = new System.Drawing.Point(40, 481);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(921, 4);
+            this.label6.TabIndex = 68;
+            // 
+            // SnackMenuLabel
+            // 
+            this.SnackMenuLabel.AutoSize = true;
+            this.SnackMenuLabel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SnackMenuLabel.ForeColor = System.Drawing.Color.Yellow;
+            this.SnackMenuLabel.Location = new System.Drawing.Point(406, 14);
+            this.SnackMenuLabel.Name = "SnackMenuLabel";
+            this.SnackMenuLabel.Size = new System.Drawing.Size(176, 22);
+            this.SnackMenuLabel.TabIndex = 69;
+            this.SnackMenuLabel.Text = "Snacks && Drinken";
+            this.SnackMenuLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // gradientLabel1
             // 
             this.gradientLabel1.BeginColor = System.Drawing.Color.Black;
@@ -284,6 +327,7 @@
             this.Controls.Add(this.gradientLabel1);
             this.Controls.Add(this.PageNumber1);
             this.Controls.Add(this.PageNumber2);
+            this.Controls.Add(this.PageNumber3);
             this.Name = "MovieReservation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MovieReservation";
@@ -292,6 +336,8 @@
             this.PageNumber1.PerformLayout();
             this.PageNumber2.ResumeLayout(false);
             this.PageNumber2.PerformLayout();
+            this.PageNumber3.ResumeLayout(false);
+            this.PageNumber3.PerformLayout();
             this.gradientLabel1.ResumeLayout(false);
             this.gradientLabel1.PerformLayout();
             this.ResumeLayout(false);
@@ -321,5 +367,9 @@
         private System.Windows.Forms.Label page2RedTopLine;
         private System.Windows.Forms.FlowLayoutPanel SelectPeoplePanel;
         private System.Windows.Forms.Label PreviousPageButton;
+        private System.Windows.Forms.Panel PageNumber3;
+        private System.Windows.Forms.Label SnackMenuLabel;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label2;
     }
 }
