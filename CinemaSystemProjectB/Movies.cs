@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
+
 namespace CinemaSystemProjectB
 {
     public partial class Movies : Form
@@ -46,6 +47,7 @@ namespace CinemaSystemProjectB
                 Array.Sort(movieList);
             }
 
+
             //Sorts the dictionary from highest rating to lowest rating
             if (RatingMovies.Checked)
             {
@@ -58,12 +60,12 @@ namespace CinemaSystemProjectB
                 movieList = rates.Keys.ToArray();
             }
 
+
             //populate here
 
             ListItem[] listItems = new ListItem[ListView.Count];
 
             //loop through each item
-
             for (int i = 0; i < listItems.Length; i++)
             {
                 listItems[i] = new ListItem();
@@ -92,8 +94,10 @@ namespace CinemaSystemProjectB
                 {
                     flowLayoutPanel1.Controls.Add(listItems[i]);
                 }
+ 
             }
         }
+
 
         private void genreItems()
         {
