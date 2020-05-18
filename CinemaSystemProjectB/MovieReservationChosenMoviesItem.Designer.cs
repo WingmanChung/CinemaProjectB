@@ -33,6 +33,7 @@
             this.runtime = new System.Windows.Forms.Label();
             this.date = new System.Windows.Forms.Label();
             this.YellowStripe = new System.Windows.Forms.Label();
+            this.ScreenLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Filmtitle
@@ -97,11 +98,22 @@
             this.YellowStripe.TabIndex = 6;
             this.YellowStripe.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MovieReservationChosenMoviesItem_MouseClick);
             // 
+            // ScreenLabel
+            // 
+            this.ScreenLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ScreenLabel.ForeColor = System.Drawing.Color.Black;
+            this.ScreenLabel.Location = new System.Drawing.Point(302, 0);
+            this.ScreenLabel.Name = "ScreenLabel";
+            this.ScreenLabel.Size = new System.Drawing.Size(125, 28);
+            this.ScreenLabel.TabIndex = 7;
+            this.ScreenLabel.Visible = false;
+            // 
             // MovieReservationChosenMoviesItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
+            this.Controls.Add(this.ScreenLabel);
             this.Controls.Add(this.YellowStripe);
             this.Controls.Add(this.date);
             this.Controls.Add(this.runtime);
@@ -123,5 +135,6 @@
         private System.Windows.Forms.Label runtime;
         private System.Windows.Forms.Label date;
         private System.Windows.Forms.Label YellowStripe;
+        private System.Windows.Forms.Label ScreenLabel;
     }
 }

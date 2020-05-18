@@ -43,6 +43,7 @@ namespace CinemaSystemProjectB
 			string selectedMovieTechnology = chosenItem.FilmTechnology;
 			string selectedMovieRuntime = chosenItem.Runtime;
 			string selectedMovieDate = chosenItem.Date;
+			string selectedMovieScreen = chosenItem.Screen;
 
 			//populate items here
 			MovieReservationChosenMoviesItem[] MovieReservationChosenMoviesItems = new MovieReservationChosenMoviesItem[j];
@@ -53,16 +54,18 @@ namespace CinemaSystemProjectB
 			MovieReservationChosenMoviesItems[row].FilmTechnology = selectedMovieTechnology;
 			MovieReservationChosenMoviesItems[row].Runtime = selectedMovieRuntime;
 			MovieReservationChosenMoviesItems[row].Date = selectedMovieDate;
+			MovieReservationChosenMoviesItems[row].Screen = selectedMovieScreen;
 
 			chosenMoviesPanel.Controls.Add(MovieReservationChosenMoviesItems[row]);
 			chosenItem.Chosen = true;
 
 			//create string array with all movie information
-			string[] tempstring = new string[4];
+			string[] tempstring = new string[5];
 			tempstring[0] = selectedMovieTitle;
 			tempstring[1] = selectedMovieTechnology;
 			tempstring[2] = selectedMovieRuntime;
 			tempstring[3] = selectedMovieDate;
+			tempstring[4] = selectedMovieScreen;
 
 			//add string array to list
 			Temp.Add(tempstring);
@@ -105,6 +108,7 @@ namespace CinemaSystemProjectB
 				SelectPeopleItems[i].FilmTechnology = Temp[i][j + 1];
 				SelectPeopleItems[i].Runtime = Temp[i][j + 2];
 				SelectPeopleItems[i].Date = Temp[i][j + 3];
+				SelectPeopleItems[i].Screen = Temp[i][j + 4];
 
 				SelectPeoplePanel.Controls.Add(SelectPeopleItems[i]);
 			}
@@ -177,11 +181,13 @@ namespace CinemaSystemProjectB
 			MovieReservationAvailableMoviesItem[] MovieReservationAvailableMoviesItems = new MovieReservationAvailableMoviesItem[availableMoviesList.Count];
 
 			string moviedate = "";
+			string moviescreen = "";
 
 			for (int i = 0; i < MovieReservationAvailableMoviesItems.Length; i++)
 			{
 				MovieReservationAvailableMoviesItems[i] = new MovieReservationAvailableMoviesItem();
 
+				//Key = movie title, Value = Index in available movie list
 				MovieReservationAvailableMoviesItems[i].MovieTitle = ListView[availableMoviesList[i].Key].Title;
 				MovieReservationAvailableMoviesItems[i].FilmTechnology = technologies[i];
 				MovieReservationAvailableMoviesItems[i].Runtime = ListView[availableMoviesList[i].Key].Runtime;
@@ -216,6 +222,100 @@ namespace CinemaSystemProjectB
 				}
 
 				MovieReservationAvailableMoviesItems[i].Date = moviedate;
+				
+				//Value = index in available movie list. first 3 is for example screen 1, second 3 are screen 2, third 3 are screen 3 etc.
+				if (availableMoviesList[i].Value == 0 ||
+				    availableMoviesList[i].Value == 1 ||
+				    availableMoviesList[i].Value == 2 ||
+
+					availableMoviesList[i].Value == 9 ||
+					availableMoviesList[i].Value == 10 ||
+					availableMoviesList[i].Value == 11 ||
+
+					availableMoviesList[i].Value == 18 ||
+					availableMoviesList[i].Value == 19 ||
+					availableMoviesList[i].Value == 20 ||
+
+					availableMoviesList[i].Value == 27 ||
+					availableMoviesList[i].Value == 28 ||
+					availableMoviesList[i].Value == 29 ||
+
+					availableMoviesList[i].Value == 36 ||
+					availableMoviesList[i].Value == 37 ||
+					availableMoviesList[i].Value == 38 ||
+
+					availableMoviesList[i].Value == 45 ||
+					availableMoviesList[i].Value == 46 ||
+					availableMoviesList[i].Value == 47 ||
+
+					availableMoviesList[i].Value == 54 ||
+					availableMoviesList[i].Value == 55 ||
+					availableMoviesList[i].Value == 56)
+				{
+					moviescreen = "Screen 1";
+				}
+				if (availableMoviesList[i].Value == 3 ||
+				    availableMoviesList[i].Value == 4 ||
+				    availableMoviesList[i].Value == 5 ||
+
+					availableMoviesList[i].Value == 12 ||
+					availableMoviesList[i].Value == 13 ||
+					availableMoviesList[i].Value == 14 ||
+
+					availableMoviesList[i].Value == 21 ||
+					availableMoviesList[i].Value == 22 ||
+					availableMoviesList[i].Value == 23 ||
+
+					availableMoviesList[i].Value == 30 ||
+					availableMoviesList[i].Value == 31 ||
+					availableMoviesList[i].Value == 32 ||
+
+					availableMoviesList[i].Value == 39 ||
+					availableMoviesList[i].Value == 40 ||
+					availableMoviesList[i].Value == 41 ||
+
+					availableMoviesList[i].Value == 48 ||
+					availableMoviesList[i].Value == 49 ||
+					availableMoviesList[i].Value == 50 ||
+
+					availableMoviesList[i].Value == 57 ||
+					availableMoviesList[i].Value == 58 ||
+					availableMoviesList[i].Value == 59)
+				{
+					moviescreen = "Screen 2";
+				}
+				if (availableMoviesList[i].Value == 6 ||
+					availableMoviesList[i].Value == 7 ||
+					availableMoviesList[i].Value == 8 ||
+
+					availableMoviesList[i].Value == 15 ||
+					availableMoviesList[i].Value == 16 ||
+					availableMoviesList[i].Value == 17 ||
+
+					availableMoviesList[i].Value == 24 ||
+					availableMoviesList[i].Value == 25 ||
+					availableMoviesList[i].Value == 26 ||
+
+					availableMoviesList[i].Value == 33 ||
+					availableMoviesList[i].Value == 34 ||
+					availableMoviesList[i].Value == 35 ||
+
+					availableMoviesList[i].Value == 42 ||
+					availableMoviesList[i].Value == 43 ||
+					availableMoviesList[i].Value == 44 ||
+
+					availableMoviesList[i].Value == 51 ||
+					availableMoviesList[i].Value == 52 ||
+					availableMoviesList[i].Value == 53 ||
+
+					availableMoviesList[i].Value == 60 ||
+					availableMoviesList[i].Value == 61 ||
+					availableMoviesList[i].Value == 62)
+				{
+					moviescreen = "Screen 3";
+				}
+
+				MovieReservationAvailableMoviesItems[i].Screen = moviescreen;
 
 				if (availableMoviesPanel.Controls.Count < 0)
 				{
