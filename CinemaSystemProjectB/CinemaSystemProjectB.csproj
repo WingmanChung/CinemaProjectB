@@ -146,6 +146,12 @@
     <Compile Include="RoadMapItem.Designer.cs">
       <DependentUpon>RoadMapItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="SeatReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SeatReservation.Designer.cs">
+      <DependentUpon>SeatReservation.cs</DependentUpon>
+    </Compile>
     <Compile Include="SelectPeopleItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -201,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RoadMapItem.resx">
       <DependentUpon>RoadMapItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeatReservation.resx">
+      <DependentUpon>SeatReservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SelectPeopleItem.resx">
       <DependentUpon>SelectPeopleItem.cs</DependentUpon>
@@ -268,6 +277,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\PlayButton4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Auditorium 1.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
