@@ -48,6 +48,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.Step3Label = new System.Windows.Forms.Label();
             this.ChooseSeatsButton = new System.Windows.Forms.Button();
+            this.ScreenLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // YellowStripe
@@ -258,11 +259,24 @@
             this.ChooseSeatsButton.Text = "Kies zitplaatsen";
             this.ChooseSeatsButton.UseVisualStyleBackColor = false;
             // 
+            // ScreenLabel
+            // 
+            this.ScreenLabel.BackColor = System.Drawing.Color.Transparent;
+            this.ScreenLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ScreenLabel.ForeColor = System.Drawing.Color.Black;
+            this.ScreenLabel.Location = new System.Drawing.Point(847, 0);
+            this.ScreenLabel.Name = "ScreenLabel";
+            this.ScreenLabel.Size = new System.Drawing.Size(43, 16);
+            this.ScreenLabel.TabIndex = 30;
+            this.ScreenLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ScreenLabel.Visible = false;
+            // 
             // SelectPeopleItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
+            this.Controls.Add(this.ScreenLabel);
             this.Controls.Add(this.ChooseSeatsButton);
             this.Controls.Add(this.Step3Label);
             this.Controls.Add(this.label3);
@@ -299,11 +313,7 @@
         private System.Windows.Forms.Label runtime;
         private System.Windows.Forms.Label date;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBoxAdult;
-        private System.Windows.Forms.ComboBox comboBoxKids;
-        private System.Windows.Forms.ComboBox comboBoxSenior;
         private System.Windows.Forms.Label SeniorLabel;
-        private System.Windows.Forms.ComboBox comboBoxStudent;
         private System.Windows.Forms.Label StudentLabel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label Step1Label;
@@ -311,5 +321,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label Step3Label;
         private System.Windows.Forms.Button ChooseSeatsButton;
+        public System.Windows.Forms.ComboBox comboBoxAdult;
+        public System.Windows.Forms.ComboBox comboBoxKids;
+        public System.Windows.Forms.ComboBox comboBoxSenior;
+        public System.Windows.Forms.ComboBox comboBoxStudent;
+        private System.Windows.Forms.Label ScreenLabel;
     }
 }

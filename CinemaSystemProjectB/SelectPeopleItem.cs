@@ -19,6 +19,7 @@ namespace CinemaSystemProjectB
 		private string _comboBoxAdult;
 		private string _comboBoxKids;
 		private string _comboBoxStudent;
+		private string _screen;
 
 		[Category("Custom Props")]
 		public string MovieTitle
@@ -78,6 +79,13 @@ namespace CinemaSystemProjectB
 			set { _comboBoxSenior = value; comboBoxSenior.Text = ""; }
 		}
 
+		[Category("Custom Props")]
+		public string Screen
+		{
+			get { return _screen; }
+			set { _screen = value; ScreenLabel.Text = value; }
+		}
+
 
 		public void CheckIfZero()
 		{
@@ -103,10 +111,7 @@ namespace CinemaSystemProjectB
 
 		public void AllFields()
 		{
-			if(ComboBoxAdult != null && ComboBoxKids != null && ComboBoxStudent != null && ComboBoxSenior != null)
-			{
-				(this.ParentForm as MovieReservation).checkAllBoxes();
-			}
+			(this.ParentForm as MovieReservation).checkAllBoxes();
 		}
 
 		private void comboBoxAdult_MouseClick(object sender, MouseEventArgs e)
@@ -130,7 +135,7 @@ namespace CinemaSystemProjectB
 			}
 			ComboBoxAdult = comboBoxAdult.SelectedIndex.ToString();
 			AllFields();
-	}
+		}
 
 		private void comboBoxKids_MouseClick(object sender, MouseEventArgs e)
 		{
@@ -170,10 +175,10 @@ namespace CinemaSystemProjectB
 					}
 				}
 			}
-			ComboBoxStudent = comboBoxKids.SelectedIndex.ToString();
+			ComboBoxStudent = comboBoxStudent.SelectedIndex.ToString();
 			CheckIfZero();
 			AllFields();
-	}
+		}
 
 		private void comboBoxSenior_MouseClick(object sender, MouseEventArgs e)
 		{
@@ -199,7 +204,7 @@ namespace CinemaSystemProjectB
 					}
 				}
 			}
-			ComboBoxSenior = comboBoxKids.SelectedIndex.ToString();
+			ComboBoxSenior = comboBoxSenior.SelectedIndex.ToString();
 			CheckIfZero();
 			AllFields();
 		}

@@ -22,6 +22,7 @@ namespace CinemaSystemProjectB
         private string _filmtechnology;
         private string _runtime;
         private string _Date;
+        private string _screen;
 
         [Category("Custom Props")]
         public string MovieTitle
@@ -51,6 +52,16 @@ namespace CinemaSystemProjectB
             get { return _Date; }
             set { _Date = value; date.Text = value; }
         }
+
+        [Category("Custom Props")]
+
+        public string Screen
+        {
+            get { return _screen; }
+            set { _screen = value; ScreenLabel.Text = value;}
+        }
+
+
         private void YellowStripe_MouseClick(object sender, MouseEventArgs e)
         {
 			chosenItem = this;
@@ -70,6 +81,7 @@ namespace CinemaSystemProjectB
                 (this.ParentForm as MovieReservation).chosenMovies();
 
             Chosen = true;
+            MessageBox.Show(Screen);
 
 		}
         private void MovieReservationAvailableMoviesItem_MouseEnter(object sender, EventArgs e)
