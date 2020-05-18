@@ -19,6 +19,7 @@ namespace CinemaSystemProjectB
 		private string _comboBoxAdult;
 		private string _comboBoxKids;
 		private string _comboBoxStudent;
+		private string _screen;
 
 		[Category("Custom Props")]
 		public string MovieTitle
@@ -76,6 +77,13 @@ namespace CinemaSystemProjectB
 		{
 			get { return _comboBoxSenior; }
 			set { _comboBoxSenior = value; comboBoxSenior.Text = ""; }
+		}
+
+		[Category("Custom Props")]
+		public string Screen
+		{
+			get { return _screen; }
+			set { _screen = value; ScreenLabel.Text = value; }
 		}
 
 
