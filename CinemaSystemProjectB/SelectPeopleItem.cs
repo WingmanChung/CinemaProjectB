@@ -103,10 +103,7 @@ namespace CinemaSystemProjectB
 
 		public void AllFields()
 		{
-			if(ComboBoxAdult != null && ComboBoxKids != null && ComboBoxStudent != null && ComboBoxSenior != null)
-			{
-				(this.ParentForm as MovieReservation).checkAllBoxes();
-			}
+			(this.ParentForm as MovieReservation).checkAllBoxes();
 		}
 
 		private void comboBoxAdult_MouseClick(object sender, MouseEventArgs e)
@@ -130,7 +127,7 @@ namespace CinemaSystemProjectB
 			}
 			ComboBoxAdult = comboBoxAdult.SelectedIndex.ToString();
 			AllFields();
-	}
+		}
 
 		private void comboBoxKids_MouseClick(object sender, MouseEventArgs e)
 		{
@@ -170,10 +167,10 @@ namespace CinemaSystemProjectB
 					}
 				}
 			}
-			ComboBoxStudent = comboBoxKids.SelectedIndex.ToString();
+			ComboBoxStudent = comboBoxStudent.SelectedIndex.ToString();
 			CheckIfZero();
 			AllFields();
-	}
+		}
 
 		private void comboBoxSenior_MouseClick(object sender, MouseEventArgs e)
 		{
@@ -199,7 +196,7 @@ namespace CinemaSystemProjectB
 					}
 				}
 			}
-			ComboBoxSenior = comboBoxKids.SelectedIndex.ToString();
+			ComboBoxSenior = comboBoxSenior.SelectedIndex.ToString();
 			CheckIfZero();
 			AllFields();
 		}

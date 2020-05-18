@@ -3,7 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Security.AccessControl;
 using System.Windows.Forms;
 
 namespace CinemaSystemProjectB
@@ -27,8 +29,6 @@ namespace CinemaSystemProjectB
 			InitializeComponent();
 
 			AvailableMovies();
-
-			
 
 			//if there are zero movies selected, then the next page button won't work
 			NextPageButton.Enabled = false;
@@ -92,6 +92,7 @@ namespace CinemaSystemProjectB
 
 			//clear select page and shows new result
 			SelectPeoplePanel.Controls.Clear();
+			FoodMenuPanel.Controls.Clear();
 
 			//fills select page with all chosen movies <- Temp contains list of string arrays (which contains movietitle, filmtechnology, runtime and date)
 			for (int i = 0, j = 0; i < Temp.Count; i++)
@@ -122,6 +123,7 @@ namespace CinemaSystemProjectB
 
 				FoodMenuPanel.Controls.Add(FoodMenuMovieItems[i]);
 			}
+
 		}
 
 		public void RemoveItem(MovieReservationChosenMoviesItem item)
@@ -258,20 +260,140 @@ namespace CinemaSystemProjectB
 			//Determines wether the return button is visible or not
 			if (page > 0)
 			{
+				MovieReservationLabel.Text = "Film reservering";
+
 				PreviousPageButton.Visible = true;
 				//if the visible page is selecting people page, then it runs the function to load all movies in the panel
 				if (page == 1)
 				{
 					SelectPeople();
 					NextPageButton.Enabled = false;
+					//checks if all comboboxes are filled else the nextpagebutton will remain disabled
 				}
 
 				//if page is 2 (snack & drink menu) then it changes the text of MovieReservationLabel
-				if(page == 2)
+				else if(page == 2)
 				{
 					MovieReservationLabel.Text = "Snack reservering";
+					//Fills all food options with the same "amount" of people
+					object[][] numbers = new object[SelectPeoplePanel.Controls.Count][];
+					int i = 0;
+					foreach (SelectPeopleItem movie in SelectPeoplePanel.Controls)
+					{
+						var x = (movie.comboBoxAdult.SelectedIndex) + (movie.comboBoxKids.SelectedIndex);
+						for (int j = 0; j < x; j++)
+						{
+							numbers[i] = new object[x + 1];
+							for (int k = 0; k < numbers[i].Length; k++)
+							{
+								numbers[i][k] = k;
+							}
+						}
+						i++;
+					}
+
+					//Add the correct amount of total people to the correct movie in the foodmenupanel
+					int num = 0;
+					foreach (FoodMenuMovieItem item in FoodMenuPanel.Controls)
+					{
+						if (item.comboBox1.Items.Count == 0)
+						{
+							//add new combobox items
+							item.comboBox1.Items.AddRange(numbers[num]);
+							item.comboBox2.Items.AddRange(numbers[num]);
+							item.comboBox3.Items.AddRange(numbers[num]);
+							item.comboBox4.Items.AddRange(numbers[num]);
+							item.comboBox5.Items.AddRange(numbers[num]);
+							item.comboBox6.Items.AddRange(numbers[num]);
+							item.comboBox7.Items.AddRange(numbers[num]);
+							item.comboBox8.Items.AddRange(numbers[num]);
+							item.comboBox9.Items.AddRange(numbers[num]);
+							item.comboBox10.Items.AddRange(numbers[num]);
+							item.comboBox11.Items.AddRange(numbers[num]);
+							item.comboBox12.Items.AddRange(numbers[num]);
+							item.comboBox13.Items.AddRange(numbers[num]);
+							item.comboBox14.Items.AddRange(numbers[num]);
+							item.comboBox15.Items.AddRange(numbers[num]);
+							item.comboBox16.Items.AddRange(numbers[num]);
+							item.comboBox17.Items.AddRange(numbers[num]);
+							item.comboBox18.Items.AddRange(numbers[num]);
+							item.comboBox19.Items.AddRange(numbers[num]);
+							//sets all combobox display text to zero
+							DefaultSelected(item);
+							num++;
+						}
+						else
+						{
+							//clears previous combobox items
+							item.comboBox1.Items.Clear();
+							item.comboBox2.Items.Clear();
+							item.comboBox3.Items.Clear();
+							item.comboBox4.Items.Clear();
+							item.comboBox5.Items.Clear();
+							item.comboBox6.Items.Clear();
+							item.comboBox7.Items.Clear();
+							item.comboBox8.Items.Clear();
+							item.comboBox9.Items.Clear();
+							item.comboBox10.Items.Clear();
+							item.comboBox11.Items.Clear();
+							item.comboBox12.Items.Clear();
+							item.comboBox13.Items.Clear();
+							item.comboBox14.Items.Clear();
+							item.comboBox15.Items.Clear();
+							item.comboBox16.Items.Clear();
+							item.comboBox17.Items.Clear();
+							item.comboBox18.Items.Clear();
+							item.comboBox19.Items.Clear();
+							//add new combobox items
+							item.comboBox1.Items.AddRange(numbers[num]);
+							item.comboBox2.Items.AddRange(numbers[num]);
+							item.comboBox3.Items.AddRange(numbers[num]);
+							item.comboBox4.Items.AddRange(numbers[num]);
+							item.comboBox5.Items.AddRange(numbers[num]);
+							item.comboBox6.Items.AddRange(numbers[num]);
+							item.comboBox7.Items.AddRange(numbers[num]);
+							item.comboBox8.Items.AddRange(numbers[num]);
+							item.comboBox9.Items.AddRange(numbers[num]);
+							item.comboBox10.Items.AddRange(numbers[num]);
+							item.comboBox11.Items.AddRange(numbers[num]);
+							item.comboBox12.Items.AddRange(numbers[num]);
+							item.comboBox13.Items.AddRange(numbers[num]);
+							item.comboBox14.Items.AddRange(numbers[num]);
+							item.comboBox15.Items.AddRange(numbers[num]);
+							item.comboBox16.Items.AddRange(numbers[num]);
+							item.comboBox17.Items.AddRange(numbers[num]);
+							item.comboBox18.Items.AddRange(numbers[num]);
+							item.comboBox19.Items.AddRange(numbers[num]);
+							//sets all combobox display text to zero
+							DefaultSelected(item);
+							num++;
+						}
+					}
 				}
 			}
+		}
+
+		public void DefaultSelected(FoodMenuMovieItem item)
+		{
+			item.comboBox1.SelectedIndex = 0;
+			item.comboBox2.SelectedIndex = 0;
+			item.comboBox3.SelectedIndex = 0;
+			item.comboBox4.SelectedIndex = 0;
+			item.comboBox5.SelectedIndex = 0;
+			item.comboBox6.SelectedIndex = 0;
+			item.comboBox7.SelectedIndex = 0;
+			item.comboBox8.SelectedIndex = 0;
+			item.comboBox9.SelectedIndex = 0;
+			item.comboBox10.SelectedIndex = 0;
+			item.comboBox11.SelectedIndex = 0;
+			item.comboBox12.SelectedIndex = 0;
+			item.comboBox13.SelectedIndex = 0;
+			item.comboBox14.SelectedIndex = 0;
+			item.comboBox15.SelectedIndex = 0;
+			item.comboBox16.SelectedIndex = 0;
+			item.comboBox17.SelectedIndex = 0;
+			item.comboBox18.SelectedIndex = 0;
+			item.comboBox19.SelectedIndex = 0;
 		}
 
 		private void PreviousPageButton_MouseClick(object sender, MouseEventArgs e)
@@ -279,13 +401,19 @@ namespace CinemaSystemProjectB
 			//While current page is not the first page -> Previous button will work
 			if (page > 0)
 			{
-				if(page == 1)
+				MovieReservationLabel.Text = "Film reservering";
+				if (page == 1)
 				{
 					//Warning to make sure the user understands the consequence of pressing the "previous page" button
 					DialogResult dialogResult = MessageBox.Show("Weet u zeker dat u terug naar de vorige pagina wilt gaan? Zo ja, dan worden uw geselecteerde keuzes verwijderd.", "Waarschuwing", MessageBoxButtons.YesNo);
 					if (dialogResult == DialogResult.Yes)
 					{
 						pages[--page].BringToFront();
+					}
+					//Check is chosenmoviepanel contains movie. If yes, then the next button will be enabled.
+					if (chosenMoviesPanel.Controls.Count != 0)
+					{
+						NextPageButton.Enabled = true;
 					}
 				}
 				else
@@ -301,30 +429,20 @@ namespace CinemaSystemProjectB
 			}
 		}
 
-
 		public void checkAllBoxes()
 		{
 			//checks if all comboboxes are filled else the nextpagebutton will remain disabled
-			int countBoxes = 0;
+			List<string> movies = new List<string>();
 			foreach (SelectPeopleItem movie in SelectPeoplePanel.Controls)
 			{
-				if (movie.ComboBoxAdult == null &&
-					movie.ComboBoxKids == null &&
-					movie.ComboBoxStudent == null &&
-					movie.ComboBoxSenior == null)
-				{
-					countBoxes++;
-				}
+				movies.Add(movie.comboBoxAdult.SelectedIndex.ToString());
+				movies.Add(movie.comboBoxKids.SelectedIndex.ToString());
 			}
-			if(countBoxes == 0)
+			bool countBoxes = movies.Count > 0 && movies.All(a => a != "-1");
+			if (countBoxes == true)
 			{
 				NextPageButton.Enabled = true;
 			}
-		}
-
-		public void FoodBoxes()
-		{
-
 		}
 
 		private void PreviousPageButton_MouseEnter(object sender, EventArgs e)

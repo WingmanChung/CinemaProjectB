@@ -299,11 +299,7 @@
         private System.Windows.Forms.Label runtime;
         private System.Windows.Forms.Label date;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBoxAdult;
-        private System.Windows.Forms.ComboBox comboBoxKids;
-        private System.Windows.Forms.ComboBox comboBoxSenior;
         private System.Windows.Forms.Label SeniorLabel;
-        private System.Windows.Forms.ComboBox comboBoxStudent;
         private System.Windows.Forms.Label StudentLabel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label Step1Label;
@@ -311,5 +307,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label Step3Label;
         private System.Windows.Forms.Button ChooseSeatsButton;
+        public System.Windows.Forms.ComboBox comboBoxAdult;
+        public System.Windows.Forms.ComboBox comboBoxKids;
+        public System.Windows.Forms.ComboBox comboBoxSenior;
+        public System.Windows.Forms.ComboBox comboBoxStudent;
     }
 }

@@ -1,15 +1,17 @@
 ﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace CinemaSystemProjectB
 {
 	public partial class FoodMenuMovieItem : UserControl
     {
+
 		private bool isCollapsed = false;
         public FoodMenuMovieItem(MovieReservationAvailableMoviesItem chosenItem)
-        {
+		{
             InitializeComponent();
-        }
+		}
 
 		private string _movietitle;
 		private string _filmtechnology;
