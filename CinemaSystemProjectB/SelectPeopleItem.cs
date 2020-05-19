@@ -78,14 +78,12 @@ namespace CinemaSystemProjectB
 			get { return _comboBoxSenior; }
 			set { _comboBoxSenior = value; comboBoxSenior.Text = ""; }
 		}
-
 		[Category("Custom Props")]
 		public string Screen
 		{
 			get { return _screen; }
 			set { _screen = value; ScreenLabel.Text = value; }
 		}
-
 
 		public void CheckIfZero()
 		{

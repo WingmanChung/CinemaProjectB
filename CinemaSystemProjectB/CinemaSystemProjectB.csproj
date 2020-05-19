@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerReservation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerReservation.Designer.cs">
+      <DependentUpon>CustomerReservation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Disclaimer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     <Compile Include="SelectPeopleItem.Designer.cs">
       <DependentUpon>SelectPeopleItem.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CustomerReservation.resx">
+      <DependentUpon>CustomerReservation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Disclaimer.resx">
       <DependentUpon>Disclaimer.cs</DependentUpon>
     </EmbeddedResource>
