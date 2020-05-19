@@ -206,5 +206,11 @@ namespace CinemaSystemProjectB
 			CheckIfZero();
 			AllFields();
 		}
+
+		private void ChooseSeatsButton_Click(object sender, EventArgs e)
+		{
+			SeatReservation screen_number = new SeatReservation(this.ScreenLabel.Text);
+			screen_number.ShowDialog(); 
+		}
 	}
 }
