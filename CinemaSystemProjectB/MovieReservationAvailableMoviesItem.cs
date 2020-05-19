@@ -62,7 +62,7 @@ namespace CinemaSystemProjectB
         }
 
 
-        private void YellowStripe_MouseClick(object sender, MouseEventArgs e)
+        public void YellowStripe_MouseClick(object sender, MouseEventArgs e)
         {
 			chosenItem = this;
             chosenMoviePanelBool = true;
