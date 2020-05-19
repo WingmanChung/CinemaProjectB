@@ -78,14 +78,12 @@ namespace CinemaSystemProjectB
 			get { return _comboBoxSenior; }
 			set { _comboBoxSenior = value; comboBoxSenior.Text = ""; }
 		}
-
 		[Category("Custom Props")]
 		public string Screen
 		{
 			get { return _screen; }
 			set { _screen = value; ScreenLabel.Text = value; }
 		}
-
 
 		public void CheckIfZero()
 		{
@@ -207,6 +205,12 @@ namespace CinemaSystemProjectB
 			ComboBoxSenior = comboBoxSenior.SelectedIndex.ToString();
 			CheckIfZero();
 			AllFields();
+		}
+
+		private void ChooseSeatsButton_Click(object sender, EventArgs e)
+		{
+			SeatReservation screen_number = new SeatReservation(this.ScreenLabel.Text);
+			screen_number.ShowDialog(); 
 		}
 	}
 }

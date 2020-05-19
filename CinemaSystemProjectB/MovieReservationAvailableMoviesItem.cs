@@ -62,7 +62,7 @@ namespace CinemaSystemProjectB
         }
 
 
-        private void YellowStripe_MouseClick(object sender, MouseEventArgs e)
+        public void YellowStripe_MouseClick(object sender, MouseEventArgs e)
         {
 			chosenItem = this;
             chosenMoviePanelBool = true;
@@ -82,8 +82,7 @@ namespace CinemaSystemProjectB
 
             Chosen = true;
             MessageBox.Show(Screen);
-
-		}
+        }
         private void MovieReservationAvailableMoviesItem_MouseEnter(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(64, 0, 0);

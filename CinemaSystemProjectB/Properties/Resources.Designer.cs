@@ -83,6 +83,26 @@ namespace CinemaSystemProjectB.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Auditorium_2 {
+            get {
+                object obj = ResourceManager.GetObject("Auditorium_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Auditorium_3 {
+            get {
+                object obj = ResourceManager.GetObject("Auditorium_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Avengersendgame {
             get {
                 object obj = ResourceManager.GetObject("Avengersendgame", resourceCulture);
