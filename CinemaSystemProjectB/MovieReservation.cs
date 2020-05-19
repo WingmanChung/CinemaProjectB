@@ -269,7 +269,7 @@ namespace CinemaSystemProjectB
 					availableMoviesList[i].Value == 55 ||
 					availableMoviesList[i].Value == 56)
 				{
-					moviescreen = "Screen 1";
+					moviescreen = "Zaal 1";
 				}
 				if (availableMoviesList[i].Value == 3 ||
 					availableMoviesList[i].Value == 4 ||
@@ -299,7 +299,7 @@ namespace CinemaSystemProjectB
 					availableMoviesList[i].Value == 58 ||
 					availableMoviesList[i].Value == 59)
 				{
-					moviescreen = "Screen 2";
+					moviescreen = "Zaal 2";
 				}
 				if (availableMoviesList[i].Value == 6 ||
 					availableMoviesList[i].Value == 7 ||
@@ -329,7 +329,7 @@ namespace CinemaSystemProjectB
 					availableMoviesList[i].Value == 61 ||
 					availableMoviesList[i].Value == 62)
 				{
-					moviescreen = "Screen 3";
+					moviescreen = "Zaal 3";
 				}
 
 				MovieReservationAvailableMoviesItems[i].Screen = moviescreen;

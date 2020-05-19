@@ -300,6 +300,7 @@
             this.Controls.Add(this.Filmtitle);
             this.Name = "SelectPeopleItem";
             this.Size = new System.Drawing.Size(890, 242);
+            this.MouseEnter += new System.EventHandler(this.SelectPeopleItem_MouseEnter);
             this.ResumeLayout(false);
 
         }

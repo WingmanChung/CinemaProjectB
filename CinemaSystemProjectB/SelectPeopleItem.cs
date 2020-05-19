@@ -7,6 +7,7 @@ namespace CinemaSystemProjectB
 {
 	public partial class SelectPeopleItem : UserControl
     {
+		public static int TotalAdultPlusKids;
 		public SelectPeopleItem(MovieReservationAvailableMoviesItem chosenItem)
         {
             InitializeComponent();
@@ -132,7 +133,6 @@ namespace CinemaSystemProjectB
 				}
 			}
 			ComboBoxAdult = comboBoxAdult.SelectedIndex.ToString();
-			AllFields();
 		}
 
 		private void comboBoxKids_MouseClick(object sender, MouseEventArgs e)
@@ -146,7 +146,6 @@ namespace CinemaSystemProjectB
 				}
 			}
 			ComboBoxKids = comboBoxKids.SelectedIndex.ToString();
-			AllFields();
 		}
 
 		private void comboBoxStudent_MouseClick(object sender, MouseEventArgs e)
@@ -175,7 +174,6 @@ namespace CinemaSystemProjectB
 			}
 			ComboBoxStudent = comboBoxStudent.SelectedIndex.ToString();
 			CheckIfZero();
-			AllFields();
 		}
 
 		private void comboBoxSenior_MouseClick(object sender, MouseEventArgs e)
@@ -204,13 +202,25 @@ namespace CinemaSystemProjectB
 			}
 			ComboBoxSenior = comboBoxSenior.SelectedIndex.ToString();
 			CheckIfZero();
-			AllFields();
 		}
 
 		private void ChooseSeatsButton_Click(object sender, EventArgs e)
 		{
-			SeatReservation screen_number = new SeatReservation(this.ScreenLabel.Text);
-			screen_number.ShowDialog(); 
+			Step1Completed();
+			if (comboBoxAdult.SelectedIndex > 0 && comboBoxKids.SelectedIndex >= 0 || comboBoxAdult.SelectedIndex >= 0 && comboBoxKids.SelectedIndex > 0)
+			{
+				SeatReservation screen_number = new SeatReservation(this.ScreenLabel.Text);
+				screen_number.ShowDialog();
+			}
+		}
+
+		private void SelectPeopleItem_MouseEnter(object sender, EventArgs e)
+		{
+			TotalAdultPlusKids = comboBoxAdult.SelectedIndex + comboBoxKids.SelectedIndex + 1;
+			AllFields();
+			int NormalSeats = (this.ParentForm as SeatReservation).dropdownNormalSeatAmount.SelectedIndex;
+			int GoodSeats = (this.ParentForm as SeatReservation).dropdownGoodSeatAmount.SelectedIndex;
+			int BestSeats = (this.ParentForm as SeatReservation).dropdownBestSeatAmount.SelectedIndex;
 		}
 	}
 }
