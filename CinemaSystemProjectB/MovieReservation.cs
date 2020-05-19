@@ -32,6 +32,8 @@ namespace CinemaSystemProjectB
 
 			//if there are zero movies selected, then the next page button won't work
 			NextPageButton.Enabled = false;
+			ConfirmButton.Enabled = false;
+			ConfirmButton.Visible = false;
 		}
 
 		int row = 0;
@@ -111,6 +113,21 @@ namespace CinemaSystemProjectB
 				SelectPeopleItems[i].Screen = Temp[i][j + 4];
 
 				SelectPeoplePanel.Controls.Add(SelectPeopleItems[i]);
+			}
+			//Fills customer reservation page with all chosen movies
+			for (int i = 0, j = 0; i < Temp.Count; i++)
+			{
+				CustomerReservation[] CustomerReservations = new CustomerReservation[Temp.Count];
+
+				CustomerReservations[i] = new CustomerReservation(chosenItem);
+
+				CustomerReservations[i].MovieTitle = Temp[i][j];
+				CustomerReservations[i].FilmTechnology = Temp[i][j + 1];
+				CustomerReservations[i].Runtime = Temp[i][j + 2];
+				CustomerReservations[i].Date = Temp[i][j + 3];
+				CustomerReservations[i].Screen = Temp[i][j + 4];
+
+				CustomerReservationPage.Controls.Add(CustomerReservations[i]);
 			}
 
 			//fills food menu page with all chosen movies
@@ -344,8 +361,11 @@ namespace CinemaSystemProjectB
 			pages.Add(PageNumber1);
 			pages.Add(PageNumber2);
 			pages.Add(PageNumber3);
+			pages.Add(PageNumber4);
 			pages[page].BringToFront();
 			PreviousPageButton.Visible = false;
+			ReservationPriceLabel.Visible = false;
+			ReservationPrice.Visible = false;
 		}
 
 		private void NextPageButton_Click(object sender, EventArgs e)
@@ -361,6 +381,10 @@ namespace CinemaSystemProjectB
 			if (page > 0)
 			{
 				MovieReservationLabel.Text = "Film reservering";
+				ReservationPriceLabel.Visible = false;
+				ReservationPrice.Visible = false;
+				ConfirmButton.Enabled = false;
+				ConfirmButton.Visible = false;
 
 				PreviousPageButton.Visible = true;
 				//if the visible page is selecting people page, then it runs the function to load all movies in the panel
@@ -470,6 +494,228 @@ namespace CinemaSystemProjectB
 						}
 					}
 				}
+				if(page == 3)
+				{
+					ConfirmButton.Enabled = true;
+					ConfirmButton.Visible = true;
+					NextPageButton.Visible = false;
+					NextPageButton.Enabled = false;
+
+					List<SelectPeopleItem> SelectedMovies = new List<SelectPeopleItem>();
+					foreach (SelectPeopleItem item in SelectPeoplePanel.Controls)
+					{
+						SelectedMovies.Add(item);
+					}
+					int n = 0;
+
+					List<KeyValuePair<string, string>> snacks = new List<KeyValuePair<string, string>>();
+					foreach (FoodMenuMovieItem item in FoodMenuPanel.Controls)
+					{
+						snacks.Add(new KeyValuePair<string, string>(item.ZoetePopcorn.Text, item.Price1.Text));
+						snacks.Add(new KeyValuePair<string, string>(item.ZoutePopcorn.Text, item.Price2.Text));
+						snacks.Add(new KeyValuePair<string, string>(item.KaramelPopcorn.Text, item.Price3.Text));
+						snacks.Add(new KeyValuePair<string, string>(item.MixedPopcorn.Text, item.Price4.Text));
+						snacks.Add(new KeyValuePair<string, string>(item.Snack1.Text, item.PriceSnack1.Text));
+						snacks.Add(new KeyValuePair<string, string>(item.Snack2.Text, item.PriceSnack2.Text));
+						snacks.Add(new KeyValuePair<string, string>(item.Snack3.Text, item.PriceSnack3.Text));
+						snacks.Add(new KeyValuePair<string, string>(item.Snack4.Text, item.PriceSnack4.Text));
+						snacks.Add(new KeyValuePair<string, string>(item.Snack5.Text, item.PriceSnack5.Text));
+						snacks.Add(new KeyValuePair<string, string>(item.Drink1.Text, item.PriceDrink1.Text));
+						snacks.Add(new KeyValuePair<string, string>(item.Drink2.Text, item.PriceDrink2.Text));
+						snacks.Add(new KeyValuePair<string, string>(item.Drink3.Text, item.PriceDrink3.Text));
+						snacks.Add(new KeyValuePair<string, string>(item.Drink4.Text, item.PriceDrink4.Text));
+						snacks.Add(new KeyValuePair<string, string>(item.Drink5.Text, item.PriceDrink5.Text));
+						snacks.Add(new KeyValuePair<string, string>(item.IceCream1.Text, item.PriceIceCream1.Text));
+						snacks.Add(new KeyValuePair<string, string>(item.IceCream2.Text, item.PriceIceCream2.Text));
+						snacks.Add(new KeyValuePair<string, string>(item.IceCream3.Text, item.PriceIceCream3.Text));
+						snacks.Add(new KeyValuePair<string, string>(item.IceCream4.Text, item.PriceIceCream4.Text));
+						snacks.Add(new KeyValuePair<string, string>(item.IceCream5.Text, item.PriceIceCream5.Text));
+						break;
+					}
+					decimal totalPriceOfReservation = 0;
+					foreach (CustomerReservation movie in CustomerReservationPage.Controls)
+					{
+						movie.Snacks.Text = "";
+						movie.SnackPrice.Text = "";
+						decimal TotalPricesSnacks = 0;
+
+						movie.TotalPeople.Text = (SelectedMovies[n].comboBoxAdult.SelectedIndex + SelectedMovies[n].comboBoxKids.SelectedIndex).ToString();
+						movie.TotalAdult.Text = SelectedMovies[n].comboBoxAdult.SelectedIndex.ToString();
+
+						movie.TotalKids.Text = SelectedMovies[n].comboBoxKids.SelectedIndex.ToString();
+
+						int temp = SelectedMovies[n].comboBoxStudent.SelectedIndex;
+						int temp2 = SelectedMovies[n].comboBoxSenior.SelectedIndex;
+						//Check wether the customer selected the comboboxes for student/senior. If not, the total will be zero.
+						if (SelectedMovies[n].comboBoxStudent.SelectedIndex.ToString() == "-1")
+						{
+							temp = 0;
+						}
+						if (SelectedMovies[n].comboBoxSenior.SelectedIndex.ToString() == "-1")
+						{
+							temp2 = 0;
+						}
+						movie.TotalStudents.Text = temp.ToString();
+						movie.TotalSeniors.Text = temp2.ToString();
+
+						movie.PriceAdult.Text = "€" + ((SelectedMovies[n].comboBoxAdult.SelectedIndex - temp - temp2)*10).ToString() + ",00";
+						movie.PriceKids.Text = "€" + ((SelectedMovies[n].comboBoxKids.SelectedIndex) * 5).ToString() + ",00";
+						movie.PriceStudent.Text = "€" + (temp * 8).ToString() + ",00";
+						movie.PriceSenior.Text = "€" + (temp2 * 7).ToString() + ",00";
+
+						//movie.BestSeat.Text = ;
+						//movie.GoodSeat.Text = ;
+						//movie.NormalSeat.Text = ;
+
+						foreach (FoodMenuMovieItem item in FoodMenuPanel.Controls)
+						{
+							if(item.comboBox1.SelectedIndex > 0)
+							{
+								movie.Snacks.Text += Environment.NewLine + item.comboBox1.SelectedIndex.ToString() + "x" + "	 " + snacks[0].Key;
+								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[0].Value) * item.comboBox1.SelectedIndex);
+								TotalPricesSnacks += (Decimal.Parse(snacks[0].Value) * item.comboBox1.SelectedIndex);
+							}
+							if(item.comboBox2.SelectedIndex > 0)
+							{
+								movie.Snacks.Text += Environment.NewLine + item.comboBox2.SelectedIndex.ToString() + "x" + "	 " + snacks[1].Key;
+								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[1].Value) * item.comboBox2.SelectedIndex);
+								TotalPricesSnacks += (Decimal.Parse(snacks[1].Value) * item.comboBox2.SelectedIndex);
+							}
+							if (item.comboBox3.SelectedIndex > 0)
+							{
+								movie.Snacks.Text += Environment.NewLine + item.comboBox3.SelectedIndex.ToString() + "x" + "	 " + snacks[2].Key;
+								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[2].Value) * item.comboBox3.SelectedIndex);
+								TotalPricesSnacks += (Decimal.Parse(snacks[2].Value) * item.comboBox3.SelectedIndex);
+							}
+							if (item.comboBox4.SelectedIndex > 0)
+							{
+								movie.Snacks.Text += Environment.NewLine + item.comboBox4.SelectedIndex.ToString() + "x" + "	 " + snacks[3].Key;
+								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[3].Value) * item.comboBox4.SelectedIndex);
+								TotalPricesSnacks += (Decimal.Parse(snacks[3].Value) * item.comboBox4.SelectedIndex);
+							}
+							if (item.comboBox5.SelectedIndex > 0)
+							{
+								movie.Snacks.Text += Environment.NewLine + item.comboBox5.SelectedIndex.ToString() + "x" + "	 " + snacks[4].Key;
+								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[4].Value) * item.comboBox5.SelectedIndex);
+								TotalPricesSnacks += (Decimal.Parse(snacks[4].Value) * item.comboBox5.SelectedIndex);
+							}
+							if (item.comboBox6.SelectedIndex > 0)
+							{
+								movie.Snacks.Text += Environment.NewLine + item.comboBox6.SelectedIndex.ToString() + "x" + "	 " + snacks[5].Key;
+								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[5].Value) * item.comboBox6.SelectedIndex);
+								TotalPricesSnacks += (Decimal.Parse(snacks[5].Value) * item.comboBox6.SelectedIndex);
+							}
+							if (item.comboBox7.SelectedIndex > 0)
+							{
+								movie.Snacks.Text += Environment.NewLine + item.comboBox7.SelectedIndex.ToString() + "x" + "	 " + snacks[6].Key;
+								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[6].Value) * item.comboBox7.SelectedIndex);
+								TotalPricesSnacks += (Decimal.Parse(snacks[6].Value) * item.comboBox7.SelectedIndex);
+							}
+							if (item.comboBox8.SelectedIndex > 0)
+							{
+								movie.Snacks.Text += Environment.NewLine + item.comboBox8.SelectedIndex.ToString() + "x" + "	 " + snacks[7].Key;
+								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[7].Value) * item.comboBox8.SelectedIndex);
+								TotalPricesSnacks += (Decimal.Parse(snacks[7].Value) * item.comboBox8.SelectedIndex);
+							}
+							if (item.comboBox9.SelectedIndex > 0)
+							{
+								movie.Snacks.Text += Environment.NewLine + item.comboBox9.SelectedIndex.ToString() + "x" + "	 " + snacks[8].Key;
+								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[8].Value) * item.comboBox9.SelectedIndex);
+								TotalPricesSnacks += (Decimal.Parse(snacks[8].Value) * item.comboBox9.SelectedIndex);
+							}
+							if (item.comboBox10.SelectedIndex > 0)
+							{
+								movie.Snacks.Text += Environment.NewLine + item.comboBox10.SelectedIndex.ToString() + "x" + "	 " + snacks[9].Key;
+								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[9].Value) * item.comboBox10.SelectedIndex);
+								TotalPricesSnacks += (Decimal.Parse(snacks[9].Value) * item.comboBox10.SelectedIndex);
+							}
+							if (item.comboBox11.SelectedIndex > 0)
+							{
+								movie.Snacks.Text += Environment.NewLine + item.comboBox11.SelectedIndex.ToString() + "x" + "	 " + snacks[10].Key;
+								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[10].Value) * item.comboBox11.SelectedIndex);
+								TotalPricesSnacks += (Decimal.Parse(snacks[10].Value) * item.comboBox11.SelectedIndex);
+							}
+							if (item.comboBox12.SelectedIndex > 0)
+							{
+								movie.Snacks.Text += Environment.NewLine + item.comboBox12.SelectedIndex.ToString() + "x" + "	 " + snacks[11].Key;
+								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[11].Value) * item.comboBox12.SelectedIndex);
+								TotalPricesSnacks += (Decimal.Parse(snacks[11].Value) * item.comboBox12.SelectedIndex);
+							}
+							if (item.comboBox13.SelectedIndex > 0)
+							{
+								movie.Snacks.Text += Environment.NewLine + item.comboBox13.SelectedIndex.ToString() + "x" + "	 " + snacks[12].Key;
+								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[12].Value) * item.comboBox13.SelectedIndex);
+								TotalPricesSnacks += (Decimal.Parse(snacks[12].Value) * item.comboBox13.SelectedIndex);
+							}
+							if (item.comboBox14.SelectedIndex > 0)
+							{
+								movie.Snacks.Text += Environment.NewLine + item.comboBox14.SelectedIndex.ToString() + "x" + "	 " + snacks[13].Key;
+								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[13].Value) * item.comboBox14.SelectedIndex);
+								TotalPricesSnacks += (Decimal.Parse(snacks[13].Value) * item.comboBox14.SelectedIndex);
+							}
+							if (item.comboBox15.SelectedIndex > 0)
+							{
+								movie.Snacks.Text += Environment.NewLine + item.comboBox15.SelectedIndex.ToString() + "x" + "	 " + snacks[14].Key;
+								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[14].Value) * item.comboBox15.SelectedIndex);
+								TotalPricesSnacks += (Decimal.Parse(snacks[14].Value) * item.comboBox15.SelectedIndex);
+							}
+							if (item.comboBox16.SelectedIndex > 0)
+							{
+								movie.Snacks.Text += Environment.NewLine + item.comboBox16.SelectedIndex.ToString() + "x" + "	 " + snacks[15].Key;
+								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[15].Value) * item.comboBox16.SelectedIndex);
+								TotalPricesSnacks += (Decimal.Parse(snacks[15].Value) * item.comboBox16.SelectedIndex);
+							}
+							if (item.comboBox17.SelectedIndex > 0)
+							{
+								movie.Snacks.Text += Environment.NewLine + item.comboBox17.SelectedIndex.ToString() + "x" + "	 " + snacks[16].Key;
+								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[16].Value) * item.comboBox17.SelectedIndex);
+								TotalPricesSnacks += (Decimal.Parse(snacks[16].Value) * item.comboBox17.SelectedIndex);
+							}
+							if (item.comboBox18.SelectedIndex > 0)
+							{
+								movie.Snacks.Text += Environment.NewLine + item.comboBox18.SelectedIndex.ToString() + "x" + "	 " + snacks[17].Key;
+								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[17].Value) * item.comboBox18.SelectedIndex);
+								TotalPricesSnacks += (Decimal.Parse(snacks[17].Value) * item.comboBox18.SelectedIndex);
+							}
+							if (item.comboBox19.SelectedIndex > 0)
+							{
+								movie.Snacks.Text += Environment.NewLine + item.comboBox19.SelectedIndex.ToString() + "x" + "	 " + snacks[18].Key;
+								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[18].Value) * item.comboBox19.SelectedIndex);
+								TotalPricesSnacks += (Decimal.Parse(snacks[18].Value) * item.comboBox19.SelectedIndex);
+							}
+						}
+
+						//CONVERT STRING ARRAY OF €0,00 TO STRING ARRAY OF 0,00 TO DECIMAL 0,0
+
+						int AddPriceStudent = 0;
+						if (SelectedMovies[n].comboBoxStudent.SelectedIndex == -1)
+						{
+							AddPriceStudent = 0;
+						}
+						else
+						{
+							AddPriceStudent = SelectedMovies[n].comboBoxStudent.SelectedIndex;
+						}
+
+						int AddPriceSenior = 0;
+						if (SelectedMovies[n].comboBoxSenior.SelectedIndex == -1)
+						{
+							AddPriceSenior = 0;
+						}
+						else
+						{
+							AddPriceSenior = SelectedMovies[n].comboBoxSenior.SelectedIndex;
+						}
+
+						movie.TotalPrice.Text = "€" + (Convert.ToDecimal((SelectedMovies[n].comboBoxAdult.SelectedIndex - temp - temp2)*10) + Convert.ToDecimal((SelectedMovies[n].comboBoxKids.SelectedIndex) * 5) + Convert.ToDecimal(AddPriceStudent * 8) + Convert.ToDecimal(AddPriceSenior * 7) + TotalPricesSnacks).ToString();
+						totalPriceOfReservation += (Convert.ToDecimal((SelectedMovies[n].comboBoxAdult.SelectedIndex - temp - temp2) * 10) + Convert.ToDecimal((SelectedMovies[n].comboBoxKids.SelectedIndex) * 5) + Convert.ToDecimal(AddPriceStudent * 8) + Convert.ToDecimal(AddPriceSenior * 7) + TotalPricesSnacks);
+						n++;
+					}
+
+					ReservationPriceLabel.Visible = true;
+					ReservationPrice.Visible = true;
+					ReservationPrice.Text = totalPriceOfReservation.ToString();
+				}
 			}
 		}
 
@@ -502,6 +748,11 @@ namespace CinemaSystemProjectB
 			if (page > 0)
 			{
 				MovieReservationLabel.Text = "Film reservering";
+				ReservationPriceLabel.Visible = false;
+				ReservationPrice.Visible = false;
+				ConfirmButton.Enabled = false;
+				ConfirmButton.Visible = false;
+				
 				if (page == 1)
 				{
 					//Warning to make sure the user understands the consequence of pressing the "previous page" button
@@ -519,6 +770,15 @@ namespace CinemaSystemProjectB
 				else
 				{
 					pages[--page].BringToFront();
+					NextPageButton.Visible = true;
+					NextPageButton.Enabled = true;
+				}
+				if(page == 4)
+				{
+					ReservationPriceLabel.Visible = true;
+					ReservationPrice.Visible = true;
+					ConfirmButton.Enabled = true;
+					ConfirmButton.Visible = true;
 				}
 			}
 
@@ -583,6 +843,16 @@ namespace CinemaSystemProjectB
 		private void RoadMapButton_MouseLeave(object sender, EventArgs e)
 		{
 			RoadMapButton.BackColor = Color.Yellow;
+		}
+
+		private void ConfirmButton_MouseEnter(object sender, EventArgs e)
+		{
+			ConfirmButton.BackColor = Color.Gold;
+		}
+
+		private void ConfirmButton_MouseLeave(object sender, EventArgs e)
+		{
+			ConfirmButton.BackColor = Color.Yellow;
 		}
 	}
 }
