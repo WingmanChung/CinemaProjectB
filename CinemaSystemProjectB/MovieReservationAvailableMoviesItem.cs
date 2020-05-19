@@ -81,7 +81,6 @@ namespace CinemaSystemProjectB
                 (this.ParentForm as MovieReservation).chosenMovies();
 
             Chosen = true;
-            MessageBox.Show(Screen);
 
 		}
         private void MovieReservationAvailableMoviesItem_MouseEnter(object sender, EventArgs e)
