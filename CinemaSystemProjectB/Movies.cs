@@ -1,15 +1,12 @@
-﻿using System;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
-using System.Threading;
+using System.Linq;
+using System.Windows.Forms;
+
 
 namespace CinemaSystemProjectB
 {
@@ -50,6 +47,7 @@ namespace CinemaSystemProjectB
                 Array.Sort(movieList);
             }
 
+
             //Sorts the dictionary from highest rating to lowest rating
             if (RatingMovies.Checked)
             {
@@ -62,12 +60,12 @@ namespace CinemaSystemProjectB
                 movieList = rates.Keys.ToArray();
             }
 
+
             //populate here
 
             ListItem[] listItems = new ListItem[ListView.Count];
 
             //loop through each item
-
             for (int i = 0; i < listItems.Length; i++)
             {
                 listItems[i] = new ListItem();
@@ -96,8 +94,10 @@ namespace CinemaSystemProjectB
                 {
                     flowLayoutPanel1.Controls.Add(listItems[i]);
                 }
+ 
             }
         }
+
 
         private void genreItems()
         {

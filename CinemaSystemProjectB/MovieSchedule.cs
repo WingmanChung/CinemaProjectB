@@ -29,64 +29,6 @@ namespace CinemaSystemProjectB
             FifthSchedule.Text = DateTime.Now.AddDays(4).ToString("dd - MM - yyyy");
             SixthSchedule.Text = DateTime.Now.AddDays(5).ToString("dd - MM - yyyy");
             SeventhSchedule.Text = DateTime.Now.AddDays(6).ToString("dd - MM - yyyy");
-
-            //creates movieschedule list if it doesnt exist
-            string movieSchedulePath = @"movieSchedulesTest.txt";
-            if (!File.Exists(movieSchedulePath))
-            {
-                File.Create(movieSchedulePath);
-            }
-
-            if (!File.Exists("DateVerification.txt"))
-            {
-                using (StreamWriter datePath = File.CreateText("DateVerification.txt"))
-                {
-                    datePath.WriteLine(DateTime.Now.ToString("dd - MM - yyyy"));
-                }
-            }
-            else
-            {
-                //Checks if dates are up-to-date
-                var allLines = File.ReadLines("DateVerification.txt");
-                int fileLength = File.ReadLines(@"DateVerification.txt").Count();
-                int lineNumber = 0;
-                foreach (var lineInAllLines in allLines)
-                {
-                    if (lineNumber + 1 == fileLength)
-                    {
-                        if (lineInAllLines != DateTime.Now.ToString("dd - MM - yyyy"))
-                        {
-                            string tempFile = Path.GetTempFileName();
-
-                            using (var sr = new StreamReader("movieSchedulesTest.txt"))
-                            using (var sw = new StreamWriter(tempFile))
-                            {
-                                string line;
-                                int line_number = 0;
-                                int lines_to_delete = 9;
-
-                                while ((line = sr.ReadLine()) != null)
-                                {
-                                    line_number++;
-
-                                    if (line_number <= lines_to_delete)
-                                        continue;
-
-                                    sw.WriteLine(line);
-                                }
-                            }
-                            File.Delete("movieSchedulesTest.txt");
-                            File.Move(tempFile, "movieSchedulesTest.txt");
-                        }
-                    }
-                    lineNumber++;
-                }
-
-                //Add today's date to text file
-                StreamWriter datesFile = new StreamWriter(@"DateVerification.txt", true);
-                datesFile.WriteLine(DateTime.Now.ToString("dd - MM - yyyy"));
-                datesFile.Close();
-            }
         }
 
         private void ScheduleScreen()
@@ -94,34 +36,6 @@ namespace CinemaSystemProjectB
             //Loads json file with all movies
 
             Dictionary<string, MovieDescriptionClass> ListView = JsonConvert.DeserializeObject<Dictionary<string, MovieDescriptionClass>>(File.ReadAllText(path));
-
-            //List with all keys (movie titles)
-            var movieList = ListView.Keys.ToArray();
-            List<string> duplicateMovieList = new List<string>();
-
-            //Fills movieschedule text file with movies if there is no total of 63 movies
-            Random movieRound = new Random();
-
-            while (File.ReadLines(@"movieSchedulesTest.txt").Count() < 63)
-            {
-                StreamWriter file2 = new StreamWriter(@"movieSchedulesTest.txt", true);
-
-                int chosenRandomNumber = movieRound.Next(0, 43);
-
-                string[] technology = ListView[movieList[chosenRandomNumber]].FilmTechnology.Split(',');
-                int chosenRandomNumber2 = movieRound.Next(0, technology.Length);
-                //Method to avoid duplicates in movieschedules
-                if (duplicateMovieList.Contains(ListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]))
-                {
-                    file2.Close();
-                }
-                else
-                {
-                    duplicateMovieList.Add(ListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]);
-                    file2.WriteLine(ListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]);
-                    file2.Close();
-                }
-            }
 
             //fills list from streamreader
 

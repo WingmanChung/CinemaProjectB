@@ -442,6 +442,7 @@
             this.Reserveerknop.Name = "Reserveerknop";
             this.Reserveerknop.Size = new System.Drawing.Size(109, 43);
             this.Reserveerknop.TabIndex = 44;
+            this.Reserveerknop.TabStop = false;
             this.Reserveerknop.Text = "Reserveren";
             this.Reserveerknop.UseVisualStyleBackColor = false;
             this.Reserveerknop.Click += new System.EventHandler(this.Reserveerknop_Click);
@@ -456,6 +457,7 @@
             this.Menuknop.Name = "Menuknop";
             this.Menuknop.Size = new System.Drawing.Size(109, 43);
             this.Menuknop.TabIndex = 46;
+            this.Menuknop.TabStop = false;
             this.Menuknop.Text = "Menu";
             this.Menuknop.UseVisualStyleBackColor = false;
             this.Menuknop.Click += new System.EventHandler(this.Menuknop_Click);
@@ -470,6 +472,7 @@
             this.Prijzenknop.Name = "Prijzenknop";
             this.Prijzenknop.Size = new System.Drawing.Size(109, 43);
             this.Prijzenknop.TabIndex = 47;
+            this.Prijzenknop.TabStop = false;
             this.Prijzenknop.Text = "Prijzen";
             this.Prijzenknop.UseVisualStyleBackColor = false;
             this.Prijzenknop.Click += new System.EventHandler(this.Prijzenknop_Click);
@@ -484,6 +487,7 @@
             this.Filmsknop.Name = "Filmsknop";
             this.Filmsknop.Size = new System.Drawing.Size(109, 43);
             this.Filmsknop.TabIndex = 48;
+            this.Filmsknop.TabStop = false;
             this.Filmsknop.Text = "Films";
             this.Filmsknop.UseVisualStyleBackColor = false;
             this.Filmsknop.Click += new System.EventHandler(this.Filmsknop_Click);
@@ -498,6 +502,7 @@
             this.Filmtijdenknop.Name = "Filmtijdenknop";
             this.Filmtijdenknop.Size = new System.Drawing.Size(109, 43);
             this.Filmtijdenknop.TabIndex = 51;
+            this.Filmtijdenknop.TabStop = false;
             this.Filmtijdenknop.Text = "Filmtijden";
             this.Filmtijdenknop.UseVisualStyleBackColor = false;
             this.Filmtijdenknop.Click += new System.EventHandler(this.Filmtijdenknop_Click);
@@ -566,6 +571,7 @@
             this.Startknop.Name = "Startknop";
             this.Startknop.Size = new System.Drawing.Size(109, 43);
             this.Startknop.TabIndex = 52;
+            this.Startknop.TabStop = false;
             this.Startknop.Text = "Start";
             this.Startknop.UseVisualStyleBackColor = false;
             this.Startknop.Click += new System.EventHandler(this.Startknop_Click);
