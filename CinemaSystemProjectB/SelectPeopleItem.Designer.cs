@@ -258,6 +258,7 @@
             this.ChooseSeatsButton.TabIndex = 29;
             this.ChooseSeatsButton.Text = "Kies zitplaatsen";
             this.ChooseSeatsButton.UseVisualStyleBackColor = false;
+            this.ChooseSeatsButton.Click += new System.EventHandler(this.ChooseSeatsButton_Click);
             // 
             // ScreenLabel
             // 
