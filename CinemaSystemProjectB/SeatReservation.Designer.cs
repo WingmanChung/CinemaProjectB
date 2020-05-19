@@ -461,14 +461,14 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.ComboBox dropdownNormalSeatRow;
-        private System.Windows.Forms.ComboBox dropdownGoodSeatRow;
-        private System.Windows.Forms.ComboBox dropdownBestSeatRow;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.ComboBox dropdownNormalSeatAmount;
-        private System.Windows.Forms.ComboBox dropdownGoodSeatAmount;
-        private System.Windows.Forms.ComboBox dropdownBestSeatAmount;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.ComboBox dropdownNormalSeatRow;
+        public System.Windows.Forms.ComboBox dropdownGoodSeatRow;
+        public System.Windows.Forms.ComboBox dropdownBestSeatRow;
+        public System.Windows.Forms.ComboBox dropdownNormalSeatAmount;
+        public System.Windows.Forms.ComboBox dropdownGoodSeatAmount;
+        public System.Windows.Forms.ComboBox dropdownBestSeatAmount;
     }
 }

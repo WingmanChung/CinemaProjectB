@@ -155,11 +155,11 @@ namespace CinemaSystemProjectB
 			//Temp list contains all chosen movies
 			for (int i = 0, j = 0; i < Temp.Count; i++)
 			{
-				if(
+				if (
 					Temp[i][j] == item.MovieTitle &&
-					Temp[i][j+1] == item.FilmTechnology &&
-					Temp[i][j+2] == item.Runtime &&
-					Temp[i][j+3] == item.Date)
+					Temp[i][j + 1] == item.FilmTechnology &&
+					Temp[i][j + 2] == item.Runtime &&
+					Temp[i][j + 3] == item.Date)
 				{
 					Temp.RemoveAt(i);
 				}
@@ -239,11 +239,11 @@ namespace CinemaSystemProjectB
 				}
 
 				MovieReservationAvailableMoviesItems[i].Date = moviedate;
-				
+
 				//Value = index in available movie list. first 3 is for example screen 1, second 3 are screen 2, third 3 are screen 3 etc.
 				if (availableMoviesList[i].Value == 0 ||
-				    availableMoviesList[i].Value == 1 ||
-				    availableMoviesList[i].Value == 2 ||
+					availableMoviesList[i].Value == 1 ||
+					availableMoviesList[i].Value == 2 ||
 
 					availableMoviesList[i].Value == 9 ||
 					availableMoviesList[i].Value == 10 ||
@@ -272,8 +272,8 @@ namespace CinemaSystemProjectB
 					moviescreen = "Screen 1";
 				}
 				if (availableMoviesList[i].Value == 3 ||
-				    availableMoviesList[i].Value == 4 ||
-				    availableMoviesList[i].Value == 5 ||
+					availableMoviesList[i].Value == 4 ||
+					availableMoviesList[i].Value == 5 ||
 
 					availableMoviesList[i].Value == 12 ||
 					availableMoviesList[i].Value == 13 ||
@@ -396,7 +396,7 @@ namespace CinemaSystemProjectB
 				}
 
 				//if page is 2 (snack & drink menu) then it changes the text of MovieReservationLabel
-				else if(page == 2)
+				else if (page == 2)
 				{
 					MovieReservationLabel.Text = "Snack reservering";
 					//Fills all food options with the same "amount" of people
@@ -494,7 +494,7 @@ namespace CinemaSystemProjectB
 						}
 					}
 				}
-				if(page == 3)
+				if (page == 3)
 				{
 					ConfirmButton.Enabled = true;
 					ConfirmButton.Visible = true;
@@ -558,7 +558,7 @@ namespace CinemaSystemProjectB
 						movie.TotalStudents.Text = temp.ToString();
 						movie.TotalSeniors.Text = temp2.ToString();
 
-						movie.PriceAdult.Text = "€" + ((SelectedMovies[n].comboBoxAdult.SelectedIndex - temp - temp2)*10).ToString() + ",00";
+						movie.PriceAdult.Text = "€" + ((SelectedMovies[n].comboBoxAdult.SelectedIndex - temp - temp2) * 10).ToString() + ",00";
 						movie.PriceKids.Text = "€" + ((SelectedMovies[n].comboBoxKids.SelectedIndex) * 5).ToString() + ",00";
 						movie.PriceStudent.Text = "€" + (temp * 8).ToString() + ",00";
 						movie.PriceSenior.Text = "€" + (temp2 * 7).ToString() + ",00";
@@ -569,13 +569,13 @@ namespace CinemaSystemProjectB
 
 						foreach (FoodMenuMovieItem item in FoodMenuPanel.Controls)
 						{
-							if(item.comboBox1.SelectedIndex > 0)
+							if (item.comboBox1.SelectedIndex > 0)
 							{
 								movie.Snacks.Text += Environment.NewLine + item.comboBox1.SelectedIndex.ToString() + "x" + "	 " + snacks[0].Key;
 								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[0].Value) * item.comboBox1.SelectedIndex);
 								TotalPricesSnacks += (Decimal.Parse(snacks[0].Value) * item.comboBox1.SelectedIndex);
 							}
-							if(item.comboBox2.SelectedIndex > 0)
+							if (item.comboBox2.SelectedIndex > 0)
 							{
 								movie.Snacks.Text += Environment.NewLine + item.comboBox2.SelectedIndex.ToString() + "x" + "	 " + snacks[1].Key;
 								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[1].Value) * item.comboBox2.SelectedIndex);
@@ -707,7 +707,7 @@ namespace CinemaSystemProjectB
 							AddPriceSenior = SelectedMovies[n].comboBoxSenior.SelectedIndex;
 						}
 
-						movie.TotalPrice.Text = "€" + (Convert.ToDecimal((SelectedMovies[n].comboBoxAdult.SelectedIndex - temp - temp2)*10) + Convert.ToDecimal((SelectedMovies[n].comboBoxKids.SelectedIndex) * 5) + Convert.ToDecimal(AddPriceStudent * 8) + Convert.ToDecimal(AddPriceSenior * 7) + TotalPricesSnacks).ToString();
+						movie.TotalPrice.Text = "€" + (Convert.ToDecimal((SelectedMovies[n].comboBoxAdult.SelectedIndex - temp - temp2) * 10) + Convert.ToDecimal((SelectedMovies[n].comboBoxKids.SelectedIndex) * 5) + Convert.ToDecimal(AddPriceStudent * 8) + Convert.ToDecimal(AddPriceSenior * 7) + TotalPricesSnacks).ToString();
 						totalPriceOfReservation += (Convert.ToDecimal((SelectedMovies[n].comboBoxAdult.SelectedIndex - temp - temp2) * 10) + Convert.ToDecimal((SelectedMovies[n].comboBoxKids.SelectedIndex) * 5) + Convert.ToDecimal(AddPriceStudent * 8) + Convert.ToDecimal(AddPriceSenior * 7) + TotalPricesSnacks);
 						n++;
 					}
@@ -752,7 +752,7 @@ namespace CinemaSystemProjectB
 				ReservationPrice.Visible = false;
 				ConfirmButton.Enabled = false;
 				ConfirmButton.Visible = false;
-				
+
 				if (page == 1)
 				{
 					//Warning to make sure the user understands the consequence of pressing the "previous page" button
@@ -773,7 +773,7 @@ namespace CinemaSystemProjectB
 					NextPageButton.Visible = true;
 					NextPageButton.Enabled = true;
 				}
-				if(page == 4)
+				if (page == 4)
 				{
 					ReservationPriceLabel.Visible = true;
 					ReservationPrice.Visible = true;
@@ -853,6 +853,104 @@ namespace CinemaSystemProjectB
 		private void ConfirmButton_MouseLeave(object sender, EventArgs e)
 		{
 			ConfirmButton.BackColor = Color.Yellow;
+		}
+
+		public class ReservationDetails
+		{
+			public int TotalPeople { get; set; }
+			public int Adult { get; set; }
+			public int Kids { get; set; }
+			public int Students { get; set; }
+			public int Senior { get; set; }
+			public int NormalSeats { get; set; }
+			public int GoodSeats { get; set; }
+			public int BestSeats { get; set; }
+			public string Snacks { get; set; }
+		}
+
+		private void ConfirmButton_Click(object sender, EventArgs e)
+		{
+			//GENERATES RESERVATION CODE
+			var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+			var stringChars = new char[8];
+			var random = new Random();
+
+			for (int i = 0; i < stringChars.Length; i++)
+			{
+				stringChars[i] = chars[random.Next(chars.Length)];
+			}
+
+			var finalString = new String(stringChars);
+
+			DateTime dateToday = DateTime.Today;
+
+			//this is the reservation code
+			string ReservationCode = finalString + dateToday.ToString("ddMMyyyy");
+
+			//loop through all chosen movies
+			List<SelectPeopleItem> SelectedMovies = new List<SelectPeopleItem>();
+			foreach (SelectPeopleItem item in SelectPeoplePanel.Controls)
+			{
+				SelectedMovies.Add(item);
+			}
+
+			//gets all snacks of all movies
+			string[] MovieSnacks = new string[CustomerReservationPage.Controls.Count];
+			int m = 0;
+			foreach (CustomerReservation movie in CustomerReservationPage.Controls)
+			{
+				MovieSnacks[m] = movie.Snacks.Text;
+			}
+
+			//loop to fill all movie reservation details
+			for (int i = 0; i < SelectedMovies.Count; i++)
+			{
+
+				//Write customer reservation to json file
+				List<KeyValuePair<string, ReservationDetails>> _data = new List<KeyValuePair<string, ReservationDetails>>();
+
+				_data.Add(new KeyValuePair<string, ReservationDetails>(ReservationCode, new ReservationDetails()
+				{
+					TotalPeople = (SelectedMovies[i].comboBoxAdult.SelectedIndex + SelectedMovies[i].comboBoxKids.SelectedIndex),
+					Adult = SelectedMovies[i].comboBoxAdult.SelectedIndex,
+					Kids = SelectedMovies[i].comboBoxKids.SelectedIndex,
+					Students = SelectedMovies[i].comboBoxStudent.SelectedIndex == -1 ? 0 : SelectedMovies[i].comboBoxStudent.SelectedIndex,
+					Senior = SelectedMovies[i].comboBoxSenior.SelectedIndex == -1 ? 0 : SelectedMovies[i].comboBoxSenior.SelectedIndex,
+
+					//NormalSeats = ,
+					//GoodSeats = ,
+					//BestSeats = ,
+					Snacks = MovieSnacks[i]
+
+
+				}));
+
+				if (!File.Exists("Reservations.txt"))
+				{
+					using (StreamWriter file = File.CreateText(@"Reservations.txt"))
+					{
+						JsonSerializer serializer = new JsonSerializer();
+						serializer.Serialize(file, _data);
+						file.Close();
+					}
+				}
+				else
+				{
+					//Add movie reservation to list
+					StreamWriter file = new StreamWriter(@"Reservations.txt", true);
+					file.WriteLine();
+					JsonSerializer serializer = new JsonSerializer();
+					serializer.Serialize(file, _data);
+					file.Close();
+				}
+			}
+
+			//Messagebox when the reservation is completed. 
+			DialogResult dialogResult = MessageBox.Show("Bedankt voor uw reservering. Klik op ok om terug naar het startscherm te gaan.", "Reservering is voltooid.", MessageBoxButtons.OK);
+			if (dialogResult == DialogResult.OK)
+			{
+				this.Close();
+			}
 		}
 	}
 }

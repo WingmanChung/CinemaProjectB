@@ -53,10 +53,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.PageNumber4 = new System.Windows.Forms.Panel();
+            this.CustomerReservationPage = new System.Windows.Forms.FlowLayoutPanel();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.CustomerReservationPage = new System.Windows.Forms.FlowLayoutPanel();
             this.gradientLabel1 = new CinemaSystemProjectB.GradientLabel();
             this.DisclaimerButton = new System.Windows.Forms.Label();
             this.RoadMapButton = new System.Windows.Forms.Label();
@@ -320,6 +320,14 @@
             this.PageNumber4.Size = new System.Drawing.Size(991, 500);
             this.PageNumber4.TabIndex = 71;
             // 
+            // CustomerReservationPage
+            // 
+            this.CustomerReservationPage.AutoScroll = true;
+            this.CustomerReservationPage.Location = new System.Drawing.Point(41, 40);
+            this.CustomerReservationPage.Name = "CustomerReservationPage";
+            this.CustomerReservationPage.Size = new System.Drawing.Size(920, 441);
+            this.CustomerReservationPage.TabIndex = 71;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -347,14 +355,6 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(921, 4);
             this.label7.TabIndex = 65;
-            // 
-            // CustomerReservationPage
-            // 
-            this.CustomerReservationPage.AutoScroll = true;
-            this.CustomerReservationPage.Location = new System.Drawing.Point(41, 40);
-            this.CustomerReservationPage.Name = "CustomerReservationPage";
-            this.CustomerReservationPage.Size = new System.Drawing.Size(920, 441);
-            this.CustomerReservationPage.TabIndex = 71;
             // 
             // gradientLabel1
             // 
@@ -449,6 +449,7 @@
             this.ConfirmButton.TabIndex = 74;
             this.ConfirmButton.Text = "Bevestigen";
             this.ConfirmButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ConfirmButton.Click += new System.EventHandler(this.ConfirmButton_Click);
             this.ConfirmButton.MouseEnter += new System.EventHandler(this.ConfirmButton_MouseEnter);
             this.ConfirmButton.MouseLeave += new System.EventHandler(this.ConfirmButton_MouseLeave);
             // 
