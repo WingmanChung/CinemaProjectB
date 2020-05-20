@@ -269,7 +269,7 @@ namespace CinemaSystemProjectB
 					availableMoviesList[i].Value == 55 ||
 					availableMoviesList[i].Value == 56)
 				{
-					moviescreen = "Screen 1";
+					moviescreen = "Zaal 1";
 				}
 				if (availableMoviesList[i].Value == 3 ||
 					availableMoviesList[i].Value == 4 ||
@@ -299,7 +299,7 @@ namespace CinemaSystemProjectB
 					availableMoviesList[i].Value == 58 ||
 					availableMoviesList[i].Value == 59)
 				{
-					moviescreen = "Screen 2";
+					moviescreen = "Zaal 2";
 				}
 				if (availableMoviesList[i].Value == 6 ||
 					availableMoviesList[i].Value == 7 ||
@@ -329,7 +329,7 @@ namespace CinemaSystemProjectB
 					availableMoviesList[i].Value == 61 ||
 					availableMoviesList[i].Value == 62)
 				{
-					moviescreen = "Screen 3";
+					moviescreen = "Zaal 3";
 				}
 
 				MovieReservationAvailableMoviesItems[i].Screen = moviescreen;
@@ -563,9 +563,32 @@ namespace CinemaSystemProjectB
 						movie.PriceStudent.Text = "€" + (temp * 8).ToString() + ",00";
 						movie.PriceSenior.Text = "€" + (temp2 * 7).ToString() + ",00";
 
-						//movie.BestSeat.Text = ;
-						//movie.GoodSeat.Text = ;
-						//movie.NormalSeat.Text = ;
+						movie.NormalSeat.Text = SelectedMovies[n].TotalNormalSeats.Text == "-1" ? "0" : SelectedMovies[n].TotalNormalSeats.Text;
+						movie.GoodSeat.Text = SelectedMovies[n].TotalGoodSeats.Text == "-1" ? "0" : SelectedMovies[n].TotalGoodSeats.Text;
+						movie.BestSeat.Text = SelectedMovies[n].TotalBestSeats.Text == "-1" ? "0" : SelectedMovies[n].TotalBestSeats.Text;
+						
+						string temp3 = "";
+						string temp4 = "";
+
+						if((Convert.ToInt32(SelectedMovies[n].TotalGoodSeats.Text)) < 0)
+						{
+							temp3 = "0";
+						}
+						else
+						{
+							temp3 = (Convert.ToInt32(SelectedMovies[n].TotalGoodSeats.Text) * 1).ToString();
+						}
+						if ((Convert.ToInt32(SelectedMovies[n].TotalBestSeats.Text)) < 0)
+						{
+							temp4 = "0";
+						}
+						else
+						{
+							temp4 = (Convert.ToInt32(SelectedMovies[n].TotalBestSeats.Text) * 2).ToString();
+						}
+
+						movie.TotalGoodSeatPrice.Text = "€" + temp3 + ",00";
+						movie.TotalBestSeatPrice.Text = "€" + temp4 + ",00";
 
 						foreach (FoodMenuMovieItem item in FoodMenuPanel.Controls)
 						{
@@ -707,8 +730,8 @@ namespace CinemaSystemProjectB
 							AddPriceSenior = SelectedMovies[n].comboBoxSenior.SelectedIndex;
 						}
 
-						movie.TotalPrice.Text = "€" + (Convert.ToDecimal((SelectedMovies[n].comboBoxAdult.SelectedIndex - temp - temp2) * 10) + Convert.ToDecimal((SelectedMovies[n].comboBoxKids.SelectedIndex) * 5) + Convert.ToDecimal(AddPriceStudent * 8) + Convert.ToDecimal(AddPriceSenior * 7) + TotalPricesSnacks).ToString();
-						totalPriceOfReservation += (Convert.ToDecimal((SelectedMovies[n].comboBoxAdult.SelectedIndex - temp - temp2) * 10) + Convert.ToDecimal((SelectedMovies[n].comboBoxKids.SelectedIndex) * 5) + Convert.ToDecimal(AddPriceStudent * 8) + Convert.ToDecimal(AddPriceSenior * 7) + TotalPricesSnacks);
+						movie.TotalPrice.Text = "€" + (Convert.ToDecimal((SelectedMovies[n].comboBoxAdult.SelectedIndex - temp - temp2) * 10) + Convert.ToDecimal((SelectedMovies[n].comboBoxKids.SelectedIndex) * 5) + Convert.ToDecimal(AddPriceStudent * 8) + Convert.ToDecimal(AddPriceSenior * 7) + Convert.ToDecimal(temp3) + Convert.ToDecimal(temp4) + TotalPricesSnacks).ToString();
+						totalPriceOfReservation += (Convert.ToDecimal((SelectedMovies[n].comboBoxAdult.SelectedIndex - temp - temp2) * 10) + Convert.ToDecimal((SelectedMovies[n].comboBoxKids.SelectedIndex) * 5) + Convert.ToDecimal(AddPriceStudent * 8) + Convert.ToDecimal(AddPriceSenior * 7) + Convert.ToDecimal(temp3) + Convert.ToDecimal(temp4) + TotalPricesSnacks );
 						n++;
 					}
 
@@ -798,8 +821,16 @@ namespace CinemaSystemProjectB
 				movies.Add(movie.comboBoxAdult.SelectedIndex.ToString());
 				movies.Add(movie.comboBoxKids.SelectedIndex.ToString());
 			}
+			List<string> strings = new List<string>();
+			foreach (SelectPeopleItem movie in SelectPeoplePanel.Controls)
+			{
+				strings.Add(movie.TotalBestSeats.Text);
+				strings.Add(movie.TotalGoodSeats.Text);
+				strings.Add(movie.TotalNormalSeats.Text);
+			}
+			bool stringLabels = strings.Count > 0 && strings.All(a => a != "");
 			bool countBoxes = movies.Count > 0 && movies.All(a => a != "-1");
-			if (countBoxes == true)
+			if (countBoxes == true && stringLabels == true)
 			{
 				NextPageButton.Enabled = true;
 			}
@@ -857,6 +888,7 @@ namespace CinemaSystemProjectB
 
 		public class ReservationDetails
 		{
+			public string MovieTitle { get; set; }
 			public int TotalPeople { get; set; }
 			public int Adult { get; set; }
 			public int Kids { get; set; }
@@ -868,24 +900,8 @@ namespace CinemaSystemProjectB
 			public string Snacks { get; set; }
 		}
 
-		private void ConfirmButton_Click(object sender, EventArgs e)
+		private void ConfirmButton_MouseClick(object sender, MouseEventArgs e)
 		{
-			//GENERATES RESERVATION CODE
-			var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-			var stringChars = new char[8];
-			var random = new Random();
-
-			for (int i = 0; i < stringChars.Length; i++)
-			{
-				stringChars[i] = chars[random.Next(chars.Length)];
-			}
-
-			var finalString = new String(stringChars);
-
-			DateTime dateToday = DateTime.Today;
-
-			//this is the reservation code
-			string ReservationCode = finalString + dateToday.ToString("ddMMyyyy");
 
 			//loop through all chosen movies
 			List<SelectPeopleItem> SelectedMovies = new List<SelectPeopleItem>();
@@ -902,29 +918,47 @@ namespace CinemaSystemProjectB
 				MovieSnacks[m] = movie.Snacks.Text;
 			}
 
+			List<KeyValuePair<string, string>> ReservationList = new List<KeyValuePair<string, string>>();
+			List<KeyValuePair<string, ReservationDetails>> _data = new List<KeyValuePair<string, ReservationDetails>>();
+
 			//loop to fill all movie reservation details
 			for (int i = 0; i < SelectedMovies.Count; i++)
 			{
+				//GENERATES RESERVATION CODE
+				var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+				var stringChars = new char[8];
+				var random = new Random();
+
+				for (int j = 0; j < stringChars.Length; j++)
+				{
+					stringChars[j] = chars[random.Next(chars.Length)];
+				}
+
+				var finalString = new String(stringChars);
+
+				DateTime dateToday = DateTime.Today;
+
+				//this is the reservation code
+				string ReservationCode = finalString + dateToday.ToString("ddMMyyyy");
 
 				//Write customer reservation to json file
-				List<KeyValuePair<string, ReservationDetails>> _data = new List<KeyValuePair<string, ReservationDetails>>();
 
 				_data.Add(new KeyValuePair<string, ReservationDetails>(ReservationCode, new ReservationDetails()
 				{
+					MovieTitle = SelectedMovies[i].MovieTitle,
 					TotalPeople = (SelectedMovies[i].comboBoxAdult.SelectedIndex + SelectedMovies[i].comboBoxKids.SelectedIndex),
 					Adult = SelectedMovies[i].comboBoxAdult.SelectedIndex,
 					Kids = SelectedMovies[i].comboBoxKids.SelectedIndex,
 					Students = SelectedMovies[i].comboBoxStudent.SelectedIndex == -1 ? 0 : SelectedMovies[i].comboBoxStudent.SelectedIndex,
 					Senior = SelectedMovies[i].comboBoxSenior.SelectedIndex == -1 ? 0 : SelectedMovies[i].comboBoxSenior.SelectedIndex,
 
-					//NormalSeats = ,
-					//GoodSeats = ,
-					//BestSeats = ,
+					NormalSeats = Convert.ToInt32(SelectedMovies[i].TotalNormalSeats.Text),
+					GoodSeats = Convert.ToInt32(SelectedMovies[i].TotalGoodSeats.Text),
+					BestSeats = Convert.ToInt32(SelectedMovies[i].TotalBestSeats.Text),
 					Snacks = MovieSnacks[i]
 
 
-				}));
-
+				}));;
 				if (!File.Exists("Reservations.txt"))
 				{
 					using (StreamWriter file = File.CreateText(@"Reservations.txt"))
@@ -943,11 +977,16 @@ namespace CinemaSystemProjectB
 					serializer.Serialize(file, _data);
 					file.Close();
 				}
+				ReservationList.Add(new KeyValuePair<string, string>(_data[i].Value.MovieTitle, _data[i].Key));
 			}
-
-			//Messagebox when the reservation is completed. 
-			DialogResult dialogResult = MessageBox.Show("Bedankt voor uw reservering. Klik op ok om terug naar het startscherm te gaan.", "Reservering is voltooid.", MessageBoxButtons.OK);
-			if (dialogResult == DialogResult.OK)
+			//shows reservation codes
+			string showCodes = "";
+			for(int i = 0; i < ReservationList.Count; i++)
+			{
+				showCodes += ReservationList[i].Key + ": " + ReservationList[i].Value + Environment.NewLine;
+			}
+			DialogResult CodesResult = MessageBox.Show("Bedankt voor uw reservering. Hieronder staan de reserveringcodes per film.\n" + Environment.NewLine + showCodes + Environment.NewLine +"Klik op OK om terug naar het startscherm te gaan.", "Reservering is voltooid.", MessageBoxButtons.OK);
+			if (CodesResult == DialogResult.OK)
 			{
 				this.Close();
 			}

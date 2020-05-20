@@ -48,6 +48,15 @@
             this.TotalStudents = new System.Windows.Forms.Label();
             this.TotalSeniors = new System.Windows.Forms.Label();
             this.MoviePanel = new System.Windows.Forms.Panel();
+            this.TotalBestSeatPrice = new System.Windows.Forms.Label();
+            this.TotalGoodSeatPrice = new System.Windows.Forms.Label();
+            this.TotalNormalSeatPrice = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.TotalPrice = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -78,6 +87,7 @@
             this.FoodLabel = new System.Windows.Forms.Label();
             this.SnackPrice = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.MoviePanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -200,7 +210,7 @@
             this.TotalKidsLabel.AutoSize = true;
             this.TotalKidsLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalKidsLabel.ForeColor = System.Drawing.Color.Yellow;
-            this.TotalKidsLabel.Location = new System.Drawing.Point(161, 339);
+            this.TotalKidsLabel.Location = new System.Drawing.Point(161, 338);
             this.TotalKidsLabel.Name = "TotalKidsLabel";
             this.TotalKidsLabel.Size = new System.Drawing.Size(138, 19);
             this.TotalKidsLabel.TabIndex = 306;
@@ -233,7 +243,7 @@
             this.TotalKids.BackColor = System.Drawing.Color.Transparent;
             this.TotalKids.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold);
             this.TotalKids.ForeColor = System.Drawing.Color.Yellow;
-            this.TotalKids.Location = new System.Drawing.Point(292, 339);
+            this.TotalKids.Location = new System.Drawing.Point(292, 338);
             this.TotalKids.Name = "TotalKids";
             this.TotalKids.Size = new System.Drawing.Size(20, 21);
             this.TotalKids.TabIndex = 309;
@@ -305,6 +315,15 @@
             // 
             // MoviePanel
             // 
+            this.MoviePanel.Controls.Add(this.TotalBestSeatPrice);
+            this.MoviePanel.Controls.Add(this.TotalGoodSeatPrice);
+            this.MoviePanel.Controls.Add(this.TotalNormalSeatPrice);
+            this.MoviePanel.Controls.Add(this.label17);
+            this.MoviePanel.Controls.Add(this.label16);
+            this.MoviePanel.Controls.Add(this.label15);
+            this.MoviePanel.Controls.Add(this.label14);
+            this.MoviePanel.Controls.Add(this.label13);
+            this.MoviePanel.Controls.Add(this.label12);
             this.MoviePanel.Controls.Add(this.TotalPrice);
             this.MoviePanel.Controls.Add(this.label9);
             this.MoviePanel.Controls.Add(this.label10);
@@ -354,12 +373,130 @@
             this.MoviePanel.Controls.Add(this.FoodLabel);
             this.MoviePanel.Controls.Add(this.SnackPrice);
             this.MoviePanel.Controls.Add(this.label11);
+            this.MoviePanel.Controls.Add(this.label18);
             this.MoviePanel.Location = new System.Drawing.Point(0, 0);
             this.MoviePanel.MaximumSize = new System.Drawing.Size(900, 1150);
             this.MoviePanel.MinimumSize = new System.Drawing.Size(900, 203);
             this.MoviePanel.Name = "MoviePanel";
             this.MoviePanel.Size = new System.Drawing.Size(900, 203);
             this.MoviePanel.TabIndex = 304;
+            // 
+            // TotalBestSeatPrice
+            // 
+            this.TotalBestSeatPrice.AutoSize = true;
+            this.TotalBestSeatPrice.BackColor = System.Drawing.Color.Transparent;
+            this.TotalBestSeatPrice.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold);
+            this.TotalBestSeatPrice.ForeColor = System.Drawing.Color.Yellow;
+            this.TotalBestSeatPrice.Location = new System.Drawing.Point(723, 514);
+            this.TotalBestSeatPrice.Name = "TotalBestSeatPrice";
+            this.TotalBestSeatPrice.Size = new System.Drawing.Size(55, 21);
+            this.TotalBestSeatPrice.TabIndex = 374;
+            this.TotalBestSeatPrice.Text = "€0,00\r\n";
+            this.TotalBestSeatPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // TotalGoodSeatPrice
+            // 
+            this.TotalGoodSeatPrice.AutoSize = true;
+            this.TotalGoodSeatPrice.BackColor = System.Drawing.Color.Transparent;
+            this.TotalGoodSeatPrice.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold);
+            this.TotalGoodSeatPrice.ForeColor = System.Drawing.Color.Yellow;
+            this.TotalGoodSeatPrice.Location = new System.Drawing.Point(723, 483);
+            this.TotalGoodSeatPrice.Name = "TotalGoodSeatPrice";
+            this.TotalGoodSeatPrice.Size = new System.Drawing.Size(55, 21);
+            this.TotalGoodSeatPrice.TabIndex = 373;
+            this.TotalGoodSeatPrice.Text = "€0,00\r\n";
+            this.TotalGoodSeatPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // TotalNormalSeatPrice
+            // 
+            this.TotalNormalSeatPrice.AutoSize = true;
+            this.TotalNormalSeatPrice.BackColor = System.Drawing.Color.Transparent;
+            this.TotalNormalSeatPrice.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold);
+            this.TotalNormalSeatPrice.ForeColor = System.Drawing.Color.Yellow;
+            this.TotalNormalSeatPrice.Location = new System.Drawing.Point(723, 451);
+            this.TotalNormalSeatPrice.Name = "TotalNormalSeatPrice";
+            this.TotalNormalSeatPrice.Size = new System.Drawing.Size(55, 21);
+            this.TotalNormalSeatPrice.TabIndex = 372;
+            this.TotalNormalSeatPrice.Text = "€0,00\r\n";
+            this.TotalNormalSeatPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold);
+            this.label17.ForeColor = System.Drawing.Color.Yellow;
+            this.label17.Location = new System.Drawing.Point(440, 514);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(55, 21);
+            this.label17.TabIndex = 370;
+            this.label17.Text = "€2,00\r\n";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold);
+            this.label16.ForeColor = System.Drawing.Color.Yellow;
+            this.label16.Location = new System.Drawing.Point(440, 483);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(55, 21);
+            this.label16.TabIndex = 369;
+            this.label16.Text = "€1,00\r\n";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold);
+            this.label15.ForeColor = System.Drawing.Color.Yellow;
+            this.label15.Location = new System.Drawing.Point(440, 449);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(55, 21);
+            this.label15.TabIndex = 368;
+            this.label15.Text = "€0,00\r\n";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold);
+            this.label14.ForeColor = System.Drawing.Color.Yellow;
+            this.label14.Location = new System.Drawing.Point(419, 512);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(21, 21);
+            this.label14.TabIndex = 367;
+            this.label14.Text = "x";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold);
+            this.label13.ForeColor = System.Drawing.Color.Yellow;
+            this.label13.Location = new System.Drawing.Point(419, 480);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(21, 21);
+            this.label13.TabIndex = 366;
+            this.label13.Text = "x";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold);
+            this.label12.ForeColor = System.Drawing.Color.Yellow;
+            this.label12.Location = new System.Drawing.Point(419, 448);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(21, 21);
+            this.label12.TabIndex = 365;
+            this.label12.Text = "x";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TotalPrice
             // 
@@ -434,7 +571,7 @@
             this.GoodSeat.BackColor = System.Drawing.Color.Transparent;
             this.GoodSeat.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold);
             this.GoodSeat.ForeColor = System.Drawing.Color.Yellow;
-            this.GoodSeat.Location = new System.Drawing.Point(299, 481);
+            this.GoodSeat.Location = new System.Drawing.Point(299, 482);
             this.GoodSeat.Name = "GoodSeat";
             this.GoodSeat.Size = new System.Drawing.Size(20, 21);
             this.GoodSeat.TabIndex = 354;
@@ -447,7 +584,7 @@
             this.BestSeat.BackColor = System.Drawing.Color.Transparent;
             this.BestSeat.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold);
             this.BestSeat.ForeColor = System.Drawing.Color.Yellow;
-            this.BestSeat.Location = new System.Drawing.Point(299, 513);
+            this.BestSeat.Location = new System.Drawing.Point(299, 514);
             this.BestSeat.Name = "BestSeat";
             this.BestSeat.Size = new System.Drawing.Size(20, 21);
             this.BestSeat.TabIndex = 353;
@@ -459,7 +596,7 @@
             this.BestSeats.AutoSize = true;
             this.BestSeats.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BestSeats.ForeColor = System.Drawing.Color.Yellow;
-            this.BestSeats.Location = new System.Drawing.Point(125, 513);
+            this.BestSeats.Location = new System.Drawing.Point(125, 514);
             this.BestSeats.Name = "BestSeats";
             this.BestSeats.Size = new System.Drawing.Size(169, 38);
             this.BestSeats.TabIndex = 352;
@@ -471,7 +608,7 @@
             this.GoodSeats.AutoSize = true;
             this.GoodSeats.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GoodSeats.ForeColor = System.Drawing.Color.Yellow;
-            this.GoodSeats.Location = new System.Drawing.Point(119, 482);
+            this.GoodSeats.Location = new System.Drawing.Point(119, 483);
             this.GoodSeats.Name = "GoodSeats";
             this.GoodSeats.Size = new System.Drawing.Size(175, 19);
             this.GoodSeats.TabIndex = 350;
@@ -521,7 +658,7 @@
             this.PriceKids.BackColor = System.Drawing.Color.Transparent;
             this.PriceKids.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold);
             this.PriceKids.ForeColor = System.Drawing.Color.Yellow;
-            this.PriceKids.Location = new System.Drawing.Point(726, 340);
+            this.PriceKids.Location = new System.Drawing.Point(726, 338);
             this.PriceKids.Name = "PriceKids";
             this.PriceKids.Size = new System.Drawing.Size(55, 21);
             this.PriceKids.TabIndex = 345;
@@ -559,7 +696,7 @@
             this.PriceLabel.AutoSize = true;
             this.PriceLabel.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold);
             this.PriceLabel.ForeColor = System.Drawing.Color.Yellow;
-            this.PriceLabel.Location = new System.Drawing.Point(729, 220);
+            this.PriceLabel.Location = new System.Drawing.Point(729, 221);
             this.PriceLabel.Name = "PriceLabel";
             this.PriceLabel.Size = new System.Drawing.Size(49, 21);
             this.PriceLabel.TabIndex = 342;
@@ -585,7 +722,7 @@
             this.label27.BackColor = System.Drawing.Color.Transparent;
             this.label27.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold);
             this.label27.ForeColor = System.Drawing.Color.Yellow;
-            this.label27.Location = new System.Drawing.Point(440, 339);
+            this.label27.Location = new System.Drawing.Point(440, 338);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(55, 21);
             this.label27.TabIndex = 340;
@@ -650,7 +787,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.Yellow;
-            this.label4.Location = new System.Drawing.Point(419, 339);
+            this.label4.Location = new System.Drawing.Point(419, 337);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(21, 21);
             this.label4.TabIndex = 335;
@@ -663,7 +800,7 @@
             this.XLabel.BackColor = System.Drawing.Color.Transparent;
             this.XLabel.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold);
             this.XLabel.ForeColor = System.Drawing.Color.Yellow;
-            this.XLabel.Location = new System.Drawing.Point(419, 251);
+            this.XLabel.Location = new System.Drawing.Point(419, 250);
             this.XLabel.Name = "XLabel";
             this.XLabel.Size = new System.Drawing.Size(21, 21);
             this.XLabel.TabIndex = 334;
@@ -718,6 +855,18 @@
             this.label11.TabIndex = 364;
             this.label11.Text = "Totale prijs:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold);
+            this.label18.ForeColor = System.Drawing.Color.Yellow;
+            this.label18.Location = new System.Drawing.Point(729, 411);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(49, 21);
+            this.label18.TabIndex = 371;
+            this.label18.Text = "Prijs\r\n";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CustomerReservation
             // 
@@ -787,5 +936,15 @@
         public System.Windows.Forms.Label TotalPrice;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
+        public System.Windows.Forms.Label label17;
+        public System.Windows.Forms.Label label16;
+        public System.Windows.Forms.Label label15;
+        public System.Windows.Forms.Label label14;
+        public System.Windows.Forms.Label label13;
+        public System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label18;
+        public System.Windows.Forms.Label TotalBestSeatPrice;
+        public System.Windows.Forms.Label TotalGoodSeatPrice;
+        public System.Windows.Forms.Label TotalNormalSeatPrice;
     }
 }

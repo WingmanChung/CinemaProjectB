@@ -120,7 +120,7 @@
   <data name="RoadMapInfo.Text" xml:space="preserve">
     <value>Zo boek je in een paar stappen je filmticket:
 
-Wanneer u op ‘reserveren’ heeft gedrukt via de homepagina, filmpagina of via het film rooster, komt u op een reserveerpagina terecht met alle films die op dat moment in de bioscoop te zien zijn. Bij iedere film wordt de filmervaring (2D/3D/IMAX-3D), film duur en datum van draaien aangegeven.
+Wanneer u op ‘reserveren’ heeft gedrukt via de startpagina, filmpagina of via het film rooster, komt u op een reserveerpagina terecht met alle films die op dat moment in de bioscoop te zien zijn. Bij iedere film wordt de filmervaring (2D/3D/IMAX-3D), film duur en datum van draaien aangegeven.
 
 1. Film selecteren
 Selecteer de gewenste films waar u een reservering voor wilt maken.
@@ -130,18 +130,18 @@ Belangrijk: de personen voor wie de boeking is gemaakt moeten voldoen aan de min
 Vul de gevraagde gegevens in.
     stap 1. vul het aantal volwassenen en/of kinderen in.
     stap 2. deze stap is niet verplicht, maar mochten er zich studenten en/of senioren bevinden onder de personen dan kunt u deze velden invullen voor de studenten- en senioren korting. Bij de kassa zal er gevraagd worden naar het laten zien van een studentenpas en legitimatiebewijs.
-    stap 3. selecteer de zitplaats(en) die u wilt reserveren. 
+    stap 3. selecteer de zitplaats(en) die u wilt reserveren. Om een zitplaats te selecteren kiest u de rij uit waar u wilt zitten en hoeveel stoelen u wilt reserveren in die rij. Op de legenda kunt u zien uit wat voor stoelen de zaal bestaat.
 
 3. Snacks (Optioneel)
-Selecteer de snacks en de aantal ervan die u wilt reserveren voor de film. Deze stap is optioneel.
+Selecteer de snacks en het aantal ervan die u wilt reserveren voor de film. Deze stap is optioneel. Om snacks te reserveren klikt u op de rode balk waardoor u de menukaart te zien krijgt. Achter elk snack kunt u een hoeveelheid aantal snacks selecteren. Wanneer u klaar bent kunt u opnieuw op de rode balk klikken om de menukaart weer op te rollen. Heeft u meerdere films geselecteerd? dan kunt u voor iedere film apart snacks reserveren.
 
 4. Reservering controleren
-Controleer uw reservering en klik op "BEVESTIGEN". Mocht u toch iets willen veranderen dan kan dat nog voordat u de reservering heeft bevestigt door op ‘terug’ te klikken. Ziet u toch af van de reservering? dan kunt u simpelweg op de knop ‘Annuleren’ drukken.
+Als u de voorgaande stappen heeft voltooid krijgt u een overzicht te zien van de gekozen film(s) en de daarbij behorende gegevens. Om meer details te krijgen over uw reservering en de prijsberekening kunt u op de rode balk klikken onder het totale prijs. Bij de prijsopbouw staat de berekening van uw ticket(s) en evt. optionele extra’s. Controleer uw reservering en klik op "BEVESTIGEN". Mocht u toch iets willen veranderen dan kan dat nog voordat u de reservering heeft bevestigt door op ‘terug’ te klikken. Ziet u toch af van de reservering? dan kunt u simpelweg de form afsluiten.
 
 5. Betaalwijze
 Als u de reservering heeft bevestigt krijgt u een reserveercode voor de film(s) waar u voor heeft geboekt. Deze code wissel je in bij de kassa voor de tickets. Bij de kassa kan er gevraagd worden naar uw legitimatiebewijs en/of studentenpas als u een student bent.
 
 6. Reservering voltooid
-Als u de reservering heeft voltooid krijgt u een overzicht te zien van de gekozen film(s) en de daarbij behorende gegevens. Bij prijsopbouw staat de berekening van uw ticket(s) en evt. optionele extra’s.</value>
+Als u de reservering heeft voltooid krijgt u een bericht te zien met daarin uw reserveringcodes. Door op OK te drukken zult u terug naar het startscherm worden gebracht.</value>
   </data>
 </root>

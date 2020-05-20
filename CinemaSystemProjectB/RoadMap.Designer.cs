@@ -91,18 +91,19 @@
             this.MovieReservationLabel.BackColor = System.Drawing.Color.Yellow;
             this.MovieReservationLabel.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MovieReservationLabel.ForeColor = System.Drawing.Color.Black;
-            this.MovieReservationLabel.Location = new System.Drawing.Point(80, 132);
+            this.MovieReservationLabel.Location = new System.Drawing.Point(36, 129);
             this.MovieReservationLabel.Name = "MovieReservationLabel";
-            this.MovieReservationLabel.Size = new System.Drawing.Size(918, 32);
+            this.MovieReservationLabel.Size = new System.Drawing.Size(1035, 32);
             this.MovieReservationLabel.TabIndex = 61;
             this.MovieReservationLabel.Text = "Online reserveren stap-voor-stap";
             this.MovieReservationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // RoadMapLayOutPanel
             // 
-            this.RoadMapLayOutPanel.Location = new System.Drawing.Point(82, 162);
+            this.RoadMapLayOutPanel.AutoScroll = true;
+            this.RoadMapLayOutPanel.Location = new System.Drawing.Point(36, 162);
             this.RoadMapLayOutPanel.Name = "RoadMapLayOutPanel";
-            this.RoadMapLayOutPanel.Size = new System.Drawing.Size(916, 585);
+            this.RoadMapLayOutPanel.Size = new System.Drawing.Size(1035, 585);
             this.RoadMapLayOutPanel.TabIndex = 62;
             // 
             // RoadMap

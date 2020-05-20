@@ -57,13 +57,13 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.ReservationPriceLabel = new System.Windows.Forms.Label();
+            this.ReservationPrice = new System.Windows.Forms.Label();
+            this.ConfirmButton = new System.Windows.Forms.Label();
             this.gradientLabel1 = new CinemaSystemProjectB.GradientLabel();
             this.DisclaimerButton = new System.Windows.Forms.Label();
             this.RoadMapButton = new System.Windows.Forms.Label();
             this.Bioscoopnaam = new System.Windows.Forms.Label();
-            this.ReservationPriceLabel = new System.Windows.Forms.Label();
-            this.ReservationPrice = new System.Windows.Forms.Label();
-            this.ConfirmButton = new System.Windows.Forms.Label();
             this.PageNumber1.SuspendLayout();
             this.PageNumber2.SuspendLayout();
             this.PageNumber3.SuspendLayout();
@@ -117,7 +117,7 @@
             this.AvailableMoviesLabel.Size = new System.Drawing.Size(176, 22);
             this.AvailableMoviesLabel.TabIndex = 62;
             this.AvailableMoviesLabel.Text = "Beschikbare films";
-            this.AvailableMoviesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AvailableMoviesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
@@ -356,6 +356,45 @@
             this.label7.Size = new System.Drawing.Size(921, 4);
             this.label7.TabIndex = 65;
             // 
+            // ReservationPriceLabel
+            // 
+            this.ReservationPriceLabel.AutoSize = true;
+            this.ReservationPriceLabel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReservationPriceLabel.ForeColor = System.Drawing.Color.Yellow;
+            this.ReservationPriceLabel.Location = new System.Drawing.Point(337, 693);
+            this.ReservationPriceLabel.Name = "ReservationPriceLabel";
+            this.ReservationPriceLabel.Size = new System.Drawing.Size(320, 44);
+            this.ReservationPriceLabel.TabIndex = 72;
+            this.ReservationPriceLabel.Text = "Totale prijs van uw reservering: €\r\n\r\n";
+            this.ReservationPriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // ReservationPrice
+            // 
+            this.ReservationPrice.AutoSize = true;
+            this.ReservationPrice.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReservationPrice.ForeColor = System.Drawing.Color.Yellow;
+            this.ReservationPrice.Location = new System.Drawing.Point(651, 693);
+            this.ReservationPrice.Name = "ReservationPrice";
+            this.ReservationPrice.Size = new System.Drawing.Size(48, 22);
+            this.ReservationPrice.TabIndex = 73;
+            this.ReservationPrice.Text = "0,00\r\n";
+            this.ReservationPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // ConfirmButton
+            // 
+            this.ConfirmButton.BackColor = System.Drawing.Color.Yellow;
+            this.ConfirmButton.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConfirmButton.ForeColor = System.Drawing.Color.Black;
+            this.ConfirmButton.Location = new System.Drawing.Point(875, 685);
+            this.ConfirmButton.Name = "ConfirmButton";
+            this.ConfirmButton.Size = new System.Drawing.Size(140, 39);
+            this.ConfirmButton.TabIndex = 74;
+            this.ConfirmButton.Text = "Bevestigen";
+            this.ConfirmButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ConfirmButton.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ConfirmButton_MouseClick);
+            this.ConfirmButton.MouseEnter += new System.EventHandler(this.ConfirmButton_MouseEnter);
+            this.ConfirmButton.MouseLeave += new System.EventHandler(this.ConfirmButton_MouseLeave);
+            // 
             // gradientLabel1
             // 
             this.gradientLabel1.BeginColor = System.Drawing.Color.Black;
@@ -414,45 +453,6 @@
             this.Bioscoopnaam.TabIndex = 10;
             this.Bioscoopnaam.Text = "Darichwiwi";
             // 
-            // ReservationPriceLabel
-            // 
-            this.ReservationPriceLabel.AutoSize = true;
-            this.ReservationPriceLabel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReservationPriceLabel.ForeColor = System.Drawing.Color.Yellow;
-            this.ReservationPriceLabel.Location = new System.Drawing.Point(337, 693);
-            this.ReservationPriceLabel.Name = "ReservationPriceLabel";
-            this.ReservationPriceLabel.Size = new System.Drawing.Size(320, 44);
-            this.ReservationPriceLabel.TabIndex = 72;
-            this.ReservationPriceLabel.Text = "Totale prijs van uw reservering: €\r\n\r\n";
-            this.ReservationPriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // ReservationPrice
-            // 
-            this.ReservationPrice.AutoSize = true;
-            this.ReservationPrice.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReservationPrice.ForeColor = System.Drawing.Color.Yellow;
-            this.ReservationPrice.Location = new System.Drawing.Point(651, 693);
-            this.ReservationPrice.Name = "ReservationPrice";
-            this.ReservationPrice.Size = new System.Drawing.Size(48, 22);
-            this.ReservationPrice.TabIndex = 73;
-            this.ReservationPrice.Text = "0,00\r\n";
-            this.ReservationPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // ConfirmButton
-            // 
-            this.ConfirmButton.BackColor = System.Drawing.Color.Yellow;
-            this.ConfirmButton.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConfirmButton.ForeColor = System.Drawing.Color.Black;
-            this.ConfirmButton.Location = new System.Drawing.Point(875, 685);
-            this.ConfirmButton.Name = "ConfirmButton";
-            this.ConfirmButton.Size = new System.Drawing.Size(140, 39);
-            this.ConfirmButton.TabIndex = 74;
-            this.ConfirmButton.Text = "Bevestigen";
-            this.ConfirmButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.ConfirmButton.Click += new System.EventHandler(this.ConfirmButton_Click);
-            this.ConfirmButton.MouseEnter += new System.EventHandler(this.ConfirmButton_MouseEnter);
-            this.ConfirmButton.MouseLeave += new System.EventHandler(this.ConfirmButton_MouseLeave);
-            // 
             // MovieReservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -464,15 +464,15 @@
             this.Controls.Add(this.ReservationPriceLabel);
             this.Controls.Add(this.PreviousPageButton);
             this.Controls.Add(this.NextPageButton);
-            this.Controls.Add(this.PageNumber4);
             this.Controls.Add(this.MovieReservationLabel);
             this.Controls.Add(this.Rechterkolom);
             this.Controls.Add(this.Linkerkolom);
             this.Controls.Add(this.Wittelijn);
             this.Controls.Add(this.gradientLabel1);
-            this.Controls.Add(this.PageNumber3);
             this.Controls.Add(this.PageNumber1);
             this.Controls.Add(this.PageNumber2);
+            this.Controls.Add(this.PageNumber4);
+            this.Controls.Add(this.PageNumber3);
             this.Name = "MovieReservation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MovieReservation";
