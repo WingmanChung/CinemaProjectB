@@ -120,7 +120,7 @@
   <data name="RoadMapInfo.Text" xml:space="preserve">
     <value>Zo boek je in een paar stappen je filmticket:
 
-Wanneer u op ‘reserveren’ heeft gedrukt via de homepagina, filmpagina of via het film rooster, komt u op een reserveerpagina terecht met alle films die op dat moment in de bioscoop te zien zijn. Bij iedere film wordt de filmervaring (2D/3D/IMAX-3D), film duur en datum van draaien aangegeven.
+Wanneer u op ‘reserveren’ heeft gedrukt via de startpagina, filmpagina of via het film rooster, komt u op een reserveerpagina terecht met alle films die op dat moment in de bioscoop te zien zijn. Bij iedere film wordt de filmervaring (2D/3D/IMAX-3D), film duur en datum van draaien aangegeven.
 
 1. Film selecteren
 Selecteer de gewenste films waar u een reservering voor wilt maken.
@@ -142,6 +142,6 @@ Als u de voorgaande stappen heeft voltooid krijgt u een overzicht te zien van de
 Als u de reservering heeft bevestigt krijgt u een reserveercode voor de film(s) waar u voor heeft geboekt. Deze code wissel je in bij de kassa voor de tickets. Bij de kassa kan er gevraagd worden naar uw legitimatiebewijs en/of studentenpas als u een student bent.
 
 6. Reservering voltooid
-Als u de reservering heeft voltooid krijgt u een melding met daarin dat uw reservering is voltooid.</value>
+Als u de reservering heeft voltooid krijgt u een bericht te zien met daarin uw reserveringcodes. Door op OK te drukken zult u terug naar het startscherm worden gebracht.</value>
   </data>
 </root>
