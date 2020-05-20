@@ -131,7 +131,8 @@ namespace CinemaSystemProjectB
         private void SeatReservation_MouseEnter(object sender, EventArgs e)
         {   
 
-            if (dropdownGoodSeatAmount.SelectedIndex > -1 & dropdownBestSeatAmount.SelectedIndex > -1)
+            if (dropdownGoodSeatAmount.SelectedIndex > -1 & dropdownBestSeatAmount.SelectedIndex > -1
+                & dropdownBestSeatRow.SelectedIndex > -1 & dropdownGoodSeatRow.SelectedIndex > -1 & dropdownNormalSeatRow.SelectedIndex > -1)
             {
                 //total price of good seats
                 int seatAmountGood = int.Parse(dropdownGoodSeatAmount.Text);
