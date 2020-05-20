@@ -146,15 +146,10 @@ namespace CinemaSystemProjectB
                 string totalAmountString = totalAmountInt.ToString();
 
                 TotalSeatPrice.Text = "€" + totalAmountString;
+
+                SeatConfirmButton.Visible = true;
             }
 
-            if ((dropdownNormalSeatAmount.SelectedIndex == -1 ? 0 : dropdownNormalSeatAmount.SelectedIndex) +
-                   (dropdownGoodSeatAmount.SelectedIndex == -1 ? 0 : dropdownGoodSeatAmount.SelectedIndex) +
-                   (dropdownBestSeatAmount.SelectedIndex == -1 ? 0 : dropdownBestSeatAmount.SelectedIndex) == TotalCustomers &&
-                   (dropdownNormalSeatRow.SelectedIndex >= 0) && (dropdownGoodSeatRow.SelectedIndex >= 0) && (dropdownBestSeatRow.SelectedIndex >= 0))
-            {
-                SeatConfirmButton.Enabled = true;
-            }
         }
 
         private void PriceList_MouseEnter(object sender, EventArgs e)
