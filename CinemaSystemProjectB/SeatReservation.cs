@@ -222,7 +222,16 @@ namespace CinemaSystemProjectB
         {
             if (dropdownNormalSeatAmount.Items.Count == 0 && dropdownGoodSeatAmount.Items.Count == 0 && dropdownBestSeatAmount.Items.Count == 0)
             {
-                for (int i = 0; i < 9; i++)
+                int total = 0;
+                if(TotalCustomers > 9)
+                {
+                    total = 9;
+                }
+                else
+                {
+                    total = TotalCustomers;
+                }
+                for (int i = 0; i < total; i++)
                 {
                     dropdownBestSeatAmount.Items.Add(i);
                 }

@@ -584,7 +584,7 @@ namespace CinemaSystemProjectB
 						}
 						else
 						{
-							temp4 = (Convert.ToInt32(SelectedMovies[n].TotalBestSeats.Text) * 1).ToString();
+							temp4 = (Convert.ToInt32(SelectedMovies[n].TotalBestSeats.Text) * 2).ToString();
 						}
 
 						movie.TotalGoodSeatPrice.Text = "€" + temp3 + ",00";
@@ -902,22 +902,6 @@ namespace CinemaSystemProjectB
 
 		private void ConfirmButton_MouseClick(object sender, MouseEventArgs e)
 		{
-			//GENERATES RESERVATION CODE
-			var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-			var stringChars = new char[8];
-			var random = new Random();
-
-			for (int i = 0; i < stringChars.Length; i++)
-			{
-				stringChars[i] = chars[random.Next(chars.Length)];
-			}
-
-			var finalString = new String(stringChars);
-
-			DateTime dateToday = DateTime.Today;
-
-			//this is the reservation code
-			string ReservationCode = finalString + dateToday.ToString("ddMMyyyy");
 
 			//loop through all chosen movies
 			List<SelectPeopleItem> SelectedMovies = new List<SelectPeopleItem>();
@@ -940,6 +924,22 @@ namespace CinemaSystemProjectB
 			//loop to fill all movie reservation details
 			for (int i = 0; i < SelectedMovies.Count; i++)
 			{
+				//GENERATES RESERVATION CODE
+				var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+				var stringChars = new char[8];
+				var random = new Random();
+
+				for (int j = 0; j < stringChars.Length; j++)
+				{
+					stringChars[j] = chars[random.Next(chars.Length)];
+				}
+
+				var finalString = new String(stringChars);
+
+				DateTime dateToday = DateTime.Today;
+
+				//this is the reservation code
+				string ReservationCode = finalString + dateToday.ToString("ddMMyyyy");
 
 				//Write customer reservation to json file
 
