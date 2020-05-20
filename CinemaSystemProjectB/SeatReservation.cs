@@ -7,6 +7,7 @@ namespace CinemaSystemProjectB
     public partial class SeatReservation : Form
     {
         int TotalCustomers = SelectPeopleItem.TotalAdultPlusKids;
+        SelectPeopleItem SelectedMovie2 = SelectPeopleItem.SelectedMovie;
         public SeatReservation()
         {
             InitializeComponent();
@@ -149,7 +150,8 @@ namespace CinemaSystemProjectB
 
             if ((dropdownNormalSeatAmount.SelectedIndex == -1 ? 0 : dropdownNormalSeatAmount.SelectedIndex) +
                    (dropdownGoodSeatAmount.SelectedIndex == -1 ? 0 : dropdownGoodSeatAmount.SelectedIndex) +
-                   (dropdownBestSeatAmount.SelectedIndex == -1 ? 0 : dropdownBestSeatAmount.SelectedIndex) == TotalCustomers)
+                   (dropdownBestSeatAmount.SelectedIndex == -1 ? 0 : dropdownBestSeatAmount.SelectedIndex) == TotalCustomers &&
+                   (dropdownNormalSeatRow.SelectedIndex >= 0) && (dropdownGoodSeatRow.SelectedIndex >= 0) && (dropdownBestSeatRow.SelectedIndex >= 0))
             {
                 SeatConfirmButton.Enabled = true;
             }
@@ -230,6 +232,15 @@ namespace CinemaSystemProjectB
                     dropdownBestSeatAmount.Items.Add(i);
                 }
             }
+        }
+
+        private void SeatConfirmButton_Click(object sender, EventArgs e)
+        {
+            SelectedMovie2.TotalNormalSeats.Text = dropdownNormalSeatAmount.SelectedIndex.ToString();
+            SelectedMovie2.TotalGoodSeats.Text = dropdownGoodSeatAmount.SelectedIndex.ToString();
+            SelectedMovie2.TotalBestSeats.Text = dropdownBestSeatAmount.SelectedIndex.ToString();
+
+            this.Close();
         }
     }
 }

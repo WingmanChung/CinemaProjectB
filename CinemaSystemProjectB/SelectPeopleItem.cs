@@ -8,6 +8,7 @@ namespace CinemaSystemProjectB
 	public partial class SelectPeopleItem : UserControl
     {
 		public static int TotalAdultPlusKids;
+		public static SelectPeopleItem SelectedMovie;
 		public SelectPeopleItem(MovieReservationAvailableMoviesItem chosenItem)
         {
             InitializeComponent();
@@ -209,6 +210,7 @@ namespace CinemaSystemProjectB
 			Step1Completed();
 			if (comboBoxAdult.SelectedIndex > 0 && comboBoxKids.SelectedIndex >= 0 || comboBoxAdult.SelectedIndex >= 0 && comboBoxKids.SelectedIndex > 0)
 			{
+				SelectedMovie = this;
 				SeatReservation screen_number = new SeatReservation(this.ScreenLabel.Text);
 				screen_number.ShowDialog();
 			}
@@ -218,9 +220,6 @@ namespace CinemaSystemProjectB
 		{
 			TotalAdultPlusKids = comboBoxAdult.SelectedIndex + comboBoxKids.SelectedIndex + 1;
 			AllFields();
-			int NormalSeats = (this.ParentForm as SeatReservation).dropdownNormalSeatAmount.SelectedIndex;
-			int GoodSeats = (this.ParentForm as SeatReservation).dropdownGoodSeatAmount.SelectedIndex;
-			int BestSeats = (this.ParentForm as SeatReservation).dropdownBestSeatAmount.SelectedIndex;
 		}
 	}
 }
