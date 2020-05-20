@@ -136,6 +136,7 @@
             this.SeatConfirmButton.TabIndex = 161;
             this.SeatConfirmButton.Text = "Bevestigen";
             this.SeatConfirmButton.UseVisualStyleBackColor = false;
+            this.SeatConfirmButton.Visible = false;
             this.SeatConfirmButton.Click += new System.EventHandler(this.SeatConfirmButton_Click);
             this.SeatConfirmButton.MouseEnter += new System.EventHandler(this.SeatConfirmButton_MouseEnter);
             this.SeatConfirmButton.MouseLeave += new System.EventHandler(this.SeatConfirmButton_MouseLeave);
