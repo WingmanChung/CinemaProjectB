@@ -49,6 +49,9 @@
             this.Step3Label = new System.Windows.Forms.Label();
             this.ChooseSeatsButton = new System.Windows.Forms.Button();
             this.ScreenLabel = new System.Windows.Forms.Label();
+            this.TotalNormalSeats = new System.Windows.Forms.Label();
+            this.TotalGoodSeats = new System.Windows.Forms.Label();
+            this.TotalBestSeats = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // YellowStripe
@@ -272,11 +275,49 @@
             this.ScreenLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.ScreenLabel.Visible = false;
             // 
+            // TotalNormalSeats
+            // 
+            this.TotalNormalSeats.BackColor = System.Drawing.Color.Transparent;
+            this.TotalNormalSeats.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalNormalSeats.ForeColor = System.Drawing.Color.Black;
+            this.TotalNormalSeats.Location = new System.Drawing.Point(799, 0);
+            this.TotalNormalSeats.Name = "TotalNormalSeats";
+            this.TotalNormalSeats.Size = new System.Drawing.Size(43, 16);
+            this.TotalNormalSeats.TabIndex = 31;
+            this.TotalNormalSeats.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TotalNormalSeats.Visible = false;
+            // 
+            // TotalGoodSeats
+            // 
+            this.TotalGoodSeats.BackColor = System.Drawing.Color.Transparent;
+            this.TotalGoodSeats.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalGoodSeats.ForeColor = System.Drawing.Color.Black;
+            this.TotalGoodSeats.Location = new System.Drawing.Point(750, 0);
+            this.TotalGoodSeats.Name = "TotalGoodSeats";
+            this.TotalGoodSeats.Size = new System.Drawing.Size(43, 16);
+            this.TotalGoodSeats.TabIndex = 32;
+            this.TotalGoodSeats.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TotalGoodSeats.Visible = false;
+            // 
+            // TotalBestSeats
+            // 
+            this.TotalBestSeats.BackColor = System.Drawing.Color.Transparent;
+            this.TotalBestSeats.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalBestSeats.ForeColor = System.Drawing.Color.Black;
+            this.TotalBestSeats.Location = new System.Drawing.Point(701, 0);
+            this.TotalBestSeats.Name = "TotalBestSeats";
+            this.TotalBestSeats.Size = new System.Drawing.Size(43, 16);
+            this.TotalBestSeats.TabIndex = 33;
+            this.TotalBestSeats.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TotalBestSeats.Visible = false;
+            // 
             // SelectPeopleItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
+            this.Controls.Add(this.TotalBestSeats);
+            this.Controls.Add(this.TotalGoodSeats);
             this.Controls.Add(this.ScreenLabel);
             this.Controls.Add(this.ChooseSeatsButton);
             this.Controls.Add(this.Step3Label);
@@ -298,6 +339,7 @@
             this.Controls.Add(this.KidsLabel);
             this.Controls.Add(this.AdultLabel);
             this.Controls.Add(this.Filmtitle);
+            this.Controls.Add(this.TotalNormalSeats);
             this.Name = "SelectPeopleItem";
             this.Size = new System.Drawing.Size(890, 242);
             this.MouseEnter += new System.EventHandler(this.SelectPeopleItem_MouseEnter);
@@ -328,5 +370,8 @@
         public System.Windows.Forms.ComboBox comboBoxSenior;
         public System.Windows.Forms.ComboBox comboBoxStudent;
         private System.Windows.Forms.Label ScreenLabel;
+        public System.Windows.Forms.Label TotalNormalSeats;
+        public System.Windows.Forms.Label TotalGoodSeats;
+        public System.Windows.Forms.Label TotalBestSeats;
     }
 }

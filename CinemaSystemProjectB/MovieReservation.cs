@@ -563,9 +563,32 @@ namespace CinemaSystemProjectB
 						movie.PriceStudent.Text = "€" + (temp * 8).ToString() + ",00";
 						movie.PriceSenior.Text = "€" + (temp2 * 7).ToString() + ",00";
 
-						//movie.BestSeat.Text = ;
-						//movie.GoodSeat.Text = ;
-						//movie.NormalSeat.Text = ;
+						movie.NormalSeat.Text = SelectedMovies[n].TotalNormalSeats.Text == "-1" ? "0" : SelectedMovies[n].TotalNormalSeats.Text;
+						movie.GoodSeat.Text = SelectedMovies[n].TotalGoodSeats.Text == "-1" ? "0" : SelectedMovies[n].TotalGoodSeats.Text;
+						movie.BestSeat.Text = SelectedMovies[n].TotalBestSeats.Text == "-1" ? "0" : SelectedMovies[n].TotalBestSeats.Text;
+						
+						string temp3 = "";
+						string temp4 = "";
+
+						if((Convert.ToInt32(SelectedMovies[n].TotalGoodSeats.Text)) < 0)
+						{
+							temp3 = "0";
+						}
+						else
+						{
+							temp3 = (Convert.ToInt32(SelectedMovies[n].TotalGoodSeats.Text) * 1).ToString();
+						}
+						if ((Convert.ToInt32(SelectedMovies[n].TotalBestSeats.Text)) < 0)
+						{
+							temp4 = "0";
+						}
+						else
+						{
+							temp4 = (Convert.ToInt32(SelectedMovies[n].TotalBestSeats.Text) * 1).ToString();
+						}
+
+						movie.TotalGoodSeatPrice.Text = "€" + temp3 + ",00";
+						movie.TotalBestSeatPrice.Text = "€" + temp4 + ",00";
 
 						foreach (FoodMenuMovieItem item in FoodMenuPanel.Controls)
 						{
@@ -707,8 +730,8 @@ namespace CinemaSystemProjectB
 							AddPriceSenior = SelectedMovies[n].comboBoxSenior.SelectedIndex;
 						}
 
-						movie.TotalPrice.Text = "€" + (Convert.ToDecimal((SelectedMovies[n].comboBoxAdult.SelectedIndex - temp - temp2) * 10) + Convert.ToDecimal((SelectedMovies[n].comboBoxKids.SelectedIndex) * 5) + Convert.ToDecimal(AddPriceStudent * 8) + Convert.ToDecimal(AddPriceSenior * 7) + TotalPricesSnacks).ToString();
-						totalPriceOfReservation += (Convert.ToDecimal((SelectedMovies[n].comboBoxAdult.SelectedIndex - temp - temp2) * 10) + Convert.ToDecimal((SelectedMovies[n].comboBoxKids.SelectedIndex) * 5) + Convert.ToDecimal(AddPriceStudent * 8) + Convert.ToDecimal(AddPriceSenior * 7) + TotalPricesSnacks);
+						movie.TotalPrice.Text = "€" + (Convert.ToDecimal((SelectedMovies[n].comboBoxAdult.SelectedIndex - temp - temp2) * 10) + Convert.ToDecimal((SelectedMovies[n].comboBoxKids.SelectedIndex) * 5) + Convert.ToDecimal(AddPriceStudent * 8) + Convert.ToDecimal(AddPriceSenior * 7) + Convert.ToDecimal(temp3) + Convert.ToDecimal(temp4) + TotalPricesSnacks).ToString();
+						totalPriceOfReservation += (Convert.ToDecimal((SelectedMovies[n].comboBoxAdult.SelectedIndex - temp - temp2) * 10) + Convert.ToDecimal((SelectedMovies[n].comboBoxKids.SelectedIndex) * 5) + Convert.ToDecimal(AddPriceStudent * 8) + Convert.ToDecimal(AddPriceSenior * 7) + Convert.ToDecimal(temp3) + Convert.ToDecimal(temp4) + TotalPricesSnacks );
 						n++;
 					}
 
@@ -798,8 +821,16 @@ namespace CinemaSystemProjectB
 				movies.Add(movie.comboBoxAdult.SelectedIndex.ToString());
 				movies.Add(movie.comboBoxKids.SelectedIndex.ToString());
 			}
+			List<string> strings = new List<string>();
+			foreach (SelectPeopleItem movie in SelectPeoplePanel.Controls)
+			{
+				strings.Add(movie.TotalBestSeats.Text);
+				strings.Add(movie.TotalGoodSeats.Text);
+				strings.Add(movie.TotalNormalSeats.Text);
+			}
+			bool stringLabels = strings.Count > 0 && strings.All(a => a != "");
 			bool countBoxes = movies.Count > 0 && movies.All(a => a != "-1");
-			if (countBoxes == true)
+			if (countBoxes == true && stringLabels == true)
 			{
 				NextPageButton.Enabled = true;
 			}
