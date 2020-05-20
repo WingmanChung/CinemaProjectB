@@ -888,6 +888,7 @@ namespace CinemaSystemProjectB
 
 		public class ReservationDetails
 		{
+			public string MovieTitle { get; set; }
 			public int TotalPeople { get; set; }
 			public int Adult { get; set; }
 			public int Kids { get; set; }
@@ -933,15 +934,18 @@ namespace CinemaSystemProjectB
 				MovieSnacks[m] = movie.Snacks.Text;
 			}
 
+			List<KeyValuePair<string, string>> ReservationList = new List<KeyValuePair<string, string>>();
+			List<KeyValuePair<string, ReservationDetails>> _data = new List<KeyValuePair<string, ReservationDetails>>();
+
 			//loop to fill all movie reservation details
 			for (int i = 0; i < SelectedMovies.Count; i++)
 			{
 
 				//Write customer reservation to json file
-				List<KeyValuePair<string, ReservationDetails>> _data = new List<KeyValuePair<string, ReservationDetails>>();
 
 				_data.Add(new KeyValuePair<string, ReservationDetails>(ReservationCode, new ReservationDetails()
 				{
+					MovieTitle = SelectedMovies[i].MovieTitle,
 					TotalPeople = (SelectedMovies[i].comboBoxAdult.SelectedIndex + SelectedMovies[i].comboBoxKids.SelectedIndex),
 					Adult = SelectedMovies[i].comboBoxAdult.SelectedIndex,
 					Kids = SelectedMovies[i].comboBoxKids.SelectedIndex,
@@ -954,8 +958,7 @@ namespace CinemaSystemProjectB
 					Snacks = MovieSnacks[i]
 
 
-				}));
-
+				}));;
 				if (!File.Exists("Reservations.txt"))
 				{
 					using (StreamWriter file = File.CreateText(@"Reservations.txt"))
@@ -974,11 +977,16 @@ namespace CinemaSystemProjectB
 					serializer.Serialize(file, _data);
 					file.Close();
 				}
+				ReservationList.Add(new KeyValuePair<string, string>(_data[i].Value.MovieTitle, _data[i].Key));
 			}
-
-			//Messagebox when the reservation is completed. 
-			DialogResult dialogResult = MessageBox.Show("Bedankt voor uw reservering. Klik op ok om terug naar het startscherm te gaan.", "Reservering is voltooid.", MessageBoxButtons.OK);
-			if (dialogResult == DialogResult.OK)
+			//shows reservation codes
+			string showCodes = "";
+			for(int i = 0; i < ReservationList.Count; i++)
+			{
+				showCodes += ReservationList[i].Key + ": " + ReservationList[i].Value + Environment.NewLine;
+			}
+			DialogResult CodesResult = MessageBox.Show("Bedankt voor uw reservering. Hieronder staan de reserveringcodes per film.\n" + Environment.NewLine + showCodes + Environment.NewLine +"Klik op OK om terug naar het startscherm te gaan.", "Reservering is voltooid.", MessageBoxButtons.OK);
+			if (CodesResult == DialogResult.OK)
 			{
 				this.Close();
 			}

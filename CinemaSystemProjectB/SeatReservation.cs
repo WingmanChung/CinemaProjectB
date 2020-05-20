@@ -128,25 +128,37 @@ namespace CinemaSystemProjectB
             SeatConfirmButton.BackColor = Color.Yellow;
         }
 
+        int goodAmount = 0;
+        int bestAmount = 0;
         private void SeatReservation_MouseEnter(object sender, EventArgs e)
-        {   
-
-            if (dropdownGoodSeatAmount.SelectedIndex > -1 & dropdownBestSeatAmount.SelectedIndex > -1
-                & dropdownBestSeatRow.SelectedIndex > -1 & dropdownGoodSeatRow.SelectedIndex > -1 & dropdownNormalSeatRow.SelectedIndex > -1)
+        {
+            //Automatically calculates the total price of all seats for the customer
+            if(dropdownGoodSeatAmount.SelectedIndex > -1)
             {
                 //total price of good seats
                 int seatAmountGood = int.Parse(dropdownGoodSeatAmount.Text);
-                int goodAmount = 1 * seatAmountGood;
+                goodAmount = 1 * seatAmountGood;
+            }
 
+            if (dropdownBestSeatAmount.SelectedIndex > -1)
+            {
                 //total price of best seats
                 int seatAmountBest = int.Parse(dropdownBestSeatAmount.Text);
-                int bestAmount = 2 * seatAmountBest;
+                bestAmount = 2 * seatAmountBest;
+            }
 
+            if (dropdownGoodSeatAmount.SelectedIndex > -1 || dropdownBestSeatAmount.SelectedIndex > -1)
+            {
                 //total price of all seats
                 int totalAmountInt = goodAmount + bestAmount;
                 string totalAmountString = totalAmountInt.ToString();
 
                 TotalSeatPrice.Text = "€" + totalAmountString;
+            }
+
+            if (dropdownGoodSeatAmount.SelectedIndex > -1 & dropdownBestSeatAmount.SelectedIndex > -1
+                & dropdownBestSeatRow.SelectedIndex > -1 & dropdownGoodSeatRow.SelectedIndex > -1 & dropdownNormalSeatRow.SelectedIndex > -1)
+            {
 
                 SeatConfirmButton.Visible = true;
             }
