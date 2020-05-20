@@ -117,47 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="John Wick 3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\John Wick 3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Auditorium 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Auditorium 1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MadeInAbyss" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MadeInAbyss.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="After" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\After.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Auditorium_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Auditorium_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pngfuel.com" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngfuel.com.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Godzilla" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Godzilla.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Avengersendgame" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Avengersendgame.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="John Wick 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\John Wick 2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Stormwind" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Stormwind.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="HowToTrainYourDragon3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HowToTrainYourDragon3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Frozen2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Frozen2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IStillSeeYou" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IStillSeeYou.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Auditorium_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Auditorium_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="RoadMapInfo.Text" xml:space="preserve">
+    <value>Zo boek je in een paar stappen je filmticket:
+
+Wanneer u op ‘reserveren’ heeft gedrukt via de startpagina, filmpagina of via het film rooster, komt u op een reserveerpagina terecht met alle films die op dat moment in de bioscoop te zien zijn. Bij iedere film wordt de filmervaring (2D/3D/IMAX-3D), film duur en datum van draaien aangegeven.
+
+1. Film selecteren
+Selecteer de gewenste films waar u een reservering voor wilt maken.
+Belangrijk: de personen voor wie de boeking is gemaakt moeten voldoen aan de minimale leeftijdsgrens van de film.
+
+2. Gegevens
+Vul de gevraagde gegevens in.
+    stap 1. vul het aantal volwassenen en/of kinderen in.
+    stap 2. deze stap is niet verplicht, maar mochten er zich studenten en/of senioren bevinden onder de personen dan kunt u deze velden invullen voor de studenten- en senioren korting. Bij de kassa zal er gevraagd worden naar het laten zien van een studentenpas en legitimatiebewijs.
+    stap 3. selecteer de zitplaats(en) die u wilt reserveren. Om een zitplaats te selecteren kiest u de rij uit waar u wilt zitten en hoeveel stoelen u wilt reserveren in die rij. Op de legenda kunt u zien uit wat voor stoelen de zaal bestaat.
+
+3. Snacks (Optioneel)
+Selecteer de snacks en het aantal ervan die u wilt reserveren voor de film. Deze stap is optioneel. Om snacks te reserveren klikt u op de rode balk waardoor u de menukaart te zien krijgt. Achter elk snack kunt u een hoeveelheid aantal snacks selecteren. Wanneer u klaar bent kunt u opnieuw op de rode balk klikken om de menukaart weer op te rollen. Heeft u meerdere films geselecteerd? dan kunt u voor iedere film apart snacks reserveren.
+
+4. Reservering controleren
+Als u de voorgaande stappen heeft voltooid krijgt u een overzicht te zien van de gekozen film(s) en de daarbij behorende gegevens. Om meer details te krijgen over uw reservering en de prijsberekening kunt u op de rode balk klikken onder het totale prijs. Bij de prijsopbouw staat de berekening van uw ticket(s) en evt. optionele extra’s. Controleer uw reservering en klik op "BEVESTIGEN". Mocht u toch iets willen veranderen dan kan dat nog voordat u de reservering heeft bevestigt door op ‘terug’ te klikken. Ziet u toch af van de reservering? dan kunt u simpelweg de form afsluiten.
+
+5. Betaalwijze
+Als u de reservering heeft bevestigt krijgt u een reserveercode voor de film(s) waar u voor heeft geboekt. Deze code wissel je in bij de kassa voor de tickets. Bij de kassa kan er gevraagd worden naar uw legitimatiebewijs en/of studentenpas als u een student bent.
+
+6. Reservering voltooid
+Als u de reservering heeft voltooid krijgt u een bericht te zien met daarin uw reserveringcodes. Door op OK te drukken zult u terug naar het startscherm worden gebracht.</value>
   </data>
 </root>
