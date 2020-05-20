@@ -899,7 +899,7 @@ namespace CinemaSystemProjectB
 			public string Snacks { get; set; }
 		}
 
-		private void ConfirmButton_Click(object sender, EventArgs e)
+		private void ConfirmButton_MouseClick(object sender, MouseEventArgs e)
 		{
 			//GENERATES RESERVATION CODE
 			var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -948,9 +948,9 @@ namespace CinemaSystemProjectB
 					Students = SelectedMovies[i].comboBoxStudent.SelectedIndex == -1 ? 0 : SelectedMovies[i].comboBoxStudent.SelectedIndex,
 					Senior = SelectedMovies[i].comboBoxSenior.SelectedIndex == -1 ? 0 : SelectedMovies[i].comboBoxSenior.SelectedIndex,
 
-					//NormalSeats = ,
-					//GoodSeats = ,
-					//BestSeats = ,
+					NormalSeats = Convert.ToInt32(SelectedMovies[i].TotalNormalSeats.Text),
+					GoodSeats = Convert.ToInt32(SelectedMovies[i].TotalGoodSeats.Text),
+					BestSeats = Convert.ToInt32(SelectedMovies[i].TotalBestSeats.Text),
 					Snacks = MovieSnacks[i]
 
 

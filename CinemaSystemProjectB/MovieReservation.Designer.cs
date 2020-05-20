@@ -391,6 +391,7 @@
             this.ConfirmButton.TabIndex = 74;
             this.ConfirmButton.Text = "Bevestigen";
             this.ConfirmButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ConfirmButton.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ConfirmButton_MouseClick);
             this.ConfirmButton.MouseEnter += new System.EventHandler(this.ConfirmButton_MouseEnter);
             this.ConfirmButton.MouseLeave += new System.EventHandler(this.ConfirmButton_MouseLeave);
             // 
