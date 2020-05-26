@@ -154,8 +154,6 @@ namespace CinemaSystemProjectB
                 datesFile.Close();
             }
 
-            Startknop.BackColor = Color.Yellow;
-
             string resultJson = JsonConvert.SerializeObject(MovieInfo);
 
             Dictionary<string, MovieDescriptionClass> Movies = JsonConvert.DeserializeObject<Dictionary<string, MovieDescriptionClass>>(File.ReadAllText(path));
@@ -238,7 +236,7 @@ namespace CinemaSystemProjectB
         {
 
             ((Control)sender).BackColor = Color.Yellow;
-            Startknop.BackColor = Color.White;
+            AdminLogin.BackColor = Color.White;
             Filmsknop.BackColor = Color.White;
             Prijzenknop.BackColor = Color.White;
             Menuknop.BackColor = Color.White;
@@ -264,7 +262,7 @@ namespace CinemaSystemProjectB
         {
 
             ((Control)sender).BackColor = Color.Yellow;
-            Startknop.BackColor = Color.White;
+            AdminLogin.BackColor = Color.White;
             Filmtijdenknop.BackColor = Color.White;
             Prijzenknop.BackColor = Color.White;
             Menuknop.BackColor = Color.White;
@@ -277,7 +275,7 @@ namespace CinemaSystemProjectB
         {
 
             ((Control)sender).BackColor = Color.Yellow;
-            Startknop.BackColor = Color.White;
+            AdminLogin.BackColor = Color.White;
             Filmtijdenknop.BackColor = Color.White;
             Filmsknop.BackColor = Color.White;
             Menuknop.BackColor = Color.White;
@@ -289,7 +287,7 @@ namespace CinemaSystemProjectB
         private void Menuknop_Click(object sender, EventArgs e)
         {
             ((Control)sender).BackColor = Color.Yellow;
-            Startknop.BackColor = Color.White;
+            AdminLogin.BackColor = Color.White;
             Filmtijdenknop.BackColor = Color.White;
             Filmsknop.BackColor = Color.White;
             Prijzenknop.BackColor = Color.White;
@@ -301,7 +299,7 @@ namespace CinemaSystemProjectB
         private void Reserveerknop_Click(object sender, EventArgs e)
         {
             ((Control)sender).BackColor = Color.Yellow;
-            Startknop.BackColor = Color.White;
+            AdminLogin.BackColor = Color.White;
             Filmtijdenknop.BackColor = Color.White;
             Filmsknop.BackColor = Color.White;
             Prijzenknop.BackColor = Color.White;
@@ -310,6 +308,14 @@ namespace CinemaSystemProjectB
             new MovieReservation().Show();
         }
 
+        private void AdminLogin_Click(object sender, EventArgs e)
+        {
+            ((Control)sender).BackColor = Color.Yellow;
+            Filmtijdenknop.BackColor = Color.White;
+            Filmsknop.BackColor = Color.White;
+            Prijzenknop.BackColor = Color.White;
+            Menuknop.BackColor = Color.White;
 
+        }
     }
 }
