@@ -532,6 +532,21 @@ namespace CinemaSystemProjectB
 						snacks.Add(new KeyValuePair<string, string>(item.IceCream5.Text, item.PriceIceCream5.Text));
 						break;
 					}
+
+					//Add all controls in snack menu to list
+					List<FoodMenuMovieItem> allItems = new List<FoodMenuMovieItem>();
+					foreach (FoodMenuMovieItem item in FoodMenuPanel.Controls)
+					{
+						allItems.Add(item);
+					}
+
+					//Add all controls in chosen movies to list
+					List<CustomerReservation> ReservedMovies = new List<CustomerReservation>();
+					foreach (CustomerReservation ReservedMovie in CustomerReservationPage.Controls)
+					{
+						ReservedMovies.Add(ReservedMovie);
+					}
+
 					decimal totalPriceOfReservation = 0;
 					foreach (CustomerReservation movie in CustomerReservationPage.Controls)
 					{
@@ -590,121 +605,26 @@ namespace CinemaSystemProjectB
 						movie.TotalGoodSeatPrice.Text = "€" + temp3 + ",00";
 						movie.TotalBestSeatPrice.Text = "€" + temp4 + ",00";
 
-						foreach (FoodMenuMovieItem item in FoodMenuPanel.Controls)
+						for (int c = 0; c < CustomerReservationPage.Controls.Count; c++)
 						{
-							if (item.comboBox1.SelectedIndex > 0)
+							//Add all comboboxes in a list
+							List<ComboBox> allComboboxes = new List<ComboBox> {allItems[c].comboBox1, allItems[c].comboBox2, allItems[c].comboBox3, allItems[c].comboBox4, allItems[c].comboBox5, allItems[c].comboBox6,
+																				allItems[c].comboBox7, allItems[c].comboBox8, allItems[c].comboBox9, allItems[c].comboBox10, allItems[c].comboBox11, allItems[c].comboBox12,
+																				allItems[c].comboBox13, allItems[c].comboBox14, allItems[c].comboBox15, allItems[c].comboBox16, allItems[c].comboBox17, allItems[c].comboBox18,
+																				allItems[c].comboBox19};
+							//loops through comboboxes
+							for (int p = 0; p < allComboboxes.Count; p++)
 							{
-								movie.Snacks.Text += Environment.NewLine + item.comboBox1.SelectedIndex.ToString() + "x" + "	 " + snacks[0].Key;
-								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[0].Value) * item.comboBox1.SelectedIndex);
-								TotalPricesSnacks += (Decimal.Parse(snacks[0].Value) * item.comboBox1.SelectedIndex);
-							}
-							if (item.comboBox2.SelectedIndex > 0)
-							{
-								movie.Snacks.Text += Environment.NewLine + item.comboBox2.SelectedIndex.ToString() + "x" + "	 " + snacks[1].Key;
-								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[1].Value) * item.comboBox2.SelectedIndex);
-								TotalPricesSnacks += (Decimal.Parse(snacks[1].Value) * item.comboBox2.SelectedIndex);
-							}
-							if (item.comboBox3.SelectedIndex > 0)
-							{
-								movie.Snacks.Text += Environment.NewLine + item.comboBox3.SelectedIndex.ToString() + "x" + "	 " + snacks[2].Key;
-								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[2].Value) * item.comboBox3.SelectedIndex);
-								TotalPricesSnacks += (Decimal.Parse(snacks[2].Value) * item.comboBox3.SelectedIndex);
-							}
-							if (item.comboBox4.SelectedIndex > 0)
-							{
-								movie.Snacks.Text += Environment.NewLine + item.comboBox4.SelectedIndex.ToString() + "x" + "	 " + snacks[3].Key;
-								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[3].Value) * item.comboBox4.SelectedIndex);
-								TotalPricesSnacks += (Decimal.Parse(snacks[3].Value) * item.comboBox4.SelectedIndex);
-							}
-							if (item.comboBox5.SelectedIndex > 0)
-							{
-								movie.Snacks.Text += Environment.NewLine + item.comboBox5.SelectedIndex.ToString() + "x" + "	 " + snacks[4].Key;
-								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[4].Value) * item.comboBox5.SelectedIndex);
-								TotalPricesSnacks += (Decimal.Parse(snacks[4].Value) * item.comboBox5.SelectedIndex);
-							}
-							if (item.comboBox6.SelectedIndex > 0)
-							{
-								movie.Snacks.Text += Environment.NewLine + item.comboBox6.SelectedIndex.ToString() + "x" + "	 " + snacks[5].Key;
-								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[5].Value) * item.comboBox6.SelectedIndex);
-								TotalPricesSnacks += (Decimal.Parse(snacks[5].Value) * item.comboBox6.SelectedIndex);
-							}
-							if (item.comboBox7.SelectedIndex > 0)
-							{
-								movie.Snacks.Text += Environment.NewLine + item.comboBox7.SelectedIndex.ToString() + "x" + "	 " + snacks[6].Key;
-								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[6].Value) * item.comboBox7.SelectedIndex);
-								TotalPricesSnacks += (Decimal.Parse(snacks[6].Value) * item.comboBox7.SelectedIndex);
-							}
-							if (item.comboBox8.SelectedIndex > 0)
-							{
-								movie.Snacks.Text += Environment.NewLine + item.comboBox8.SelectedIndex.ToString() + "x" + "	 " + snacks[7].Key;
-								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[7].Value) * item.comboBox8.SelectedIndex);
-								TotalPricesSnacks += (Decimal.Parse(snacks[7].Value) * item.comboBox8.SelectedIndex);
-							}
-							if (item.comboBox9.SelectedIndex > 0)
-							{
-								movie.Snacks.Text += Environment.NewLine + item.comboBox9.SelectedIndex.ToString() + "x" + "	 " + snacks[8].Key;
-								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[8].Value) * item.comboBox9.SelectedIndex);
-								TotalPricesSnacks += (Decimal.Parse(snacks[8].Value) * item.comboBox9.SelectedIndex);
-							}
-							if (item.comboBox10.SelectedIndex > 0)
-							{
-								movie.Snacks.Text += Environment.NewLine + item.comboBox10.SelectedIndex.ToString() + "x" + "	 " + snacks[9].Key;
-								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[9].Value) * item.comboBox10.SelectedIndex);
-								TotalPricesSnacks += (Decimal.Parse(snacks[9].Value) * item.comboBox10.SelectedIndex);
-							}
-							if (item.comboBox11.SelectedIndex > 0)
-							{
-								movie.Snacks.Text += Environment.NewLine + item.comboBox11.SelectedIndex.ToString() + "x" + "	 " + snacks[10].Key;
-								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[10].Value) * item.comboBox11.SelectedIndex);
-								TotalPricesSnacks += (Decimal.Parse(snacks[10].Value) * item.comboBox11.SelectedIndex);
-							}
-							if (item.comboBox12.SelectedIndex > 0)
-							{
-								movie.Snacks.Text += Environment.NewLine + item.comboBox12.SelectedIndex.ToString() + "x" + "	 " + snacks[11].Key;
-								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[11].Value) * item.comboBox12.SelectedIndex);
-								TotalPricesSnacks += (Decimal.Parse(snacks[11].Value) * item.comboBox12.SelectedIndex);
-							}
-							if (item.comboBox13.SelectedIndex > 0)
-							{
-								movie.Snacks.Text += Environment.NewLine + item.comboBox13.SelectedIndex.ToString() + "x" + "	 " + snacks[12].Key;
-								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[12].Value) * item.comboBox13.SelectedIndex);
-								TotalPricesSnacks += (Decimal.Parse(snacks[12].Value) * item.comboBox13.SelectedIndex);
-							}
-							if (item.comboBox14.SelectedIndex > 0)
-							{
-								movie.Snacks.Text += Environment.NewLine + item.comboBox14.SelectedIndex.ToString() + "x" + "	 " + snacks[13].Key;
-								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[13].Value) * item.comboBox14.SelectedIndex);
-								TotalPricesSnacks += (Decimal.Parse(snacks[13].Value) * item.comboBox14.SelectedIndex);
-							}
-							if (item.comboBox15.SelectedIndex > 0)
-							{
-								movie.Snacks.Text += Environment.NewLine + item.comboBox15.SelectedIndex.ToString() + "x" + "	 " + snacks[14].Key;
-								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[14].Value) * item.comboBox15.SelectedIndex);
-								TotalPricesSnacks += (Decimal.Parse(snacks[14].Value) * item.comboBox15.SelectedIndex);
-							}
-							if (item.comboBox16.SelectedIndex > 0)
-							{
-								movie.Snacks.Text += Environment.NewLine + item.comboBox16.SelectedIndex.ToString() + "x" + "	 " + snacks[15].Key;
-								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[15].Value) * item.comboBox16.SelectedIndex);
-								TotalPricesSnacks += (Decimal.Parse(snacks[15].Value) * item.comboBox16.SelectedIndex);
-							}
-							if (item.comboBox17.SelectedIndex > 0)
-							{
-								movie.Snacks.Text += Environment.NewLine + item.comboBox17.SelectedIndex.ToString() + "x" + "	 " + snacks[16].Key;
-								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[16].Value) * item.comboBox17.SelectedIndex);
-								TotalPricesSnacks += (Decimal.Parse(snacks[16].Value) * item.comboBox17.SelectedIndex);
-							}
-							if (item.comboBox18.SelectedIndex > 0)
-							{
-								movie.Snacks.Text += Environment.NewLine + item.comboBox18.SelectedIndex.ToString() + "x" + "	 " + snacks[17].Key;
-								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[17].Value) * item.comboBox18.SelectedIndex);
-								TotalPricesSnacks += (Decimal.Parse(snacks[17].Value) * item.comboBox18.SelectedIndex);
-							}
-							if (item.comboBox19.SelectedIndex > 0)
-							{
-								movie.Snacks.Text += Environment.NewLine + item.comboBox19.SelectedIndex.ToString() + "x" + "	 " + snacks[18].Key;
-								movie.SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[18].Value) * item.comboBox19.SelectedIndex);
-								TotalPricesSnacks += (Decimal.Parse(snacks[18].Value) * item.comboBox19.SelectedIndex);
+								if (allComboboxes[p].SelectedIndex > 0)
+								{
+									//if statement to make sure the reserved movie will display the chosen snacks only once
+									if (!(ReservedMovies[c].Snacks.Text.Contains(snacks[p].Key)))
+									{
+										ReservedMovies[c].Snacks.Text += Environment.NewLine + allComboboxes[p].SelectedIndex.ToString() + "x" + "	 " + snacks[p].Key;
+										ReservedMovies[c].SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[p].Value) * allComboboxes[p].SelectedIndex);
+										TotalPricesSnacks += (Decimal.Parse(snacks[p].Value) * allComboboxes[p].SelectedIndex);
+									}
+								}
 							}
 						}
 
