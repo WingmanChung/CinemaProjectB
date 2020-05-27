@@ -14,6 +14,9 @@ namespace CinemaSystemProjectB
 {
     public partial class AdminLoginForm : Form
     {
+
+        const string path = @"Password.json";
+
         public AdminLoginForm()
         {
             InitializeComponent();
@@ -26,13 +29,10 @@ namespace CinemaSystemProjectB
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            Dictionary<int, string> dict = new Dictionary<int, string>()
-            {
-                { 1, "GertJan" },
-                { 2, "admin" }
-            };
 
-            if(UserNameInput.Text == dict[1] && PassWordInput.Text == dict[2])
+            Dictionary<string, AdminCredentials> ListView = JsonConvert.DeserializeObject<Dictionary<string, AdminCredentials>>(File.ReadAllText(path));
+
+            if (UserNameInput.Text == ListView["admin_login"].Username && PassWordInput.Text == ListView["admin_login"].Password)
             {
                 string msgtxt = $"Username: {UserNameInput.Text}{Environment.NewLine}Wachtwoord: {PassWordInput.Text}";
                 MessageBox.Show(msgtxt);

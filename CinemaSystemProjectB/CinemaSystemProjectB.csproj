@@ -80,6 +80,7 @@
     <Compile Include="AdminRemoveMovieItem.Designer.cs">
       <DependentUpon>AdminRemoveMovieItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminCredentials.cs" />
     <Compile Include="CustomerReservation.cs">
       <SubType>UserControl</SubType>
     </Compile>
