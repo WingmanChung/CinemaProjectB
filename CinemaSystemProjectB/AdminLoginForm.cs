@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,8 +26,21 @@ namespace CinemaSystemProjectB
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            string msgtxt = $"Username: {UserNameInput.Text}{Environment.NewLine}Wachtwoord: {PassWordInput.Text}";
-            MessageBox.Show(msgtxt);
+            Dictionary<int, string> dict = new Dictionary<int, string>()
+            {
+                { 1, "GertJan" },
+                { 2, "admin" }
+            };
+
+            if(UserNameInput.Text == dict[1] && PassWordInput.Text == dict[2])
+            {
+                string msgtxt = $"Username: {UserNameInput.Text}{Environment.NewLine}Wachtwoord: {PassWordInput.Text}";
+                MessageBox.Show(msgtxt);
+            }
+            else
+            {
+                MessageBox.Show("Invalid Credentials");
+            }
         }
 
         private void ShowPassWord_CheckedChanged(object sender, EventArgs e)

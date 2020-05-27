@@ -61,6 +61,7 @@
     <Compile Include="AdminLoginForm.Designer.cs">
       <DependentUpon>AdminLoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminPassword.cs" />
     <Compile Include="CustomerReservation.cs">
       <SubType>UserControl</SubType>
     </Compile>
