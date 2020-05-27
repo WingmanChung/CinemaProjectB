@@ -34,14 +34,12 @@ namespace CinemaSystemProjectB
 
             if (UserNameInput.Text == ListView["admin_login"].Username && PassWordInput.Text == ListView["admin_login"].Password)
             {
-                string msgtxt = $"Username: {UserNameInput.Text}{Environment.NewLine}Wachtwoord: {PassWordInput.Text}";
-                MessageBox.Show(msgtxt);
+                new AdminPanel().Show();
             }
             else
             {
                 MessageBox.Show("Invalid Credentials");
             }
-            new AdminPanel().Show();
         }
 
         private void ShowPassWord_CheckedChanged(object sender, EventArgs e)
