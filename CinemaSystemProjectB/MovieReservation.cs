@@ -14,7 +14,7 @@ namespace CinemaSystemProjectB
 	{
 
 		const string path = @"JsonTextFile.json";
-
+		public static string showCodes;
 		//pages is a list of panels
 		List<Panel> pages = new List<Panel>();
 
@@ -900,16 +900,11 @@ namespace CinemaSystemProjectB
 				ReservationList.Add(new KeyValuePair<string, string>(_data[i].Value.MovieTitle, _data[i].Key));
 			}
 			//shows reservation codes
-			string showCodes = "";
 			for(int i = 0; i < ReservationList.Count; i++)
 			{
 				showCodes += ReservationList[i].Key + ": " + ReservationList[i].Value + Environment.NewLine;
 			}
-			DialogResult CodesResult = MessageBox.Show("Bedankt voor uw reservering. Hieronder staan de reserveringcodes per film.\n" + Environment.NewLine + showCodes + Environment.NewLine +"Klik op OK om terug naar het startscherm te gaan.", "Reservering is voltooid.", MessageBoxButtons.OK);
-			if (CodesResult == DialogResult.OK)
-			{
-				this.Close();
-			}
+			new ReservationConfirmation().ShowDialog();
 		}
 	}
 }
