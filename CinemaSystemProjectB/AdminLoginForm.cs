@@ -41,6 +41,7 @@ namespace CinemaSystemProjectB
             {
                 MessageBox.Show("Invalid Credentials");
             }
+            new AdminPanel().Show();
         }
 
         private void ShowPassWord_CheckedChanged(object sender, EventArgs e)
