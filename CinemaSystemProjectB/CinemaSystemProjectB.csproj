@@ -67,7 +67,6 @@
     <Compile Include="AdminPanel.Designer.cs">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminPassword.cs" />
     <Compile Include="AdminRemoveMovie.cs">
       <SubType>UserControl</SubType>
     </Compile>
