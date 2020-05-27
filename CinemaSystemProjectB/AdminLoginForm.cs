@@ -66,5 +66,25 @@ namespace CinemaSystemProjectB
                 PassWordInput.UseSystemPasswordChar = true;
             }
         }
+
+        private void LoginButton_MouseEnter(object sender, EventArgs e)
+        {
+            LoginButton.BackColor = Color.Gold;
+        }
+
+        private void LoginButton_MouseLeave(object sender, EventArgs e)
+        {
+            LoginButton.BackColor = Color.Yellow;
+        }
+
+        private void Exit_MouseEnter(object sender, EventArgs e)
+        {
+            Exit.BackColor = Color.Gold;
+        }
+
+        private void Exit_MouseLeave(object sender, EventArgs e)
+        {
+            Exit.BackColor = Color.Yellow;
+        }
     }
 }
