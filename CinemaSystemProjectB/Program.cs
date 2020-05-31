@@ -8,6 +8,8 @@ namespace CinemaSystemProjectB
 {
     static class Program
     {
+        public static MovieOverview MovieOverview;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -26,7 +28,8 @@ namespace CinemaSystemProjectB
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MovieOverview());
+            MovieOverview = new MovieOverview();
+            Application.Run(MovieOverview);
         }
     }
 }
