@@ -1,4 +1,7 @@
-﻿namespace CinemaSystemProjectB
+﻿using System;
+using System.Windows.Forms;
+
+namespace CinemaSystemProjectB
 {
     partial class MovieOverview
     {
@@ -524,7 +527,7 @@
             this.Film5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Film5.TabIndex = 16;
             this.Film5.TabStop = false;
-            this.Film5.Click += new System.EventHandler(this.Film5_Click);
+            this.Film5.Click += new EventHandler(this.PictureBox_Click);
             // 
             // Film4
             // 
@@ -534,7 +537,7 @@
             this.Film4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Film4.TabIndex = 15;
             this.Film4.TabStop = false;
-            this.Film4.Click += new System.EventHandler(this.Film4_Click);
+            this.Film4.Click += new EventHandler(this.PictureBox_Click);
             // 
             // Film3
             // 
@@ -544,7 +547,7 @@
             this.Film3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Film3.TabIndex = 14;
             this.Film3.TabStop = false;
-            this.Film3.Click += new System.EventHandler(this.Film3_Click);
+            this.Film3.Click += new EventHandler(this.PictureBox_Click);
             // 
             // Film2
             // 
@@ -554,7 +557,7 @@
             this.Film2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Film2.TabIndex = 13;
             this.Film2.TabStop = false;
-            this.Film2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.Film2.Click += new EventHandler(this.PictureBox_Click);
             // 
             // Film1
             // 
@@ -564,7 +567,7 @@
             this.Film1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Film1.TabIndex = 12;
             this.Film1.TabStop = false;
-            this.Film1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.Film1.Click += new EventHandler(this.PictureBox_Click);
             // 
             // AdminLogin
             // 
