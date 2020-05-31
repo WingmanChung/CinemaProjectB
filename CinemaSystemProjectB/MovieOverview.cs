@@ -8,6 +8,20 @@ using System.Windows.Forms;
 
 namespace CinemaSystemProjectB
 {
+    public struct MovieTitle
+	{
+		public string Name;
+		public Label Label;
+		public PictureBox Image;
+
+        public MovieTitle(string name, Label label, PictureBox image)
+        {
+            Name = name;
+            Label = label;
+            Image = image;
+        }
+    }
+
     public partial class MovieOverview : Form
     {
         const string path = @"JsonTextFile.json";
@@ -15,7 +29,8 @@ namespace CinemaSystemProjectB
 
         public static string chosenMovie;
         public static bool HomeScreen = false;
-        public static List<string> titles;
+		public static List<MovieTitle> titles = new List<MovieTitle>();
+        public static Label[] labels { get; private set; }
 
         public MovieOverview()
         {
@@ -157,15 +172,23 @@ namespace CinemaSystemProjectB
 
             Dictionary<string, MovieDescriptionClass> Movies = JsonConvert.DeserializeObject<Dictionary<string, MovieDescriptionClass>>(File.ReadAllText(path));
 
-            Label[] labels = new Label[] { filmtitel1, filmtitel2, filmtitel3, filmtitel4, filmtitel5 };
+            labels = new Label[] { filmtitel1, filmtitel2, filmtitel3, filmtitel4, filmtitel5 };
             PictureBox[] images = new PictureBox[] { Film1, Film2, Film3, Film4, Film5 };
-            titles = Movies.Keys.ToList().GetRange(0, 5);
+			titles.Clear();
 
-            for (int i = 0; i < titles.Count; i++)
+            for (int i = 0; i < 5; i++)
             {
-                toolTip1.SetToolTip(labels[i], titles[i]);
-                labels[i].Text = titles[i];
-                images[i].Image = Image.FromStream(new MemoryStream(Convert.FromBase64String(Movies[titles[i]].Image)));
+				string title = Movies.Keys.ElementAt(i);
+
+				titles.Add(new MovieTitle(
+					title,
+					labels[i],
+                    images[i]
+				));
+
+                toolTip1.SetToolTip(labels[i], title);
+                labels[i].Text = title;
+                images[i].Image = Image.FromStream(new MemoryStream(Convert.FromBase64String(Movies[title].Image)));
             }
 
             Email.Text = "bioscoop@hr.nl";
@@ -176,29 +199,40 @@ namespace CinemaSystemProjectB
 
         private void PictureBox_Click(object sender, EventArgs e)
         {
-            PictureBox pic = (PictureBox)sender;
-            switch (pic.Name)
-            {
-                case "Film1":
-                    chosenMovie = titles[0];
-                    break;
-                case "Film2":
-                    chosenMovie = titles[1];
-                    break;
-                case "Film3":
-                    chosenMovie = titles[2];
-                    break;
-                case "Film4":
-                    chosenMovie = titles[3];
-                    break;
-                case "Film5":
-                    chosenMovie = titles[4];
-                    break;
-            }
+            PictureBox pic = sender as PictureBox;
+			MovieTitle title = titles.First(x => x.Image == pic);
+
+			chosenMovie = title.Name;
+
             HomeScreen = true;
             new MovieDescription().Show();
             HomeScreen = false;
         }
+
+        private void PictureBox_MouseEnter(object sender, EventArgs e)
+		{
+            // Get the MovieTitle object that contains this picture box
+			MovieTitle title = titles.First(x => x.Image == sender);
+			Label label = title.Label;
+
+            // Measure the height of the wrapped text in the label
+			var textSize = TextRenderer.MeasureText(label.Text,
+				label.Font,
+                new Size(label.Size.Width, int.MaxValue), // The bounding box stretches downwards so that the resulting text size is not limited
+                TextFormatFlags.WordBreak // Specify that the lines should break when they extend past the label width
+            );
+
+            // Set the label size to the newly measured text size
+			label.Size = new Size(label.Size.Width, Math.Max(label.Size.Height, textSize.Height + 2));
+		}
+
+        private void PictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            MovieTitle title = titles.First(x => x.Image == sender);
+
+            title.Label.Size = new Size(title.Label.Width, 20);
+        }
+        
 
         private void Filmtijdenknop_Click(object sender, EventArgs e)
         {
