@@ -32,14 +32,12 @@ namespace CinemaSystemProjectB
             AllMoviesList.Controls.Clear();
             for (int i = 0; i < movieList.Length; i++)
             {
-                var RemoveItem = new AdminRemoveMovieItem();
+                var RemoveItem = new AdminRemoveMovieItem(ListView[movieList[i]].Title);
                 //load image
                 var filmCover = ListView[movieList[i]].Image;
                 var bytesFilm = Convert.FromBase64String(filmCover);
 
                 RemoveItem.Cover = Image.FromStream(new MemoryStream(bytesFilm));
-
-                RemoveItem.Title = ListView[movieList[i]].Title;
                 RemoveItem.Release = ListView[movieList[i]].Release;
                 
                 RemoveItem.FilmTechnology = ListView[movieList[i]].FilmTechnology;

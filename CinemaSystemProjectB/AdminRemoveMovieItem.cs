@@ -7,14 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace CinemaSystemProjectB
 {
     public partial class AdminRemoveMovieItem : UserControl
     {
-        public AdminRemoveMovieItem()
+        public AdminRemoveMovieItem(string title)
         {
+
             InitializeComponent();
+            Title = title;
+
+            foreach(string entry in File.ReadAllLines(@"movieSchedulesTest.txt"))
+            {
+                if(entry.Split(',')[0] == Title){
+                    IsScheduled = true;
+                    this.BackColor = Color.Gray;
+                    break;
+                }
+            }
         }
 
         public Image Cover { get => MoviePoster.Image; internal set => MoviePoster.Image = value;}
@@ -25,21 +37,33 @@ namespace CinemaSystemProjectB
         public string Genre { get => genre.Text; internal set => genre.Text = value; }
         public string Language { get => taal.Text; internal set => taal.Text = value; }
 
+        public bool IsScheduled { get; set; } = false;
+
         public bool IsClicked { get; set; }
 
         private void OnMouseClick(object sender, EventArgs e)
         {
-            IsClicked = !IsClicked;
+            if (IsScheduled)
+            {
+                MessageBox.Show("Can't remove scheduled movie!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                IsClicked = !IsClicked;
+            }
+            
+            
         }
 
         private void OnMouseEnter(object sender, EventArgs e)
         {
-            this.BackColor = Color.Maroon;
+            if(!IsScheduled)
+                this.BackColor = Color.Maroon;
         }
 
         private void OnMouseLeave(object sender, EventArgs e)
         {
-            if(!IsClicked)
+            if(!IsClicked && !IsScheduled)
                 this.BackColor = Color.Black;
         }
 
