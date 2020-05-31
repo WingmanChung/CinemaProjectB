@@ -70,13 +70,13 @@ namespace CinemaSystemProjectB
             this.Rechterkolom = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.gradientLabel1 = new CinemaSystemProjectB.GradientLabel();
+            this.AdminLogin = new System.Windows.Forms.Button();
             this.Bioscoopnaam = new System.Windows.Forms.Label();
             this.Film5 = new System.Windows.Forms.PictureBox();
             this.Film4 = new System.Windows.Forms.PictureBox();
             this.Film3 = new System.Windows.Forms.PictureBox();
             this.Film2 = new System.Windows.Forms.PictureBox();
             this.Film1 = new System.Windows.Forms.PictureBox();
-            this.AdminLogin = new System.Windows.Forms.Button();
             this.gradientLabel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Film5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Film4)).BeginInit();
@@ -506,6 +506,21 @@ namespace CinemaSystemProjectB
             this.gradientLabel1.Size = new System.Drawing.Size(1113, 121);
             this.gradientLabel1.TabIndex = 55;
             // 
+            // AdminLogin
+            // 
+            this.AdminLogin.BackColor = System.Drawing.Color.White;
+            this.AdminLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AdminLogin.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdminLogin.ForeColor = System.Drawing.Color.Black;
+            this.AdminLogin.Location = new System.Drawing.Point(981, 80);
+            this.AdminLogin.Name = "AdminLogin";
+            this.AdminLogin.Size = new System.Drawing.Size(109, 43);
+            this.AdminLogin.TabIndex = 52;
+            this.AdminLogin.TabStop = false;
+            this.AdminLogin.Text = "Inloggen";
+            this.AdminLogin.UseVisualStyleBackColor = false;
+            this.AdminLogin.Click += new System.EventHandler(this.AdminLogin_Click);
+            // 
             // Bioscoopnaam
             // 
             this.Bioscoopnaam.AutoSize = true;
@@ -527,7 +542,9 @@ namespace CinemaSystemProjectB
             this.Film5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Film5.TabIndex = 16;
             this.Film5.TabStop = false;
-            this.Film5.Click += new EventHandler(this.PictureBox_Click);
+            this.Film5.Click += new System.EventHandler(this.PictureBox_Click);
+            this.Film5.MouseEnter += new System.EventHandler(this.PictureBox_MouseEnter);
+            this.Film5.MouseLeave += new System.EventHandler(this.PictureBox_MouseLeave);
             // 
             // Film4
             // 
@@ -537,7 +554,9 @@ namespace CinemaSystemProjectB
             this.Film4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Film4.TabIndex = 15;
             this.Film4.TabStop = false;
-            this.Film4.Click += new EventHandler(this.PictureBox_Click);
+            this.Film4.Click += new System.EventHandler(this.PictureBox_Click);
+            this.Film4.MouseEnter += new System.EventHandler(this.PictureBox_MouseEnter);
+            this.Film4.MouseLeave += new System.EventHandler(this.PictureBox_MouseLeave);
             // 
             // Film3
             // 
@@ -547,7 +566,9 @@ namespace CinemaSystemProjectB
             this.Film3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Film3.TabIndex = 14;
             this.Film3.TabStop = false;
-            this.Film3.Click += new EventHandler(this.PictureBox_Click);
+            this.Film3.Click += new System.EventHandler(this.PictureBox_Click);
+            this.Film3.MouseEnter += new System.EventHandler(this.PictureBox_MouseEnter);
+            this.Film3.MouseLeave += new System.EventHandler(this.PictureBox_MouseLeave);
             // 
             // Film2
             // 
@@ -557,7 +578,9 @@ namespace CinemaSystemProjectB
             this.Film2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Film2.TabIndex = 13;
             this.Film2.TabStop = false;
-            this.Film2.Click += new EventHandler(this.PictureBox_Click);
+            this.Film2.Click += new System.EventHandler(this.PictureBox_Click);
+            this.Film2.MouseEnter += new System.EventHandler(this.PictureBox_MouseEnter);
+            this.Film2.MouseLeave += new System.EventHandler(this.PictureBox_MouseLeave);
             // 
             // Film1
             // 
@@ -567,22 +590,9 @@ namespace CinemaSystemProjectB
             this.Film1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Film1.TabIndex = 12;
             this.Film1.TabStop = false;
-            this.Film1.Click += new EventHandler(this.PictureBox_Click);
-            // 
-            // AdminLogin
-            // 
-            this.AdminLogin.BackColor = System.Drawing.Color.White;
-            this.AdminLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AdminLogin.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AdminLogin.ForeColor = System.Drawing.Color.Black;
-            this.AdminLogin.Location = new System.Drawing.Point(981, 80);
-            this.AdminLogin.Name = "AdminLogin";
-            this.AdminLogin.Size = new System.Drawing.Size(109, 43);
-            this.AdminLogin.TabIndex = 52;
-            this.AdminLogin.TabStop = false;
-            this.AdminLogin.Text = "Inloggen";
-            this.AdminLogin.UseVisualStyleBackColor = false;
-            this.AdminLogin.Click += new System.EventHandler(this.AdminLogin_Click);
+            this.Film1.Click += new System.EventHandler(this.PictureBox_Click);
+            this.Film1.MouseEnter += new System.EventHandler(this.PictureBox_MouseEnter);
+            this.Film1.MouseLeave += new System.EventHandler(this.PictureBox_MouseLeave);
             // 
             // MovieOverview
             // 
