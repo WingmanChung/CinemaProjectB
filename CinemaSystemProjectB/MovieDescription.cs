@@ -71,23 +71,23 @@ namespace CinemaSystemProjectB
 
         private void ReservationButton_Click(object sender, EventArgs e)
         {
-            /*var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-            var stringChars = new char[8];
-            var random = new Random();
-
-            for (int i = 0; i < stringChars.Length; i++)
-            {
-                stringChars[i] = chars[random.Next(chars.Length)];
-            }
-
-            var finalString = new String(stringChars);
-
-            DateTime dateToday = DateTime.Today;
-            MessageBox.Show(finalString + dateToday.ToString("ddMMyyyy"), "Reservatie code");*/
-
             new MovieReservation().Show();
         }
 
+        private void PriceListButton_MouseEnter(object sender, EventArgs e)
+        {
+            PriceListButton.BackColor = Color.Gold;
+        }
+
+        private void PriceListButton_MouseLeave(object sender, EventArgs e)
+        {
+            PriceListButton.BackColor = Color.Yellow;
+        }
+
+        private void PriceListButton_Click(object sender, EventArgs e)
+        {
+            new PriceList().Show();
+        }
     }
 }
 

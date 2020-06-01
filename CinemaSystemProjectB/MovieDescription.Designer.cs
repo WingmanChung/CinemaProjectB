@@ -60,6 +60,7 @@
             this.RatingLabel = new System.Windows.Forms.Label();
             this.Runtime = new System.Windows.Forms.Label();
             this.RuntimeLabel = new System.Windows.Forms.Label();
+            this.PriceListButton = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Filmposter)).BeginInit();
             this.gradientLabel1.SuspendLayout();
             this.SuspendLayout();
@@ -403,12 +404,28 @@
             this.RuntimeLabel.TabIndex = 84;
             this.RuntimeLabel.Text = "0 min";
             // 
+            // PriceListButton
+            // 
+            this.PriceListButton.BackColor = System.Drawing.Color.Yellow;
+            this.PriceListButton.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PriceListButton.ForeColor = System.Drawing.Color.Black;
+            this.PriceListButton.Location = new System.Drawing.Point(475, 387);
+            this.PriceListButton.Name = "PriceListButton";
+            this.PriceListButton.Size = new System.Drawing.Size(86, 23);
+            this.PriceListButton.TabIndex = 85;
+            this.PriceListButton.Text = "prijzenlijst";
+            this.PriceListButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PriceListButton.Click += new System.EventHandler(this.PriceListButton_Click);
+            this.PriceListButton.MouseEnter += new System.EventHandler(this.PriceListButton_MouseEnter);
+            this.PriceListButton.MouseLeave += new System.EventHandler(this.PriceListButton_MouseLeave);
+            // 
             // MovieDescription
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1110, 722);
+            this.Controls.Add(this.PriceListButton);
             this.Controls.Add(this.RuntimeLabel);
             this.Controls.Add(this.Runtime);
             this.Controls.Add(this.RatingLabel);
@@ -488,5 +505,6 @@
         private System.Windows.Forms.Label RatingLabel;
         private System.Windows.Forms.Label Runtime;
         private System.Windows.Forms.Label RuntimeLabel;
+        private System.Windows.Forms.Label PriceListButton;
     }
 }
