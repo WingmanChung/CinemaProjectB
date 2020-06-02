@@ -1,10 +1,9 @@
 ﻿using System;
-using System.ComponentModel;
 
 namespace CinemaSystemProjectB
 {
     
-    [DefaultProperty("Name")]
+   
     public class MovieDescriptionClass
     {
         public string Title { get; set; }
@@ -21,5 +20,15 @@ namespace CinemaSystemProjectB
         public string Synopsis { get; set; }
         public string Image { get; set; }
 
+        public override bool Equals(object obj)
+        {
+            if (obj is MovieDescriptionClass movieDescription)
+			{
+                return this.Title == movieDescription.Title &&
+                    this.Release == movieDescription.Release && 
+                    this.Language == movieDescription.Language;
+            }
+            return base.Equals(obj);
+        }
     }
 }

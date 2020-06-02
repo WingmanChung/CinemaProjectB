@@ -68,9 +68,9 @@
             this.OpenAddMoviePanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OpenAddMoviePanel.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OpenAddMoviePanel.ForeColor = System.Drawing.Color.Black;
-            this.OpenAddMoviePanel.Location = new System.Drawing.Point(-1, 6);
+            this.OpenAddMoviePanel.Location = new System.Drawing.Point(-1, 5);
             this.OpenAddMoviePanel.Name = "OpenAddMoviePanel";
-            this.OpenAddMoviePanel.Size = new System.Drawing.Size(971, 39);
+            this.OpenAddMoviePanel.Size = new System.Drawing.Size(971, 41);
             this.OpenAddMoviePanel.TabIndex = 301;
             this.OpenAddMoviePanel.Text = "Film toevoegen\r\n";
             this.OpenAddMoviePanel.UseVisualStyleBackColor = false;
@@ -100,7 +100,7 @@
             this.AddMovieButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddMovieButton.Location = new System.Drawing.Point(812, 838);
             this.AddMovieButton.Name = "AddMovieButton";
-            this.AddMovieButton.Size = new System.Drawing.Size(138, 31);
+            this.AddMovieButton.Size = new System.Drawing.Size(166, 36);
             this.AddMovieButton.TabIndex = 304;
             this.AddMovieButton.Text = "Film toevoegen";
             this.AddMovieButton.UseVisualStyleBackColor = false;
@@ -315,7 +315,7 @@
             this.AddMovieImageButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddMovieImageButton.Location = new System.Drawing.Point(100, 436);
             this.AddMovieImageButton.Name = "AddMovieImageButton";
-            this.AddMovieImageButton.Size = new System.Drawing.Size(210, 31);
+            this.AddMovieImageButton.Size = new System.Drawing.Size(227, 36);
             this.AddMovieImageButton.TabIndex = 332;
             this.AddMovieImageButton.Text = "Afbeelding toevoegen";
             this.AddMovieImageButton.UseVisualStyleBackColor = false;

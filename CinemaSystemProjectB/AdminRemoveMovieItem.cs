@@ -45,7 +45,7 @@ namespace CinemaSystemProjectB
         {
             if (IsScheduled)
             {
-                MessageBox.Show("Can't remove scheduled movie!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Kan geplande film niet verwijderen! Alleen films die momenteel niet draaien in de bioscoop zijn verwijderbaar.\n Grijs: Niet beschikbaar\n Zwart: Verwijderbaar", "Foutmelding!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -66,7 +66,5 @@ namespace CinemaSystemProjectB
             if(!IsClicked && !IsScheduled)
                 this.BackColor = Color.Black;
         }
-
-
     }
 }
