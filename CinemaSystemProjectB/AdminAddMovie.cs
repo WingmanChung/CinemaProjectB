@@ -122,10 +122,10 @@ namespace CinemaSystemProjectB
             //Loads json file with all movies
             Dictionary<string, MovieDescriptionClass> movies = JsonConvert.DeserializeObject<Dictionary<string, MovieDescriptionClass>>(File.ReadAllText(path));
 
-			MovieDescriptionClass Movie;
-			try
+            MovieDescriptionClass newMovie;
+            try
 			{
-                Movie = new MovieDescriptionClass()
+                newMovie = new MovieDescriptionClass()
                 {
                     Title = textBoxTitle.Text,
                     Release = textBoxRelease.Text,
@@ -139,16 +139,29 @@ namespace CinemaSystemProjectB
                     Price = textBoxPrice.Text,
                     Trailer = textBoxTrailer.Text,
                     Synopsis = textBoxSynopsis.Text,
+                    Image = Convert.ToBase64String(File.ReadAllBytes(AddMoviePoster.ImageLocation))
                 };
 			}
             catch
 			{
-				// TODO Prop hier een foutmelding lol
-				return;
+                MessageBox.Show("Voer een geldig nummer in.");
+                return;
 			}
 
-            // if (movies.Values.Any(x => x.Equals(Movie)))
+            //Check for duplicate movies
+            foreach(var entry in movies.Values)
+            {
+                if (newMovie.Equals(entry))
+                {
+                    MessageBox.Show("Deze film bestaat al.");
+                    return;
+                }
+            }
 
+            movies.Add(newMovie.Title, newMovie);
+
+            File.WriteAllText(path, JsonConvert.SerializeObject(movies, Formatting.Indented));
+            MessageBox.Show("Film is toegevoegd");
         }
 
         private void AddMovieButton_MouseEnter(object sender, EventArgs e)
