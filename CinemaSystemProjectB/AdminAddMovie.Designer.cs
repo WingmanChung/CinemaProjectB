@@ -68,7 +68,7 @@
             this.OpenAddMoviePanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OpenAddMoviePanel.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OpenAddMoviePanel.ForeColor = System.Drawing.Color.Black;
-            this.OpenAddMoviePanel.Location = new System.Drawing.Point(-1, 4);
+            this.OpenAddMoviePanel.Location = new System.Drawing.Point(-1, 5);
             this.OpenAddMoviePanel.Name = "OpenAddMoviePanel";
             this.OpenAddMoviePanel.Size = new System.Drawing.Size(971, 41);
             this.OpenAddMoviePanel.TabIndex = 301;
@@ -348,7 +348,7 @@
             this.AddMovieControl.MaximumSize = new System.Drawing.Size(970, 887);
             this.AddMovieControl.MinimumSize = new System.Drawing.Size(970, 54);
             this.AddMovieControl.Name = "AddMovieControl";
-            this.AddMovieControl.Size = new System.Drawing.Size(970, 536);
+            this.AddMovieControl.Size = new System.Drawing.Size(970, 54);
             this.AddMovieControl.TabIndex = 333;
             // 
             // AdminAddMovie
@@ -360,7 +360,7 @@
             this.MaximumSize = new System.Drawing.Size(970, 887);
             this.MinimumSize = new System.Drawing.Size(970, 54);
             this.Name = "AdminAddMovie";
-            this.Size = new System.Drawing.Size(970, 536);
+            this.Size = new System.Drawing.Size(970, 54);
             ((System.ComponentModel.ISupportInitialize)(this.AddMoviePoster)).EndInit();
             this.AddMovieControl.ResumeLayout(false);
             this.AddMovieControl.PerformLayout();
