@@ -57,7 +57,7 @@
             this.OpenRemoveMoviePanel.Name = "OpenRemoveMoviePanel";
             this.OpenRemoveMoviePanel.Size = new System.Drawing.Size(971, 39);
             this.OpenRemoveMoviePanel.TabIndex = 302;
-            this.OpenRemoveMoviePanel.Text = "Film verwijderen";
+            this.OpenRemoveMoviePanel.Text = "Film verwijderen / wijzigen\r\n";
             this.OpenRemoveMoviePanel.UseVisualStyleBackColor = false;
             this.OpenRemoveMoviePanel.Click += new System.EventHandler(this.OpenRemoveMoviePanel_Click);
             // 
@@ -82,7 +82,7 @@
             this.RemoveMovieControl.MaximumSize = new System.Drawing.Size(970, 750);
             this.RemoveMovieControl.MinimumSize = new System.Drawing.Size(970, 54);
             this.RemoveMovieControl.Name = "RemoveMovieControl";
-            this.RemoveMovieControl.Size = new System.Drawing.Size(970, 54);
+            this.RemoveMovieControl.Size = new System.Drawing.Size(970, 750);
             this.RemoveMovieControl.TabIndex = 304;
             // 
             // label4
@@ -132,7 +132,7 @@
             this.MaximumSize = new System.Drawing.Size(970, 750);
             this.MinimumSize = new System.Drawing.Size(970, 54);
             this.Name = "AdminRemoveMovie";
-            this.Size = new System.Drawing.Size(970, 59);
+            this.Size = new System.Drawing.Size(970, 750);
             this.RemoveMovieControl.ResumeLayout(false);
             this.RemoveMovieControl.PerformLayout();
             this.ResumeLayout(false);
