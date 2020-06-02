@@ -348,8 +348,8 @@
             this.AddMovieControl.MaximumSize = new System.Drawing.Size(970, 887);
             this.AddMovieControl.MinimumSize = new System.Drawing.Size(970, 54);
             this.AddMovieControl.Name = "AddMovieControl";
-            this.AddMovieControl.Size = new System.Drawing.Size(970, 54);
-            this.AddMovieControl.TabIndex = 333;
+            this.AddMovieControl.Size = new System.Drawing.Size(970, 887);
+			this.AddMovieControl.TabIndex = 333;
             // 
             // AdminAddMovie
             // 
