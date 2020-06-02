@@ -98,7 +98,7 @@
             this.AddMovieButton.BackColor = System.Drawing.Color.Yellow;
             this.AddMovieButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddMovieButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddMovieButton.Location = new System.Drawing.Point(812, 838);
+            this.AddMovieButton.Location = new System.Drawing.Point(784, 830);
             this.AddMovieButton.Name = "AddMovieButton";
             this.AddMovieButton.Size = new System.Drawing.Size(166, 36);
             this.AddMovieButton.TabIndex = 304;
@@ -313,7 +313,7 @@
             this.AddMovieImageButton.BackColor = System.Drawing.Color.Yellow;
             this.AddMovieImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddMovieImageButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddMovieImageButton.Location = new System.Drawing.Point(100, 436);
+            this.AddMovieImageButton.Location = new System.Drawing.Point(92, 436);
             this.AddMovieImageButton.Name = "AddMovieImageButton";
             this.AddMovieImageButton.Size = new System.Drawing.Size(227, 36);
             this.AddMovieImageButton.TabIndex = 332;
@@ -349,7 +349,7 @@
             this.AddMovieControl.MinimumSize = new System.Drawing.Size(970, 54);
             this.AddMovieControl.Name = "AddMovieControl";
             this.AddMovieControl.Size = new System.Drawing.Size(970, 887);
-			this.AddMovieControl.TabIndex = 333;
+            this.AddMovieControl.TabIndex = 333;
             // 
             // AdminAddMovie
             // 
@@ -358,9 +358,9 @@
             this.BackColor = System.Drawing.Color.Black;
             this.Controls.Add(this.AddMovieControl);
             this.MaximumSize = new System.Drawing.Size(970, 887);
-            this.MinimumSize = new System.Drawing.Size(970, 54);
+            this.MinimumSize = new System.Drawing.Size(970, 50);
             this.Name = "AdminAddMovie";
-            this.Size = new System.Drawing.Size(970, 54);
+            this.Size = new System.Drawing.Size(970, 887);
             ((System.ComponentModel.ISupportInitialize)(this.AddMoviePoster)).EndInit();
             this.AddMovieControl.ResumeLayout(false);
             this.AddMovieControl.PerformLayout();
