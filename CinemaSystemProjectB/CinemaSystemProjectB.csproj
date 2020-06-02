@@ -55,6 +55,24 @@
     <Compile Include="AdminAddMovie.Designer.cs">
       <DependentUpon>AdminAddMovie.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminEditMovie.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminEditMovie.Designer.cs">
+      <DependentUpon>AdminEditMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminEditMovieItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminEditMovieItem.Designer.cs">
+      <DependentUpon>AdminEditMovieItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminEditMovieWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminEditMovieWindow.Designer.cs">
+      <DependentUpon>AdminEditMovieWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminLoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +221,15 @@
     </Compile>
     <EmbeddedResource Include="AdminAddMovie.resx">
       <DependentUpon>AdminAddMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminEditMovie.resx">
+      <DependentUpon>AdminEditMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminEditMovieItem.resx">
+      <DependentUpon>AdminEditMovieItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminEditMovieWindow.resx">
+      <DependentUpon>AdminEditMovieWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminLoginForm.resx">
       <DependentUpon>AdminLoginForm.cs</DependentUpon>

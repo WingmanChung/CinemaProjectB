@@ -14,6 +14,7 @@ namespace CinemaSystemProjectB
         {
             AddMovieFunc();
             RemoveMovieFunc();
+            EditMovieFunc();
         }
 
         public void AddMovieFunc()
@@ -45,6 +46,22 @@ namespace CinemaSystemProjectB
             else
             {
                 AdminFunctions.Controls.Add(RemoveMovie[0]);
+            }
+        }
+
+        public void EditMovieFunc()
+        {
+            AdminEditMovie[] EditMovie = new AdminEditMovie[1];
+
+            EditMovie[0] = new AdminEditMovie();
+
+            if (AdminFunctions.Controls.Count < 0)
+            {
+                AdminFunctions.Controls.Clear();
+            }
+            else
+            {
+                AdminFunctions.Controls.Add(EditMovie[0]);
             }
         }
     }

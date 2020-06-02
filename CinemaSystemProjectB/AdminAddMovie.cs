@@ -16,6 +16,9 @@ namespace CinemaSystemProjectB
         public AdminAddMovie()
         {
             InitializeComponent();
+
+            // Shrink upon initialization (allows the form to be big in the designer tab)
+            this.Size = this.MinimumSize;
         }
 
 
