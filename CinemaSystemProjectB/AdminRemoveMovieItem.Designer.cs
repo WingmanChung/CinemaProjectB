@@ -1,4 +1,6 @@
-﻿namespace CinemaSystemProjectB
+﻿using System.Windows.Forms;
+
+namespace CinemaSystemProjectB
 {
     partial class AdminRemoveMovieItem
     {
@@ -36,6 +38,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.release = new System.Windows.Forms.Label();
+            this.taal = new System.Windows.Forms.Label();
+            this.genre = new System.Windows.Forms.Label();
+            this.filmtechnologie = new System.Windows.Forms.Label();
+            this.rating = new System.Windows.Forms.Label();
+            this.titel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.MoviePoster)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,11 +130,89 @@
             this.label7.TabIndex = 313;
             this.label7.Text = "Rating:";
             // 
+            // release
+            // 
+            this.release.AutoSize = true;
+            this.release.BackColor = System.Drawing.Color.Transparent;
+            this.release.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.release.ForeColor = System.Drawing.Color.Yellow;
+            this.release.Location = new System.Drawing.Point(396, 63);
+            this.release.Name = "release";
+            this.release.Size = new System.Drawing.Size(54, 19);
+            this.release.TabIndex = 314;
+            this.release.Text = "label8";
+            // 
+            // taal
+            // 
+            this.taal.AutoSize = true;
+            this.taal.BackColor = System.Drawing.Color.Transparent;
+            this.taal.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.taal.ForeColor = System.Drawing.Color.Yellow;
+            this.taal.Location = new System.Drawing.Point(396, 91);
+            this.taal.Name = "taal";
+            this.taal.Size = new System.Drawing.Size(54, 19);
+            this.taal.TabIndex = 315;
+            this.taal.Text = "label8";
+            // 
+            // genre
+            // 
+            this.genre.AutoSize = true;
+            this.genre.BackColor = System.Drawing.Color.Transparent;
+            this.genre.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genre.ForeColor = System.Drawing.Color.Yellow;
+            this.genre.Location = new System.Drawing.Point(396, 110);
+            this.genre.Name = "genre";
+            this.genre.Size = new System.Drawing.Size(54, 19);
+            this.genre.TabIndex = 316;
+            this.genre.Text = "label8";
+            // 
+            // filmtechnologie
+            // 
+            this.filmtechnologie.AutoSize = true;
+            this.filmtechnologie.BackColor = System.Drawing.Color.Transparent;
+            this.filmtechnologie.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filmtechnologie.ForeColor = System.Drawing.Color.Yellow;
+            this.filmtechnologie.Location = new System.Drawing.Point(396, 129);
+            this.filmtechnologie.Name = "filmtechnologie";
+            this.filmtechnologie.Size = new System.Drawing.Size(54, 19);
+            this.filmtechnologie.TabIndex = 317;
+            this.filmtechnologie.Text = "label8";
+            // 
+            // rating
+            // 
+            this.rating.AutoSize = true;
+            this.rating.BackColor = System.Drawing.Color.Transparent;
+            this.rating.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rating.ForeColor = System.Drawing.Color.Yellow;
+            this.rating.Location = new System.Drawing.Point(396, 153);
+            this.rating.Name = "rating";
+            this.rating.Size = new System.Drawing.Size(54, 19);
+            this.rating.TabIndex = 318;
+            this.rating.Text = "label8";
+            // 
+            // titel
+            // 
+            this.titel.AutoSize = true;
+            this.titel.BackColor = System.Drawing.Color.Transparent;
+            this.titel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titel.ForeColor = System.Drawing.Color.Yellow;
+            this.titel.Location = new System.Drawing.Point(396, 22);
+            this.titel.Name = "titel";
+            this.titel.Size = new System.Drawing.Size(54, 19);
+            this.titel.TabIndex = 319;
+            this.titel.Text = "label8";
+            // 
             // AdminRemoveMovieItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
+            this.Controls.Add(this.titel);
+            this.Controls.Add(this.rating);
+            this.Controls.Add(this.filmtechnologie);
+            this.Controls.Add(this.genre);
+            this.Controls.Add(this.taal);
+            this.Controls.Add(this.release);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -137,6 +223,9 @@
             this.Controls.Add(this.label2);
             this.Name = "AdminRemoveMovieItem";
             this.Size = new System.Drawing.Size(840, 200);
+            this.MouseEnter += new System.EventHandler(this.OnMouseEnter);
+            this.MouseLeave += new System.EventHandler(this.OnMouseLeave);
+            this.MouseClick += new MouseEventHandler(this.OnMouseClick);
             ((System.ComponentModel.ISupportInitialize)(this.MoviePoster)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -153,5 +242,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label release;
+        private System.Windows.Forms.Label taal;
+        private System.Windows.Forms.Label genre;
+        private System.Windows.Forms.Label filmtechnologie;
+        private System.Windows.Forms.Label rating;
+        private System.Windows.Forms.Label titel;
     }
 }

@@ -17,48 +17,35 @@ namespace CinemaSystemProjectB
 
 		//properties
 		public bool Chosen { get; set; } = false;
-
-        private string _movietitle;
-        private string _filmtechnology;
-        private string _runtime;
-        private string _Date;
-        private string _screen;
-
-        [Category("Custom Props")]
+        
         public string MovieTitle
         {
-            get { return _movietitle; }
-            set { _movietitle = value; Filmtitle.Text = value; }
+            get => Filmtitle.Text;
+            set => Filmtitle.Text = value;
         }
 
-        [Category("Custom Props")]
         public string FilmTechnology
         {
-            get { return _filmtechnology; }
-            set { _filmtechnology = value; Filmtechnology.Text = value; }
+            get => Filmtechnology.Text;
+            set => Filmtechnology.Text = value;
         }
 
-        [Category("Custom Props")]
         public string Runtime
         {
-            get { return _runtime; }
-            set { _runtime = value; runtime.Text = value; }
+            get => runtime.Text;
+            set => runtime.Text = value;
         }
-
-        [Category("Custom Props")]
 
         public string Date
         {
-            get { return _Date; }
-            set { _Date = value; date.Text = value; }
+            get => date.Text;
+            set => date.Text = value;
         }
-
-        [Category("Custom Props")]
 
         public string Screen
         {
-            get { return _screen; }
-            set { _screen = value; ScreenLabel.Text = value;}
+            get => ScreenLabel.Text;
+            set => ScreenLabel.Text = value;
         }
 
 

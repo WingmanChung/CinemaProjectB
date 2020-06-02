@@ -1,6 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace CinemaSystemProjectB
@@ -14,7 +12,6 @@ namespace CinemaSystemProjectB
             InitializeComponent();
 		}
 
-		private string _movietitle;
 		private string _filmtechnology;
 		private string _runtime;
 		private string _Date;
@@ -23,68 +20,58 @@ namespace CinemaSystemProjectB
 		private string _comboBoxStudent;
 		private string _screen;
 
-		[Category("Custom Props")]
 		public string MovieTitle
 		{
-			get { return _movietitle; }
-			set { _movietitle = value; Filmtitle.Text = value; }
+			get { return Filmtitle.Text; }
+			set { Filmtitle.Text = value; }
 		}
 
-		[Category("Custom Props")]
 		public string FilmTechnology
 		{
 			get { return _filmtechnology; }
 			set { _filmtechnology = value; Filmtechnology.Text = value; }
 		}
 
-		[Category("Custom Props")]
 		public string Runtime
 		{
-			get { return _runtime; }
-			set { _runtime = value; runtime.Text = value; }
+			get { return runtime.Text; }
+			set { runtime.Text = value; }
 		}
-
-		[Category("Custom Props")]
+		
 		public string Date
 		{
-			get { return _Date; }
-			set { _Date = value; date.Text = value; }
+			get { return date.Text; }
+			set { date.Text = value; }
 		}
 
-		[Category("Custom Props")]
 		public string ComboBoxAdult
 		{
-			get { return _comboBoxAdult; }
-			set { _comboBoxAdult = value; comboBoxAdult.Text = ""; }
+			get => comboBoxAdult.Text;
+			set => comboBoxAdult.Text = value;
 		}
 
-		[Category("Custom Props")]
 		public string ComboBoxKids
 		{
-			get { return _comboBoxKids; }
-			set { _comboBoxKids = value; comboBoxKids.Text = ""; }
+			get => _comboBoxKids;
+			set => comboBoxKids.Text = value;
 		}
 
-		[Category("Custom Props")]
 		public string ComboBoxStudent
 		{
-			get { return _comboBoxStudent; }
-			set { _comboBoxStudent = value; comboBoxStudent.Text = ""; }
+			get => comboBoxStudent.Text;
+			set => comboBoxStudent.Text = value;
 		}
-
-		[Category("Custom Props")]
-		private string _comboBoxSenior;
 
 		public string ComboBoxSenior
 		{
-			get { return _comboBoxSenior; }
-			set { _comboBoxSenior = value; comboBoxSenior.Text = ""; }
+			get => comboBoxSenior.Text;
+			set => comboBoxSenior.Text = value;
 		}
-		[Category("Custom Props")]
+
 		public string Screen
 		{
-			get { return _screen; }
-			set { _screen = value; ScreenLabel.Text = value; }
+			get => ScreenLabel.Text;
+			set => ScreenLabel.Text = value;
 		}
 
 		public void CheckIfZero()
