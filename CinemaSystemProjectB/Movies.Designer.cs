@@ -63,19 +63,19 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(0, 149);
+            this.label1.Location = new System.Drawing.Point(0, 147);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 796);
+            this.label1.Size = new System.Drawing.Size(40, 798);
             this.label1.TabIndex = 60;
             // 
             // Rechterkolom
             // 
             this.Rechterkolom.BackColor = System.Drawing.Color.Maroon;
-            this.Rechterkolom.Location = new System.Drawing.Point(1436, 149);
+            this.Rechterkolom.Location = new System.Drawing.Point(1436, 147);
             this.Rechterkolom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Rechterkolom.Name = "Rechterkolom";
-            this.Rechterkolom.Size = new System.Drawing.Size(40, 796);
+            this.Rechterkolom.Size = new System.Drawing.Size(40, 798);
             this.Rechterkolom.TabIndex = 61;
             // 
             // YellowLabel
@@ -118,7 +118,7 @@
             this.ThrillerMovies.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ThrillerMovies.ForeColor = System.Drawing.Color.Yellow;
             this.ThrillerMovies.Location = new System.Drawing.Point(95, 212);
-            this.ThrillerMovies.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ThrillerMovies.Margin = new System.Windows.Forms.Padding(4);
             this.ThrillerMovies.Name = "ThrillerMovies";
             this.ThrillerMovies.Size = new System.Drawing.Size(89, 26);
             this.ThrillerMovies.TabIndex = 82;
@@ -132,7 +132,7 @@
             this.ActionMovies.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ActionMovies.ForeColor = System.Drawing.Color.Yellow;
             this.ActionMovies.Location = new System.Drawing.Point(95, 245);
-            this.ActionMovies.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ActionMovies.Margin = new System.Windows.Forms.Padding(4);
             this.ActionMovies.Name = "ActionMovies";
             this.ActionMovies.Size = new System.Drawing.Size(75, 26);
             this.ActionMovies.TabIndex = 83;
@@ -146,7 +146,7 @@
             this.RomanceMovies.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RomanceMovies.ForeColor = System.Drawing.Color.Yellow;
             this.RomanceMovies.Location = new System.Drawing.Point(95, 278);
-            this.RomanceMovies.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RomanceMovies.Margin = new System.Windows.Forms.Padding(4);
             this.RomanceMovies.Name = "RomanceMovies";
             this.RomanceMovies.Size = new System.Drawing.Size(122, 26);
             this.RomanceMovies.TabIndex = 84;
@@ -160,7 +160,7 @@
             this.FantasyMovies.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FantasyMovies.ForeColor = System.Drawing.Color.Yellow;
             this.FantasyMovies.Location = new System.Drawing.Point(95, 311);
-            this.FantasyMovies.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FantasyMovies.Margin = new System.Windows.Forms.Padding(4);
             this.FantasyMovies.Name = "FantasyMovies";
             this.FantasyMovies.Size = new System.Drawing.Size(104, 26);
             this.FantasyMovies.TabIndex = 85;
@@ -174,7 +174,7 @@
             this.HorrorMovies.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HorrorMovies.ForeColor = System.Drawing.Color.Yellow;
             this.HorrorMovies.Location = new System.Drawing.Point(95, 345);
-            this.HorrorMovies.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HorrorMovies.Margin = new System.Windows.Forms.Padding(4);
             this.HorrorMovies.Name = "HorrorMovies";
             this.HorrorMovies.Size = new System.Drawing.Size(85, 26);
             this.HorrorMovies.TabIndex = 86;
@@ -188,7 +188,7 @@
             this.SciFiMovies.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SciFiMovies.ForeColor = System.Drawing.Color.Yellow;
             this.SciFiMovies.Location = new System.Drawing.Point(95, 378);
-            this.SciFiMovies.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SciFiMovies.Margin = new System.Windows.Forms.Padding(4);
             this.SciFiMovies.Name = "SciFiMovies";
             this.SciFiMovies.Size = new System.Drawing.Size(81, 26);
             this.SciFiMovies.TabIndex = 87;
@@ -202,7 +202,7 @@
             this.ComedyMovies.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComedyMovies.ForeColor = System.Drawing.Color.Yellow;
             this.ComedyMovies.Location = new System.Drawing.Point(95, 411);
-            this.ComedyMovies.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ComedyMovies.Margin = new System.Windows.Forms.Padding(4);
             this.ComedyMovies.Name = "ComedyMovies";
             this.ComedyMovies.Size = new System.Drawing.Size(110, 26);
             this.ComedyMovies.TabIndex = 88;
@@ -216,7 +216,7 @@
             this.AnimationMovies.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AnimationMovies.ForeColor = System.Drawing.Color.Yellow;
             this.AnimationMovies.Location = new System.Drawing.Point(95, 444);
-            this.AnimationMovies.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AnimationMovies.Margin = new System.Windows.Forms.Padding(4);
             this.AnimationMovies.Name = "AnimationMovies";
             this.AnimationMovies.Size = new System.Drawing.Size(105, 26);
             this.AnimationMovies.TabIndex = 89;
@@ -230,7 +230,7 @@
             this.NameMovies.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NameMovies.ForeColor = System.Drawing.Color.Yellow;
             this.NameMovies.Location = new System.Drawing.Point(95, 799);
-            this.NameMovies.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.NameMovies.Margin = new System.Windows.Forms.Padding(4);
             this.NameMovies.Name = "NameMovies";
             this.NameMovies.Size = new System.Drawing.Size(116, 26);
             this.NameMovies.TabIndex = 90;
@@ -244,7 +244,7 @@
             this.RatingMovies.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RatingMovies.ForeColor = System.Drawing.Color.Yellow;
             this.RatingMovies.Location = new System.Drawing.Point(95, 832);
-            this.RatingMovies.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RatingMovies.Margin = new System.Windows.Forms.Padding(4);
             this.RatingMovies.Name = "RatingMovies";
             this.RatingMovies.Size = new System.Drawing.Size(86, 26);
             this.RatingMovies.TabIndex = 93;
@@ -258,7 +258,7 @@
             this.AgeMovies.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AgeMovies.ForeColor = System.Drawing.Color.Yellow;
             this.AgeMovies.Location = new System.Drawing.Point(95, 865);
-            this.AgeMovies.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AgeMovies.Margin = new System.Windows.Forms.Padding(4);
             this.AgeMovies.Name = "AgeMovies";
             this.AgeMovies.Size = new System.Drawing.Size(127, 26);
             this.AgeMovies.TabIndex = 94;
@@ -272,7 +272,7 @@
             this.DramaMovies.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DramaMovies.ForeColor = System.Drawing.Color.Yellow;
             this.DramaMovies.Location = new System.Drawing.Point(95, 478);
-            this.DramaMovies.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DramaMovies.Margin = new System.Windows.Forms.Padding(4);
             this.DramaMovies.Name = "DramaMovies";
             this.DramaMovies.Size = new System.Drawing.Size(88, 26);
             this.DramaMovies.TabIndex = 96;
@@ -286,7 +286,7 @@
             this.HistoryMovies.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HistoryMovies.ForeColor = System.Drawing.Color.Yellow;
             this.HistoryMovies.Location = new System.Drawing.Point(95, 511);
-            this.HistoryMovies.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HistoryMovies.Margin = new System.Windows.Forms.Padding(4);
             this.HistoryMovies.Name = "HistoryMovies";
             this.HistoryMovies.Size = new System.Drawing.Size(115, 26);
             this.HistoryMovies.TabIndex = 97;
@@ -300,7 +300,7 @@
             this.WarMovies.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WarMovies.ForeColor = System.Drawing.Color.Yellow;
             this.WarMovies.Location = new System.Drawing.Point(95, 544);
-            this.WarMovies.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.WarMovies.Margin = new System.Windows.Forms.Padding(4);
             this.WarMovies.Name = "WarMovies";
             this.WarMovies.Size = new System.Drawing.Size(90, 26);
             this.WarMovies.TabIndex = 98;
@@ -314,7 +314,7 @@
             this.AdventureMovies.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdventureMovies.ForeColor = System.Drawing.Color.Yellow;
             this.AdventureMovies.Location = new System.Drawing.Point(95, 577);
-            this.AdventureMovies.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AdventureMovies.Margin = new System.Windows.Forms.Padding(4);
             this.AdventureMovies.Name = "AdventureMovies";
             this.AdventureMovies.Size = new System.Drawing.Size(106, 26);
             this.AdventureMovies.TabIndex = 99;
@@ -328,7 +328,7 @@
             this.MysteryMovies.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MysteryMovies.ForeColor = System.Drawing.Color.Yellow;
             this.MysteryMovies.Location = new System.Drawing.Point(95, 610);
-            this.MysteryMovies.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MysteryMovies.Margin = new System.Windows.Forms.Padding(4);
             this.MysteryMovies.Name = "MysteryMovies";
             this.MysteryMovies.Size = new System.Drawing.Size(103, 26);
             this.MysteryMovies.TabIndex = 100;
@@ -342,7 +342,7 @@
             this.CrimeMovies.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CrimeMovies.ForeColor = System.Drawing.Color.Yellow;
             this.CrimeMovies.Location = new System.Drawing.Point(95, 644);
-            this.CrimeMovies.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CrimeMovies.Margin = new System.Windows.Forms.Padding(4);
             this.CrimeMovies.Name = "CrimeMovies";
             this.CrimeMovies.Size = new System.Drawing.Size(103, 26);
             this.CrimeMovies.TabIndex = 101;
@@ -356,7 +356,7 @@
             this.FamilyMovies.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FamilyMovies.ForeColor = System.Drawing.Color.Yellow;
             this.FamilyMovies.Location = new System.Drawing.Point(95, 677);
-            this.FamilyMovies.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FamilyMovies.Margin = new System.Windows.Forms.Padding(4);
             this.FamilyMovies.Name = "FamilyMovies";
             this.FamilyMovies.Size = new System.Drawing.Size(93, 26);
             this.FamilyMovies.TabIndex = 102;
@@ -369,7 +369,7 @@
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(424, 197);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(980, 742);
             this.flowLayoutPanel1.TabIndex = 103;
@@ -380,7 +380,7 @@
             this.AllMovies.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AllMovies.ForeColor = System.Drawing.Color.Yellow;
             this.AllMovies.Location = new System.Drawing.Point(95, 766);
-            this.AllMovies.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AllMovies.Margin = new System.Windows.Forms.Padding(4);
             this.AllMovies.Name = "AllMovies";
             this.AllMovies.Size = new System.Drawing.Size(109, 26);
             this.AllMovies.TabIndex = 104;
@@ -395,7 +395,7 @@
             this.TwelvePlus.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TwelvePlus.ForeColor = System.Drawing.Color.Yellow;
             this.TwelvePlus.Location = new System.Drawing.Point(95, 898);
-            this.TwelvePlus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TwelvePlus.Margin = new System.Windows.Forms.Padding(4);
             this.TwelvePlus.Name = "TwelvePlus";
             this.TwelvePlus.Size = new System.Drawing.Size(158, 26);
             this.TwelvePlus.TabIndex = 105;
@@ -421,7 +421,7 @@
             this.Wittelijn.Location = new System.Drawing.Point(-7, 143);
             this.Wittelijn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Wittelijn.Name = "Wittelijn";
-            this.Wittelijn.Size = new System.Drawing.Size(1483, 6);
+            this.Wittelijn.Size = new System.Drawing.Size(1487, 6);
             this.Wittelijn.TabIndex = 60;
             // 
             // Bioscoopnaam
@@ -443,7 +443,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1475, 943);
+            this.ClientSize = new System.Drawing.Size(1476, 943);
             this.Controls.Add(this.TwelvePlus);
             this.Controls.Add(this.AllMovies);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -471,7 +471,7 @@
             this.Controls.Add(this.Rechterkolom);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gradientLabel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Movies";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Movies";

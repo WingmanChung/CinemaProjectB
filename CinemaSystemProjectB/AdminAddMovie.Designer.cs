@@ -58,8 +58,9 @@
             // 
             this.label1.BackColor = System.Drawing.Color.Maroon;
             this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(970, 3);
+            this.label1.Size = new System.Drawing.Size(1293, 4);
             this.label1.TabIndex = 18;
             // 
             // OpenAddMoviePanel
@@ -68,9 +69,10 @@
             this.OpenAddMoviePanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OpenAddMoviePanel.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OpenAddMoviePanel.ForeColor = System.Drawing.Color.Black;
-            this.OpenAddMoviePanel.Location = new System.Drawing.Point(-1, 6);
+            this.OpenAddMoviePanel.Location = new System.Drawing.Point(65, -23);
+            this.OpenAddMoviePanel.Margin = new System.Windows.Forms.Padding(4);
             this.OpenAddMoviePanel.Name = "OpenAddMoviePanel";
-            this.OpenAddMoviePanel.Size = new System.Drawing.Size(971, 39);
+            this.OpenAddMoviePanel.Size = new System.Drawing.Size(1295, 51);
             this.OpenAddMoviePanel.TabIndex = 301;
             this.OpenAddMoviePanel.Text = "Film toevoegen\r\n";
             this.OpenAddMoviePanel.UseVisualStyleBackColor = false;
@@ -79,17 +81,19 @@
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.Maroon;
-            this.label3.Location = new System.Drawing.Point(0, 48);
+            this.label3.Location = new System.Drawing.Point(0, 59);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(970, 3);
+            this.label3.Size = new System.Drawing.Size(1293, 4);
             this.label3.TabIndex = 302;
             // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.Maroon;
-            this.label2.Location = new System.Drawing.Point(20, 820);
+            this.label2.Location = new System.Drawing.Point(27, 1009);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(930, 3);
+            this.label2.Size = new System.Drawing.Size(1240, 4);
             this.label2.TabIndex = 303;
             // 
             // AddMovieButton
@@ -98,9 +102,10 @@
             this.AddMovieButton.BackColor = System.Drawing.Color.Yellow;
             this.AddMovieButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddMovieButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddMovieButton.Location = new System.Drawing.Point(812, 838);
+            this.AddMovieButton.Location = new System.Drawing.Point(1083, 1031);
+            this.AddMovieButton.Margin = new System.Windows.Forms.Padding(4);
             this.AddMovieButton.Name = "AddMovieButton";
-            this.AddMovieButton.Size = new System.Drawing.Size(138, 31);
+            this.AddMovieButton.Size = new System.Drawing.Size(221, 44);
             this.AddMovieButton.TabIndex = 304;
             this.AddMovieButton.Text = "Film toevoegen";
             this.AddMovieButton.UseVisualStyleBackColor = false;
@@ -114,9 +119,10 @@
             this.textBoxTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxTitle.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Italic);
             this.textBoxTitle.ForeColor = System.Drawing.Color.Yellow;
-            this.textBoxTitle.Location = new System.Drawing.Point(341, 121);
+            this.textBoxTitle.Location = new System.Drawing.Point(455, 149);
+            this.textBoxTitle.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxTitle.Name = "textBoxTitle";
-            this.textBoxTitle.Size = new System.Drawing.Size(526, 27);
+            this.textBoxTitle.Size = new System.Drawing.Size(701, 32);
             this.textBoxTitle.TabIndex = 318;
             this.textBoxTitle.Text = "Titel";
             this.textBoxTitle.Enter += new System.EventHandler(this.textBoxTitle_Enter);
@@ -128,9 +134,10 @@
             this.textBoxRelease.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxRelease.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Italic);
             this.textBoxRelease.ForeColor = System.Drawing.Color.Yellow;
-            this.textBoxRelease.Location = new System.Drawing.Point(341, 156);
+            this.textBoxRelease.Location = new System.Drawing.Point(455, 192);
+            this.textBoxRelease.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxRelease.Name = "textBoxRelease";
-            this.textBoxRelease.Size = new System.Drawing.Size(526, 27);
+            this.textBoxRelease.Size = new System.Drawing.Size(701, 32);
             this.textBoxRelease.TabIndex = 319;
             this.textBoxRelease.Text = "Releasedatum";
             this.textBoxRelease.Enter += new System.EventHandler(this.textBoxRelease_Enter);
@@ -142,9 +149,10 @@
             this.textBoxDirector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxDirector.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Italic);
             this.textBoxDirector.ForeColor = System.Drawing.Color.Yellow;
-            this.textBoxDirector.Location = new System.Drawing.Point(341, 191);
+            this.textBoxDirector.Location = new System.Drawing.Point(455, 235);
+            this.textBoxDirector.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDirector.Name = "textBoxDirector";
-            this.textBoxDirector.Size = new System.Drawing.Size(526, 27);
+            this.textBoxDirector.Size = new System.Drawing.Size(701, 32);
             this.textBoxDirector.TabIndex = 320;
             this.textBoxDirector.Text = "Regisseur(s)";
             this.textBoxDirector.Enter += new System.EventHandler(this.textBoxDirector_Enter);
@@ -156,9 +164,10 @@
             this.textBoxGenre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxGenre.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Italic);
             this.textBoxGenre.ForeColor = System.Drawing.Color.Yellow;
-            this.textBoxGenre.Location = new System.Drawing.Point(341, 226);
+            this.textBoxGenre.Location = new System.Drawing.Point(455, 278);
+            this.textBoxGenre.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxGenre.Name = "textBoxGenre";
-            this.textBoxGenre.Size = new System.Drawing.Size(526, 27);
+            this.textBoxGenre.Size = new System.Drawing.Size(701, 32);
             this.textBoxGenre.TabIndex = 321;
             this.textBoxGenre.Text = "Genre";
             this.textBoxGenre.Enter += new System.EventHandler(this.textBoxGenre_Enter);
@@ -170,9 +179,10 @@
             this.textBoxLanguage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxLanguage.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Italic);
             this.textBoxLanguage.ForeColor = System.Drawing.Color.Yellow;
-            this.textBoxLanguage.Location = new System.Drawing.Point(341, 261);
+            this.textBoxLanguage.Location = new System.Drawing.Point(455, 321);
+            this.textBoxLanguage.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxLanguage.Name = "textBoxLanguage";
-            this.textBoxLanguage.Size = new System.Drawing.Size(526, 27);
+            this.textBoxLanguage.Size = new System.Drawing.Size(701, 32);
             this.textBoxLanguage.TabIndex = 322;
             this.textBoxLanguage.Text = "Taal";
             this.textBoxLanguage.Enter += new System.EventHandler(this.textBoxLanguage_Enter);
@@ -184,9 +194,10 @@
             this.textBoxRating.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxRating.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Italic);
             this.textBoxRating.ForeColor = System.Drawing.Color.Yellow;
-            this.textBoxRating.Location = new System.Drawing.Point(341, 296);
+            this.textBoxRating.Location = new System.Drawing.Point(455, 364);
+            this.textBoxRating.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxRating.Name = "textBoxRating";
-            this.textBoxRating.Size = new System.Drawing.Size(526, 27);
+            this.textBoxRating.Size = new System.Drawing.Size(701, 32);
             this.textBoxRating.TabIndex = 323;
             this.textBoxRating.Text = "Rating";
             this.textBoxRating.Enter += new System.EventHandler(this.textBoxRating_Enter);
@@ -198,9 +209,10 @@
             this.textBoxAge.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxAge.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Italic);
             this.textBoxAge.ForeColor = System.Drawing.Color.Yellow;
-            this.textBoxAge.Location = new System.Drawing.Point(341, 331);
+            this.textBoxAge.Location = new System.Drawing.Point(455, 407);
+            this.textBoxAge.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxAge.Name = "textBoxAge";
-            this.textBoxAge.Size = new System.Drawing.Size(526, 27);
+            this.textBoxAge.Size = new System.Drawing.Size(701, 32);
             this.textBoxAge.TabIndex = 324;
             this.textBoxAge.Text = "Leeftijd";
             this.textBoxAge.Enter += new System.EventHandler(this.textBoxAge_Enter);
@@ -212,9 +224,10 @@
             this.textBoxRuntime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxRuntime.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Italic);
             this.textBoxRuntime.ForeColor = System.Drawing.Color.Yellow;
-            this.textBoxRuntime.Location = new System.Drawing.Point(341, 366);
+            this.textBoxRuntime.Location = new System.Drawing.Point(455, 450);
+            this.textBoxRuntime.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxRuntime.Name = "textBoxRuntime";
-            this.textBoxRuntime.Size = new System.Drawing.Size(526, 27);
+            this.textBoxRuntime.Size = new System.Drawing.Size(701, 32);
             this.textBoxRuntime.TabIndex = 325;
             this.textBoxRuntime.Text = "Filmduur";
             this.textBoxRuntime.Enter += new System.EventHandler(this.textBoxRuntime_Enter);
@@ -226,9 +239,10 @@
             this.textBoxFilmtechnology.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxFilmtechnology.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Italic);
             this.textBoxFilmtechnology.ForeColor = System.Drawing.Color.Yellow;
-            this.textBoxFilmtechnology.Location = new System.Drawing.Point(341, 401);
+            this.textBoxFilmtechnology.Location = new System.Drawing.Point(455, 494);
+            this.textBoxFilmtechnology.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxFilmtechnology.Name = "textBoxFilmtechnology";
-            this.textBoxFilmtechnology.Size = new System.Drawing.Size(526, 27);
+            this.textBoxFilmtechnology.Size = new System.Drawing.Size(701, 32);
             this.textBoxFilmtechnology.TabIndex = 326;
             this.textBoxFilmtechnology.Text = "Filmtechnologie";
             this.textBoxFilmtechnology.Enter += new System.EventHandler(this.textBoxFilmtechnology_Enter);
@@ -240,9 +254,10 @@
             this.textBoxPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxPrice.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Italic);
             this.textBoxPrice.ForeColor = System.Drawing.Color.Yellow;
-            this.textBoxPrice.Location = new System.Drawing.Point(341, 436);
+            this.textBoxPrice.Location = new System.Drawing.Point(455, 537);
+            this.textBoxPrice.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPrice.Name = "textBoxPrice";
-            this.textBoxPrice.Size = new System.Drawing.Size(526, 27);
+            this.textBoxPrice.Size = new System.Drawing.Size(701, 32);
             this.textBoxPrice.TabIndex = 327;
             this.textBoxPrice.Text = "Prijs";
             this.textBoxPrice.Enter += new System.EventHandler(this.textBoxPrice_Enter);
@@ -254,9 +269,10 @@
             this.textBoxTrailer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxTrailer.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Italic);
             this.textBoxTrailer.ForeColor = System.Drawing.Color.Yellow;
-            this.textBoxTrailer.Location = new System.Drawing.Point(341, 471);
+            this.textBoxTrailer.Location = new System.Drawing.Point(455, 580);
+            this.textBoxTrailer.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxTrailer.Name = "textBoxTrailer";
-            this.textBoxTrailer.Size = new System.Drawing.Size(526, 27);
+            this.textBoxTrailer.Size = new System.Drawing.Size(701, 32);
             this.textBoxTrailer.TabIndex = 328;
             this.textBoxTrailer.Text = "Trailerlink";
             this.textBoxTrailer.Enter += new System.EventHandler(this.textBoxTrailer_Enter);
@@ -268,11 +284,12 @@
             this.textBoxSynopsis.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxSynopsis.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Italic);
             this.textBoxSynopsis.ForeColor = System.Drawing.Color.Yellow;
-            this.textBoxSynopsis.Location = new System.Drawing.Point(341, 506);
+            this.textBoxSynopsis.Location = new System.Drawing.Point(455, 623);
+            this.textBoxSynopsis.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSynopsis.Multiline = true;
             this.textBoxSynopsis.Name = "textBoxSynopsis";
             this.textBoxSynopsis.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxSynopsis.Size = new System.Drawing.Size(526, 294);
+            this.textBoxSynopsis.Size = new System.Drawing.Size(701, 361);
             this.textBoxSynopsis.TabIndex = 329;
             this.textBoxSynopsis.Text = "Korte filmbeschrijving";
             this.textBoxSynopsis.Enter += new System.EventHandler(this.textBoxSynopsis_Enter);
@@ -281,9 +298,10 @@
             // AddMoviePoster
             // 
             this.AddMoviePoster.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.AddMoviePoster.Location = new System.Drawing.Point(100, 121);
+            this.AddMoviePoster.Location = new System.Drawing.Point(133, 149);
+            this.AddMoviePoster.Margin = new System.Windows.Forms.Padding(4);
             this.AddMoviePoster.Name = "AddMoviePoster";
-            this.AddMoviePoster.Size = new System.Drawing.Size(210, 307);
+            this.AddMoviePoster.Size = new System.Drawing.Size(280, 378);
             this.AddMoviePoster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.AddMoviePoster.TabIndex = 317;
             this.AddMoviePoster.TabStop = false;
@@ -293,18 +311,20 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Yellow;
-            this.label4.Location = new System.Drawing.Point(297, 72);
+            this.label4.Location = new System.Drawing.Point(396, 89);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(359, 24);
+            this.label4.Size = new System.Drawing.Size(472, 32);
             this.label4.TabIndex = 330;
             this.label4.Text = "Vul hier de onderstaande velden in";
             // 
             // label5
             // 
             this.label5.BackColor = System.Drawing.Color.Maroon;
-            this.label5.Location = new System.Drawing.Point(20, 98);
+            this.label5.Location = new System.Drawing.Point(27, 121);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(930, 3);
+            this.label5.Size = new System.Drawing.Size(1240, 4);
             this.label5.TabIndex = 331;
             // 
             // AddMovieImageButton
@@ -313,9 +333,10 @@
             this.AddMovieImageButton.BackColor = System.Drawing.Color.Yellow;
             this.AddMovieImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddMovieImageButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddMovieImageButton.Location = new System.Drawing.Point(100, 436);
+            this.AddMovieImageButton.Location = new System.Drawing.Point(133, 537);
+            this.AddMovieImageButton.Margin = new System.Windows.Forms.Padding(4);
             this.AddMovieImageButton.Name = "AddMovieImageButton";
-            this.AddMovieImageButton.Size = new System.Drawing.Size(210, 31);
+            this.AddMovieImageButton.Size = new System.Drawing.Size(303, 44);
             this.AddMovieImageButton.TabIndex = 332;
             this.AddMovieImageButton.Text = "Afbeelding toevoegen";
             this.AddMovieImageButton.UseVisualStyleBackColor = false;
@@ -344,23 +365,25 @@
             this.AddMovieControl.Controls.Add(this.textBoxGenre);
             this.AddMovieControl.Controls.Add(this.textBoxRating);
             this.AddMovieControl.Controls.Add(this.textBoxLanguage);
-            this.AddMovieControl.Location = new System.Drawing.Point(0, 3);
-            this.AddMovieControl.MaximumSize = new System.Drawing.Size(970, 887);
-            this.AddMovieControl.MinimumSize = new System.Drawing.Size(970, 54);
+            this.AddMovieControl.Location = new System.Drawing.Point(0, 4);
+            this.AddMovieControl.Margin = new System.Windows.Forms.Padding(4);
+            this.AddMovieControl.MaximumSize = new System.Drawing.Size(1293, 1092);
+            this.AddMovieControl.MinimumSize = new System.Drawing.Size(1293, 66);
             this.AddMovieControl.Name = "AddMovieControl";
-            this.AddMovieControl.Size = new System.Drawing.Size(970, 54);
+            this.AddMovieControl.Size = new System.Drawing.Size(1293, 660);
             this.AddMovieControl.TabIndex = 333;
             // 
             // AdminAddMovie
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.Controls.Add(this.AddMovieControl);
-            this.MaximumSize = new System.Drawing.Size(970, 887);
-            this.MinimumSize = new System.Drawing.Size(970, 54);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(1293, 1092);
+            this.MinimumSize = new System.Drawing.Size(1293, 66);
             this.Name = "AdminAddMovie";
-            this.Size = new System.Drawing.Size(970, 54);
+            this.Size = new System.Drawing.Size(1293, 660);
             ((System.ComponentModel.ISupportInitialize)(this.AddMoviePoster)).EndInit();
             this.AddMovieControl.ResumeLayout(false);
             this.AddMovieControl.PerformLayout();

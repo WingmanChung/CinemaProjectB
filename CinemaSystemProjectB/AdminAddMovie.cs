@@ -1,6 +1,10 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace CinemaSystemProjectB
@@ -8,10 +12,13 @@ namespace CinemaSystemProjectB
     public partial class AdminAddMovie : UserControl
     {
         private bool isCollapsed = false;
+        const string path = @"JsonTextFile.json";
         public AdminAddMovie()
         {
             InitializeComponent();
         }
+
+
 
         private string _movieTitle;
         private string _filmtechnology;
@@ -112,7 +119,36 @@ namespace CinemaSystemProjectB
 
         private void AddMovieButton_Click(object sender, EventArgs e)
         {
-            //Saves data to json
+            //Loads json file with all movies
+            Dictionary<string, MovieDescriptionClass> movies = JsonConvert.DeserializeObject<Dictionary<string, MovieDescriptionClass>>(File.ReadAllText(path));
+
+			MovieDescriptionClass Movie;
+			try
+			{
+                Movie = new MovieDescriptionClass()
+                {
+                    Title = textBoxTitle.Text,
+                    Release = textBoxRelease.Text,
+                    Director = textBoxDirector.Text,
+                    Genre = textBoxGenre.Text,
+                    Language = textBoxLanguage.Text,
+                    Rating = float.Parse(textBoxRating.Text),
+                    Age = textBoxAge.Text,
+                    Runtime = textBoxAge.Text,
+                    FilmTechnology = textBoxFilmtechnology.Text,
+                    Price = textBoxPrice.Text,
+                    Trailer = textBoxTrailer.Text,
+                    Synopsis = textBoxSynopsis.Text,
+                };
+			}
+            catch
+			{
+				// TODO Prop hier een foutmelding lol
+				return;
+			}
+
+            // if (movies.Values.Any(x => x.Equals(Movie)))
+
         }
 
         private void AddMovieButton_MouseEnter(object sender, EventArgs e)
@@ -146,6 +182,11 @@ namespace CinemaSystemProjectB
             if(textBoxTitle.Text == "Titel")
             {
                 textBoxTitle.Text = "";
+
+                if(textBoxTitle.Text != null)
+                {
+
+                }
 
                 textBoxTitle.Font = new Font(textBoxTitle.Font, FontStyle.Regular);
             }
@@ -383,7 +424,6 @@ namespace CinemaSystemProjectB
 
         private void AddMovieImageButton_Click(object sender, EventArgs e)
         {
-            string imageLocation = "";
             try
             {
                 OpenFileDialog dialog = new OpenFileDialog();
@@ -391,16 +431,16 @@ namespace CinemaSystemProjectB
                 //Admin may only choose jpg or png file
                 dialog.Filter = "jpg files(*.jpg)|*.jpg| PNG files(*.png)|*.png| All Files(*.*)|*.*";
 
-                if(dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                if(dialog.ShowDialog() == DialogResult.OK)
                 {
-                    imageLocation = dialog.FileName;
+                    string imageLocation = dialog.FileName;
 
                     AddMoviePoster.ImageLocation = imageLocation;
                 }
             }
             catch (Exception)
             {
-                MessageBox.Show("Er is iets fout gegaan", "Foutmelding", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Er is iets fout gegaan", "Foutmelding!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

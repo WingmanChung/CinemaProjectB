@@ -70,34 +70,38 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(0, 119);
+            this.label1.Location = new System.Drawing.Point(0, 146);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 647);
+            this.label1.Size = new System.Drawing.Size(40, 796);
             this.label1.TabIndex = 61;
             // 
             // Rechterkolom
             // 
             this.Rechterkolom.BackColor = System.Drawing.Color.Maroon;
-            this.Rechterkolom.Location = new System.Drawing.Point(1077, 119);
+            this.Rechterkolom.Location = new System.Drawing.Point(1436, 146);
+            this.Rechterkolom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Rechterkolom.Name = "Rechterkolom";
-            this.Rechterkolom.Size = new System.Drawing.Size(30, 647);
+            this.Rechterkolom.Size = new System.Drawing.Size(40, 796);
             this.Rechterkolom.TabIndex = 62;
             // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(31, 186);
+            this.label2.Location = new System.Drawing.Point(41, 229);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1045, 3);
+            this.label2.Size = new System.Drawing.Size(1393, 4);
             this.label2.TabIndex = 61;
             // 
             // TodaySchedule
             // 
             this.TodaySchedule.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TodaySchedule.ForeColor = System.Drawing.Color.Yellow;
-            this.TodaySchedule.Location = new System.Drawing.Point(32, 119);
+            this.TodaySchedule.Location = new System.Drawing.Point(43, 146);
+            this.TodaySchedule.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TodaySchedule.Name = "TodaySchedule";
-            this.TodaySchedule.Size = new System.Drawing.Size(149, 65);
+            this.TodaySchedule.Size = new System.Drawing.Size(199, 80);
             this.TodaySchedule.TabIndex = 63;
             this.TodaySchedule.Text = "Zo";
             this.TodaySchedule.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -109,9 +113,10 @@
             // 
             this.SecondSchedule.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SecondSchedule.ForeColor = System.Drawing.Color.Yellow;
-            this.SecondSchedule.Location = new System.Drawing.Point(181, 119);
+            this.SecondSchedule.Location = new System.Drawing.Point(241, 146);
+            this.SecondSchedule.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SecondSchedule.Name = "SecondSchedule";
-            this.SecondSchedule.Size = new System.Drawing.Size(149, 65);
+            this.SecondSchedule.Size = new System.Drawing.Size(199, 80);
             this.SecondSchedule.TabIndex = 64;
             this.SecondSchedule.Text = "Ma";
             this.SecondSchedule.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -123,9 +128,10 @@
             // 
             this.ThirthSchedule.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ThirthSchedule.ForeColor = System.Drawing.Color.Yellow;
-            this.ThirthSchedule.Location = new System.Drawing.Point(330, 119);
+            this.ThirthSchedule.Location = new System.Drawing.Point(440, 146);
+            this.ThirthSchedule.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ThirthSchedule.Name = "ThirthSchedule";
-            this.ThirthSchedule.Size = new System.Drawing.Size(149, 65);
+            this.ThirthSchedule.Size = new System.Drawing.Size(199, 80);
             this.ThirthSchedule.TabIndex = 65;
             this.ThirthSchedule.Text = "Di";
             this.ThirthSchedule.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -137,9 +143,10 @@
             // 
             this.FourthSchedule.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FourthSchedule.ForeColor = System.Drawing.Color.Yellow;
-            this.FourthSchedule.Location = new System.Drawing.Point(479, 119);
+            this.FourthSchedule.Location = new System.Drawing.Point(639, 146);
+            this.FourthSchedule.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.FourthSchedule.Name = "FourthSchedule";
-            this.FourthSchedule.Size = new System.Drawing.Size(149, 65);
+            this.FourthSchedule.Size = new System.Drawing.Size(199, 80);
             this.FourthSchedule.TabIndex = 66;
             this.FourthSchedule.Text = "Wo";
             this.FourthSchedule.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -151,9 +158,10 @@
             // 
             this.FifthSchedule.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FifthSchedule.ForeColor = System.Drawing.Color.Yellow;
-            this.FifthSchedule.Location = new System.Drawing.Point(628, 121);
+            this.FifthSchedule.Location = new System.Drawing.Point(837, 149);
+            this.FifthSchedule.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.FifthSchedule.Name = "FifthSchedule";
-            this.FifthSchedule.Size = new System.Drawing.Size(149, 65);
+            this.FifthSchedule.Size = new System.Drawing.Size(199, 80);
             this.FifthSchedule.TabIndex = 67;
             this.FifthSchedule.Text = "Do";
             this.FifthSchedule.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -165,9 +173,10 @@
             // 
             this.SixthSchedule.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SixthSchedule.ForeColor = System.Drawing.Color.Yellow;
-            this.SixthSchedule.Location = new System.Drawing.Point(777, 119);
+            this.SixthSchedule.Location = new System.Drawing.Point(1036, 146);
+            this.SixthSchedule.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SixthSchedule.Name = "SixthSchedule";
-            this.SixthSchedule.Size = new System.Drawing.Size(149, 65);
+            this.SixthSchedule.Size = new System.Drawing.Size(199, 80);
             this.SixthSchedule.TabIndex = 68;
             this.SixthSchedule.Text = "Vr";
             this.SixthSchedule.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -179,9 +188,10 @@
             // 
             this.SeventhSchedule.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SeventhSchedule.ForeColor = System.Drawing.Color.Yellow;
-            this.SeventhSchedule.Location = new System.Drawing.Point(926, 119);
+            this.SeventhSchedule.Location = new System.Drawing.Point(1235, 146);
+            this.SeventhSchedule.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SeventhSchedule.Name = "SeventhSchedule";
-            this.SeventhSchedule.Size = new System.Drawing.Size(149, 65);
+            this.SeventhSchedule.Size = new System.Drawing.Size(199, 80);
             this.SeventhSchedule.TabIndex = 69;
             this.SeventhSchedule.Text = "Za";
             this.SeventhSchedule.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -193,9 +203,10 @@
             // 
             this.Screen1.BackColor = System.Drawing.Color.Yellow;
             this.Screen1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Screen1.Location = new System.Drawing.Point(157, 221);
+            this.Screen1.Location = new System.Drawing.Point(209, 272);
+            this.Screen1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Screen1.Name = "Screen1";
-            this.Screen1.Size = new System.Drawing.Size(293, 43);
+            this.Screen1.Size = new System.Drawing.Size(391, 53);
             this.Screen1.TabIndex = 70;
             this.Screen1.Text = "Zaal 1";
             this.Screen1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -204,9 +215,10 @@
             // 
             this.Screen2.BackColor = System.Drawing.Color.Yellow;
             this.Screen2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Screen2.Location = new System.Drawing.Point(456, 221);
+            this.Screen2.Location = new System.Drawing.Point(608, 272);
+            this.Screen2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Screen2.Name = "Screen2";
-            this.Screen2.Size = new System.Drawing.Size(293, 43);
+            this.Screen2.Size = new System.Drawing.Size(391, 53);
             this.Screen2.TabIndex = 72;
             this.Screen2.Text = "Zaal 2";
             this.Screen2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -215,153 +227,172 @@
             // 
             this.Screen3.BackColor = System.Drawing.Color.Yellow;
             this.Screen3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Screen3.Location = new System.Drawing.Point(755, 221);
+            this.Screen3.Location = new System.Drawing.Point(1007, 272);
+            this.Screen3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Screen3.Name = "Screen3";
-            this.Screen3.Size = new System.Drawing.Size(293, 43);
+            this.Screen3.Size = new System.Drawing.Size(391, 53);
             this.Screen3.TabIndex = 73;
             this.Screen3.Text = "Zaal 3";
             this.Screen3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Screen1Schedule
             // 
-            this.Screen1Schedule.Location = new System.Drawing.Point(157, 264);
+            this.Screen1Schedule.Location = new System.Drawing.Point(209, 325);
+            this.Screen1Schedule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Screen1Schedule.Name = "Screen1Schedule";
-            this.Screen1Schedule.Size = new System.Drawing.Size(293, 468);
+            this.Screen1Schedule.Size = new System.Drawing.Size(391, 576);
             this.Screen1Schedule.TabIndex = 74;
             // 
             // Screen2Schedule
             // 
-            this.Screen2Schedule.Location = new System.Drawing.Point(456, 264);
+            this.Screen2Schedule.Location = new System.Drawing.Point(608, 325);
+            this.Screen2Schedule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Screen2Schedule.Name = "Screen2Schedule";
-            this.Screen2Schedule.Size = new System.Drawing.Size(293, 468);
+            this.Screen2Schedule.Size = new System.Drawing.Size(391, 576);
             this.Screen2Schedule.TabIndex = 75;
             // 
             // Screen3Schedule
             // 
-            this.Screen3Schedule.Location = new System.Drawing.Point(755, 264);
+            this.Screen3Schedule.Location = new System.Drawing.Point(1007, 325);
+            this.Screen3Schedule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Screen3Schedule.Name = "Screen3Schedule";
-            this.Screen3Schedule.Size = new System.Drawing.Size(293, 468);
+            this.Screen3Schedule.Size = new System.Drawing.Size(391, 576);
             this.Screen3Schedule.TabIndex = 76;
             // 
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(30, 119);
+            this.label3.Location = new System.Drawing.Point(40, 146);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(3, 69);
+            this.label3.Size = new System.Drawing.Size(4, 85);
             this.label3.TabIndex = 77;
             // 
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(1073, 117);
+            this.label4.Location = new System.Drawing.Point(1431, 144);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(3, 69);
+            this.label4.Size = new System.Drawing.Size(4, 85);
             this.label4.TabIndex = 78;
             // 
             // label5
             // 
             this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(181, 119);
+            this.label5.Location = new System.Drawing.Point(241, 146);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(3, 23);
+            this.label5.Size = new System.Drawing.Size(4, 28);
             this.label5.TabIndex = 79;
             // 
             // label6
             // 
             this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(181, 165);
+            this.label6.Location = new System.Drawing.Point(241, 203);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(3, 23);
+            this.label6.Size = new System.Drawing.Size(4, 28);
             this.label6.TabIndex = 80;
             // 
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(330, 119);
+            this.label7.Location = new System.Drawing.Point(440, 146);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(3, 23);
+            this.label7.Size = new System.Drawing.Size(4, 28);
             this.label7.TabIndex = 81;
             // 
             // label8
             // 
             this.label8.BackColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(330, 165);
+            this.label8.Location = new System.Drawing.Point(440, 203);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(3, 23);
+            this.label8.Size = new System.Drawing.Size(4, 28);
             this.label8.TabIndex = 82;
             // 
             // label9
             // 
             this.label9.BackColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(479, 119);
+            this.label9.Location = new System.Drawing.Point(639, 146);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(3, 23);
+            this.label9.Size = new System.Drawing.Size(4, 28);
             this.label9.TabIndex = 83;
             // 
             // label10
             // 
             this.label10.BackColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(479, 165);
+            this.label10.Location = new System.Drawing.Point(639, 203);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(3, 23);
+            this.label10.Size = new System.Drawing.Size(4, 28);
             this.label10.TabIndex = 84;
             // 
             // label11
             // 
             this.label11.BackColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(628, 119);
+            this.label11.Location = new System.Drawing.Point(837, 146);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(3, 23);
+            this.label11.Size = new System.Drawing.Size(4, 28);
             this.label11.TabIndex = 85;
             // 
             // label12
             // 
             this.label12.BackColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(628, 165);
+            this.label12.Location = new System.Drawing.Point(837, 203);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(3, 23);
+            this.label12.Size = new System.Drawing.Size(4, 28);
             this.label12.TabIndex = 86;
             // 
             // label13
             // 
             this.label13.BackColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(777, 119);
+            this.label13.Location = new System.Drawing.Point(1036, 146);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(3, 23);
+            this.label13.Size = new System.Drawing.Size(4, 28);
             this.label13.TabIndex = 87;
             // 
             // label14
             // 
             this.label14.BackColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(777, 165);
+            this.label14.Location = new System.Drawing.Point(1036, 203);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(3, 23);
+            this.label14.Size = new System.Drawing.Size(4, 28);
             this.label14.TabIndex = 88;
             // 
             // label15
             // 
             this.label15.BackColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(926, 119);
+            this.label15.Location = new System.Drawing.Point(1235, 146);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(3, 23);
+            this.label15.Size = new System.Drawing.Size(4, 28);
             this.label15.TabIndex = 89;
             // 
             // label16
             // 
             this.label16.BackColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(926, 165);
+            this.label16.Location = new System.Drawing.Point(1235, 203);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(3, 23);
+            this.label16.Size = new System.Drawing.Size(4, 28);
             this.label16.TabIndex = 90;
             // 
             // Time1Label
             // 
             this.Time1Label.BackColor = System.Drawing.Color.Yellow;
             this.Time1Label.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Time1Label.Location = new System.Drawing.Point(64, 265);
+            this.Time1Label.Location = new System.Drawing.Point(85, 326);
+            this.Time1Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Time1Label.Name = "Time1Label";
-            this.Time1Label.Size = new System.Drawing.Size(92, 153);
+            this.Time1Label.Size = new System.Drawing.Size(123, 188);
             this.Time1Label.TabIndex = 92;
             this.Time1Label.Text = "16:00 uur";
             this.Time1Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -370,9 +401,10 @@
             // 
             this.Time2Label.BackColor = System.Drawing.Color.Yellow;
             this.Time2Label.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Time2Label.Location = new System.Drawing.Point(64, 425);
+            this.Time2Label.Location = new System.Drawing.Point(85, 523);
+            this.Time2Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Time2Label.Name = "Time2Label";
-            this.Time2Label.Size = new System.Drawing.Size(92, 153);
+            this.Time2Label.Size = new System.Drawing.Size(123, 188);
             this.Time2Label.TabIndex = 93;
             this.Time2Label.Text = "19:00 uur";
             this.Time2Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -381,9 +413,10 @@
             // 
             this.Time3Label.BackColor = System.Drawing.Color.Yellow;
             this.Time3Label.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Time3Label.Location = new System.Drawing.Point(64, 586);
+            this.Time3Label.Location = new System.Drawing.Point(85, 721);
+            this.Time3Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Time3Label.Name = "Time3Label";
-            this.Time3Label.Size = new System.Drawing.Size(92, 153);
+            this.Time3Label.Size = new System.Drawing.Size(123, 188);
             this.Time3Label.TabIndex = 94;
             this.Time3Label.Text = "22:00 uur";
             this.Time3Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -394,18 +427,19 @@
             this.gradientLabel1.Controls.Add(this.Wittelijn);
             this.gradientLabel1.Controls.Add(this.Bioscoopnaam);
             this.gradientLabel1.EndColor = System.Drawing.Color.Maroon;
-            this.gradientLabel1.Location = new System.Drawing.Point(-3, -2);
-            this.gradientLabel1.Margin = new System.Windows.Forms.Padding(2);
+            this.gradientLabel1.Location = new System.Drawing.Point(-4, -2);
+            this.gradientLabel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gradientLabel1.Name = "gradientLabel1";
-            this.gradientLabel1.Size = new System.Drawing.Size(1113, 121);
+            this.gradientLabel1.Size = new System.Drawing.Size(1484, 149);
             this.gradientLabel1.TabIndex = 58;
             // 
             // Wittelijn
             // 
             this.Wittelijn.BackColor = System.Drawing.Color.White;
-            this.Wittelijn.Location = new System.Drawing.Point(-3, 116);
+            this.Wittelijn.Location = new System.Drawing.Point(-4, 143);
+            this.Wittelijn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Wittelijn.Name = "Wittelijn";
-            this.Wittelijn.Size = new System.Drawing.Size(1112, 5);
+            this.Wittelijn.Size = new System.Drawing.Size(1483, 6);
             this.Wittelijn.TabIndex = 60;
             // 
             // Bioscoopnaam
@@ -415,18 +449,19 @@
             this.Bioscoopnaam.Cursor = System.Windows.Forms.Cursors.SizeNESW;
             this.Bioscoopnaam.Font = new System.Drawing.Font("Lucida Sans Unicode", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bioscoopnaam.ForeColor = System.Drawing.Color.Yellow;
-            this.Bioscoopnaam.Location = new System.Drawing.Point(52, 32);
+            this.Bioscoopnaam.Location = new System.Drawing.Point(69, 39);
+            this.Bioscoopnaam.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Bioscoopnaam.Name = "Bioscoopnaam";
-            this.Bioscoopnaam.Size = new System.Drawing.Size(289, 59);
+            this.Bioscoopnaam.Size = new System.Drawing.Size(356, 73);
             this.Bioscoopnaam.TabIndex = 10;
             this.Bioscoopnaam.Text = "Darichwiwi";
             // 
             // MovieSchedule
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1106, 766);
+            this.ClientSize = new System.Drawing.Size(1476, 943);
             this.Controls.Add(this.Time3Label);
             this.Controls.Add(this.Time2Label);
             this.Controls.Add(this.Time1Label);
@@ -461,6 +496,7 @@
             this.Controls.Add(this.Rechterkolom);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gradientLabel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MovieSchedule";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MovieSchedule";
