@@ -73,5 +73,7 @@ namespace CinemaSystemProjectB
                 isCollapsed = true;
             }
         }
+
+
     }
 }

@@ -12,6 +12,7 @@ namespace CinemaSystemProjectB
 {
     public partial class AdminEditMovieItem : UserControl
     {
+        public static string ChosenEdit = "";
         public AdminEditMovieItem(string title)
         {
             InitializeComponent();
@@ -38,6 +39,7 @@ namespace CinemaSystemProjectB
 
         private void AdminEditMovieItem_MouseClick(object sender, MouseEventArgs e)
         {
+            ChosenEdit = titel.Text;
             new AdminEditMovieWindow().Show();
         }
     }

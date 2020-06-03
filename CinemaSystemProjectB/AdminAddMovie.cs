@@ -459,5 +459,15 @@ namespace CinemaSystemProjectB
                 MessageBox.Show("Er is iets fout gegaan", "Foutmelding!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void AddMovieImageButton_MouseEnter(object sender, EventArgs e)
+        {
+            AddMovieImageButton.BackColor = Color.Gold;
+        }
+
+        private void AddMovieImageButton_MouseLeave(object sender, EventArgs e)
+        {
+            AddMovieImageButton.BackColor = Color.Yellow;
+        }
     }
 }
