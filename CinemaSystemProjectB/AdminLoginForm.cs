@@ -38,7 +38,7 @@ namespace CinemaSystemProjectB
             }
             else
             {
-                MessageBox.Show("Invalid Credentials");
+                MessageBox.Show("Ongeldige inloggegevens");
             }
         }
 
