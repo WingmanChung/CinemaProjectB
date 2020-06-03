@@ -13,6 +13,8 @@ namespace CinemaSystemProjectB
     public partial class Movies : Form
     {
         const string path = @"JsonTextFile.json";
+		//Loads json file with all movies
+        public Dictionary<string, MovieDescriptionClass> ListView = JsonConvert.DeserializeObject<Dictionary<string, MovieDescriptionClass>>(File.ReadAllText(path));
 
         public MovieDescriptionClass ListViewItems { get; set; }
 
@@ -34,10 +36,6 @@ namespace CinemaSystemProjectB
 
         private void populateItems()
         {
-            //Loads json file with all movies
-
-            Dictionary<string, MovieDescriptionClass> ListView = JsonConvert.DeserializeObject<Dictionary<string, MovieDescriptionClass>>(File.ReadAllText(path));
-
             //List with all keys (movie titles)
             var movieList = ListView.Keys.ToArray();
 
@@ -46,7 +44,6 @@ namespace CinemaSystemProjectB
             {
                 Array.Sort(movieList);
             }
-
 
             //Sorts the dictionary from highest rating to lowest rating
             if (RatingMovies.Checked)
@@ -60,9 +57,7 @@ namespace CinemaSystemProjectB
                 movieList = rates.Keys.ToArray();
             }
 
-
             //populate here
-
             ListItem[] listItems = new ListItem[ListView.Count];
 
             //loop through each item
@@ -101,9 +96,6 @@ namespace CinemaSystemProjectB
 
         private void genreItems()
         {
-            //Loads json file with all movies
-
-            Dictionary<string, MovieDescriptionClass> ListView = JsonConvert.DeserializeObject<Dictionary<string, MovieDescriptionClass>>(File.ReadAllText(path));
 
             //List with all keys (movie titles)
             var movieList = ListView.Keys.ToArray();
@@ -164,9 +156,6 @@ namespace CinemaSystemProjectB
 
         private void movieKidsItems()
         {
-            //Loads json file with all movies
-
-            Dictionary<string, MovieDescriptionClass> ListView = JsonConvert.DeserializeObject<Dictionary<string, MovieDescriptionClass>>(File.ReadAllText(path));
 
             //List with all keys (movie titles)
             var movieList = ListView.Keys.ToArray();

@@ -320,6 +320,8 @@
             this.AddMovieImageButton.Text = "Afbeelding toevoegen";
             this.AddMovieImageButton.UseVisualStyleBackColor = false;
             this.AddMovieImageButton.Click += new System.EventHandler(this.AddMovieImageButton_Click);
+            this.AddMovieImageButton.MouseEnter += new System.EventHandler(this.AddMovieImageButton_MouseEnter);
+            this.AddMovieImageButton.MouseLeave += new System.EventHandler(this.AddMovieImageButton_MouseLeave);
             // 
             // AddMovieControl
             // 

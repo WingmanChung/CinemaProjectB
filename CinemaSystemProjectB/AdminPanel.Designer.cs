@@ -105,6 +105,7 @@
             this.Controls.Add(this.Linkerkolom);
             this.Controls.Add(this.gradientLabel1);
             this.Name = "AdminPanel";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminPanel";
             this.Load += new System.EventHandler(this.AdminPanel_Load);
             this.gradientLabel1.ResumeLayout(false);

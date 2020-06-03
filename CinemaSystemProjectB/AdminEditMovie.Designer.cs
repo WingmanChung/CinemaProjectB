@@ -29,13 +29,12 @@
         private void InitializeComponent()
         {
             this.EditMovieControl = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.OpenRemoveMoviePanel = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.RemoveMovieButton = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.AllMoviesList = new System.Windows.Forms.FlowLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.OpenRemoveMoviePanel = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.EditMovieControl.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,7 +43,6 @@
             this.EditMovieControl.Controls.Add(this.AllMoviesList);
             this.EditMovieControl.Controls.Add(this.label2);
             this.EditMovieControl.Controls.Add(this.label4);
-            this.EditMovieControl.Controls.Add(this.RemoveMovieButton);
             this.EditMovieControl.Controls.Add(this.label3);
             this.EditMovieControl.Controls.Add(this.OpenRemoveMoviePanel);
             this.EditMovieControl.Controls.Add(this.label1);
@@ -55,13 +53,37 @@
             this.EditMovieControl.Size = new System.Drawing.Size(970, 750);
             this.EditMovieControl.TabIndex = 0;
             // 
-            // label1
+            // AllMoviesList
             // 
-            this.label1.BackColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(1, 2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(970, 3);
-            this.label1.TabIndex = 20;
+            this.AllMoviesList.AutoScroll = true;
+            this.AllMoviesList.Location = new System.Drawing.Point(59, 75);
+            this.AllMoviesList.Name = "AllMoviesList";
+            this.AllMoviesList.Size = new System.Drawing.Size(854, 610);
+            this.AllMoviesList.TabIndex = 311;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Maroon;
+            this.label2.Location = new System.Drawing.Point(20, 686);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(930, 3);
+            this.label2.TabIndex = 310;
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.Maroon;
+            this.label4.Location = new System.Drawing.Point(20, 72);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(930, 3);
+            this.label4.TabIndex = 309;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.Maroon;
+            this.label3.Location = new System.Drawing.Point(1, 48);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(970, 3);
+            this.label3.TabIndex = 304;
             // 
             // OpenRemoveMoviePanel
             // 
@@ -77,50 +99,13 @@
             this.OpenRemoveMoviePanel.UseVisualStyleBackColor = false;
             this.OpenRemoveMoviePanel.Click += new System.EventHandler(this.OpenRemoveMoviePanel_Click);
             // 
-            // label3
+            // label1
             // 
-            this.label3.BackColor = System.Drawing.Color.Maroon;
-            this.label3.Location = new System.Drawing.Point(1, 48);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(970, 3);
-            this.label3.TabIndex = 304;
-            // 
-            // RemoveMovieButton
-            // 
-            this.RemoveMovieButton.AutoSize = true;
-            this.RemoveMovieButton.BackColor = System.Drawing.Color.Yellow;
-            this.RemoveMovieButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RemoveMovieButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RemoveMovieButton.Location = new System.Drawing.Point(804, 704);
-            this.RemoveMovieButton.Name = "RemoveMovieButton";
-            this.RemoveMovieButton.Size = new System.Drawing.Size(146, 31);
-            this.RemoveMovieButton.TabIndex = 307;
-            this.RemoveMovieButton.Text = "Film wijzigen";
-            this.RemoveMovieButton.UseVisualStyleBackColor = false;
-            // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.Color.Maroon;
-            this.label4.Location = new System.Drawing.Point(20, 72);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(930, 3);
-            this.label4.TabIndex = 309;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.Maroon;
-            this.label2.Location = new System.Drawing.Point(20, 686);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(930, 3);
-            this.label2.TabIndex = 310;
-            // 
-            // AllMoviesList
-            // 
-            this.AllMoviesList.AutoScroll = true;
-            this.AllMoviesList.Location = new System.Drawing.Point(59, 75);
-            this.AllMoviesList.Name = "AllMoviesList";
-            this.AllMoviesList.Size = new System.Drawing.Size(854, 610);
-            this.AllMoviesList.TabIndex = 311;
+            this.label1.BackColor = System.Drawing.Color.Maroon;
+            this.label1.Location = new System.Drawing.Point(1, 2);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(970, 3);
+            this.label1.TabIndex = 20;
             // 
             // AdminEditMovie
             // 
@@ -133,7 +118,6 @@
             this.Name = "AdminEditMovie";
             this.Size = new System.Drawing.Size(970, 750);
             this.EditMovieControl.ResumeLayout(false);
-            this.EditMovieControl.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -144,7 +128,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button OpenRemoveMoviePanel;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button RemoveMovieButton;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.FlowLayoutPanel AllMoviesList;
