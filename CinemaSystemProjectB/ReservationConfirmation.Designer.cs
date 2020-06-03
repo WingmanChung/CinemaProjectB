@@ -35,12 +35,14 @@
             this.Exit = new System.Windows.Forms.Label();
             this.UserNameLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.ReservationCodes = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.ReservationCodes = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -115,16 +117,6 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "Bedankt voor uw reservering. Hieronder staan de reserveringcodes per film.";
             // 
-            // ReservationCodes
-            // 
-            this.ReservationCodes.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReservationCodes.ForeColor = System.Drawing.Color.Yellow;
-            this.ReservationCodes.Location = new System.Drawing.Point(34, 69);
-            this.ReservationCodes.Name = "ReservationCodes";
-            this.ReservationCodes.Size = new System.Drawing.Size(613, 221);
-            this.ReservationCodes.TabIndex = 13;
-            this.ReservationCodes.Text = "\r\n";
-            // 
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -163,18 +155,37 @@
             this.label10.Size = new System.Drawing.Size(2, 377);
             this.label10.TabIndex = 18;
             // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.ReservationCodes);
+            this.panel1.Location = new System.Drawing.Point(26, 71);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(635, 227);
+            this.panel1.TabIndex = 19;
+            // 
+            // ReservationCodes
+            // 
+            this.ReservationCodes.AutoSize = true;
+            this.ReservationCodes.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReservationCodes.ForeColor = System.Drawing.Color.Yellow;
+            this.ReservationCodes.Location = new System.Drawing.Point(3, 0);
+            this.ReservationCodes.Name = "ReservationCodes";
+            this.ReservationCodes.Size = new System.Drawing.Size(0, 17);
+            this.ReservationCodes.TabIndex = 0;
+            // 
             // ReservationConfirmation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(683, 381);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.ReservationCodes);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.UserNameLabel);
             this.Controls.Add(this.Exit);
@@ -187,6 +198,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReservationConfirmation";
             this.Load += new System.EventHandler(this.ReservationConfirmation_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -200,11 +213,12 @@
         private System.Windows.Forms.Label Exit;
         private System.Windows.Forms.Label UserNameLabel;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label ReservationCodes;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label ReservationCodes;
     }
 }
