@@ -18,9 +18,7 @@ namespace CinemaSystemProjectB
             InitializeComponent();
         }
 
-
         //Properties
-
         private string _title;
         private string _release;
         private Image _cover;

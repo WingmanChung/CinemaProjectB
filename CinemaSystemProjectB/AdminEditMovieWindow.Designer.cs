@@ -46,7 +46,7 @@
             this.textBoxGenre = new System.Windows.Forms.TextBox();
             this.textBoxRating = new System.Windows.Forms.TextBox();
             this.textBoxLanguage = new System.Windows.Forms.TextBox();
-            this.AddMovieButton = new System.Windows.Forms.Button();
+            this.EditMovieButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.AddMoviePoster)).BeginInit();
             this.SuspendLayout();
@@ -79,6 +79,9 @@
             this.AddMovieImageButton.TabIndex = 348;
             this.AddMovieImageButton.Text = "Afbeelding toevoegen";
             this.AddMovieImageButton.UseVisualStyleBackColor = false;
+            this.AddMovieImageButton.Click += new System.EventHandler(this.AddMovieImageButton_Click);
+            this.AddMovieImageButton.MouseEnter += new System.EventHandler(this.AddMovieImageButton_MouseEnter);
+            this.AddMovieImageButton.MouseLeave += new System.EventHandler(this.AddMovieImageButton_MouseLeave);
             // 
             // label5
             // 
@@ -255,18 +258,21 @@
             this.textBoxLanguage.TabIndex = 338;
             this.textBoxLanguage.Text = "Taal";
             // 
-            // AddMovieButton
+            // EditMovieButton
             // 
-            this.AddMovieButton.AutoSize = true;
-            this.AddMovieButton.BackColor = System.Drawing.Color.Yellow;
-            this.AddMovieButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddMovieButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddMovieButton.Location = new System.Drawing.Point(852, 762);
-            this.AddMovieButton.Name = "AddMovieButton";
-            this.AddMovieButton.Size = new System.Drawing.Size(166, 36);
-            this.AddMovieButton.TabIndex = 350;
-            this.AddMovieButton.Text = "Film wijzigen";
-            this.AddMovieButton.UseVisualStyleBackColor = false;
+            this.EditMovieButton.AutoSize = true;
+            this.EditMovieButton.BackColor = System.Drawing.Color.Yellow;
+            this.EditMovieButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditMovieButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditMovieButton.Location = new System.Drawing.Point(852, 762);
+            this.EditMovieButton.Name = "EditMovieButton";
+            this.EditMovieButton.Size = new System.Drawing.Size(166, 36);
+            this.EditMovieButton.TabIndex = 350;
+            this.EditMovieButton.Text = "Film wijzigen";
+            this.EditMovieButton.UseVisualStyleBackColor = false;
+            this.EditMovieButton.Click += new System.EventHandler(this.EditMovieButton_Click);
+            this.EditMovieButton.MouseEnter += new System.EventHandler(this.EditMovieButton_MouseEnter);
+            this.EditMovieButton.MouseLeave += new System.EventHandler(this.EditMovieButton_MouseLeave);
             // 
             // label2
             // 
@@ -282,7 +288,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1107, 817);
-            this.Controls.Add(this.AddMovieButton);
+            this.Controls.Add(this.EditMovieButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.AddMovieImageButton);
             this.Controls.Add(this.label5);
@@ -330,7 +336,7 @@
         private System.Windows.Forms.TextBox textBoxGenre;
         private System.Windows.Forms.TextBox textBoxRating;
         private System.Windows.Forms.TextBox textBoxLanguage;
-        private System.Windows.Forms.Button AddMovieButton;
+        private System.Windows.Forms.Button EditMovieButton;
         private System.Windows.Forms.Label label2;
     }
 }

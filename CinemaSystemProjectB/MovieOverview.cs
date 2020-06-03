@@ -8,6 +8,8 @@ using System.Windows.Forms;
 
 namespace CinemaSystemProjectB
 {
+    // This struct is used in a list to keep the picture boxes and their labels in one place
+    // (makes editing the labels easier in the picture box events)
     public struct MovieTitle
 	{
 		public string Name;
@@ -24,10 +26,10 @@ namespace CinemaSystemProjectB
 
     public partial class MovieOverview : Form
     {
-        const string path = @"JsonTextFile.json";
         public MovieDescriptionClass MovieInfo { get; set; }
 
         public static string chosenMovie;
+        public static Dictionary<string, MovieDescriptionClass> MovieListView;
         public static bool HomeScreen = false;
 		public static List<MovieTitle> titles = new List<MovieTitle>();
         public static Label[] labels { get; private set; }
@@ -35,10 +37,16 @@ namespace CinemaSystemProjectB
         public MovieOverview()
         {
             InitializeComponent();
+
             LoadMoviesOverview();
         }
 
         public void LoadMoviesOverview() {
+            const string path = @"JsonTextFile.json";
+
+            //Loads dictionary with all movies
+            MovieListView = JsonConvert.DeserializeObject<Dictionary<string, MovieDescriptionClass>>(File.ReadAllText(path));
+            
             if (!File.Exists("movieSchedulesTest.txt"))
             {
                 using (StreamWriter datePath = File.CreateText("movieSchedulesTest.txt"))
@@ -47,12 +55,8 @@ namespace CinemaSystemProjectB
                 }
             }
 
-            //Loads json file with all movies
-
-            Dictionary<string, MovieDescriptionClass> ListView = JsonConvert.DeserializeObject<Dictionary<string, MovieDescriptionClass>>(File.ReadAllText(path));
-
             //List with all keys (movie titles)
-            var movieList = ListView.Keys.ToArray();
+            var movieList = MovieListView.Keys.ToArray();
             List<string> duplicateMovieList = new List<string>();
 
             //Fills movieschedule text file with movies if there is no total of 63 movies
@@ -65,10 +69,10 @@ namespace CinemaSystemProjectB
 
                 int chosenRandomNumber = movieRound.Next(0, 43);
 
-                string[] technology = ListView[movieList[chosenRandomNumber]].FilmTechnology.Split(',');
+                string[] technology = MovieListView[movieList[chosenRandomNumber]].FilmTechnology.Split(',');
                 int chosenRandomNumber2 = movieRound.Next(0, technology.Length);
                 //Method to avoid duplicates in movieschedules
-                if (duplicateMovieList.Contains(ListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]))
+                if (duplicateMovieList.Contains(MovieListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]))
                 {
                     file2.Close();
                 }
@@ -94,23 +98,23 @@ namespace CinemaSystemProjectB
                         textFileLength >= 57 && textFileLength < 59 ||
                         textFileLength >= 60 && textFileLength < 62)
                 {
-                    string[] runTime = ListView[movieList[chosenRandomNumber]].Runtime.Split();
+                    string[] runTime = MovieListView[movieList[chosenRandomNumber]].Runtime.Split();
                     if (Int64.Parse(runTime[0]) > 180)
                     {
                         file2.Close();
                     }
                     else
                     {
-                        duplicateMovieList.Add(ListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]);
-                        file2.WriteLine(ListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]);
+                        duplicateMovieList.Add(MovieListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]);
+                        file2.WriteLine(MovieListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]);
                         file2.Close();
                         textFileLength++;
                     }
                 }
                 else
                 {
-                    duplicateMovieList.Add(ListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]);
-                    file2.WriteLine(ListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]);
+                    duplicateMovieList.Add(MovieListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]);
+                    file2.WriteLine(MovieListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]);
                     file2.Close();
                     textFileLength++;
                 }
