@@ -321,6 +321,7 @@ namespace CinemaSystemProjectB
             Filmsknop.BackColor = Color.White;
             Prijzenknop.BackColor = Color.White;
             Menuknop.BackColor = Color.White;
+            Reserveerknop.BackColor = Color.White;
             new AdminLoginForm().ShowDialog();
         }
     }

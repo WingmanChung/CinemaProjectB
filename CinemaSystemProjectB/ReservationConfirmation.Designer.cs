@@ -105,7 +105,7 @@
             this.UserNameLabel.Name = "UserNameLabel";
             this.UserNameLabel.Size = new System.Drawing.Size(189, 23);
             this.UserNameLabel.TabIndex = 11;
-            this.UserNameLabel.Text = "Reservatie voltooid";
+            this.UserNameLabel.Text = "Reservering voltooid";
             // 
             // label3
             // 

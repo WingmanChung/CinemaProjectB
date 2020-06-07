@@ -19,6 +19,7 @@ namespace CinemaSystemProjectB
 
         private void Exit_Click(object sender, EventArgs e)
         {
+            MovieReservation.showCodes = "";
             MovieReservation obj = (MovieReservation)Application.OpenForms["MovieReservation"];
             obj.Close();
             this.Close();
