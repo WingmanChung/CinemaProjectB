@@ -10,6 +10,7 @@ namespace CinemaSystemProjectB
 		public CustomerReservation(MovieReservationAvailableMoviesItem chosenItem)
         {
             InitializeComponent();
+			this.Size = this.MinimumSize;
 		}
 
 		private string _movietitle;
@@ -53,9 +54,8 @@ namespace CinemaSystemProjectB
 			set { _screen = value; ScreenLabel.Text = value; }
 		}
 
-		private void ChooseFoodButton_Click(object sender, EventArgs e)
+		private void ShowReservationButton_Click(object sender, EventArgs e)
 		{
-
 			//IN KNOP BUTTON
 			if (isCollapsed)
 			{
@@ -69,6 +69,23 @@ namespace CinemaSystemProjectB
 				MoviePanel.Size = MoviePanel.MaximumSize;
 				isCollapsed = true;
 			}
+		}
+
+		public static bool clicked = false;
+		public static CustomerReservation CustomerMovie;
+
+		private void ChooseOrChangeSeatsButton_Click(object sender, EventArgs e)
+		{
+			CustomerMovie = this;
+			clicked = true;
+			SeatReservation screen_number = new SeatReservation((Filmtitle.Text + Filmtechnology.Text + date.Text + ScreenLabel.Text).ToString(), ScreenLabel.Text, this.ScreenLabel.Text == "Zaal 1" ? 12 : this.ScreenLabel.Text == "Zaal 2" ? 18 : 30);
+			screen_number.ShowDialog();
+			clicked = false;
+		}
+
+		private void MoviePanel_MouseEnter(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

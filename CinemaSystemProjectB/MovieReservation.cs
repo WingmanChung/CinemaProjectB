@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -573,42 +574,43 @@ namespace CinemaSystemProjectB
 						movie.TotalStudents.Text = temp.ToString();
 						movie.TotalSeniors.Text = temp2.ToString();
 
-						movie.PriceAdult.Text = "€" + ((SelectedMovies[n].comboBoxAdult.SelectedIndex - temp - temp2) * 10).ToString() + ",00";
-						movie.PriceKids.Text = "€" + ((SelectedMovies[n].comboBoxKids.SelectedIndex) * 5).ToString() + ",00";
-						movie.PriceStudent.Text = "€" + (temp * 8).ToString() + ",00";
-						movie.PriceSenior.Text = "€" + (temp2 * 7).ToString() + ",00";
+						movie.PriceAdult.Text = "€" + (((SelectedMovies[n].comboBoxAdult.SelectedIndex - temp - temp2) * 10 < 10 ? "    " : (SelectedMovies[n].comboBoxAdult.SelectedIndex - temp - temp2) * 10 < 100 ? "  " : "")  + (SelectedMovies[n].comboBoxAdult.SelectedIndex - temp - temp2) * 10).ToString()+ ",00";
+						movie.PriceKids.Text = "€" + ((SelectedMovies[n].comboBoxKids.SelectedIndex) * 5 < 10 ? "    " : (SelectedMovies[n].comboBoxKids.SelectedIndex * 5) < 100 ? "  " : "") + (SelectedMovies[n].comboBoxKids.SelectedIndex * 5).ToString() + ",00";
+						movie.PriceStudent.Text = "€" + ((temp * 8) < 10 ? "    " : (temp * 8) < 100 ? "  " : "") + (temp * 8).ToString() + ",00";
+						movie.PriceSenior.Text = "€" + ((temp2 * 7) < 10 ? "    " : (temp2 * 7) < 100 ? "  " : "") + (temp2 * 7).ToString() + ",00";
 
-						movie.NormalSeat.Text = SelectedMovies[n].TotalNormalSeats.Text == "-1" ? "0" : SelectedMovies[n].TotalNormalSeats.Text;
-						movie.GoodSeat.Text = SelectedMovies[n].TotalGoodSeats.Text == "-1" ? "0" : SelectedMovies[n].TotalGoodSeats.Text;
-						movie.BestSeat.Text = SelectedMovies[n].TotalBestSeats.Text == "-1" ? "0" : SelectedMovies[n].TotalBestSeats.Text;
+						movie.NormalSeat.Text = SelectedMovies[n].TotalNormalSeats.Text;
+						movie.GoodSeat.Text = SelectedMovies[n].TotalGoodSeats.Text;
+						movie.BestSeat.Text = SelectedMovies[n].TotalBestSeats.Text;
 						
 						string temp3 = "";
 						string temp4 = "";
 
 						if((Convert.ToInt32(SelectedMovies[n].TotalGoodSeats.Text)) < 0)
 						{
-							temp3 = "0";
+							temp3 = "    0";
 						}
 						else
 						{
-							temp3 = (Convert.ToInt32(SelectedMovies[n].TotalGoodSeats.Text) * 1).ToString();
+							temp3 = ((Convert.ToInt32(SelectedMovies[n].TotalGoodSeats.Text) * 1) < 10 ? "    " : (Convert.ToInt32(SelectedMovies[n].TotalGoodSeats.Text) * 1) < 100 ? "  " : "") + (Convert.ToInt32(SelectedMovies[n].TotalGoodSeats.Text) * 1).ToString();
 						}
 						if ((Convert.ToInt32(SelectedMovies[n].TotalBestSeats.Text)) < 0)
 						{
-							temp4 = "0";
+							temp4 = "    0";
 						}
 						else
 						{
-							temp4 = (Convert.ToInt32(SelectedMovies[n].TotalBestSeats.Text) * 2).ToString();
+							temp4 = ((Convert.ToInt32(SelectedMovies[n].TotalBestSeats.Text) * 2) < 10 ? "    " : (Convert.ToInt32(SelectedMovies[n].TotalBestSeats.Text) * 2) < 100 ? "  " : "") + (Convert.ToInt32(SelectedMovies[n].TotalBestSeats.Text) * 2).ToString();
 						}
 
+						movie.TotalNormalSeatPrice.Text = "€    0,00";
 						movie.TotalGoodSeatPrice.Text = "€" + temp3 + ",00";
 						movie.TotalBestSeatPrice.Text = "€" + temp4 + ",00";
 
 						for (int c = 0; c < CustomerReservationPage.Controls.Count; c++)
 						{
 							//Add all comboboxes in a list
-							List<ComboBox> allComboboxes = new List<ComboBox> {allItems[c].comboBox1, allItems[c].comboBox2, allItems[c].comboBox3, allItems[c].comboBox4, allItems[c].comboBox5, allItems[c].comboBox6,
+							List<ComboBox> allComboboxes = new List<ComboBox>() {allItems[c].comboBox1, allItems[c].comboBox2, allItems[c].comboBox3, allItems[c].comboBox4, allItems[c].comboBox5, allItems[c].comboBox6,
 																				allItems[c].comboBox7, allItems[c].comboBox8, allItems[c].comboBox9, allItems[c].comboBox10, allItems[c].comboBox11, allItems[c].comboBox12,
 																				allItems[c].comboBox13, allItems[c].comboBox14, allItems[c].comboBox15, allItems[c].comboBox16, allItems[c].comboBox17, allItems[c].comboBox18,
 																				allItems[c].comboBox19};
@@ -750,6 +752,7 @@ namespace CinemaSystemProjectB
 			}
 			bool stringLabels = strings.Count > 0 && strings.All(a => a != "");
 			bool countBoxes = movies.Count > 0 && movies.All(a => a != "-1");
+
 			if (countBoxes == true && stringLabels == true)
 			{
 				NextPageButton.Enabled = true;
@@ -817,6 +820,7 @@ namespace CinemaSystemProjectB
 			public int NormalSeats { get; set; }
 			public int GoodSeats { get; set; }
 			public int BestSeats { get; set; }
+			public List<string> Seats { get; set; }
 			public string Snacks { get; set; }
 		}
 
@@ -875,6 +879,7 @@ namespace CinemaSystemProjectB
 					NormalSeats = Convert.ToInt32(SelectedMovies[i].TotalNormalSeats.Text),
 					GoodSeats = Convert.ToInt32(SelectedMovies[i].TotalGoodSeats.Text),
 					BestSeats = Convert.ToInt32(SelectedMovies[i].TotalBestSeats.Text),
+					Seats = SelectedMovies[i].CustomerChosenSeats.Keys.ToList(),
 					Snacks = MovieSnacks[i]
 
 
@@ -898,6 +903,22 @@ namespace CinemaSystemProjectB
 					file.Close();
 				}
 				ReservationList.Add(new KeyValuePair<string, string>(_data[i].Value.MovieTitle, _data[i].Key));
+
+				Dictionary<string, int[][]> AllMovieSeats = JsonConvert.DeserializeObject<Dictionary<string, int[][]>>(File.ReadAllText(@"ReservedSeats.json"));
+
+				//saves all selected seats
+				//File.WriteAllText(@"ReservedSeats.json", new JObject() { { (SelectedMovies[i].MovieTitle + SelectedMovies[i].FilmTechnology + SelectedMovies[i].Date + SelectedMovies[i].Screen).ToString(), JArray.FromObject(SelectedMovies[i].newBlocks) } }.ToString());
+				if (!(AllMovieSeats.ContainsKey((SelectedMovies[i].MovieTitle + SelectedMovies[i].FilmTechnology + SelectedMovies[i].Date + SelectedMovies[i].Screen).ToString())))
+				{
+					AllMovieSeats.Add((SelectedMovies[i].MovieTitle + SelectedMovies[i].FilmTechnology + SelectedMovies[i].Date + SelectedMovies[i].Screen).ToString(), (SelectedMovies[i].newBlocks));
+				}
+				else
+				{
+					AllMovieSeats[(SelectedMovies[i].MovieTitle + SelectedMovies[i].FilmTechnology + SelectedMovies[i].Date + SelectedMovies[i].Screen).ToString()] = SelectedMovies[i].newBlocks;
+				}
+				string json = JsonConvert.SerializeObject(AllMovieSeats, Formatting.Indented);
+
+				File.WriteAllText(@"ReservedSeats.json", json);
 			}
 			//shows reservation codes
 			for(int i = 0; i < ReservationList.Count; i++)
@@ -905,6 +926,16 @@ namespace CinemaSystemProjectB
 				showCodes += ReservationList[i].Key + ": " + ReservationList[i].Value + Environment.NewLine;
 			}
 			new ReservationConfirmation().ShowDialog();
+		}
+
+		private void SelectPeoplePanel_MouseEnter(object sender, EventArgs e)
+		{
+			checkAllBoxes();
+		}
+
+		private void MovieReservation_MouseEnter(object sender, EventArgs e)
+		{
+			checkAllBoxes();
 		}
 	}
 }

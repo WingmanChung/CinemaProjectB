@@ -180,11 +180,23 @@ namespace CinemaSystemProjectB
             PictureBox[] images = new PictureBox[] { Film1, Film2, Film3, Film4, Film5 };
 			titles.Clear();
 
+            //List with all keys (movie titles)
+            string[] movieTitles = Movies.Keys.ToArray();
+
+            //Sorts the dictionary from highest rating to lowest rating
+            Dictionary<string, float> rates = new Dictionary<string, float>();
+            for (int i = 0; i < movieTitles.Length; i++)
+            {
+                rates.Add(Movies[movieTitles[i]].Title, Movies[movieTitles[i]].Rating);
+            }
+            rates = rates.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+            string[] movieRates = rates.Keys.ToArray();
+
             for (int i = 0; i < 5; i++)
             {
-				string title = Movies.Keys.ElementAt(i);
+                string title = movieRates[i];
 
-				titles.Add(new MovieTitle(
+                titles.Add(new MovieTitle(
 					title,
 					labels[i],
                     images[i]
@@ -321,6 +333,7 @@ namespace CinemaSystemProjectB
             Filmsknop.BackColor = Color.White;
             Prijzenknop.BackColor = Color.White;
             Menuknop.BackColor = Color.White;
+            Reserveerknop.BackColor = Color.White;
             new AdminLoginForm().ShowDialog();
         }
     }

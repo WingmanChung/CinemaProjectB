@@ -1,5 +1,10 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
+using System.Runtime.InteropServices.ComTypes;
+using System.Security.Cryptography;
 using System.Windows.Forms;
 
 namespace CinemaSystemProjectB
@@ -7,115 +12,146 @@ namespace CinemaSystemProjectB
     public partial class SeatReservation : Form
     {
         int TotalCustomers = SelectPeopleItem.TotalAdultPlusKids;
+        public Dictionary<string, Color> selectedSeats = new Dictionary<string, Color>();       //{key;value} / {"A1"; (0,255,0)}
+        private int BestSeats;
+        private int GoodSeats;
+        private int NormalSeats;
+        private int SeatRows;
+
         SelectPeopleItem SelectedMovie2 = SelectPeopleItem.SelectedMovie;
+        
+        public Dictionary<string, MovieDescriptionClass> AllMovieSeats { get; private set; }
+
         public SeatReservation()
         {
             InitializeComponent();
             SeatConfirmButton.Enabled = false;
         }
 
-        public SeatReservation(String str)
+        private int[][] blocks = new int[][] { };
+        private Label[][] arraySeat = new Label[][] { };
+
+        public SeatReservation(String chosenMovie, string MovieScreen, int Row)
         {
             InitializeComponent();
-            this.WhichScreenLabel.Text = str;
-
-            if (this.WhichScreenLabel.Text == "Zaal 1")
+            SeatRows = Row;
+            Dictionary<string, int[][]> AllMovieSeats = JsonConvert.DeserializeObject<Dictionary<string, int[][]>>(File.ReadAllText(@"ReservedSeats.json"));
+            foreach (var movie in AllMovieSeats)
             {
-                pictureBox1.Image = Properties.Resources.Auditorium_1;
-                Auditorium_1();
+                if (movie.Key == chosenMovie)
+                {
+                    blocks = movie.Value;
+                    break;
+                }
             }
-            else if (this.WhichScreenLabel.Text == "Zaal 2")
-            {
-                pictureBox1.Image = Properties.Resources.Auditorium_2;
-                Auditorium_2();
 
+            if (MovieScreen == "Zaal 1")
+            {
+                //Screen 1 size
+                SeatFlowPanel.Size = new Size(blocks[0].Length*32 + 28, blocks.Length*32+28);
+                this.Size = new Size(1110, 786);
+
+                gradientLabel1.Width = 1110;                                                                    //logo
+                Wittelijn.Width = 1110;                                                                         //white line
+
+                Sizes();
             }
-            else
+            if (MovieScreen == "Zaal 2")
             {
-                pictureBox1.Image = Properties.Resources.Auditorium_3;
-                Auditorium_3();
+                //Screen 2 size
+                SeatFlowPanel.Size = new Size(blocks[0].Length * 32 + 28, blocks.Length*32+28);
+                this.Size = new Size(1110, SeatFlowPanel.Height + 300);
 
+                gradientLabel1.Width = 1110;                                                                    //logo
+                Wittelijn.Width = 1110;                                                                         //white line
+
+                Sizes();
+
+                //EXTRA SIZES
+                label2.Size = new Size(30, 779);                                                                //red line on the right size
+                Linkerkolom.Size = new Size(30, 779);                                                           //red line on the left size
+            }
+            if (MovieScreen == "Zaal 3")
+            {
+                //Screen 3 size
+                SeatFlowPanel.Size = new Size(blocks[0].Length * 32 + 31, blocks.Length * 32 + 31);
+                this.Size = new Size(SeatFlowPanel.Width + 450, SeatFlowPanel.Height + 300);
+
+                gradientLabel1.Width = SeatFlowPanel.Width + 450;                                               //logo
+                Wittelijn.Width = SeatFlowPanel.Width + 450;                                                    //white line
+
+                Sizes();
+
+                //EXTRA SIZES
+                label2.Size = new Size(30, 979);                                                                //red line on the right size
+                Linkerkolom.Size = new Size(30, 979);                                                           //red line on the left size
+            }
+
+
+            int a = 65;
+            Label[][] arraySeat = new Label[blocks.Length][];
+
+            for (int i = 0; i < blocks.Length; i++)
+            {
+                arraySeat[i] = new Label[blocks[i].Length];
+                int color = 1;
+                for (int j = 0; j < blocks[i].Length; j++)
+                {
+                    int x = 13;
+                    int y = 14;
+                    int width = 31;
+                    int height = 31;
+                    Label mylabel = new Label
+                    {
+                        Text = BackColor != Color.Transparent ? (((char)(a + i)) + $"{color}").ToString() : ((char)(a)).ToString(),
+                        Size = new Size(width, height),
+                        Font = new Font("Arial", 9, FontStyle.Bold),
+                        TextAlign = ContentAlignment.MiddleCenter,
+                        Location = new Point(x, y),
+                        BackColor = blocks[i][j] == 1 ? Color.FromArgb(0, 162, 232) : blocks[i][j] == 2 ? Color.FromArgb(240, 228, 0) : blocks[i][j] == 3 ? Color.FromArgb(237, 28, 36) : blocks[i][j] == 4 || blocks[i][j] == 5 ? Color.Gray : Color.Transparent
+                    };
+                    mylabel.Click += new EventHandler(SeatClick);
+                    mylabel.Margin = new Padding(1);
+                    arraySeat[i][j] = mylabel;
+                    SeatFlowPanel.Controls.Add(mylabel);
+                    if (mylabel.BackColor != Color.Transparent)
+                    {
+                        color++;
+                    }
+                }
             }
         }
 
-        public void Auditorium()
+        public void Sizes()
         {
-            Auditorium_1();
-            Auditorium_2();
-            Auditorium_3();
-        }
+            label2.Location = new Point(this.Size.Width - 40, 121);                                         //red line on the right
 
-        public void Auditorium_1()
-        {
-            for (int Nrow = 1; Nrow < 13; Nrow++)
-            {
-                dropdownNormalSeatRow.Items.AddRange(new object[] { Nrow });
-            }
+            label1.Location = new Point(this.Size.Width - 357, 154);                                        //text aboven selectedSeatsPanel //753; 154
+            label8.Location = new Point(this.Size.Width - 376, 177);                                        //red line above selectedSeatsPanel //734; 177
+            selectedSeatsPanel.Location = new Point(this.Size.Width - 376, 201);                            //displays selected seat //734; 201
+            label9.Location = new Point(this.Size.Width - 376, 597);                                        //red line under selectedSeatsPanel //734; 597
 
-            for(int Grow = 4; Grow < 12; Grow++)
-            {
-                dropdownGoodSeatRow.Items.AddRange(new object[] { Grow });
-            }
+            PriceList.Location = new Point(gradientLabel1.Width - 376, this.Size.Height - 147);             //price list //734; 639
+            AdditionalCosts.Location = new Point(gradientLabel1.Width - 267, this.Size.Height - 141);       //additional costs //843; 645
+            SeatConfirmButton.Location = new Point(gradientLabel1.Width - 201, this.Size.Height - 99);      //confirm selected seats button //909; 687
 
-            for (int Brow = 6; Brow < 10; Brow++)
-            {
-                dropdownBestSeatRow.Items.AddRange(new object[] { Brow });
-            }
-        }
+            Screen.Location = new Point(82, this.Size.Height - 143);                                        //gray screen //82; 643
+            Screen.Width = SeatFlowPanel.Width - 50;
 
-        public void Auditorium_2()
-        {
-            for (int Nrow = 1; Nrow < 20; Nrow++)
-            {
-                dropdownNormalSeatRow.Items.AddRange(new object[] { Nrow });
-            }
+            label11.Location = new Point(83, this.Size.Height - 99);                                        //blue color //83; 687
+            label12.Location = new Point(102, this.Size.Height - 99);                                       //normal seats //102; 687
 
-            for (int Grow = 4; Grow < 18; Grow++)
-            {
-                dropdownGoodSeatRow.Items.AddRange(new object[] { Grow });
-            }
+            label13.Location = new Point(83, this.Size.Height - 71);                                        //yellow color //83; 715
+            label14.Location = new Point(102, this.Size.Height - 71);                                       //good seats //102; 715
 
-            for (int Brow = 7; Brow < 14; Brow++)
-            {
-                dropdownBestSeatRow.Items.AddRange(new object[] { Brow });
-            }
+            label15.Location = new Point(292, this.Size.Height - 99);                                       //red color //292; 687
+            label16.Location = new Point(311, this.Size.Height - 99);                                       //best seats //311; 687
 
-            for (int amount = 0; amount < 11; amount++)
-            {
-                dropdownNormalSeatAmount.Items.AddRange(new object[] { amount });
+            label4.Location = new Point(292, this.Size.Height - 71);                                        //green //292; 715
+            label5.Location = new Point(311, this.Size.Height - 71);                                        //selected seats //311; 715
 
-                dropdownGoodSeatAmount.Items.AddRange(new object[] { amount });
-
-                dropdownBestSeatAmount.Items.AddRange(new object[] { amount });
-            }
-        }
-
-        public void Auditorium_3()
-        {
-            for (int Nrow = 1; Nrow < 31; Nrow++)
-            {
-                dropdownNormalSeatRow.Items.AddRange(new object[] { Nrow });
-            }
-
-            for (int Grow = 4; Grow < 19; Grow++)
-            {
-                dropdownGoodSeatRow.Items.AddRange(new object[] { Grow });
-            }
-
-            for (int Brow = 8; Brow < 16; Brow++)
-            {
-                dropdownBestSeatRow.Items.AddRange(new object[] { Brow });
-            }
-
-            for (int amount = 0; amount < 11; amount++)
-            {
-                dropdownNormalSeatAmount.Items.AddRange(new object[] { amount });
-
-                dropdownGoodSeatAmount.Items.AddRange(new object[] { amount });
-
-                dropdownBestSeatAmount.Items.AddRange(new object[] { amount });
-
-            }
+            label6.Location = new Point(494, this.Size.Height - 99);                                        //gray color //494; 687
+            label7.Location = new Point(513, this.Size.Height - 99);                                        //unavailable seats //513; 687
         }
 
         private void SeatConfirmButton_MouseEnter(object sender, EventArgs e)
@@ -128,41 +164,42 @@ namespace CinemaSystemProjectB
             SeatConfirmButton.BackColor = Color.Yellow;
         }
 
-        int goodAmount = 0;
-        int bestAmount = 0;
+        int costs = 0;
         private void SeatReservation_MouseEnter(object sender, EventArgs e)
         {
-            //Automatically calculates the total price of all seats for the customer
-            if(dropdownGoodSeatAmount.SelectedIndex > -1)
+            int tempNormal = 0;
+            int tempGood = 0;
+            int tempBest = 0;
+            foreach (var seat in selectedSeats)
             {
-                //total price of good seats
-                int seatAmountGood = int.Parse(dropdownGoodSeatAmount.Text);
-                goodAmount = 1 * seatAmountGood;
+                if (seat.Value == Color.FromArgb(237, 28, 36))
+                {
+                    tempBest++;
+                }
+                else if (seat.Value == Color.FromArgb(240, 228, 0))
+                {
+                    tempGood++;
+                }
+                else if (seat.Value == Color.FromArgb(0, 162, 232))
+                {
+                    tempNormal++;
+                }
             }
 
-            if (dropdownBestSeatAmount.SelectedIndex > -1)
+            costs = (tempBest * 2) + (tempGood * 1) + (tempNormal * 0);
+            AdditionalCosts.Text = "Extra kosten €" + costs + ",00";
+
+            //Checks if seats are equal to total customers
+            if (selectedSeats.Count == TotalCustomers - 1)
             {
-                //total price of best seats
-                int seatAmountBest = int.Parse(dropdownBestSeatAmount.Text);
-                bestAmount = 2 * seatAmountBest;
-            }
-
-            if (dropdownGoodSeatAmount.SelectedIndex > -1 || dropdownBestSeatAmount.SelectedIndex > -1)
-            {
-                //total price of all seats
-                int totalAmountInt = goodAmount + bestAmount;
-                string totalAmountString = totalAmountInt.ToString();
-
-                TotalSeatPrice.Text = "€" + totalAmountString;
-            }
-
-            if (dropdownGoodSeatAmount.SelectedIndex > -1 & dropdownBestSeatAmount.SelectedIndex > -1
-                & dropdownBestSeatRow.SelectedIndex > -1 & dropdownGoodSeatRow.SelectedIndex > -1 & dropdownNormalSeatRow.SelectedIndex > -1)
-            {
-
                 SeatConfirmButton.Visible = true;
+                SeatConfirmButton.Enabled = true;
             }
-
+            else
+            {
+                SeatConfirmButton.Visible = false;
+                SeatConfirmButton.Enabled = false;
+            }
         }
 
         private void PriceList_MouseEnter(object sender, EventArgs e)
@@ -179,85 +216,144 @@ namespace CinemaSystemProjectB
         {
             new PriceList().Show();
         }
-
-        private void dropdownNormalSeatAmount_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (dropdownNormalSeatAmount.Items.Count == 0 && dropdownGoodSeatAmount.Items.Count == 0 && dropdownBestSeatAmount.Items.Count == 0)
-            {
-                for (int i = 0; i < TotalCustomers; i++)
-                {
-                    dropdownNormalSeatAmount.Items.Add(i);
-                }
-            }
-            else
-            {
-                dropdownNormalSeatAmount.Items.Clear();
-                for (int i = 0; i < TotalCustomers - (dropdownGoodSeatAmount.SelectedIndex == -1 ? 0 : dropdownGoodSeatAmount.SelectedIndex) - (dropdownBestSeatAmount.SelectedIndex == -1 ? 0 : dropdownBestSeatAmount.SelectedIndex); i++)
-                {
-                    dropdownNormalSeatAmount.Items.Add(i);
-                }
-            }
-        }
-
-        private void dropdownGoodSeatAmount_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (dropdownNormalSeatAmount.Items.Count == 0 && dropdownGoodSeatAmount.Items.Count == 0 && dropdownBestSeatAmount.Items.Count == 0)
-            {
-                for (int i = 0; i < TotalCustomers; i++)
-                {
-                    dropdownGoodSeatAmount.Items.Add(i);
-                }
-            }
-            else
-            {
-                dropdownGoodSeatAmount.Items.Clear();
-                for (int i = 0; i < TotalCustomers - (dropdownNormalSeatAmount.SelectedIndex == -1 ? 0 : dropdownNormalSeatAmount.SelectedIndex) - (dropdownBestSeatAmount.SelectedIndex == -1 ? 0 : dropdownBestSeatAmount.SelectedIndex); i++)
-                {
-                    dropdownGoodSeatAmount.Items.Add(i);
-                }
-            }
-        }
-
-        private void dropdownBestSeatAmount_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (dropdownNormalSeatAmount.Items.Count == 0 && dropdownGoodSeatAmount.Items.Count == 0 && dropdownBestSeatAmount.Items.Count == 0)
-            {
-                int total = 0;
-                if(TotalCustomers > 9)
-                {
-                    total = 9;
-                }
-                else
-                {
-                    total = TotalCustomers;
-                }
-                for (int i = 0; i < total; i++)
-                {
-                    dropdownBestSeatAmount.Items.Add(i);
-                }
-            }
-            else
-            {
-                dropdownBestSeatAmount.Items.Clear();
-                int total = TotalCustomers - (dropdownGoodSeatAmount.SelectedIndex == -1 ? 0 : dropdownGoodSeatAmount.SelectedIndex) - (dropdownNormalSeatAmount.SelectedIndex == -1 ? 0 : dropdownNormalSeatAmount.SelectedIndex);
-                if(total > 9)
-                {
-                    total = 9;
-                }
-                for (int i = 0; i < total; i++)
-                {
-                    dropdownBestSeatAmount.Items.Add(i);
-                }
-            }
-        }
-
+        
         private void SeatConfirmButton_Click(object sender, EventArgs e)
         {
-            SelectedMovie2.TotalNormalSeats.Text = dropdownNormalSeatAmount.SelectedIndex.ToString();
-            SelectedMovie2.TotalGoodSeats.Text = dropdownGoodSeatAmount.SelectedIndex.ToString();
-            SelectedMovie2.TotalBestSeats.Text = dropdownBestSeatAmount.SelectedIndex.ToString();
+            foreach (var seat in selectedSeats)
+            {
+                if (seat.Value == Color.FromArgb(237, 28, 36))
+                {
+                    BestSeats++;
+                }
+                else if (seat.Value == Color.FromArgb(240, 228, 0))
+                {
+                    GoodSeats++;
+                }
+                else if (seat.Value == Color.FromArgb(0, 162, 232))
+                {
+                    NormalSeats++;
+                }
+            }
+
+            SelectedMovie2.TotalNormalSeats.Text = NormalSeats.ToString();
+            SelectedMovie2.TotalGoodSeats.Text = GoodSeats.ToString();
+            SelectedMovie2.TotalBestSeats.Text = BestSeats.ToString();
+
+            //Saves the state of selected seats when customer exists form
+            SelectedMovie2.CustomerChosenSeats = new Dictionary<string, Color>(selectedSeats);
+
+            Label[] allSeats = new Label[SeatFlowPanel.Controls.Count];
+
+            int index = 0;
+            foreach(Label seat in SeatFlowPanel.Controls)
+            {
+                allSeats[index] = seat;
+                index++;
+            }
+
+            //Saves new seat array
+            index = 0;
+            for (int i = 0; i < SelectedMovie2.newBlocks.Length; i++)
+            {
+                SelectedMovie2.newBlocks[i] = new int[SeatRows];
+                for (int j = 0; j < SeatRows; j++)
+                {
+                    if (allSeats[index].BackColor == Color.FromArgb(0, 162, 232))
+                    {
+                        SelectedMovie2.newBlocks[i][j] = 1;     //blue
+                    }
+                    else if (allSeats[index].BackColor == Color.FromArgb(240, 228, 0))
+                    {
+                        SelectedMovie2.newBlocks[i][j] = 2;     //yellow
+                    }
+                    else if (allSeats[index].BackColor == Color.FromArgb(237, 28, 36))
+                    {
+                        SelectedMovie2.newBlocks[i][j] = 3;     //red
+                    }
+                    else if (allSeats[index].BackColor == Color.FromArgb(0, 255, 0))
+                    {
+                        SelectedMovie2.newBlocks[i][j] = 4;     //green
+                    }
+                    else if (allSeats[index].BackColor == Color.Gray)
+                    {
+                        SelectedMovie2.newBlocks[i][j] = 5;     //gray
+                    }
+                    else
+                    {
+                        SelectedMovie2.newBlocks[i][j] = 0;     //transparent
+                    }
+                    index++;
+                }
+            }
+            if(clickedHere == true)
+            {
+                movie.NormalSeat.Text = NormalSeats.ToString();
+                movie.GoodSeat.Text = GoodSeats.ToString();
+                movie.BestSeat.Text = BestSeats.ToString();
+
+                string temp3 = "";
+                string temp4 = "";
+
+                temp3 = ((GoodSeats * 1) < 10 ? "    " : (GoodSeats * 1) < 100 ? "  " : "") + (GoodSeats * 1).ToString();
+
+                temp4 = ((BestSeats * 2) < 10 ? "    " : (BestSeats * 2) < 100 ? "  " : "") + (BestSeats * 2).ToString();
+
+                movie.TotalGoodSeatPrice.Text = "€" + temp3 + ",00";
+                movie.TotalBestSeatPrice.Text = "€" + temp4 + ",00";
+
+                movie.Refresh();
+            }
 
             this.Close();
+        }
+
+        bool clickedHere = CustomerReservation.clicked;
+        CustomerReservation movie = CustomerReservation.CustomerMovie;
+
+        private void SeatReservation_Load(object sender, EventArgs e)
+        {
+            //Reloads the last state of selected seats
+            if(SelectedMovie2.CustomerChosenSeats.Count > 0)
+            {
+                selectedSeats = new Dictionary<string, Color>(SelectedMovie2.CustomerChosenSeats);
+
+                //checks if the seat is in the panel. If yes, the seat becomes green
+                foreach(var text in selectedSeats)
+                {
+                    foreach(Label seat in SeatFlowPanel.Controls)
+                    {
+                        if(text.Key == seat.Text)
+                        {
+                            seat.BackColor = Color.FromArgb(0, 255, 0); //green
+                        }
+                    }
+                }
+            }
+        }
+
+        protected void SeatClick(object sender, EventArgs e)
+        {
+            //attempt to cast the sender as a label
+            Label lbl = sender as Label;
+
+            //Changes label color when clicked on a specific label
+            if (selectedSeats.ContainsKey(lbl.Text))
+            {
+                lbl.BackColor = selectedSeats[lbl.Text];
+                selectedSeats.Remove(lbl.Text);
+            }
+            else
+            {
+                if (lbl.BackColor != Color.Transparent && lbl.BackColor != Color.Gray)
+                {
+                    if (selectedSeats.Count < TotalCustomers - 1)
+                    {
+                        selectedSeats.Add(lbl.Text, lbl.BackColor);
+                        lbl.BackColor = Color.FromArgb(0, 255, 0); //green
+                    }
+                }
+            }
+            SelectedSeatsLabel.Text = string.Join("\n", selectedSeats.Keys);
         }
     }
 }
