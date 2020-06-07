@@ -390,9 +390,9 @@
             this.ChooseOrChangeSeatsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ChooseOrChangeSeatsButton.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
             this.ChooseOrChangeSeatsButton.ForeColor = System.Drawing.Color.Black;
-            this.ChooseOrChangeSeatsButton.Location = new System.Drawing.Point(108, 547);
+            this.ChooseOrChangeSeatsButton.Location = new System.Drawing.Point(98, 547);
             this.ChooseOrChangeSeatsButton.Name = "ChooseOrChangeSeatsButton";
-            this.ChooseOrChangeSeatsButton.Size = new System.Drawing.Size(671, 28);
+            this.ChooseOrChangeSeatsButton.Size = new System.Drawing.Size(701, 28);
             this.ChooseOrChangeSeatsButton.TabIndex = 375;
             this.ChooseOrChangeSeatsButton.Text = "Klik hier om uw zitplaatsen te bekijken of te wijzigen\r\n";
             this.ChooseOrChangeSeatsButton.UseVisualStyleBackColor = false;

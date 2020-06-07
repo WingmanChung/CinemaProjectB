@@ -528,9 +528,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label ReservationPriceLabel;
-        private System.Windows.Forms.Label ReservationPrice;
         private System.Windows.Forms.Label ConfirmButton;
         public System.Windows.Forms.FlowLayoutPanel SelectPeoplePanel;
         public System.Windows.Forms.FlowLayoutPanel CustomerReservationPage;
+        private System.Windows.Forms.Label ReservationPrice;
     }
 }
