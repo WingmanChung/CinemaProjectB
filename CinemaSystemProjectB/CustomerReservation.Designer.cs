@@ -382,6 +382,7 @@
             this.MoviePanel.Name = "MoviePanel";
             this.MoviePanel.Size = new System.Drawing.Size(900, 829);
             this.MoviePanel.TabIndex = 304;
+            this.MoviePanel.MouseEnter += new System.EventHandler(this.MoviePanel_MouseEnter);
             // 
             // ChooseOrChangeSeatsButton
             // 
@@ -894,7 +895,6 @@
             this.MinimumSize = new System.Drawing.Size(900, 203);
             this.Name = "CustomerReservation";
             this.Size = new System.Drawing.Size(900, 829);
-            this.MouseEnter += new System.EventHandler(this.CustomerReservation_MouseEnter);
             this.MoviePanel.ResumeLayout(false);
             this.MoviePanel.PerformLayout();
             this.ResumeLayout(false);

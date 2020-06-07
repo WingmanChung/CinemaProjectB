@@ -285,8 +285,30 @@ namespace CinemaSystemProjectB
                     index++;
                 }
             }
+            if(clickedHere == true)
+            {
+                movie.NormalSeat.Text = NormalSeats.ToString();
+                movie.GoodSeat.Text = GoodSeats.ToString();
+                movie.BestSeat.Text = BestSeats.ToString();
+
+                string temp3 = "";
+                string temp4 = "";
+
+                temp3 = ((GoodSeats * 1) < 10 ? "    " : (GoodSeats * 1) < 100 ? "  " : "") + (GoodSeats * 1).ToString();
+
+                temp4 = ((BestSeats * 2) < 10 ? "    " : (BestSeats * 2) < 100 ? "  " : "") + (BestSeats * 2).ToString();
+
+                movie.TotalGoodSeatPrice.Text = "€" + temp3 + ",00";
+                movie.TotalBestSeatPrice.Text = "€" + temp4 + ",00";
+
+                movie.Refresh();
+            }
+
             this.Close();
         }
+
+        bool clickedHere = CustomerReservation.clicked;
+        CustomerReservation movie = CustomerReservation.CustomerMovie;
 
         private void SeatReservation_Load(object sender, EventArgs e)
         {

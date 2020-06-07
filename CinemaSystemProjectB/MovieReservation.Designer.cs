@@ -470,10 +470,10 @@
             this.Controls.Add(this.Linkerkolom);
             this.Controls.Add(this.Wittelijn);
             this.Controls.Add(this.gradientLabel1);
-            this.Controls.Add(this.PageNumber2);
             this.Controls.Add(this.PageNumber4);
             this.Controls.Add(this.PageNumber3);
             this.Controls.Add(this.PageNumber1);
+            this.Controls.Add(this.PageNumber2);
             this.Name = "MovieReservation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MovieReservation";
@@ -527,10 +527,10 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.FlowLayoutPanel CustomerReservationPage;
         private System.Windows.Forms.Label ReservationPriceLabel;
         private System.Windows.Forms.Label ReservationPrice;
         private System.Windows.Forms.Label ConfirmButton;
-        private System.Windows.Forms.FlowLayoutPanel SelectPeoplePanel;
+        public System.Windows.Forms.FlowLayoutPanel SelectPeoplePanel;
+        public System.Windows.Forms.FlowLayoutPanel CustomerReservationPage;
     }
 }

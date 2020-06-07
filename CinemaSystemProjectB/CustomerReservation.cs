@@ -71,51 +71,21 @@ namespace CinemaSystemProjectB
 			}
 		}
 
+		public static bool clicked = false;
+		public static CustomerReservation CustomerMovie;
+
 		private void ChooseOrChangeSeatsButton_Click(object sender, EventArgs e)
 		{
+			CustomerMovie = this;
+			clicked = true;
 			SeatReservation screen_number = new SeatReservation((Filmtitle.Text + Filmtechnology.Text + date.Text + ScreenLabel.Text).ToString(), ScreenLabel.Text, this.ScreenLabel.Text == "Zaal 1" ? 12 : this.ScreenLabel.Text == "Zaal 2" ? 18 : 30);
 			screen_number.ShowDialog();
+			clicked = false;
 		}
 
-		private void CustomerReservation_MouseEnter(object sender, EventArgs e)
+		private void MoviePanel_MouseEnter(object sender, EventArgs e)
 		{
-			/*SelectPeopleItem SelectedMovies = null;
-			foreach (SelectPeopleItem item in SelectPeoplePanel.Controls)
-			{
-				if(item.MovieTitle == this.MovieTitle)
-				{
-					SelectedMovies = item;
-					break;
-				}
-			}
 
-			this.NormalSeat.Text = SelectedMovies.TotalNormalSeats.Text;
-			this.GoodSeat.Text = SelectedMovies.TotalGoodSeats.Text;
-			this.BestSeat.Text = SelectedMovies.TotalBestSeats.Text;
-
-			string temp3 = "";
-			string temp4 = "";
-
-			if ((Convert.ToInt32(SelectedMovies.TotalGoodSeats.Text)) < 0)
-			{
-				temp3 = "    0";
-			}
-			else
-			{
-				temp3 = ((Convert.ToInt32(SelectedMovies.TotalGoodSeats.Text) * 1) < 10 ? "    " : (Convert.ToInt32(SelectedMovies.TotalGoodSeats.Text) * 1) < 100 ? "  " : "") + (Convert.ToInt32(SelectedMovies.TotalGoodSeats.Text) * 1).ToString();
-			}
-			if ((Convert.ToInt32(SelectedMovies.TotalBestSeats.Text)) < 0)
-			{
-				temp4 = "    0";
-			}
-			else
-			{
-				temp4 = ((Convert.ToInt32(SelectedMovies.TotalBestSeats.Text) * 2) < 10 ? "    " : (Convert.ToInt32(SelectedMovies.TotalBestSeats.Text) * 2) < 100 ? "  " : "") + (Convert.ToInt32(SelectedMovies.TotalBestSeats.Text) * 2).ToString();
-			}
-
-			this.TotalNormalSeatPrice.Text = "€    0,00";
-			this.TotalGoodSeatPrice.Text = "€" + temp3 + ",00";
-			this.TotalBestSeatPrice.Text = "€" + temp4 + ",00";*/
 		}
 	}
 }
