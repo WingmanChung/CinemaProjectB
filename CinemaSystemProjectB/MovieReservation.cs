@@ -623,7 +623,7 @@ namespace CinemaSystemProjectB
 									if (!(ReservedMovies[c].Snacks.Text.Contains(snacks[p].Key)))
 									{
 										ReservedMovies[c].Snacks.Text += Environment.NewLine + allComboboxes[p].SelectedIndex.ToString() + "x" + "	 " + snacks[p].Key;
-										ReservedMovies[c].SnackPrice.Text += Environment.NewLine + "€" + (Decimal.Parse(snacks[p].Value) * allComboboxes[p].SelectedIndex);
+										ReservedMovies[c].SnackPrice.Text += Environment.NewLine + "€" + ((Decimal.Parse(snacks[p].Value) * allComboboxes[p].SelectedIndex) < 10 ? "    " : (Decimal.Parse(snacks[p].Value) * allComboboxes[p].SelectedIndex) < 100 ? "  " : "") + (Decimal.Parse(snacks[p].Value) * allComboboxes[p].SelectedIndex);
 										TotalPricesSnacks += (Decimal.Parse(snacks[p].Value) * allComboboxes[p].SelectedIndex);
 									}
 								}
@@ -936,6 +936,15 @@ namespace CinemaSystemProjectB
 		private void MovieReservation_MouseEnter(object sender, EventArgs e)
 		{
 			checkAllBoxes();
+
+			if (page == 3)
+			{
+				foreach (CustomerReservation movie in CustomerReservationPage.Controls)
+				{
+					ReservationPrice.Text = "0";
+					ReservationPrice.Text = (Convert.ToDecimal(ReservationPrice.Text) + Convert.ToDecimal(movie.TotalPrice.Text.Replace("€", ""))).ToString();
+				}
+			}
 		}
 	}
 }

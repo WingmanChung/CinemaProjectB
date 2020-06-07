@@ -287,20 +287,21 @@ namespace CinemaSystemProjectB
             }
             if(clickedHere == true)
             {
+                movie.TotalPrice.Text = (Convert.ToDecimal(movie.TotalPrice.Text.Replace("€", "")) - Convert.ToDecimal(movie.TotalGoodSeatPrice.Text.Replace("€", "")) -
+                                                                                    Convert.ToDecimal(movie.TotalBestSeatPrice.Text.Replace("€", ""))).ToString();
                 movie.NormalSeat.Text = NormalSeats.ToString();
                 movie.GoodSeat.Text = GoodSeats.ToString();
                 movie.BestSeat.Text = BestSeats.ToString();
 
-                string temp3 = "";
-                string temp4 = "";
+                string temp3 = ((GoodSeats * 1) < 10 ? "    " : (GoodSeats * 1) < 100 ? "  " : "") + (GoodSeats * 1).ToString();
 
-                temp3 = ((GoodSeats * 1) < 10 ? "    " : (GoodSeats * 1) < 100 ? "  " : "") + (GoodSeats * 1).ToString();
-
-                temp4 = ((BestSeats * 2) < 10 ? "    " : (BestSeats * 2) < 100 ? "  " : "") + (BestSeats * 2).ToString();
+                string temp4 = ((BestSeats * 2) < 10 ? "    " : (BestSeats * 2) < 100 ? "  " : "") + (BestSeats * 2).ToString();
 
                 movie.TotalGoodSeatPrice.Text = "€" + temp3 + ",00";
                 movie.TotalBestSeatPrice.Text = "€" + temp4 + ",00";
 
+                movie.TotalPrice.Text = "€" + (Convert.ToDecimal(GoodSeats * 1) + Convert.ToDecimal(BestSeats * 2) + Convert.ToDecimal(movie.TotalPrice.Text.Replace("€", ""))).ToString();
+                //ReservationPrice
                 movie.Refresh();
             }
 

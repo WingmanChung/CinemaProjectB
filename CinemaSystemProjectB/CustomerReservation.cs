@@ -54,6 +54,8 @@ namespace CinemaSystemProjectB
 			set { _screen = value; ScreenLabel.Text = value; }
 		}
 
+		public object CustomerReservationPage { get; internal set; }
+
 		private void ShowReservationButton_Click(object sender, EventArgs e)
 		{
 			//IN KNOP BUTTON
