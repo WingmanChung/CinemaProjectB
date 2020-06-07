@@ -1104,17 +1104,17 @@
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.Maroon;
-            this.label3.Location = new System.Drawing.Point(-6, 134);
+            this.label3.Location = new System.Drawing.Point(0, 134);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(885, 3);
+            this.label3.Size = new System.Drawing.Size(880, 3);
             this.label3.TabIndex = 299;
             // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(-5, 86);
+            this.label1.Location = new System.Drawing.Point(0, 86);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(885, 3);
+            this.label1.Size = new System.Drawing.Size(880, 3);
             this.label1.TabIndex = 17;
             // 
             // ChooseFoodButton
@@ -1123,9 +1123,9 @@
             this.ChooseFoodButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ChooseFoodButton.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ChooseFoodButton.ForeColor = System.Drawing.Color.Black;
-            this.ChooseFoodButton.Location = new System.Drawing.Point(-2, 92);
+            this.ChooseFoodButton.Location = new System.Drawing.Point(0, 92);
             this.ChooseFoodButton.Name = "ChooseFoodButton";
-            this.ChooseFoodButton.Size = new System.Drawing.Size(883, 39);
+            this.ChooseFoodButton.Size = new System.Drawing.Size(880, 39);
             this.ChooseFoodButton.TabIndex = 300;
             this.ChooseFoodButton.Text = "Klik hier om snacks && drinken voor de gekozen film te kiezen";
             this.ChooseFoodButton.UseVisualStyleBackColor = false;
@@ -1236,9 +1236,9 @@
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.Maroon;
-            this.label2.Location = new System.Drawing.Point(-5, 596);
+            this.label2.Location = new System.Drawing.Point(0, 596);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(885, 3);
+            this.label2.Size = new System.Drawing.Size(880, 3);
             this.label2.TabIndex = 298;
             // 
             // FoodMenuMovieItem
@@ -1247,7 +1247,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.Controls.Add(this.ItemPanel);
-            this.MaximumSize = new System.Drawing.Size(905, 602);
+            this.MaximumSize = new System.Drawing.Size(880, 602);
             this.MinimumSize = new System.Drawing.Size(880, 143);
             this.Name = "FoodMenuMovieItem";
             this.Size = new System.Drawing.Size(880, 143);

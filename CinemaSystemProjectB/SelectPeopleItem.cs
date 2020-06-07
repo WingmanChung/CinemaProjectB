@@ -1,4 +1,9 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace CinemaSystemProjectB
@@ -7,18 +12,14 @@ namespace CinemaSystemProjectB
     {
 		public static int TotalAdultPlusKids;
 		public static SelectPeopleItem SelectedMovie;
+		public Dictionary<string, Color> CustomerChosenSeats = new Dictionary<string, Color>();
+		public int[][] newBlocks;
 		public SelectPeopleItem(MovieReservationAvailableMoviesItem chosenItem)
         {
             InitializeComponent();
 		}
 
 		private string _filmtechnology;
-		private string _runtime;
-		private string _Date;
-		private string _comboBoxAdult;
-		private string _comboBoxKids;
-		private string _comboBoxStudent;
-		private string _screen;
 
 		public string MovieTitle
 		{
@@ -52,7 +53,7 @@ namespace CinemaSystemProjectB
 
 		public string ComboBoxKids
 		{
-			get => _comboBoxKids;
+			get => comboBoxKids.Text;
 			set => comboBoxKids.Text = value;
 		}
 
@@ -106,7 +107,7 @@ namespace CinemaSystemProjectB
 			//if adult combobox is empty, fill it
 			if (comboBoxAdult.Items.Count == 0)
 			{
-				for (int i = 0; i < 10; i++)
+				for (int i = 0; i < 11; i++)
 				{
 					comboBoxAdult.Items.Add(i);
 				}
@@ -128,7 +129,7 @@ namespace CinemaSystemProjectB
 			//if kids combobox is empty, fill it
 			if (comboBoxKids.Items.Count == 0)
 			{
-				for (int i = 0; i < 10; i++)
+				for (int i = 0; i < 11; i++)
 				{
 					comboBoxKids.Items.Add(i);
 				}
@@ -192,13 +193,52 @@ namespace CinemaSystemProjectB
 			CheckIfZero();
 		}
 
+		public class MovieSeatReservation
+		{
+			public string Movie { get; set; }
+			public int[][] Seats { get; set; }
+		}
+
 		private void ChooseSeatsButton_Click(object sender, EventArgs e)
 		{
 			Step1Completed();
 			if (comboBoxAdult.SelectedIndex > 0 && comboBoxKids.SelectedIndex >= 0 || comboBoxAdult.SelectedIndex >= 0 && comboBoxKids.SelectedIndex > 0)
 			{
 				SelectedMovie = this;
-				SeatReservation screen_number = new SeatReservation(this.ScreenLabel.Text);
+
+				MovieSeatReservation movieSeats = new MovieSeatReservation
+				{
+					Movie = Filmtitle.Text + Filmtechnology.Text + date.Text + ScreenLabel.Text,
+					Seats = ScreenLabel.Text == "Zaal 1" ? Screen1Seats() : ScreenLabel.Text == "Zaal 2" ? Screen2Seats() : Screen3Seats()
+				};
+				newBlocks = new int[movieSeats.Seats.Length][];
+
+				//Creates json file if it doesn't exist yet
+				if (!File.Exists("ReservedSeats.json"))
+				{
+					using (StreamWriter datePath = File.CreateText("ReservedSeats.json"))
+					{
+						datePath.Close();
+					}
+				}
+
+				Dictionary<string, int[][]> AllMovieSeats = JsonConvert.DeserializeObject<Dictionary<string, int[][]>>(File.ReadAllText(@"ReservedSeats.json"));
+
+				//checks if AllMovieSeats dictionary is null (this will avoid NullException error
+				if(AllMovieSeats == null)
+				{
+					File.WriteAllText(@"ReservedSeats.json", new JObject() { { movieSeats.Movie, JArray.FromObject(movieSeats.Seats) } }.ToString());
+				}
+				//if it's not null, then add dictionary to json file
+				else if (!(AllMovieSeats.ContainsKey(movieSeats.Movie)))
+				{
+					AllMovieSeats.Add(movieSeats.Movie, movieSeats.Seats);
+					string json = JsonConvert.SerializeObject(AllMovieSeats, Formatting.Indented);
+
+					File.WriteAllText(@"ReservedSeats.json", json);
+				}
+
+				SeatReservation screen_number = new SeatReservation(movieSeats.Movie, ScreenLabel.Text, movieSeats.Seats[0].Length);
 				screen_number.ShowDialog();
 			}
 		}
@@ -207,6 +247,85 @@ namespace CinemaSystemProjectB
 		{
 			TotalAdultPlusKids = comboBoxAdult.SelectedIndex + comboBoxKids.SelectedIndex + 1;
 			AllFields();
+		}
+
+		public int[][] Screen1Seats()
+		{
+			//ZAAL1
+			int[][] blocks = new int[14][]{
+		 new int[] {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 }, //1
+		 new int[] {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 }, //2
+		 new int[] {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 }, //3
+		 new int[] {1, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1 }, //4
+		 new int[] {1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 1, 1 }, //5
+		 new int[] {1, 1, 1, 2, 2, 3, 3, 2, 2, 1, 1, 1 }, //6
+		 new int[] {1, 1, 1, 2, 2, 3, 3, 2, 2, 1, 1, 1 }, //7
+		 new int[] {1, 1, 1, 2, 2, 3, 3, 2, 2, 1, 1, 1 }, //8
+		 new int[] {1, 1, 1, 2, 2, 3, 3, 2, 2, 1, 1, 1 }, //9
+		 new int[] {1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 1, 1 }, //10
+		 new int[] {1, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1 }, //11
+		 new int[] {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 }, //12
+		 new int[] {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 }, //13
+		 new int[] {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 } //14
+		 };
+			return blocks;
+		}
+
+		public int[][] Screen2Seats()
+		{
+			//ZAAL2
+			int[][] blocks = new int[19][]
+			{
+			new int[] {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 }, //1
+			new int[] {0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 0 }, //2
+			new int[] {0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 0 }, //3
+			new int[] {0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 0 }, //4
+			new int[] {0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 0 }, //5
+			new int[] {0, 1, 1, 1, 2, 2, 2, 2, 3, 3, 2, 2, 2, 2, 1, 1, 1, 0 }, //6
+			new int[] {1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 2, 2, 2, 2, 1, 1, 1 }, //7
+			new int[] {1, 1, 1, 2, 2, 2, 3, 3, 3, 3, 3, 3, 2, 2, 2, 1, 1, 1 }, //8
+			new int[] {1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 1, 1 }, //9
+			new int[] {1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 1, 1 },//10
+			new int[] {1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 1, 1 }, //11
+			new int[] {0, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 2, 2, 2, 2, 1, 1, 0 }, //12
+			new int[] {0, 1, 1, 1, 2, 2, 2, 2, 3, 3, 2, 2, 2, 2, 1, 1, 1, 0 }, //13
+			new int[] {0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 0 }, //14
+			new int[] {0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 0, 0 }, //15
+			new int[] {0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 0, 0 }, //16
+			new int[] {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 }, //17
+			new int[] {0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0 }, //18
+			new int[] {0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0 } //19
+			};
+			return blocks;
+		}
+
+		public int[][] Screen3Seats()
+		{
+			//ZAAL3
+			int[][] blocks = new int[20][]
+			{
+			new int[] {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0 }, //1
+			new int[] {0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 0, 0, 0 }, //2
+			new int[] {0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 0, 0, 0 }, //3
+			new int[] {0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 0, 0, 0 }, //4
+			new int[] {0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 0, 0, 0 }, //5
+			new int[] {0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 0, 0 }, //6
+			new int[] {0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 0 }, //7
+			new int[] {1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1 }, //8
+			new int[] {1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1 }, //9
+			new int[] {1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1 }, //10
+			new int[] {1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1 }, //11
+			new int[] {1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1 }, //12
+			new int[] {0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 0 }, //13
+			new int[] {0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 0, 0 }, //14
+			new int[] {0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 0, 0 }, //15
+			new int[] {0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0 }, //16
+			new int[] {0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0 }, //17
+			new int[] {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0 }, //18
+			new int[] {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0 }, //19
+			new int[] {0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0 } //19
+			};
+			return blocks;
 		}
 	}
 }
