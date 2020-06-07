@@ -52,6 +52,7 @@
             this.TotalNormalSeats = new System.Windows.Forms.Label();
             this.TotalGoodSeats = new System.Windows.Forms.Label();
             this.TotalBestSeats = new System.Windows.Forms.Label();
+            this.OptionalLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // YellowStripe
@@ -215,7 +216,7 @@
             this.Step1Label.ForeColor = System.Drawing.Color.Yellow;
             this.Step1Label.Location = new System.Drawing.Point(93, 113);
             this.Step1Label.Name = "Step1Label";
-            this.Step1Label.Size = new System.Drawing.Size(79, 23);
+            this.Step1Label.Size = new System.Drawing.Size(70, 23);
             this.Step1Label.TabIndex = 25;
             this.Step1Label.Text = "Stap 1";
             // 
@@ -311,11 +312,24 @@
             this.TotalBestSeats.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.TotalBestSeats.Visible = false;
             // 
+            // OptionalLabel
+            // 
+            this.OptionalLabel.AutoSize = true;
+            this.OptionalLabel.BackColor = System.Drawing.Color.Transparent;
+            this.OptionalLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OptionalLabel.ForeColor = System.Drawing.Color.Yellow;
+            this.OptionalLabel.Location = new System.Drawing.Point(432, 134);
+            this.OptionalLabel.Name = "OptionalLabel";
+            this.OptionalLabel.Size = new System.Drawing.Size(66, 15);
+            this.OptionalLabel.TabIndex = 34;
+            this.OptionalLabel.Text = "(optioneel)";
+            // 
             // SelectPeopleItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
+            this.Controls.Add(this.OptionalLabel);
             this.Controls.Add(this.TotalBestSeats);
             this.Controls.Add(this.TotalGoodSeats);
             this.Controls.Add(this.ScreenLabel);
@@ -344,6 +358,7 @@
             this.Size = new System.Drawing.Size(890, 242);
             this.MouseEnter += new System.EventHandler(this.SelectPeopleItem_MouseEnter);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -373,5 +388,6 @@
         public System.Windows.Forms.Label TotalNormalSeats;
         public System.Windows.Forms.Label TotalGoodSeats;
         public System.Windows.Forms.Label TotalBestSeats;
+        private System.Windows.Forms.Label OptionalLabel;
     }
 }
