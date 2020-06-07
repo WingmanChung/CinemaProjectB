@@ -3,6 +3,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.IO;
 using System.Windows.Forms;
 
@@ -15,8 +16,30 @@ namespace CinemaSystemProjectB
 		public Dictionary<string, Color> CustomerChosenSeats = new Dictionary<string, Color>();
 		public int[][] newBlocks;
 		public SelectPeopleItem(MovieReservationAvailableMoviesItem chosenItem)
-        {
-            InitializeComponent();
+		{
+			InitializeComponent();
+			Label infoButton = new Label
+			{
+				Width = 20,
+				Height = 20,
+				BackColor = Color.Yellow,
+				ForeColor = Color.Black,
+				Text = "i",
+				Font = new Font("Arial", 10, FontStyle.Bold),
+				TextAlign = ContentAlignment.MiddleCenter,
+				Location = new Point(165, 115)
+			};
+			GraphicsPath p = new GraphicsPath();
+			p.AddEllipse(1, 1, infoButton.Width - 4, infoButton.Height - 4);
+			infoButton.Region = new Region(p);
+			ToolTip infoTip = new ToolTip
+			{
+				AutoPopDelay = 0,
+				ToolTipTitle = "Reserveren voor meer personen?",
+			};
+			infoTip.SetToolTip(infoButton, $"Neem dan contact met ons op {Environment.NewLine}e-mail: bioscoop@hr.nl {Environment.NewLine}telefoonnr.: 010-1234567");
+			this.Controls.Add(infoButton);
+			
 		}
 
 		private string _filmtechnology;
@@ -327,5 +350,6 @@ namespace CinemaSystemProjectB
 			};
 			return blocks;
 		}
+
 	}
 }
