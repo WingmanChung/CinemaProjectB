@@ -12,24 +12,23 @@ namespace CinemaSystemProjectB
     public partial class MovieDescription : Form
     {
         const string path = @"JsonTextFile.json";
-        public MovieDescriptionClass MovieInfo { get; set; }
+        Dictionary<string, MovieDescriptionClass> Movies = JsonConvert.DeserializeObject<Dictionary<string, MovieDescriptionClass>>(File.ReadAllText(path));
+
+		public MovieDescriptionClass MovieInfo { get; set; }
 
         public MovieDescription()
         {
             InitializeComponent();
 
             string showMovie;
-            //to check if chosenMovie is selected in Trending or not
-            bool checkBool = MovieOverview.HomeScreen;
-            bool checkBool2 = MovieScheduleItem.MovieScheduleChosenMovie;
 
             //determines which variable will be used to show selected movie(choosing between forms)
-
-            if (checkBool)
+            if (MovieOverview.HomeScreen)
             {
                 showMovie = MovieOverview.chosenMovie;
             }
-            else if (checkBool2)
+            //to check if chosenMovie is selected in Trending or not
+            else if (MovieScheduleItem.MovieScheduleChosenMovie)
             {
                 showMovie = MovieScheduleItem.chosenMovieMovieSchedule;
             }
@@ -39,8 +38,6 @@ namespace CinemaSystemProjectB
             }
 
             string resultJson = JsonConvert.SerializeObject(MovieInfo);
-
-            Dictionary<string, MovieDescriptionClass> Movies = JsonConvert.DeserializeObject<Dictionary<string, MovieDescriptionClass>>(File.ReadAllText(path));
 
             Filmtitel.Text = Movies[showMovie].Title;
             Releasedatumlabel.Text = Movies[showMovie].Release;
@@ -55,59 +52,34 @@ namespace CinemaSystemProjectB
             RuntimeLabel.Text = Movies[showMovie].Runtime;
             RatingLabel.Text = Movies[showMovie].Rating.ToString();
 
-            var fileString = Movies[showMovie].Image;
-            var bytes = Convert.FromBase64String(fileString);
-
-            Filmposter.Image = Image.FromStream(new MemoryStream(bytes));
-
-
+            // Load the filmposter image from the base 64 stream (uses a memory stream to read the bytes from the base64 string)
+            Filmposter.Image = Image.FromStream(new MemoryStream(Convert.FromBase64String(Movies[showMovie].Image)));
             MovieInfo = JsonConvert.DeserializeObject<MovieDescriptionClass>(resultJson, new JsonSerializerSettings());
         }
 
-        private void Trailerlink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start(Trailerlink.Text);
-        }
+		private void Trailerlink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			Process.Start(Trailerlink.Text);
+		}
 
         private void ReservationButton_Click(object sender, EventArgs e)
         {
-            /*var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-            var stringChars = new char[8];
-            var random = new Random();
-
-            for (int i = 0; i < stringChars.Length; i++)
-            {
-                stringChars[i] = chars[random.Next(chars.Length)];
-            }
-
-            var finalString = new String(stringChars);
-
-            DateTime dateToday = DateTime.Today;
-            MessageBox.Show(finalString + dateToday.ToString("ddMMyyyy"), "Reservatie code");*/
-
             new MovieReservation().Show();
         }
 
+        private void PriceListButton_MouseEnter(object sender, EventArgs e)
+        {
+            PriceListButton.BackColor = Color.Gold;
+        }
+
+        private void PriceListButton_MouseLeave(object sender, EventArgs e)
+        {
+            PriceListButton.BackColor = Color.Yellow;
+        }
+
+        private void PriceListButton_Click(object sender, EventArgs e)
+        {
+            new PriceList().Show();
+        }
     }
 }
-
-/*
-{
-    "Avengers": {
-        "Title": "whatever"
-    },
-    After": {
-    title}
-}
-*/
-
-/*
-
-{
-
-var fileString = Movies[showMovie].Image;
-var bytes = Convert.FromBase64String(fileString);
-
-pictureBox1.Image = Image.FromStream(new MemoryStream(bytes));
-}
-*/

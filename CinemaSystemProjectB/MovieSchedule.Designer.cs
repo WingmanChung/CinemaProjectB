@@ -64,6 +64,11 @@
             this.gradientLabel1 = new CinemaSystemProjectB.GradientLabel();
             this.Wittelijn = new System.Windows.Forms.Label();
             this.Bioscoopnaam = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.gradientLabel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -395,7 +400,7 @@
             this.gradientLabel1.Controls.Add(this.Bioscoopnaam);
             this.gradientLabel1.EndColor = System.Drawing.Color.Maroon;
             this.gradientLabel1.Location = new System.Drawing.Point(-3, -2);
-            this.gradientLabel1.Margin = new System.Windows.Forms.Padding(2);
+            this.gradientLabel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gradientLabel1.Name = "gradientLabel1";
             this.gradientLabel1.Size = new System.Drawing.Size(1113, 121);
             this.gradientLabel1.TabIndex = 58;
@@ -421,12 +426,57 @@
             this.Bioscoopnaam.TabIndex = 10;
             this.Bioscoopnaam.Text = "Darichwiwi";
             // 
+            // label17
+            // 
+            this.label17.BackColor = System.Drawing.Color.Maroon;
+            this.label17.Location = new System.Drawing.Point(64, 420);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(984, 3);
+            this.label17.TabIndex = 95;
+            // 
+            // label18
+            // 
+            this.label18.BackColor = System.Drawing.Color.Maroon;
+            this.label18.Location = new System.Drawing.Point(64, 582);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(984, 3);
+            this.label18.TabIndex = 96;
+            // 
+            // label19
+            // 
+            this.label19.BackColor = System.Drawing.Color.Maroon;
+            this.label19.Location = new System.Drawing.Point(452, 221);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(3, 513);
+            this.label19.TabIndex = 97;
+            // 
+            // label20
+            // 
+            this.label20.BackColor = System.Drawing.Color.Maroon;
+            this.label20.Location = new System.Drawing.Point(752, 221);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(0, 0);
+            this.label20.TabIndex = 98;
+            // 
+            // label21
+            // 
+            this.label21.BackColor = System.Drawing.Color.Maroon;
+            this.label21.Location = new System.Drawing.Point(751, 221);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(3, 513);
+            this.label21.TabIndex = 99;
+            // 
             // MovieSchedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1106, 766);
+            this.ClientSize = new System.Drawing.Size(1107, 766);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.label17);
             this.Controls.Add(this.Time3Label);
             this.Controls.Add(this.Time2Label);
             this.Controls.Add(this.Time1Label);
@@ -509,5 +559,10 @@
         private System.Windows.Forms.Label Time1Label;
         private System.Windows.Forms.Label Time2Label;
         private System.Windows.Forms.Label Time3Label;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
     }
 }

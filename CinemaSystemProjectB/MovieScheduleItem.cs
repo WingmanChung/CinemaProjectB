@@ -53,6 +53,7 @@ namespace CinemaSystemProjectB
             chosenMovieMovieSchedule = Filmtitle.Text;
             MovieScheduleChosenMovie = true;
             new MovieDescription().Show();
+            MovieScheduleChosenMovie = false;
         }
     }
 }

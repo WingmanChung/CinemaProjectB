@@ -92,7 +92,7 @@
             this.Rechterkolom.BackColor = System.Drawing.Color.Maroon;
             this.Rechterkolom.Location = new System.Drawing.Point(1077, 121);
             this.Rechterkolom.Name = "Rechterkolom";
-            this.Rechterkolom.Size = new System.Drawing.Size(30, 626);
+            this.Rechterkolom.Size = new System.Drawing.Size(30, 647);
             this.Rechterkolom.TabIndex = 59;
             // 
             // MovieReservationLabel
@@ -100,7 +100,7 @@
             this.MovieReservationLabel.BackColor = System.Drawing.Color.Yellow;
             this.MovieReservationLabel.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MovieReservationLabel.ForeColor = System.Drawing.Color.Black;
-            this.MovieReservationLabel.Location = new System.Drawing.Point(97, 143);
+            this.MovieReservationLabel.Location = new System.Drawing.Point(98, 143);
             this.MovieReservationLabel.Name = "MovieReservationLabel";
             this.MovieReservationLabel.Size = new System.Drawing.Size(918, 32);
             this.MovieReservationLabel.TabIndex = 60;
@@ -218,6 +218,7 @@
             this.SelectPeoplePanel.Name = "SelectPeoplePanel";
             this.SelectPeoplePanel.Size = new System.Drawing.Size(914, 435);
             this.SelectPeoplePanel.TabIndex = 67;
+            this.SelectPeoplePanel.MouseEnter += new System.EventHandler(this.SelectPeoplePanel_MouseEnter);
             // 
             // SelectPeopleLabel
             // 
@@ -278,7 +279,7 @@
             this.FoodMenuPanel.AutoScroll = true;
             this.FoodMenuPanel.Location = new System.Drawing.Point(40, 44);
             this.FoodMenuPanel.Name = "FoodMenuPanel";
-            this.FoodMenuPanel.Size = new System.Drawing.Size(921, 437);
+            this.FoodMenuPanel.Size = new System.Drawing.Size(922, 437);
             this.FoodMenuPanel.TabIndex = 70;
             // 
             // SnackMenuLabel
@@ -323,9 +324,9 @@
             // CustomerReservationPage
             // 
             this.CustomerReservationPage.AutoScroll = true;
-            this.CustomerReservationPage.Location = new System.Drawing.Point(41, 40);
+            this.CustomerReservationPage.Location = new System.Drawing.Point(37, 44);
             this.CustomerReservationPage.Name = "CustomerReservationPage";
-            this.CustomerReservationPage.Size = new System.Drawing.Size(920, 441);
+            this.CustomerReservationPage.Size = new System.Drawing.Size(925, 438);
             this.CustomerReservationPage.TabIndex = 71;
             // 
             // label9
@@ -351,7 +352,7 @@
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.Maroon;
-            this.label7.Location = new System.Drawing.Point(41, 38);
+            this.label7.Location = new System.Drawing.Point(41, 39);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(921, 4);
             this.label7.TabIndex = 65;
@@ -458,7 +459,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1107, 747);
+            this.ClientSize = new System.Drawing.Size(1107, 766);
             this.Controls.Add(this.ConfirmButton);
             this.Controls.Add(this.ReservationPrice);
             this.Controls.Add(this.ReservationPriceLabel);
@@ -469,14 +470,15 @@
             this.Controls.Add(this.Linkerkolom);
             this.Controls.Add(this.Wittelijn);
             this.Controls.Add(this.gradientLabel1);
-            this.Controls.Add(this.PageNumber1);
-            this.Controls.Add(this.PageNumber2);
             this.Controls.Add(this.PageNumber4);
             this.Controls.Add(this.PageNumber3);
+            this.Controls.Add(this.PageNumber1);
+            this.Controls.Add(this.PageNumber2);
             this.Name = "MovieReservation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MovieReservation";
             this.Load += new System.EventHandler(this.MovieReservation_Load);
+            this.MouseEnter += new System.EventHandler(this.MovieReservation_MouseEnter);
             this.PageNumber1.ResumeLayout(false);
             this.PageNumber1.PerformLayout();
             this.PageNumber2.ResumeLayout(false);
@@ -513,7 +515,6 @@
         private System.Windows.Forms.Label SelectPeopleLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label page2RedTopLine;
-        private System.Windows.Forms.FlowLayoutPanel SelectPeoplePanel;
         private System.Windows.Forms.Label PreviousPageButton;
         private System.Windows.Forms.Panel PageNumber3;
         private System.Windows.Forms.Label SnackMenuLabel;
@@ -526,9 +527,10 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.FlowLayoutPanel CustomerReservationPage;
         private System.Windows.Forms.Label ReservationPriceLabel;
-        private System.Windows.Forms.Label ReservationPrice;
         private System.Windows.Forms.Label ConfirmButton;
+        public System.Windows.Forms.FlowLayoutPanel SelectPeoplePanel;
+        public System.Windows.Forms.FlowLayoutPanel CustomerReservationPage;
+        private System.Windows.Forms.Label ReservationPrice;
     }
 }

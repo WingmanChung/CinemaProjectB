@@ -8,23 +8,45 @@ using System.Windows.Forms;
 
 namespace CinemaSystemProjectB
 {
+    // This struct is used in a list to keep the picture boxes and their labels in one place
+    // (makes editing the labels easier in the picture box events)
+    public struct MovieTitle
+	{
+		public string Name;
+		public Label Label;
+		public PictureBox Image;
+
+        public MovieTitle(string name, Label label, PictureBox image)
+        {
+            Name = name;
+            Label = label;
+            Image = image;
+        }
+    }
+
     public partial class MovieOverview : Form
     {
-        const string path = @"JsonTextFile.json";
         public MovieDescriptionClass MovieInfo { get; set; }
 
-        public static string Film1Title = "After";
-        public static string Film2Title = "Avengers: Endgame";
-        public static string Film3Title = "Frozen 2";
-        public static string Film4Title = "Godzilla: King of the Monsters";
-        public static string Film5Title = "How to train your dragon 3";
         public static string chosenMovie;
+        public static Dictionary<string, MovieDescriptionClass> MovieListView;
         public static bool HomeScreen = false;
+		public static List<MovieTitle> titles = new List<MovieTitle>();
+        public static Label[] labels { get; private set; }
 
         public MovieOverview()
         {
             InitializeComponent();
 
+            LoadMoviesOverview();
+        }
+
+        public void LoadMoviesOverview() {
+            const string path = @"JsonTextFile.json";
+
+            //Loads dictionary with all movies
+            MovieListView = JsonConvert.DeserializeObject<Dictionary<string, MovieDescriptionClass>>(File.ReadAllText(path));
+            
             if (!File.Exists("movieSchedulesTest.txt"))
             {
                 using (StreamWriter datePath = File.CreateText("movieSchedulesTest.txt"))
@@ -33,12 +55,8 @@ namespace CinemaSystemProjectB
                 }
             }
 
-            //Loads json file with all movies
-
-            Dictionary<string, MovieDescriptionClass> ListView = JsonConvert.DeserializeObject<Dictionary<string, MovieDescriptionClass>>(File.ReadAllText(path));
-
             //List with all keys (movie titles)
-            var movieList = ListView.Keys.ToArray();
+            var movieList = MovieListView.Keys.ToArray();
             List<string> duplicateMovieList = new List<string>();
 
             //Fills movieschedule text file with movies if there is no total of 63 movies
@@ -51,10 +69,10 @@ namespace CinemaSystemProjectB
 
                 int chosenRandomNumber = movieRound.Next(0, 43);
 
-                string[] technology = ListView[movieList[chosenRandomNumber]].FilmTechnology.Split(',');
+                string[] technology = MovieListView[movieList[chosenRandomNumber]].FilmTechnology.Split(',');
                 int chosenRandomNumber2 = movieRound.Next(0, technology.Length);
                 //Method to avoid duplicates in movieschedules
-                if (duplicateMovieList.Contains(ListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]))
+                if (duplicateMovieList.Contains(MovieListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]))
                 {
                     file2.Close();
                 }
@@ -80,23 +98,23 @@ namespace CinemaSystemProjectB
                         textFileLength >= 57 && textFileLength < 59 ||
                         textFileLength >= 60 && textFileLength < 62)
                 {
-                    string[] runTime = ListView[movieList[chosenRandomNumber]].Runtime.Split();
+                    string[] runTime = MovieListView[movieList[chosenRandomNumber]].Runtime.Split();
                     if (Int64.Parse(runTime[0]) > 180)
                     {
                         file2.Close();
                     }
                     else
                     {
-                        duplicateMovieList.Add(ListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]);
-                        file2.WriteLine(ListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]);
+                        duplicateMovieList.Add(MovieListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]);
+                        file2.WriteLine(MovieListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]);
                         file2.Close();
                         textFileLength++;
                     }
                 }
                 else
                 {
-                    duplicateMovieList.Add(ListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]);
-                    file2.WriteLine(ListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]);
+                    duplicateMovieList.Add(MovieListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]);
+                    file2.WriteLine(MovieListView[movieList[chosenRandomNumber]].Title + ", " + technology[chosenRandomNumber2]);
                     file2.Close();
                     textFileLength++;
                 }
@@ -154,91 +172,89 @@ namespace CinemaSystemProjectB
                 datesFile.Close();
             }
 
-            Startknop.BackColor = Color.Yellow;
-
             string resultJson = JsonConvert.SerializeObject(MovieInfo);
 
             Dictionary<string, MovieDescriptionClass> Movies = JsonConvert.DeserializeObject<Dictionary<string, MovieDescriptionClass>>(File.ReadAllText(path));
 
-            toolTip1.SetToolTip(filmtitel1, Film1Title);
-            toolTip1.SetToolTip(filmtitel2, Film2Title);
-            toolTip1.SetToolTip(filmtitel3, Film3Title);
-            toolTip1.SetToolTip(filmtitel4, Film4Title);
-            toolTip1.SetToolTip(filmtitel5, Film5Title);
+            labels = new Label[] { filmtitel1, filmtitel2, filmtitel3, filmtitel4, filmtitel5 };
+            PictureBox[] images = new PictureBox[] { Film1, Film2, Film3, Film4, Film5 };
+			titles.Clear();
 
-            filmtitel1.Text = Film1Title;
-            filmtitel2.Text = Film2Title;
-            filmtitel3.Text = Film3Title;
-            filmtitel4.Text = Film4Title;
-            filmtitel5.Text = Film5Title;
+            //List with all keys (movie titles)
+            string[] movieTitles = Movies.Keys.ToArray();
 
-            var fileStringFilm1 = Movies[Film1Title].Image;
-            var bytesFilm1 = Convert.FromBase64String(fileStringFilm1);
-            var fileStringFilm2 = Movies[Film2Title].Image;
-            var bytesFilm2 = Convert.FromBase64String(fileStringFilm2);
-            var fileStringFilm3 = Movies[Film3Title].Image;
-            var bytesFilm3 = Convert.FromBase64String(fileStringFilm3);
-            var fileStringFilm4 = Movies[Film4Title].Image;
-            var bytesFilm4 = Convert.FromBase64String(fileStringFilm4);
-            var fileStringFilm5 = Movies[Film5Title].Image;
-            var bytesFilm5 = Convert.FromBase64String(fileStringFilm5);
+            //Sorts the dictionary from highest rating to lowest rating
+            Dictionary<string, float> rates = new Dictionary<string, float>();
+            for (int i = 0; i < movieTitles.Length; i++)
+            {
+                rates.Add(Movies[movieTitles[i]].Title, Movies[movieTitles[i]].Rating);
+            }
+            rates = rates.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+            string[] movieRates = rates.Keys.ToArray();
 
-            Film1.Image = Image.FromStream(new MemoryStream(bytesFilm1));
-            Film2.Image = Image.FromStream(new MemoryStream(bytesFilm2));
-            Film3.Image = Image.FromStream(new MemoryStream(bytesFilm3));
-            Film4.Image = Image.FromStream(new MemoryStream(bytesFilm4));
-            Film5.Image = Image.FromStream(new MemoryStream(bytesFilm5));
+            for (int i = 0; i < 5; i++)
+            {
+                string title = movieRates[i];
+
+                titles.Add(new MovieTitle(
+					title,
+					labels[i],
+                    images[i]
+				));
+
+                toolTip1.SetToolTip(labels[i], title);
+                labels[i].Text = title;
+                images[i].Image = Image.FromStream(new MemoryStream(Convert.FromBase64String(Movies[title].Image)));
+            }
 
             Email.Text = "bioscoop@hr.nl";
             Telefoonnummer.Text = "010-1234567";
             Locatie.Text = "Wijnhaven 107, 3011 WN Rotterdam";
 
         }
-        private void pictureBox1_Click(object sender, EventArgs e)
+
+        private void PictureBox_Click(object sender, EventArgs e)
         {
-            chosenMovie = Film1Title;
+            PictureBox pic = sender as PictureBox;
+			MovieTitle title = titles.First(x => x.Image == pic);
+
+			chosenMovie = title.Name;
+
             HomeScreen = true;
             new MovieDescription().Show();
             HomeScreen = false;
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            chosenMovie = Film2Title;
-            HomeScreen = true;
-            new MovieDescription().Show();
-            HomeScreen = false;
-        }
+        private void PictureBox_MouseEnter(object sender, EventArgs e)
+		{
+            // Get the MovieTitle object that contains this picture box
+			MovieTitle title = titles.First(x => x.Image == sender);
+			Label label = title.Label;
 
-        private void Film3_Click(object sender, EventArgs e)
-        {
-            chosenMovie = Film3Title;
-            HomeScreen = true;
-            new MovieDescription().Show();
-            HomeScreen = false;
-        }
+            // Measure the height of the wrapped text in the label
+			var textSize = TextRenderer.MeasureText(label.Text,
+				label.Font,
+                new Size(label.Size.Width, int.MaxValue), // The bounding box stretches downwards so that the resulting text size is not limited
+                TextFormatFlags.WordBreak // Specify that the lines should break when they extend past the label width
+            );
 
-        private void Film4_Click(object sender, EventArgs e)
-        {
-            chosenMovie = Film4Title;
-            HomeScreen = true;
-            new MovieDescription().Show();
-            HomeScreen = false;
-        }
+            // Set the label size to the newly measured text size
+			label.Size = new Size(label.Size.Width, Math.Max(label.Size.Height, textSize.Height + 2));
+		}
 
-        private void Film5_Click(object sender, EventArgs e)
+        private void PictureBox_MouseLeave(object sender, EventArgs e)
         {
-            chosenMovie = Film5Title;
-            HomeScreen = true;
-            new MovieDescription().Show();
-            HomeScreen = false;
+            MovieTitle title = titles.First(x => x.Image == sender);
+
+            title.Label.Size = new Size(title.Label.Width, 20);
         }
+        
 
         private void Filmtijdenknop_Click(object sender, EventArgs e)
         {
 
             ((Control)sender).BackColor = Color.Yellow;
-            Startknop.BackColor = Color.White;
+            AdminLogin.BackColor = Color.White;
             Filmsknop.BackColor = Color.White;
             Prijzenknop.BackColor = Color.White;
             Menuknop.BackColor = Color.White;
@@ -264,7 +280,7 @@ namespace CinemaSystemProjectB
         {
 
             ((Control)sender).BackColor = Color.Yellow;
-            Startknop.BackColor = Color.White;
+            AdminLogin.BackColor = Color.White;
             Filmtijdenknop.BackColor = Color.White;
             Prijzenknop.BackColor = Color.White;
             Menuknop.BackColor = Color.White;
@@ -277,7 +293,7 @@ namespace CinemaSystemProjectB
         {
 
             ((Control)sender).BackColor = Color.Yellow;
-            Startknop.BackColor = Color.White;
+            AdminLogin.BackColor = Color.White;
             Filmtijdenknop.BackColor = Color.White;
             Filmsknop.BackColor = Color.White;
             Menuknop.BackColor = Color.White;
@@ -289,7 +305,7 @@ namespace CinemaSystemProjectB
         private void Menuknop_Click(object sender, EventArgs e)
         {
             ((Control)sender).BackColor = Color.Yellow;
-            Startknop.BackColor = Color.White;
+            AdminLogin.BackColor = Color.White;
             Filmtijdenknop.BackColor = Color.White;
             Filmsknop.BackColor = Color.White;
             Prijzenknop.BackColor = Color.White;
@@ -301,7 +317,7 @@ namespace CinemaSystemProjectB
         private void Reserveerknop_Click(object sender, EventArgs e)
         {
             ((Control)sender).BackColor = Color.Yellow;
-            Startknop.BackColor = Color.White;
+            AdminLogin.BackColor = Color.White;
             Filmtijdenknop.BackColor = Color.White;
             Filmsknop.BackColor = Color.White;
             Prijzenknop.BackColor = Color.White;
@@ -310,6 +326,15 @@ namespace CinemaSystemProjectB
             new MovieReservation().Show();
         }
 
-
+        private void AdminLogin_Click(object sender, EventArgs e)
+        {
+            ((Control)sender).BackColor = Color.Yellow;
+            Filmtijdenknop.BackColor = Color.White;
+            Filmsknop.BackColor = Color.White;
+            Prijzenknop.BackColor = Color.White;
+            Menuknop.BackColor = Color.White;
+            Reserveerknop.BackColor = Color.White;
+            new AdminLoginForm().ShowDialog();
+        }
     }
 }

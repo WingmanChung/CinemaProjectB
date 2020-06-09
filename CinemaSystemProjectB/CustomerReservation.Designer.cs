@@ -30,7 +30,7 @@
         {
             this.label7 = new System.Windows.Forms.Label();
             this.date = new System.Windows.Forms.Label();
-            this.ChooseFoodButton = new System.Windows.Forms.Button();
+            this.ShowReservationButton = new System.Windows.Forms.Button();
             this.runtime = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.Filmtechnology = new System.Windows.Forms.Label();
@@ -48,6 +48,7 @@
             this.TotalStudents = new System.Windows.Forms.Label();
             this.TotalSeniors = new System.Windows.Forms.Label();
             this.MoviePanel = new System.Windows.Forms.Panel();
+            this.ChooseOrChangeSeatsButton = new System.Windows.Forms.Button();
             this.TotalBestSeatPrice = new System.Windows.Forms.Label();
             this.TotalGoodSeatPrice = new System.Windows.Forms.Label();
             this.TotalNormalSeatPrice = new System.Windows.Forms.Label();
@@ -96,7 +97,7 @@
             this.label7.BackColor = System.Drawing.Color.Maroon;
             this.label7.Location = new System.Drawing.Point(2, 148);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(910, 4);
+            this.label7.Size = new System.Drawing.Size(900, 4);
             this.label7.TabIndex = 66;
             // 
             // date
@@ -110,19 +111,19 @@
             this.date.Text = "Datum";
             this.date.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ChooseFoodButton
+            // ShowReservationButton
             // 
-            this.ChooseFoodButton.BackColor = System.Drawing.Color.DarkRed;
-            this.ChooseFoodButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ChooseFoodButton.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChooseFoodButton.ForeColor = System.Drawing.Color.Black;
-            this.ChooseFoodButton.Location = new System.Drawing.Point(5, 155);
-            this.ChooseFoodButton.Name = "ChooseFoodButton";
-            this.ChooseFoodButton.Size = new System.Drawing.Size(907, 39);
-            this.ChooseFoodButton.TabIndex = 301;
-            this.ChooseFoodButton.Text = "Klik hier om de volledige prijsoverzicht te bekijken\r\n";
-            this.ChooseFoodButton.UseVisualStyleBackColor = false;
-            this.ChooseFoodButton.Click += new System.EventHandler(this.ChooseFoodButton_Click);
+            this.ShowReservationButton.BackColor = System.Drawing.Color.DarkRed;
+            this.ShowReservationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ShowReservationButton.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ShowReservationButton.ForeColor = System.Drawing.Color.Black;
+            this.ShowReservationButton.Location = new System.Drawing.Point(0, 155);
+            this.ShowReservationButton.Name = "ShowReservationButton";
+            this.ShowReservationButton.Size = new System.Drawing.Size(900, 39);
+            this.ShowReservationButton.TabIndex = 301;
+            this.ShowReservationButton.Text = "Klik hier om de volledige prijsoverzicht te bekijken\r\n";
+            this.ShowReservationButton.UseVisualStyleBackColor = false;
+            this.ShowReservationButton.Click += new System.EventHandler(this.ShowReservationButton_Click);
             // 
             // runtime
             // 
@@ -140,7 +141,7 @@
             this.label3.BackColor = System.Drawing.Color.Maroon;
             this.label3.Location = new System.Drawing.Point(1, 197);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(910, 4);
+            this.label3.Size = new System.Drawing.Size(900, 4);
             this.label3.TabIndex = 302;
             // 
             // Filmtechnology
@@ -173,7 +174,7 @@
             this.Filmtitle.BackColor = System.Drawing.Color.Yellow;
             this.Filmtitle.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Filmtitle.ForeColor = System.Drawing.Color.Black;
-            this.Filmtitle.Location = new System.Drawing.Point(18, 16);
+            this.Filmtitle.Location = new System.Drawing.Point(20, 16);
             this.Filmtitle.Name = "Filmtitle";
             this.Filmtitle.Size = new System.Drawing.Size(860, 26);
             this.Filmtitle.TabIndex = 67;
@@ -315,6 +316,7 @@
             // 
             // MoviePanel
             // 
+            this.MoviePanel.Controls.Add(this.ChooseOrChangeSeatsButton);
             this.MoviePanel.Controls.Add(this.TotalBestSeatPrice);
             this.MoviePanel.Controls.Add(this.TotalGoodSeatPrice);
             this.MoviePanel.Controls.Add(this.TotalNormalSeatPrice);
@@ -366,7 +368,7 @@
             this.MoviePanel.Controls.Add(this.Filmtechnology);
             this.MoviePanel.Controls.Add(this.label3);
             this.MoviePanel.Controls.Add(this.runtime);
-            this.MoviePanel.Controls.Add(this.ChooseFoodButton);
+            this.MoviePanel.Controls.Add(this.ShowReservationButton);
             this.MoviePanel.Controls.Add(this.date);
             this.MoviePanel.Controls.Add(this.label7);
             this.MoviePanel.Controls.Add(this.NormalSeats);
@@ -378,8 +380,23 @@
             this.MoviePanel.MaximumSize = new System.Drawing.Size(900, 1150);
             this.MoviePanel.MinimumSize = new System.Drawing.Size(900, 203);
             this.MoviePanel.Name = "MoviePanel";
-            this.MoviePanel.Size = new System.Drawing.Size(900, 203);
+            this.MoviePanel.Size = new System.Drawing.Size(900, 829);
             this.MoviePanel.TabIndex = 304;
+            this.MoviePanel.MouseEnter += new System.EventHandler(this.MoviePanel_MouseEnter);
+            // 
+            // ChooseOrChangeSeatsButton
+            // 
+            this.ChooseOrChangeSeatsButton.BackColor = System.Drawing.Color.DarkRed;
+            this.ChooseOrChangeSeatsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ChooseOrChangeSeatsButton.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
+            this.ChooseOrChangeSeatsButton.ForeColor = System.Drawing.Color.Black;
+            this.ChooseOrChangeSeatsButton.Location = new System.Drawing.Point(98, 547);
+            this.ChooseOrChangeSeatsButton.Name = "ChooseOrChangeSeatsButton";
+            this.ChooseOrChangeSeatsButton.Size = new System.Drawing.Size(701, 28);
+            this.ChooseOrChangeSeatsButton.TabIndex = 375;
+            this.ChooseOrChangeSeatsButton.Text = "Klik hier om uw zitplaatsen te bekijken of te wijzigen\r\n";
+            this.ChooseOrChangeSeatsButton.UseVisualStyleBackColor = false;
+            this.ChooseOrChangeSeatsButton.Click += new System.EventHandler(this.ChooseOrChangeSeatsButton_Click);
             // 
             // TotalBestSeatPrice
             // 
@@ -514,9 +531,9 @@
             // label9
             // 
             this.label9.BackColor = System.Drawing.Color.Maroon;
-            this.label9.Location = new System.Drawing.Point(-3, 88);
+            this.label9.Location = new System.Drawing.Point(0, 88);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(910, 4);
+            this.label9.Size = new System.Drawing.Size(900, 4);
             this.label9.TabIndex = 362;
             // 
             // label10
@@ -524,7 +541,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold);
             this.label10.ForeColor = System.Drawing.Color.Yellow;
-            this.label10.Location = new System.Drawing.Point(726, 605);
+            this.label10.Location = new System.Drawing.Point(735, 605);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(49, 21);
             this.label10.TabIndex = 360;
@@ -696,7 +713,7 @@
             this.PriceLabel.AutoSize = true;
             this.PriceLabel.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold);
             this.PriceLabel.ForeColor = System.Drawing.Color.Yellow;
-            this.PriceLabel.Location = new System.Drawing.Point(729, 221);
+            this.PriceLabel.Location = new System.Drawing.Point(735, 221);
             this.PriceLabel.Name = "PriceLabel";
             this.PriceLabel.Size = new System.Drawing.Size(49, 21);
             this.PriceLabel.TabIndex = 342;
@@ -861,7 +878,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold);
             this.label18.ForeColor = System.Drawing.Color.Yellow;
-            this.label18.Location = new System.Drawing.Point(729, 411);
+            this.label18.Location = new System.Drawing.Point(735, 412);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(49, 21);
             this.label18.TabIndex = 371;
@@ -877,7 +894,7 @@
             this.MaximumSize = new System.Drawing.Size(900, 1150);
             this.MinimumSize = new System.Drawing.Size(900, 203);
             this.Name = "CustomerReservation";
-            this.Size = new System.Drawing.Size(900, 203);
+            this.Size = new System.Drawing.Size(900, 829);
             this.MoviePanel.ResumeLayout(false);
             this.MoviePanel.PerformLayout();
             this.ResumeLayout(false);
@@ -888,7 +905,7 @@
 
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label date;
-        private System.Windows.Forms.Button ChooseFoodButton;
+        private System.Windows.Forms.Button ShowReservationButton;
         private System.Windows.Forms.Label runtime;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label Filmtechnology;
@@ -946,5 +963,6 @@
         public System.Windows.Forms.Label TotalBestSeatPrice;
         public System.Windows.Forms.Label TotalGoodSeatPrice;
         public System.Windows.Forms.Label TotalNormalSeatPrice;
+        private System.Windows.Forms.Button ChooseOrChangeSeatsButton;
     }
 }
