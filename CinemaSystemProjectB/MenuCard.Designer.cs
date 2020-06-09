@@ -1004,6 +1004,7 @@
             this.Controls.Add(this.Rechterkolom);
             this.Controls.Add(this.gradientLabel1);
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "MenuCard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuCard";
