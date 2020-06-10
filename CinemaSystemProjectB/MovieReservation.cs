@@ -706,7 +706,7 @@ namespace CinemaSystemProjectB
 					string totalPriceString = "€" + totalPriceOfReservation.ToString();
 					if (!totalPriceString.EndsWith(",00"))
 						totalPriceString += ",00";
-					MessageBox.Show(totalPriceString);
+
 					ReservationPrice.Text = totalPriceString;
 				}
 			}
