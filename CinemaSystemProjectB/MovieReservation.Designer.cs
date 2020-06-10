@@ -74,28 +74,25 @@
             // Wittelijn
             // 
             this.Wittelijn.BackColor = System.Drawing.Color.White;
-            this.Wittelijn.Location = new System.Drawing.Point(-7, 143);
-            this.Wittelijn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Wittelijn.Location = new System.Drawing.Point(-5, 116);
             this.Wittelijn.Name = "Wittelijn";
-            this.Wittelijn.Size = new System.Drawing.Size(1483, 6);
+            this.Wittelijn.Size = new System.Drawing.Size(1112, 5);
             this.Wittelijn.TabIndex = 57;
             // 
             // Linkerkolom
             // 
             this.Linkerkolom.BackColor = System.Drawing.Color.Maroon;
-            this.Linkerkolom.Location = new System.Drawing.Point(0, 149);
-            this.Linkerkolom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Linkerkolom.Location = new System.Drawing.Point(0, 121);
             this.Linkerkolom.Name = "Linkerkolom";
-            this.Linkerkolom.Size = new System.Drawing.Size(40, 796);
+            this.Linkerkolom.Size = new System.Drawing.Size(30, 647);
             this.Linkerkolom.TabIndex = 58;
             // 
             // Rechterkolom
             // 
             this.Rechterkolom.BackColor = System.Drawing.Color.Maroon;
-            this.Rechterkolom.Location = new System.Drawing.Point(1436, 149);
-            this.Rechterkolom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Rechterkolom.Location = new System.Drawing.Point(1077, 121);
             this.Rechterkolom.Name = "Rechterkolom";
-            this.Rechterkolom.Size = new System.Drawing.Size(40, 796);
+            this.Rechterkolom.Size = new System.Drawing.Size(30, 647);
             this.Rechterkolom.TabIndex = 59;
             // 
             // MovieReservationLabel
@@ -103,10 +100,9 @@
             this.MovieReservationLabel.BackColor = System.Drawing.Color.Yellow;
             this.MovieReservationLabel.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MovieReservationLabel.ForeColor = System.Drawing.Color.Black;
-            this.MovieReservationLabel.Location = new System.Drawing.Point(131, 176);
-            this.MovieReservationLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.MovieReservationLabel.Location = new System.Drawing.Point(98, 143);
             this.MovieReservationLabel.Name = "MovieReservationLabel";
-            this.MovieReservationLabel.Size = new System.Drawing.Size(1224, 39);
+            this.MovieReservationLabel.Size = new System.Drawing.Size(918, 32);
             this.MovieReservationLabel.TabIndex = 60;
             this.MovieReservationLabel.Text = "Film reservering";
             this.MovieReservationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -116,10 +112,9 @@
             this.AvailableMoviesLabel.AutoSize = true;
             this.AvailableMoviesLabel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AvailableMoviesLabel.ForeColor = System.Drawing.Color.Yellow;
-            this.AvailableMoviesLabel.Location = new System.Drawing.Point(237, 18);
-            this.AvailableMoviesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.AvailableMoviesLabel.Location = new System.Drawing.Point(178, 15);
             this.AvailableMoviesLabel.Name = "AvailableMoviesLabel";
-            this.AvailableMoviesLabel.Size = new System.Drawing.Size(217, 29);
+            this.AvailableMoviesLabel.Size = new System.Drawing.Size(176, 22);
             this.AvailableMoviesLabel.TabIndex = 62;
             this.AvailableMoviesLabel.Text = "Beschikbare films";
             this.AvailableMoviesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -127,10 +122,9 @@
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.Maroon;
-            this.label3.Location = new System.Drawing.Point(52, 48);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(39, 39);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1228, 5);
+            this.label3.Size = new System.Drawing.Size(921, 4);
             this.label3.TabIndex = 63;
             // 
             // chosenMoviesLabel
@@ -138,10 +132,9 @@
             this.chosenMoviesLabel.AutoSize = true;
             this.chosenMoviesLabel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chosenMoviesLabel.ForeColor = System.Drawing.Color.Yellow;
-            this.chosenMoviesLabel.Location = new System.Drawing.Point(884, 18);
-            this.chosenMoviesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.chosenMoviesLabel.Location = new System.Drawing.Point(663, 15);
             this.chosenMoviesLabel.Name = "chosenMoviesLabel";
-            this.chosenMoviesLabel.Size = new System.Drawing.Size(176, 29);
+            this.chosenMoviesLabel.Size = new System.Drawing.Size(141, 22);
             this.chosenMoviesLabel.TabIndex = 64;
             this.chosenMoviesLabel.Text = "Gekozen films";
             this.chosenMoviesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -149,37 +142,33 @@
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.Maroon;
-            this.label4.Location = new System.Drawing.Point(660, 50);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(495, 41);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(3, 542);
+            this.label4.Size = new System.Drawing.Size(2, 440);
             this.label4.TabIndex = 65;
             // 
             // availableMoviesPanel
             // 
             this.availableMoviesPanel.AutoScroll = true;
-            this.availableMoviesPanel.Location = new System.Drawing.Point(57, 54);
-            this.availableMoviesPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.availableMoviesPanel.Location = new System.Drawing.Point(43, 44);
             this.availableMoviesPanel.Name = "availableMoviesPanel";
-            this.availableMoviesPanel.Size = new System.Drawing.Size(600, 534);
+            this.availableMoviesPanel.Size = new System.Drawing.Size(450, 434);
             this.availableMoviesPanel.TabIndex = 66;
             // 
             // label5
             // 
             this.label5.BackColor = System.Drawing.Color.Maroon;
-            this.label5.Location = new System.Drawing.Point(52, 592);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(39, 481);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(1228, 5);
+            this.label5.Size = new System.Drawing.Size(921, 4);
             this.label5.TabIndex = 67;
             // 
             // chosenMoviesPanel
             // 
             this.chosenMoviesPanel.AutoScroll = true;
-            this.chosenMoviesPanel.Location = new System.Drawing.Point(664, 54);
-            this.chosenMoviesPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chosenMoviesPanel.Location = new System.Drawing.Point(498, 44);
             this.chosenMoviesPanel.Name = "chosenMoviesPanel";
-            this.chosenMoviesPanel.Size = new System.Drawing.Size(604, 534);
+            this.chosenMoviesPanel.Size = new System.Drawing.Size(453, 434);
             this.chosenMoviesPanel.TabIndex = 68;
             // 
             // NextPageButton
@@ -187,10 +176,9 @@
             this.NextPageButton.BackColor = System.Drawing.Color.Yellow;
             this.NextPageButton.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NextPageButton.ForeColor = System.Drawing.Color.Black;
-            this.NextPageButton.Location = new System.Drawing.Point(1167, 843);
-            this.NextPageButton.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.NextPageButton.Location = new System.Drawing.Point(875, 685);
             this.NextPageButton.Name = "NextPageButton";
-            this.NextPageButton.Size = new System.Drawing.Size(187, 48);
+            this.NextPageButton.Size = new System.Drawing.Size(140, 39);
             this.NextPageButton.TabIndex = 69;
             this.NextPageButton.Text = "Volgende";
             this.NextPageButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -207,10 +195,9 @@
             this.PageNumber1.Controls.Add(this.label5);
             this.PageNumber1.Controls.Add(this.label3);
             this.PageNumber1.Controls.Add(this.label4);
-            this.PageNumber1.Location = new System.Drawing.Point(79, 224);
-            this.PageNumber1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PageNumber1.Location = new System.Drawing.Point(59, 182);
             this.PageNumber1.Name = "PageNumber1";
-            this.PageNumber1.Size = new System.Drawing.Size(1321, 615);
+            this.PageNumber1.Size = new System.Drawing.Size(991, 500);
             this.PageNumber1.TabIndex = 70;
             // 
             // PageNumber2
@@ -219,19 +206,17 @@
             this.PageNumber2.Controls.Add(this.SelectPeopleLabel);
             this.PageNumber2.Controls.Add(this.label1);
             this.PageNumber2.Controls.Add(this.page2RedTopLine);
-            this.PageNumber2.Location = new System.Drawing.Point(79, 224);
-            this.PageNumber2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PageNumber2.Location = new System.Drawing.Point(59, 182);
             this.PageNumber2.Name = "PageNumber2";
-            this.PageNumber2.Size = new System.Drawing.Size(1321, 615);
+            this.PageNumber2.Size = new System.Drawing.Size(991, 500);
             this.PageNumber2.TabIndex = 69;
             // 
             // SelectPeoplePanel
             // 
             this.SelectPeoplePanel.AutoScroll = true;
-            this.SelectPeoplePanel.Location = new System.Drawing.Point(56, 54);
-            this.SelectPeoplePanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SelectPeoplePanel.Location = new System.Drawing.Point(42, 44);
             this.SelectPeoplePanel.Name = "SelectPeoplePanel";
-            this.SelectPeoplePanel.Size = new System.Drawing.Size(1219, 535);
+            this.SelectPeoplePanel.Size = new System.Drawing.Size(914, 435);
             this.SelectPeoplePanel.TabIndex = 67;
             this.SelectPeoplePanel.MouseEnter += new System.EventHandler(this.SelectPeoplePanel_MouseEnter);
             // 
@@ -240,10 +225,9 @@
             this.SelectPeopleLabel.AutoSize = true;
             this.SelectPeopleLabel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SelectPeopleLabel.ForeColor = System.Drawing.Color.Yellow;
-            this.SelectPeopleLabel.Location = new System.Drawing.Point(425, 18);
-            this.SelectPeopleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.SelectPeopleLabel.Location = new System.Drawing.Point(319, 15);
             this.SelectPeopleLabel.Name = "SelectPeopleLabel";
-            this.SelectPeopleLabel.Size = new System.Drawing.Size(403, 29);
+            this.SelectPeopleLabel.Size = new System.Drawing.Size(326, 22);
             this.SelectPeopleLabel.TabIndex = 66;
             this.SelectPeopleLabel.Text = "Selecteer aantal personen per film";
             this.SelectPeopleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -251,19 +235,17 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(53, 592);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(40, 481);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1228, 5);
+            this.label1.Size = new System.Drawing.Size(921, 4);
             this.label1.TabIndex = 65;
             // 
             // page2RedTopLine
             // 
             this.page2RedTopLine.BackColor = System.Drawing.Color.Maroon;
-            this.page2RedTopLine.Location = new System.Drawing.Point(53, 48);
-            this.page2RedTopLine.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.page2RedTopLine.Location = new System.Drawing.Point(40, 39);
             this.page2RedTopLine.Name = "page2RedTopLine";
-            this.page2RedTopLine.Size = new System.Drawing.Size(1228, 5);
+            this.page2RedTopLine.Size = new System.Drawing.Size(921, 4);
             this.page2RedTopLine.TabIndex = 64;
             // 
             // PreviousPageButton
@@ -271,10 +253,9 @@
             this.PreviousPageButton.BackColor = System.Drawing.Color.Yellow;
             this.PreviousPageButton.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PreviousPageButton.ForeColor = System.Drawing.Color.Black;
-            this.PreviousPageButton.Location = new System.Drawing.Point(132, 843);
-            this.PreviousPageButton.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.PreviousPageButton.Location = new System.Drawing.Point(99, 685);
             this.PreviousPageButton.Name = "PreviousPageButton";
-            this.PreviousPageButton.Size = new System.Drawing.Size(187, 48);
+            this.PreviousPageButton.Size = new System.Drawing.Size(140, 39);
             this.PreviousPageButton.TabIndex = 71;
             this.PreviousPageButton.Text = "Terug";
             this.PreviousPageButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -288,19 +269,17 @@
             this.PageNumber3.Controls.Add(this.SnackMenuLabel);
             this.PageNumber3.Controls.Add(this.label6);
             this.PageNumber3.Controls.Add(this.label2);
-            this.PageNumber3.Location = new System.Drawing.Point(79, 224);
-            this.PageNumber3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PageNumber3.Location = new System.Drawing.Point(59, 182);
             this.PageNumber3.Name = "PageNumber3";
-            this.PageNumber3.Size = new System.Drawing.Size(1321, 615);
+            this.PageNumber3.Size = new System.Drawing.Size(991, 500);
             this.PageNumber3.TabIndex = 69;
             // 
             // FoodMenuPanel
             // 
             this.FoodMenuPanel.AutoScroll = true;
-            this.FoodMenuPanel.Location = new System.Drawing.Point(53, 54);
-            this.FoodMenuPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FoodMenuPanel.Location = new System.Drawing.Point(40, 44);
             this.FoodMenuPanel.Name = "FoodMenuPanel";
-            this.FoodMenuPanel.Size = new System.Drawing.Size(1229, 538);
+            this.FoodMenuPanel.Size = new System.Drawing.Size(922, 437);
             this.FoodMenuPanel.TabIndex = 70;
             // 
             // SnackMenuLabel
@@ -308,10 +287,9 @@
             this.SnackMenuLabel.AutoSize = true;
             this.SnackMenuLabel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SnackMenuLabel.ForeColor = System.Drawing.Color.Yellow;
-            this.SnackMenuLabel.Location = new System.Drawing.Point(541, 17);
-            this.SnackMenuLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.SnackMenuLabel.Location = new System.Drawing.Point(406, 14);
             this.SnackMenuLabel.Name = "SnackMenuLabel";
-            this.SnackMenuLabel.Size = new System.Drawing.Size(216, 29);
+            this.SnackMenuLabel.Size = new System.Drawing.Size(176, 22);
             this.SnackMenuLabel.TabIndex = 69;
             this.SnackMenuLabel.Text = "Snacks && Drinken";
             this.SnackMenuLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -319,19 +297,17 @@
             // label6
             // 
             this.label6.BackColor = System.Drawing.Color.Maroon;
-            this.label6.Location = new System.Drawing.Point(53, 592);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(40, 481);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(1228, 5);
+            this.label6.Size = new System.Drawing.Size(921, 4);
             this.label6.TabIndex = 68;
             // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.Maroon;
-            this.label2.Location = new System.Drawing.Point(53, 48);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(40, 39);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1228, 5);
+            this.label2.Size = new System.Drawing.Size(921, 4);
             this.label2.TabIndex = 64;
             // 
             // PageNumber4
@@ -340,19 +316,17 @@
             this.PageNumber4.Controls.Add(this.label9);
             this.PageNumber4.Controls.Add(this.label8);
             this.PageNumber4.Controls.Add(this.label7);
-            this.PageNumber4.Location = new System.Drawing.Point(79, 224);
-            this.PageNumber4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PageNumber4.Location = new System.Drawing.Point(59, 182);
             this.PageNumber4.Name = "PageNumber4";
-            this.PageNumber4.Size = new System.Drawing.Size(1321, 615);
+            this.PageNumber4.Size = new System.Drawing.Size(991, 500);
             this.PageNumber4.TabIndex = 71;
             // 
             // CustomerReservationPage
             // 
             this.CustomerReservationPage.AutoScroll = true;
-            this.CustomerReservationPage.Location = new System.Drawing.Point(49, 54);
-            this.CustomerReservationPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CustomerReservationPage.Location = new System.Drawing.Point(37, 44);
             this.CustomerReservationPage.Name = "CustomerReservationPage";
-            this.CustomerReservationPage.Size = new System.Drawing.Size(1233, 539);
+            this.CustomerReservationPage.Size = new System.Drawing.Size(925, 438);
             this.CustomerReservationPage.TabIndex = 71;
             // 
             // label9
@@ -360,10 +334,9 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Yellow;
-            this.label9.Location = new System.Drawing.Point(520, 17);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(390, 14);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(257, 29);
+            this.label9.Size = new System.Drawing.Size(212, 22);
             this.label9.TabIndex = 70;
             this.label9.Text = "Overzicht reservering";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -371,19 +344,17 @@
             // label8
             // 
             this.label8.BackColor = System.Drawing.Color.Maroon;
-            this.label8.Location = new System.Drawing.Point(55, 593);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(41, 482);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(1228, 5);
+            this.label8.Size = new System.Drawing.Size(921, 4);
             this.label8.TabIndex = 66;
             // 
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.Maroon;
-            this.label7.Location = new System.Drawing.Point(55, 48);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(41, 39);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(1228, 5);
+            this.label7.Size = new System.Drawing.Size(921, 4);
             this.label7.TabIndex = 65;
             // 
             // ReservationPriceLabel
@@ -391,10 +362,9 @@
             this.ReservationPriceLabel.AutoSize = true;
             this.ReservationPriceLabel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReservationPriceLabel.ForeColor = System.Drawing.Color.Yellow;
-            this.ReservationPriceLabel.Location = new System.Drawing.Point(449, 853);
-            this.ReservationPriceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ReservationPriceLabel.Location = new System.Drawing.Point(337, 693);
             this.ReservationPriceLabel.Name = "ReservationPriceLabel";
-            this.ReservationPriceLabel.Size = new System.Drawing.Size(392, 58);
+            this.ReservationPriceLabel.Size = new System.Drawing.Size(320, 44);
             this.ReservationPriceLabel.TabIndex = 72;
             this.ReservationPriceLabel.Text = "Totale prijs van uw reservering: €\r\n\r\n";
             this.ReservationPriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -404,10 +374,9 @@
             this.ReservationPrice.AutoSize = true;
             this.ReservationPrice.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReservationPrice.ForeColor = System.Drawing.Color.Yellow;
-            this.ReservationPrice.Location = new System.Drawing.Point(868, 853);
-            this.ReservationPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ReservationPrice.Location = new System.Drawing.Point(651, 693);
             this.ReservationPrice.Name = "ReservationPrice";
-            this.ReservationPrice.Size = new System.Drawing.Size(59, 29);
+            this.ReservationPrice.Size = new System.Drawing.Size(48, 22);
             this.ReservationPrice.TabIndex = 73;
             this.ReservationPrice.Text = "0,00\r\n";
             this.ReservationPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -417,10 +386,9 @@
             this.ConfirmButton.BackColor = System.Drawing.Color.Yellow;
             this.ConfirmButton.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConfirmButton.ForeColor = System.Drawing.Color.Black;
-            this.ConfirmButton.Location = new System.Drawing.Point(1167, 843);
-            this.ConfirmButton.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ConfirmButton.Location = new System.Drawing.Point(875, 685);
             this.ConfirmButton.Name = "ConfirmButton";
-            this.ConfirmButton.Size = new System.Drawing.Size(187, 48);
+            this.ConfirmButton.Size = new System.Drawing.Size(140, 39);
             this.ConfirmButton.TabIndex = 74;
             this.ConfirmButton.Text = "Bevestigen";
             this.ConfirmButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -435,10 +403,10 @@
             this.gradientLabel1.Controls.Add(this.RoadMapButton);
             this.gradientLabel1.Controls.Add(this.Bioscoopnaam);
             this.gradientLabel1.EndColor = System.Drawing.Color.Maroon;
-            this.gradientLabel1.Location = new System.Drawing.Point(-4, -2);
-            this.gradientLabel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gradientLabel1.Location = new System.Drawing.Point(-3, -2);
+            this.gradientLabel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gradientLabel1.Name = "gradientLabel1";
-            this.gradientLabel1.Size = new System.Drawing.Size(1484, 149);
+            this.gradientLabel1.Size = new System.Drawing.Size(1113, 121);
             this.gradientLabel1.TabIndex = 56;
             // 
             // DisclaimerButton
@@ -447,10 +415,9 @@
             this.DisclaimerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DisclaimerButton.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DisclaimerButton.ForeColor = System.Drawing.Color.Black;
-            this.DisclaimerButton.Location = new System.Drawing.Point(801, 54);
-            this.DisclaimerButton.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.DisclaimerButton.Location = new System.Drawing.Point(601, 44);
             this.DisclaimerButton.Name = "DisclaimerButton";
-            this.DisclaimerButton.Size = new System.Drawing.Size(301, 42);
+            this.DisclaimerButton.Size = new System.Drawing.Size(226, 34);
             this.DisclaimerButton.TabIndex = 12;
             this.DisclaimerButton.Text = "Disclaimer";
             this.DisclaimerButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -464,10 +431,9 @@
             this.RoadMapButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RoadMapButton.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RoadMapButton.ForeColor = System.Drawing.Color.Black;
-            this.RoadMapButton.Location = new System.Drawing.Point(1129, 54);
-            this.RoadMapButton.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.RoadMapButton.Location = new System.Drawing.Point(847, 44);
             this.RoadMapButton.Name = "RoadMapButton";
-            this.RoadMapButton.Size = new System.Drawing.Size(301, 42);
+            this.RoadMapButton.Size = new System.Drawing.Size(226, 34);
             this.RoadMapButton.TabIndex = 11;
             this.RoadMapButton.Text = "Hoe reserveer ik een ticket?";
             this.RoadMapButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -482,19 +448,18 @@
             this.Bioscoopnaam.Cursor = System.Windows.Forms.Cursors.SizeNESW;
             this.Bioscoopnaam.Font = new System.Drawing.Font("Lucida Sans Unicode", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bioscoopnaam.ForeColor = System.Drawing.Color.Yellow;
-            this.Bioscoopnaam.Location = new System.Drawing.Point(69, 39);
-            this.Bioscoopnaam.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Bioscoopnaam.Location = new System.Drawing.Point(52, 32);
             this.Bioscoopnaam.Name = "Bioscoopnaam";
-            this.Bioscoopnaam.Size = new System.Drawing.Size(356, 73);
+            this.Bioscoopnaam.Size = new System.Drawing.Size(289, 59);
             this.Bioscoopnaam.TabIndex = 10;
             this.Bioscoopnaam.Text = "Darichwiwi";
             // 
             // MovieReservation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1476, 943);
+            this.ClientSize = new System.Drawing.Size(1107, 766);
             this.Controls.Add(this.ConfirmButton);
             this.Controls.Add(this.ReservationPrice);
             this.Controls.Add(this.ReservationPriceLabel);
@@ -509,7 +474,6 @@
             this.Controls.Add(this.PageNumber3);
             this.Controls.Add(this.PageNumber1);
             this.Controls.Add(this.PageNumber2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "MovieReservation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

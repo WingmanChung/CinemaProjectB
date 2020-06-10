@@ -705,6 +705,10 @@ namespace CinemaSystemProjectB
 					if (dialogResult == DialogResult.Yes)
 					{
 						pages[--page].BringToFront();
+
+						SelectPeoplePanel.Controls.Clear();
+						FoodMenuPanel.Controls.Clear();
+						CustomerReservationPage.Controls.Clear();
 					}
 					//Check is chosenmoviepanel contains movie. If yes, then the next button will be enabled.
 					if (chosenMoviesPanel.Controls.Count != 0)
@@ -939,9 +943,9 @@ namespace CinemaSystemProjectB
 
 			if (page == 3)
 			{
+				ReservationPrice.Text = "0";
 				foreach (CustomerReservation movie in CustomerReservationPage.Controls)
 				{
-					ReservationPrice.Text = "0";
 					ReservationPrice.Text = (Convert.ToDecimal(ReservationPrice.Text) + Convert.ToDecimal(movie.TotalPrice.Text.Replace("€", ""))).ToString();
 				}
 			}
