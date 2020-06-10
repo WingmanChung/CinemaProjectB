@@ -364,9 +364,9 @@
             this.ReservationPriceLabel.ForeColor = System.Drawing.Color.Yellow;
             this.ReservationPriceLabel.Location = new System.Drawing.Point(337, 693);
             this.ReservationPriceLabel.Name = "ReservationPriceLabel";
-            this.ReservationPriceLabel.Size = new System.Drawing.Size(320, 44);
+            this.ReservationPriceLabel.Size = new System.Drawing.Size(309, 44);
             this.ReservationPriceLabel.TabIndex = 72;
-            this.ReservationPriceLabel.Text = "Totale prijs van uw reservering: €\r\n\r\n";
+            this.ReservationPriceLabel.Text = "Totale prijs van uw reservering: \r\n\r\n";
             this.ReservationPriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ReservationPrice
@@ -374,7 +374,7 @@
             this.ReservationPrice.AutoSize = true;
             this.ReservationPrice.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReservationPrice.ForeColor = System.Drawing.Color.Yellow;
-            this.ReservationPrice.Location = new System.Drawing.Point(651, 693);
+            this.ReservationPrice.Location = new System.Drawing.Point(633, 693);
             this.ReservationPrice.Name = "ReservationPrice";
             this.ReservationPrice.Size = new System.Drawing.Size(48, 22);
             this.ReservationPrice.TabIndex = 73;
@@ -474,6 +474,7 @@
             this.Controls.Add(this.PageNumber3);
             this.Controls.Add(this.PageNumber1);
             this.Controls.Add(this.PageNumber2);
+            this.MaximizeBox = false;
             this.Name = "MovieReservation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MovieReservation";
@@ -528,9 +529,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label ReservationPriceLabel;
-        private System.Windows.Forms.Label ReservationPrice;
         private System.Windows.Forms.Label ConfirmButton;
         public System.Windows.Forms.FlowLayoutPanel SelectPeoplePanel;
         public System.Windows.Forms.FlowLayoutPanel CustomerReservationPage;
+        private System.Windows.Forms.Label ReservationPrice;
     }
 }

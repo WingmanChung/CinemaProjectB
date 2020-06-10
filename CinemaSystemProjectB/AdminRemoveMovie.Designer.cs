@@ -96,9 +96,9 @@
             // AllMoviesList
             // 
             this.AllMoviesList.AutoScroll = true;
-            this.AllMoviesList.Location = new System.Drawing.Point(59, 75);
+            this.AllMoviesList.Location = new System.Drawing.Point(53, 75);
             this.AllMoviesList.Name = "AllMoviesList";
-            this.AllMoviesList.Size = new System.Drawing.Size(854, 610);
+            this.AllMoviesList.Size = new System.Drawing.Size(867, 610);
             this.AllMoviesList.TabIndex = 307;
             // 
             // RemoveMovieButton

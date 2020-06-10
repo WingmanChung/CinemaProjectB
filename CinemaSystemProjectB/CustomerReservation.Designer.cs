@@ -48,7 +48,7 @@
             this.TotalStudents = new System.Windows.Forms.Label();
             this.TotalSeniors = new System.Windows.Forms.Label();
             this.MoviePanel = new System.Windows.Forms.Panel();
-            this.ChooseOrChangeSeatsButton = new System.Windows.Forms.Button();
+            this.SelectedSeatsDisplay = new System.Windows.Forms.Label();
             this.TotalBestSeatPrice = new System.Windows.Forms.Label();
             this.TotalGoodSeatPrice = new System.Windows.Forms.Label();
             this.TotalNormalSeatPrice = new System.Windows.Forms.Label();
@@ -316,7 +316,7 @@
             // 
             // MoviePanel
             // 
-            this.MoviePanel.Controls.Add(this.ChooseOrChangeSeatsButton);
+            this.MoviePanel.Controls.Add(this.SelectedSeatsDisplay);
             this.MoviePanel.Controls.Add(this.TotalBestSeatPrice);
             this.MoviePanel.Controls.Add(this.TotalGoodSeatPrice);
             this.MoviePanel.Controls.Add(this.TotalNormalSeatPrice);
@@ -384,19 +384,16 @@
             this.MoviePanel.TabIndex = 304;
             this.MoviePanel.MouseEnter += new System.EventHandler(this.MoviePanel_MouseEnter);
             // 
-            // ChooseOrChangeSeatsButton
+            // SelectedSeatsDisplay
             // 
-            this.ChooseOrChangeSeatsButton.BackColor = System.Drawing.Color.DarkRed;
-            this.ChooseOrChangeSeatsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ChooseOrChangeSeatsButton.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
-            this.ChooseOrChangeSeatsButton.ForeColor = System.Drawing.Color.Black;
-            this.ChooseOrChangeSeatsButton.Location = new System.Drawing.Point(108, 547);
-            this.ChooseOrChangeSeatsButton.Name = "ChooseOrChangeSeatsButton";
-            this.ChooseOrChangeSeatsButton.Size = new System.Drawing.Size(671, 28);
-            this.ChooseOrChangeSeatsButton.TabIndex = 375;
-            this.ChooseOrChangeSeatsButton.Text = "Klik hier om uw zitplaatsen te bekijken of te wijzigen\r\n";
-            this.ChooseOrChangeSeatsButton.UseVisualStyleBackColor = false;
-            this.ChooseOrChangeSeatsButton.Click += new System.EventHandler(this.ChooseOrChangeSeatsButton_Click);
+            this.SelectedSeatsDisplay.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SelectedSeatsDisplay.ForeColor = System.Drawing.Color.Yellow;
+            this.SelectedSeatsDisplay.Location = new System.Drawing.Point(110, 539);
+            this.SelectedSeatsDisplay.Name = "SelectedSeatsDisplay";
+            this.SelectedSeatsDisplay.Size = new System.Drawing.Size(668, 79);
+            this.SelectedSeatsDisplay.TabIndex = 375;
+            this.SelectedSeatsDisplay.Text = "Geselecteerde stoelen";
+            this.SelectedSeatsDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TotalBestSeatPrice
             // 
@@ -541,7 +538,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold);
             this.label10.ForeColor = System.Drawing.Color.Yellow;
-            this.label10.Location = new System.Drawing.Point(735, 605);
+            this.label10.Location = new System.Drawing.Point(735, 634);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(49, 21);
             this.label10.TabIndex = 360;
@@ -551,7 +548,7 @@
             // label8
             // 
             this.label8.BackColor = System.Drawing.Color.Maroon;
-            this.label8.Location = new System.Drawing.Point(99, 626);
+            this.label8.Location = new System.Drawing.Point(99, 655);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(700, 2);
             this.label8.TabIndex = 356;
@@ -562,7 +559,7 @@
             this.Snacks.BackColor = System.Drawing.Color.Transparent;
             this.Snacks.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold);
             this.Snacks.ForeColor = System.Drawing.Color.Yellow;
-            this.Snacks.Location = new System.Drawing.Point(115, 620);
+            this.Snacks.Location = new System.Drawing.Point(115, 649);
             this.Snacks.Name = "Snacks";
             this.Snacks.Size = new System.Drawing.Size(164, 42);
             this.Snacks.TabIndex = 358;
@@ -842,7 +839,7 @@
             this.FoodLabel.BackColor = System.Drawing.Color.Transparent;
             this.FoodLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FoodLabel.ForeColor = System.Drawing.Color.Yellow;
-            this.FoodLabel.Location = new System.Drawing.Point(115, 605);
+            this.FoodLabel.Location = new System.Drawing.Point(115, 634);
             this.FoodLabel.Name = "FoodLabel";
             this.FoodLabel.Size = new System.Drawing.Size(146, 38);
             this.FoodLabel.TabIndex = 357;
@@ -855,7 +852,7 @@
             this.SnackPrice.BackColor = System.Drawing.Color.Transparent;
             this.SnackPrice.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold);
             this.SnackPrice.ForeColor = System.Drawing.Color.Yellow;
-            this.SnackPrice.Location = new System.Drawing.Point(723, 621);
+            this.SnackPrice.Location = new System.Drawing.Point(723, 650);
             this.SnackPrice.Name = "SnackPrice";
             this.SnackPrice.Size = new System.Drawing.Size(55, 21);
             this.SnackPrice.TabIndex = 361;
@@ -963,6 +960,6 @@
         public System.Windows.Forms.Label TotalBestSeatPrice;
         public System.Windows.Forms.Label TotalGoodSeatPrice;
         public System.Windows.Forms.Label TotalNormalSeatPrice;
-        private System.Windows.Forms.Button ChooseOrChangeSeatsButton;
+        public System.Windows.Forms.Label SelectedSeatsDisplay;
     }
 }
