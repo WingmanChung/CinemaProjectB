@@ -692,7 +692,7 @@ namespace CinemaSystemProjectB
 						);
 
 						string priceString = "€" + price.ToString();
-						if  (!priceString.EndsWith(",00"))
+						if  (!priceString.Contains(","))
 							priceString += ",00";
 
 						movie.TotalPrice.Text = priceString;
@@ -704,7 +704,7 @@ namespace CinemaSystemProjectB
 					ReservationPrice.Visible = true;
 
 					string totalPriceString = "€" + totalPriceOfReservation.ToString();
-					if (!totalPriceString.EndsWith(",00"))
+					if (!totalPriceString.Contains(","))
 						totalPriceString += ",00";
 
 					ReservationPrice.Text = totalPriceString;
