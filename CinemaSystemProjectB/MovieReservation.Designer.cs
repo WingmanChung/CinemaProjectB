@@ -364,9 +364,9 @@
             this.ReservationPriceLabel.ForeColor = System.Drawing.Color.Yellow;
             this.ReservationPriceLabel.Location = new System.Drawing.Point(337, 693);
             this.ReservationPriceLabel.Name = "ReservationPriceLabel";
-            this.ReservationPriceLabel.Size = new System.Drawing.Size(320, 44);
+            this.ReservationPriceLabel.Size = new System.Drawing.Size(309, 44);
             this.ReservationPriceLabel.TabIndex = 72;
-            this.ReservationPriceLabel.Text = "Totale prijs van uw reservering: €\r\n\r\n";
+            this.ReservationPriceLabel.Text = "Totale prijs van uw reservering: \r\n\r\n";
             this.ReservationPriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ReservationPrice
@@ -374,7 +374,7 @@
             this.ReservationPrice.AutoSize = true;
             this.ReservationPrice.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReservationPrice.ForeColor = System.Drawing.Color.Yellow;
-            this.ReservationPrice.Location = new System.Drawing.Point(651, 693);
+            this.ReservationPrice.Location = new System.Drawing.Point(633, 693);
             this.ReservationPrice.Name = "ReservationPrice";
             this.ReservationPrice.Size = new System.Drawing.Size(48, 22);
             this.ReservationPrice.TabIndex = 73;
@@ -404,7 +404,7 @@
             this.gradientLabel1.Controls.Add(this.Bioscoopnaam);
             this.gradientLabel1.EndColor = System.Drawing.Color.Maroon;
             this.gradientLabel1.Location = new System.Drawing.Point(-3, -2);
-            this.gradientLabel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gradientLabel1.Margin = new System.Windows.Forms.Padding(2);
             this.gradientLabel1.Name = "gradientLabel1";
             this.gradientLabel1.Size = new System.Drawing.Size(1113, 121);
             this.gradientLabel1.TabIndex = 56;
